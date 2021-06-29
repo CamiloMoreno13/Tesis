@@ -1,8 +1,7 @@
 import { createElementCssSelector } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import * as THREE from 'three';
-import { Scene } from 'three';
-
+//import * as THREE from 'three';
+//import { Scene } from 'three';
 
 @Component({
   selector: 'app-space',
