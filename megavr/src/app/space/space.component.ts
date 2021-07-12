@@ -1,7 +1,9 @@
 import { createElementCssSelector } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { AnimationFrameScheduler } from 'rxjs/internal/scheduler/AnimationFrameScheduler';
 import * as THREE from 'three';
 import { Scene } from 'three';
+
 
 
 @Component({
@@ -9,6 +11,7 @@ import { Scene } from 'three';
   templateUrl: './space.component.html',
   styleUrls: ['./space.component.css']
 })
+
 export class SpaceComponent implements OnInit {
 
   constructor() { }
@@ -44,12 +47,25 @@ export class SpaceComponent implements OnInit {
 
       animate();
       */
-     /*
+    
+
     let caja = document.getElementById('caja');
-    caja?.setAttribute('color', 'red');
+    caja?.setAttribute('geometry', 'primitive: box');
+    caja?.setAttribute('material', 'color:red');
     caja?.setAttribute('position', '1 2 -5');
     caja?.setAttribute('rotation', '0 45 45');
-      */
+
+    var entity= document.querySelector('#yellow') ;
+    if(entity != null){
+      console.log("enity" , entity);
+    }
   }
+
+  prueba(){
+    let valor = document.querySelector('#caja');
+    console.log(valor);
+    valor?.setAttribute('color', 'red');
+  }
+
 
 }

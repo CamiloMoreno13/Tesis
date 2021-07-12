@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,27 @@
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <title>Prueba1</title>
 </head>
+
 <body>
-  <a-scene>
-    <a-box id='caja'></a-box>
+  <a-scene class="escena">
+    <!---------------------------------Elementos externos ------------------------>
+    <a-assets>
+      <audio id="bichota" src="../../assets/bichota.mp3"></audio>
+      <video id="video" src="../../assets/p1.mp4" preload="auto" autoplay></video>
+    </a-assets>
+    <!----------------------------------------------------------------------------->
+    <!-------------------------------Camara---------------------------------------->
+    <!--<a-camera wasd-controls="enabled : false">-->
+    <a-camera wasd-controls="enabled : false">
+      <a-cursor></a-cursor>
+    </a-camera>
+    <!-------------------------------------Elementos ------------------------------>
+    <a-sky id="fondo" src="https://i.imgur.com/jL7ZMrY.jpeg%22%3E"></a-sky>
+    <!-- texto -->
+    <a-entity text="value: Welcome to the MegaSpace; color: red; align: center; width : 60; letterSpacing: 10;"  position="0 20 -40"></a-entity>
+    <a-text ></a-text>
+
   </a-scene>
 </body>
+
 </html>
