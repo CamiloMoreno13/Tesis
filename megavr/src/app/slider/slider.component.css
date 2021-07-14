@@ -1,0 +1,24 @@
+.picsum-img-wrapper{
+    height: 100vh;
+    background-color: green;
+}
+
+.ima{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.carousel-caption{
+    margin-bottom: 20%;
+    color: black;
+    border-radius: 5px solid black;
+}
+
+.carousel-control-prev-icon {
+
+    background-image: url('https://apufpel.com.br/assets/img/seta_prim.png');
+  }
+  .carousel-control-next-icon{
+    background-image: url('https://apufpel.com.br/assets/img/seta_ult.png')
+  }
