@@ -9,13 +9,15 @@ import { SpaceComponent } from './space/space.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderComponent } from './slider/slider.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpaceComponent,
     SliderComponent,
-    InicioComponent
+    InicioComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
