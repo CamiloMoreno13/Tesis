@@ -66,10 +66,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    
 }
 .final button{
     background-color: white;
     border: none;
+    margin-top: 10px;
 }
 #icono{
     display: flex;
@@ -83,27 +85,37 @@
 .texto p{
     font-size: 1.2rem;
 }
-
 .indicadores ul{
     list-style: none;
     display: flex;
 }
-
-.indicadores ul li{
+.indicadores ul a{
     width: 22px;
     height:22px;
     border: 1px solid black;
     border-radius: 50px;
     margin: 5px;
 }
-
 .indicadores{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+.indicadores ul a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-.indicadores ul li{
-    background-color: red;
+.indicadores ul a .active{
+    width: 14px;
+    height: 14px;
+    background-color:black;
+    border-radius: 40px;
+}
+
+#footer{
+    position: absolute;
 }

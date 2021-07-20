@@ -12,11 +12,12 @@
         </div>
         <div class="indicadores">
             <ul>
-                <li style="background-color: black;"></li>
-                <li (click)="next2()"></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <a (click)="indi1()">
+                    <li class="active"></li>
+                </a>
+                <a (click)="indi2()"></a>
+                <a (click)="indi3()"></a>
+                <a (click)="indi4()"></a>
             </ul>
             <p> <u (click)="space()">saltar</u></p>
         </div>
@@ -36,11 +37,12 @@
         </div>
         <div class="indicadores">
             <ul>
-                <li></li>
-                <li style="background-color: black;"></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <a (click)="indi1()"></a>
+                <a (click)="indi2()">
+                    <li class="active"></li>
+                </a>
+                <a (click)="indi3()"></a>
+                <a (click)="indi4()"></a>
             </ul>
             <p> <u (click)="space()">saltar</u></p>
         </div>
@@ -56,6 +58,14 @@
             <input type="button" value="" class="back" (click)="back4()">
         </div>
         <div class="indicadores">
+            <ul>
+                <a (click)="indi1()"></a>
+                <a (click)="indi2()"></a>
+                <a (click)="indi3()">
+                    <li class="active"></li>
+                </a>
+                <a (click)="indi4()"></a>
+            </ul>
             <p> <u (click)="space()">saltar</u></p>
         </div>
     </div>
@@ -67,14 +77,20 @@
         </div>
         <div class="botones">
             <input type="button" value="" class="back" (click)="back5()">
+
             <div class="final">
                 <button (click)="space()"><img src="../../assets/home64.png
                 " alt=""></button>
                 <p class="inicio">Inicio</p>
             </div>
         </div>
-        <div class="indicadores">
-            
+        <div class="indicadores" id="footer">
+            <ul>
+                <a (click)="indi1()"></a>
+                <a (click)="indi2()"></a>
+                <a (click)="indi3()"></a>
+                <a (click)="indi4()"><li class="active"></li></a>
+            </ul>
         </div>
     </div>
 </div>
