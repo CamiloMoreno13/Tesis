@@ -11,7 +11,7 @@ import {Vista} from '../../app/slider/vista';
 export class SliderComponent implements OnInit {
 
   public vistas: Vista[] = [];
-  constructor(config:NgbCarouselConfig, private router:Router) {
+  constructor(private config:NgbCarouselConfig, private router:Router) {
     config.wrap = false;
    }
 

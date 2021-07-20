@@ -1,0 +1,109 @@
+.contenedor{
+    width: 100%;
+    height: 100vh;
+}
+.contenedor .uno .logo{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../../assets/mega.jpg);
+    background-position: center;
+    background-size: cover;
+    border: none;
+    position: fixed;
+    z-index: 1;
+}
+.contenedor .slider{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contenedor .slider .texto{
+    text-align: center;
+    margin: 30px;
+}
+.slider .botones .next{
+    position: absolute;
+}
+.next{
+    background-color: white;
+    background-image: url(../../assets/nexto.png);
+    border: none;
+    width: 64px;
+    height: 64px;
+    background-position: center;
+    background-size: cover;
+    float: right;
+    bottom: 5px;
+    right: 5px;
+}
+.back{
+    background-color: white;
+    background-image: url(../../assets/back.png);
+    border: none;
+    width: 64px;
+    height: 64px;
+    background-position: center;
+    background-size: cover;
+    float: right;
+    bottom: 5px;
+    right: 5px;
+}
+.slider .botones .back{
+    position: absolute;
+    float: left;
+    bottom: 5px;
+    left: 5px;
+}
+.slider .indicadores{
+    margin-top: 50px;
+    position: relative;
+}
+.final{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.final button{
+    background-color: white;
+    border: none;
+}
+#icono{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.texto h3{
+    font-size: 2.5rem;
+}
+.texto p{
+    font-size: 1.2rem;
+}
+
+.indicadores ul{
+    list-style: none;
+    display: flex;
+}
+
+.indicadores ul li{
+    width: 22px;
+    height:22px;
+    border: 1px solid black;
+    border-radius: 50px;
+    margin: 5px;
+}
+
+.indicadores{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.indicadores ul li{
+    background-color: red;
+}
