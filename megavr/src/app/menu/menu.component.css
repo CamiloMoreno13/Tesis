@@ -1,13 +1,23 @@
-body{
-  background-color: blue;
-  padding: 0;
-  margin: 0;
+/*body{
+    padding: 0;
+    margin: 0;
+}*/
+
+.contenedor{
+  height: 65px ;
+  width: 65px ;
+  position: absolute;
+  margin: auto;
+  top: 80%;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-
 .menu{
-  height: 85px ;
-  width: 85px ;
+  height: 65px ;
+  width: 65px ;
+  text-align: center;
   background-color: tomato;
   border-radius: 50%;
   position: absolute;
@@ -20,60 +30,50 @@ body{
   z-index: 3;
 }
 
-.fa-share-alt{
-  position: relative;
-  top:17px;
-  left:19px;
-
-}
-
 .menu-items{
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   position: absolute;
   margin: auto;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
- 
-
-}
-.menu-items >div{
-  background-color: white;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  font-size: 43px;
-  position: relative;
-  transition: 0.5s linear;
-  z-index: 2;
-}
-.fa{
-  position: relative;
-  top: 17px;
-}
-a{
-  color:tomato;
-}
-.item2{
-  bottom: 80px;
   }
-.item3{
-  bottom: 160px;
-}
-.item4{
-bottom: 240px;
-
-}
-.item5{
-  bottom: 320px;
-}
-.menu-items>div:hover{
-  background-color: tomato ;
-}
-
-
-.menu-items>div:hover a{
- color: white ;
- }
+  .menu-items >div{
+      text-align: center;
+      background-color: black;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      font-size: 40px;
+      position: relative;
+      transition: 0.5s linear;
+      z-index: 2;
+  }
+  /*
+  .fa{
+      position: relative;
+      top: 17px;
+  }*/
+  a{
+      color:tomato;
+  }
+  .item2{
+      bottom: 60px;
+  }
+  .item3{
+      bottom: 120px;
+  }
+  .item4{
+      bottom: 180px;
+  }
+  .item5{
+      bottom: 240px;
+  }
+  .menu-items>div:hover{
+      background-color: tomato ;
+  }
+  .menu-items>div:hover a{
+      color: white ;
+  }
