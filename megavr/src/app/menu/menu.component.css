@@ -1,79 +1,98 @@
-/*body{
-    padding: 0;
-    margin: 0;
-}*/
-
 .contenedor{
-  height: 65px ;
-  width: 65px ;
-  position: absolute;
-  margin: auto;
-  top: 80%;
-  bottom: 0;
-  left: 0;
-  right: 0;
+    height: 50px ;
+    width: 50px ;
+    position: absolute;
+    margin: auto;
+    top: 80%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .menu{
-  height: 65px ;
-  width: 65px ;
-  text-align: center;
-  background-color: tomato;
-  border-radius: 50%;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  font-size: 43px;
-  z-index: 3;
+    height: 50px ;
+    width: 50px ;
+    text-align: center;
+    background-color: tomato;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 35px;
+    z-index: 3;
+}
+  
+.menu-items{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    }
+.menu-items >div{
+    text-align: center;
+    background-color: black;    
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    position: relative;
+    transition: 0.5s linear;
+    z-index: 2;
+}
+.name{
+    font-size: 10px;
+    color: black;
+    background-color: transparent;
+    position: absolute;
+    margin: auto;
+    top: -25px;
+    left: 0;
+    right: 0;
+}
+/*
+.fa{
+    position: relative;
+    top: 17px;
+}*/
+a{
+    color:tomato;
+}
+.item2{
+    bottom: 40px;
+}
+.item3{
+    bottom: 80px;
+}
+.item4{
+    bottom: 120px;
+}
+.item5{
+    bottom: 160px;
+}
+.menu-items>div:hover{
+    background-color: tomato ;
+}
+.menu-items>div:hover a{
+    color: white ;
 }
 
-.menu-items{
-  height: 60px;
-  width: 60px;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  }
-  .menu-items >div{
-      text-align: center;
-      background-color: black;
-      height: 60px;
-      width: 60px;
-      border-radius: 50%;
-      font-size: 40px;
-      position: relative;
-      transition: 0.5s linear;
-      z-index: 2;
-  }
-  /*
-  .fa{
-      position: relative;
-      top: 17px;
-  }*/
-  a{
-      color:tomato;
-  }
-  .item2{
-      bottom: 60px;
-  }
-  .item3{
-      bottom: 120px;
-  }
-  .item4{
-      bottom: 180px;
-  }
-  .item5{
-      bottom: 240px;
-  }
-  .menu-items>div:hover{
-      background-color: tomato ;
-  }
-  .menu-items>div:hover a{
-      color: white ;
-  }
+.cerrar{
+    z-index: 3;
+    position: absolute;
+    font-size: 40px;
+    margin: auto;
+    top: 0;
+    bottom: 1;
+    left: 1;
+    right: 0;
+    height: 45px ;
+    width: 45px ;
+    border-radius: 50%;
+}

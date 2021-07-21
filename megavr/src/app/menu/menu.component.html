@@ -1,59 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="menu.component.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-
-<body>
-  <div class="contenedor" >
+<div class="cerrar" id="cerrar" *ngIf="!bola" #cerrar>
+  <a href="/inicio.component.html">
+  <i class="fa fa-times-circle"></i>
+  </a>
+</div>
+<div class="contenedor" *ngIf="inicio">
   <div class="menu" (click)="pop()" #pls>
-
-    <i class="fa fa-plus"></i>
+      <i class="fa fa-plus"></i>
   </div>
   <div class="menu-items">
-
-    <div class="item1" id="item1 " #item1>
-      <a href="#">
-        <i class="fa fa-facebook"></i>
-      </a>
-    </div>
-
-    
-    <div class="item2" id="item2 " #item2>
-      <a href="#">
-        <i class="fa fa-twitter"></i>
-      </a>
-    </div>
-
-    <div class="item3" id="item3 " #item3>
-      <a href="#">
-        <i class="fa fa-pinterest"></i>
-      </a>
-    </div>
-
-    <div class="item4" id="item4 " #item4>
-      <a href="#">
-        <i class="fa fa-linkedin"></i>
-      </a>
-    </div>
-
-    <div class="item5" id="item5 " #item5>
-      <a href="#">
-        <i class="fa fa-instagram"></i>
-      </a>
-    </div>
-
-
+      <div class="item1" id="item1 " #item1>
+          <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
+          <a href="#">
+              <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item2" id="item2 " #item2>
+          <h1 class="name" *ngIf="bola">Caro Carreta</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item3" id="item3 " #item3>
+          <h1 class="name" *ngIf="bola">El shirry</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item4" id="item4 " #item4>
+          <h1 class="name" *ngIf="bola">Carlos Mira</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item5" id="item5 " #item5>
+          <h1 class="name" *ngIf="bola">Dani Murcia</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
   </div>
-
 </div>
-
-</body>
-
-</html>

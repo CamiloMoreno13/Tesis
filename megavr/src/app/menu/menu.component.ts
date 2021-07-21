@@ -16,23 +16,16 @@ export class MenuComponent implements OnInit {
   @ViewChild('item3') item3!: ElementRef;
   @ViewChild('item4') item4!: ElementRef;
   @ViewChild('item5') item5!: ElementRef;
-
-  
-
   @ViewChild('menu-items') menu!: ElementRef;
 
-  private bola : boolean = false;
+  public bola : boolean = false;
+  public inicio: boolean = false;
   constructor(private renderer2: Renderer2) { }
 
   ngOnInit(): void {
-
+    this.inicio = true;
   }
-
-
-
   pop() {
-    console.log("perro");
-    var i = 0;
     var b1 = this.item1.nativeElement;
     var b2 = this.item2.nativeElement;
     var b3 = this.item3.nativeElement;
