@@ -118,4 +118,27 @@
 
 #footer{
     position: absolute;
+    
 }
+
+
+@media screen and (min-device-width: 320px) and (max-height: 570px) {
+    #footer{
+        bottom: 5%;
+        position: absolute;
+    }
+}
+@media only screen and (max-height: 700px){
+    #footer{
+        bottom: 25%;
+        position: absolute;
+    }
+}
+@media only screen and (max-height: 900px){
+    #footer{
+        bottom: 38%;
+        position: absolute;
+    }
+}
+
+

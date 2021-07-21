@@ -1,5 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import * as $ from 'jquery';
 
 @Component({
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit {
 
   public bola : boolean = false;
   public inicio: boolean = false;
-  constructor(private renderer2: Renderer2) { }
+  constructor(private renderer2: Renderer2, private router:Router) { }
 
   ngOnInit(): void {
     this.inicio = true;
@@ -34,11 +35,11 @@ export class MenuComponent implements OnInit {
     
 
     if (!this.bola) {
-      this.renderer2.setStyle(b1, 'transform', 'translateX(-150px)');
-      this.renderer2.setStyle(b2,'transform','translate(-100px,-100px)');
-      this.renderer2.setStyle(b3,'transform','translateY(-150px)');
-      this.renderer2.setStyle(b4,'transform','translate(100px,-100px)');
-      this.renderer2.setStyle(b5,'transform','translateX(150px)');
+      this.renderer2.setStyle(b1, 'transform', 'translate(-120px,0px)');
+      this.renderer2.setStyle(b2,'transform','translate(-60px,-50px)');
+      this.renderer2.setStyle(b3,'transform','translateY(-75px)');
+      this.renderer2.setStyle(b4,'transform','translate(60px,-50px)');
+      this.renderer2.setStyle(b5,'transform','translate(120px,0px)');
       this.bola=true;
     }
     else{
@@ -49,5 +50,8 @@ export class MenuComponent implements OnInit {
       this.renderer2.setStyle(b5,'transform', 'translate(0px)');
       this.bola=false;
     }
+  }
+  start(){
+    this.router.navigate(['/inicio']);
   }
 }
