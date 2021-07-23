@@ -1,0 +1,96 @@
+<div class="contenedor">
+    <div class="uno">
+        <input type="button" value="" class="logo" (click)="fprimera()" *ngIf="primera">
+    </div>
+    <div class="slider" id="dos" *ngIf="segunda">
+        <div class="texto">
+            <h3>Bienvenido</h3>
+            <p>Hola te damos la bienvenida a la mega virtual</p>
+        </div>
+        <div class="botones">
+            <input type="button" value="" class="next" (click)="next2()">
+        </div>
+        <div class="indicadores">
+            <ul>
+                <a (click)="indi1()">
+                    <li class="active"></li>
+                </a>
+                <a (click)="indi2()"></a>
+                <a (click)="indi3()"></a>
+                <a (click)="indi4()"></a>
+            </ul>
+            <p> <u (click)="space()">saltar</u></p>
+        </div>
+    </div>
+    <div class="slider" id="tres" *ngIf="tercera">
+        <div class="texto">
+            <div class="final" id="icono">
+                <button (click)="space()"><img src="../../assets/celular128.png" alt=""></button>
+            </div>
+            <p>Para navegar usa tu celular de la forma horizontal y conoce el contenido
+                tocando sobre las diferentes iconos
+            </p>
+        </div>
+        <div class="botones">
+            <input type="button" value="" class="next" (click)="next3()">
+            <input type="button" value="" class="back" (click)="back3()">
+        </div>
+        <div class="indicadores">
+            <ul>
+                <a (click)="indi1()"></a>
+                <a (click)="indi2()">
+                    <li class="active"></li>
+                </a>
+                <a (click)="indi3()"></a>
+                <a (click)="indi4()"></a>
+            </ul>
+            <p> <u (click)="space()">saltar</u></p>
+        </div>
+    </div>
+    <div class="slider" id="cuarta" *ngIf="cuarta">
+        <div class="texto">
+            <h3>Sabes donde se sienta cada DJ</h3>
+            <p>Vas a poder interactuar con cada uno de los Dj's de la mega y saber las noticias del entretenimiento
+            </p>
+        </div>
+        <div class="botones">
+            <input type="button" value="" class="next" (click)="next4()">
+            <input type="button" value="" class="back" (click)="back4()">
+        </div>
+        <div class="indicadores">
+            <ul>
+                <a (click)="indi1()"></a>
+                <a (click)="indi2()"></a>
+                <a (click)="indi3()">
+                    <li class="active"></li>
+                </a>
+                <a (click)="indi4()"></a>
+            </ul>
+            <p> <u (click)="space()">saltar</u></p>
+        </div>
+    </div>
+    <div class="slider" id="quinta" *ngIf="quinta">
+        <div class="texto">
+            <h3>Comparte con tus amigos</h3>
+            <p>Vas a poder interactuar con cada uno de los Dj's de la mega y saber las noticias del entretenimiento
+            </p>
+        </div>
+        <div class="botones">
+            <input type="button" value="" class="back" (click)="back5()">
+
+            <div class="final">
+                <button (click)="space()"><img src="../../assets/home64.png
+                " alt=""></button>
+                <p class="inicio">Inicio</p>
+            </div>
+        </div>
+        <div class="indicadores" id="footer">
+            <ul>
+                <a (click)="indi1()"></a>
+                <a (click)="indi2()"></a>
+                <a (click)="indi3()"></a>
+                <a (click)="indi4()"><li class="active"></li></a>
+            </ul>
+        </div>
+    </div>
+</div>

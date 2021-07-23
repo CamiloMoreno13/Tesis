@@ -1,0 +1,42 @@
+<div class="cerrar" id="cerrar" *ngIf="!bola" #cerrar>
+  <a (click)="start()">
+  <i class="fa fa-times-circle"></i>
+  </a>
+</div>
+<div class="contenedor" *ngIf="inicio">
+  <div class="menu" (click)="pop()" #pls>
+      <i class="fa fa-plus"></i>
+  </div>
+  <div class="menu-items">
+      <div class="item1" id="item1 " #item1>
+          <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
+          <a href="#">
+              <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item2" id="item2 " #item2>
+          <h1 class="name" *ngIf="bola">Caro Carreta</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item3" id="item3 " #item3>
+          <h1 class="name" *ngIf="bola">El shirry</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item4" id="item4 " #item4>
+          <h1 class="name" *ngIf="bola">Carlos Mira</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+      <div class="item5" id="item5 " #item5>
+          <h1 class="name" *ngIf="bola">Dani Murcia</h1>
+          <a href="#">
+          <i class="fa fa-user"></i>
+          </a>
+      </div>
+  </div>
+</div>

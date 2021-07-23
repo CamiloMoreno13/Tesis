@@ -1,0 +1,107 @@
+.contenedor{
+    height: 50px ;
+    width: 50px ;
+    position: absolute;
+    margin: auto;
+    top: 85%;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+
+.menu{
+    height: 50px ;
+    width: 50px ;
+    text-align: center;
+    background-color: tomato;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 35px;
+    z-index: 3;
+}
+  
+.menu-items{
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    }
+.menu-items > div{
+    text-align: center;
+    background-color: black;    
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 25px;
+    position: relative;
+    transition: 0.5s linear;
+    z-index: 2;
+}
+.name{
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    margin: auto;
+    top: -40px;
+    left: 0;
+    right: 0;
+}
+/*
+.fa{
+    position: relative;
+    top: 17px;
+}*/
+
+a{
+    color:tomato;
+}
+.item2{
+    bottom: 40px;
+}
+.item3{
+    bottom: 80px;
+}
+.item4{
+    bottom: 120px;
+}
+.item5{
+    bottom: 160px;
+}
+.menu-items>div:hover{
+    background-color: tomato ;
+}
+.menu-items>div:hover a{
+    color: white ;
+}
+
+.cerrar{
+    z-index: 3;
+    position: absolute;
+    font-size: 40px;
+    margin: auto;
+    top: 0;
+    bottom: 1;
+    left: 1;
+    right: 0;
+    height: 45px ;
+    width: 45px ;
+    border-radius: 50%;
+}
+.cerrar a{
+    color:tomato;
+}
+
+h1{
+    color: white;
+    font-size: 15px;
+}
