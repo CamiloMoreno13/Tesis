@@ -1,5 +1,6 @@
 import { createElementCssSelector } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-space',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 
 export class SpaceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit(): void {
     
@@ -31,5 +32,6 @@ export class SpaceComponent implements OnInit {
     valor?.setAttribute('color', 'red');
   }
 
+  
 
 }

@@ -10,6 +10,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SliderComponent } from './slider/slider.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
+import { PerfilesComponent } from './perfiles/perfiles.component';
+import { ProductoComponent } from './producto/producto.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MenuComponent } from './menu/menu.component';
     SpaceComponent,
     SliderComponent,
     InicioComponent,
-    MenuComponent
+    MenuComponent,
+    PerfilesComponent,
+    ProductoComponent
   ],
   imports: [
     BrowserModule,

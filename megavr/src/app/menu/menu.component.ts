@@ -2,6 +2,8 @@ import { style } from '@angular/animations';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { Injectable } from '@angular/core';
+
 
 @Component({
   selector: 'app-menu',
@@ -54,4 +56,11 @@ export class MenuComponent implements OnInit {
   start(){
     this.router.navigate(['/inicio']);
   }
+
+  locutor(cadena:string){
+     this.router.navigate(['/perfiles',cadena]);
+  }
+
+
+
 }
