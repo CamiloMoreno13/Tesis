@@ -12,10 +12,13 @@
         <div class="videoContainer">
 
 
-            <video id="videopls" autoplay loop>
+            <video id="videopls" autoplay loop controlsList="nodownload" disablePictureInPicture #videopls>
                 <source src="../../assets/webm.webm">
 
             </video>
+            <i class="fa fa-volume-up"  (click)="mute()" #videoi>
+                
+            </i>
 
             <div>
                 <h5>

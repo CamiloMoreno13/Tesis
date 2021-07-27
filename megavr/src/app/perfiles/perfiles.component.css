@@ -27,11 +27,11 @@ body{
       object-fit: contain;
       width: 100%;
       height: 100vh;
-
-      
-     }
-
-
+           }
+ .videoContainer i{
+   font-size: 40px;
+  color: gray;
+ }   
 
   .cerrar{
       z-index: 3;
