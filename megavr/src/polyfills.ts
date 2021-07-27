@@ -60,7 +60,6 @@
 import 'zone.js';  // Included with Angular CLI.
 
 import 'aframe';
-import 'aframe-transparent-video-shader'
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
