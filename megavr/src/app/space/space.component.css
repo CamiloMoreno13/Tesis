@@ -1,3 +1,43 @@
 .box1{
     color:"white";
 }
+
+.menu{
+    height: 50px ;
+    width: 130px; 
+    text-align: center;
+    color: white;
+    background-color:  rgb(4, 170, 109);
+    border-radius: 25px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    z-index: 3;
+}
+
+.menu:hover {
+    background-color: #059862 !important;
+    color: white !important;
+
+    /*
+    Poner mas grande el boton 
+    color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 4px 16px rgba(49, 138, 172, 1);
+    transition: all 0.2s ease;
+    */
+}
+
+.n{
+    font-size: 15px;
+    color: white;
+    background-color: transparent;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+}

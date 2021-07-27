@@ -11,6 +11,9 @@
 </head>
 
 <body>
+  <div class="menu" #pls>
+    <i class="nose">Hola mundo</i>
+  </div>
   <a-scene cursor="rayOrigin: mouse" stats>
     <a-camera wasd-controls-enabled="false"></a-camera>
     <!--Assets-->
@@ -49,11 +52,23 @@
       material="shader: transparent-video; src: #videoId ; transparent:true"
     ></a-plane>
 
+    <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0.5; radiusOuter: 0.8;"
+    material="color: #fff; opacity: 0.5"
+    animation="property: geometry.radiusOuter; from: 0.8; to: 1.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
+    
+    <a-entity id="anillo" rotation="-29.051252044313262 49.11107740963851 22.779083061016138"
+    scale="0.39141 0.39141 0.39141" position="-5.23339 -1.12823 -3">
+    <a-entity mixin="icon-animation"></a-entity>
+    </a-entity>
+
+
       
      
     
-    
     <a-sky id="fondo" src="https://i.imgur.com/jL7ZMrY.jpeg"></a-sky>
+
+    
+
   </a-scene>
 </body>
 </html>
