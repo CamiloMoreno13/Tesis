@@ -1,0 +1,74 @@
+.presen{
+    border-radius: 40px;
+    height: 50px ;
+    width: 230px; 
+    background-color:  rgba(0, 0, 0, 0.3);
+    border: 3px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info{
+    width: 180px; 
+    height: 40px;
+    background-color:  transparent;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title{
+    width: 160px; 
+    height: 20px;
+    margin: auto;
+    background-color: transparent;
+    display: block;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-style: normal;
+}
+
+.subtitle{
+    width: 160px; 
+    height: 20px;
+    margin: auto;
+    background-color: transparent;
+    font-size: 15px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-style:initial;
+}
+
+.icon{
+    border: 1px solid white;
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px;
+    font-size: 22px;
+    background-color:  rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.fa fa-user{
+    display: inline;
+}
+
+
+/*
+Centrar algo dento de un div
+
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+*/

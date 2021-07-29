@@ -11,9 +11,18 @@
 </head>
 
 <body>
-  <div class="menu" #pls>
-    <i class="nose">Hola mundo</i>
+  <div class="presen">
+    <div class="icon">
+        <i class="fa fa-user"></i>
+    </div>
+    <div class="info">
+        <i class="title">Carol Carreta</i>
+        <i class="subtitle">Cheerleader del mañanero</i>
+    </div>
   </div>
+    <!--
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xoWxv2yZXLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
+    -->
   <a-scene cursor="rayOrigin: mouse" stats>
     <a-camera wasd-controls-enabled="false"></a-camera>
     <!--Assets-->
@@ -22,8 +31,15 @@
       <video id="videoId" src="https://cdn.glitch.com/e3796de4-705d-4b33-a77c-084a0b428d27%2FAlphaTestVideo.webm?1552438409173" muted autoplay loop="true"></video>
       <video id="carowebm" src="../../assets/webm.webm" autoplay ></video>
 
+      <!--Cargar archivo obj-->
+      <a-asset-item id="tree-obj" src="../../assets/Humvee.obj"></a-asset-item>
+      <a-asset-item id="tree-mtl" src="../../assets/Humvee.mtl"></a-asset-item>
+
       
     </a-assets>
+
+    <!--Cargar archivo obj-->
+    <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.001 0.001 0.001" position="-2 0 0"></a-entity>
 
     <a-entity id="yellow" position="-2.2272 -0.97333 -4.03859" sound="src:#bichota" #yellowBox>
 
@@ -45,16 +61,18 @@
         
       ></a-plane>
 
-
+    <!--
       <a-plane
       id="calvo" scale="2.16505 2.16505 2.16505" rotation="0 41.477560705110555 0"
       position="-4.96037 1.15864 -2.05425"
       material="shader: transparent-video; src: #videoId ; transparent:true"
     ></a-plane>
-
-    <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0.5; radiusOuter: 0.8;"
+    -->
+    
+    <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
     material="color: #fff; opacity: 0.5"
     animation="property: geometry.radiusOuter; from: 0.8; to: 1.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
+
     
     <a-entity id="anillo" rotation="-29.051252044313262 49.11107740963851 22.779083061016138"
     scale="0.39141 0.39141 0.39141" position="-5.23339 -1.12823 -3">
