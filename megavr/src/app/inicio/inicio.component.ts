@@ -97,4 +97,10 @@ export class InicioComponent implements OnInit {
     this.cuarta = false;
     this.quinta = true;
   }
+  saltar(){
+    this.segunda = false;
+    this.tercera = false;
+    this.cuarta = false;
+    this.quinta = true;
+  }
 }
