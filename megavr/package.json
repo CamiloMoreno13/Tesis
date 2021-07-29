@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~12.0.5",
     "@angular/router": "~12.0.5",
     "aframe": "^1.2.0",
+    "aframe-htmlembed-component": "^1.0.0",
     "aframe-transparent-video-shader": "^1.0.1",
     "aframe-watcher": "^1.4.0",
     "rxjs": "~6.6.0",

@@ -11,15 +11,7 @@
 </head>
 
 <body>
-  <div class="presen">
-    <div class="icon">
-        <i class="fa fa-user"></i>
-    </div>
-    <div class="info">
-        <i class="title">Carol Carreta</i>
-        <i class="subtitle">Cheerleader del mañanero</i>
-    </div>
-  </div>
+  
     <!--
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xoWxv2yZXLQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen ></iframe>
     -->
@@ -39,6 +31,7 @@
     </a-assets>
 
     <!--Cargar archivo obj-->
+        
     <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.001 0.001 0.001" position="-2 0 0"></a-entity>
 
     <a-entity id="yellow" position="-2.2272 -0.97333 -4.03859" sound="src:#bichota" #yellowBox>
@@ -60,6 +53,17 @@
         
         
       ></a-plane>
+      <a-entity id="plspl" position="0 1.6 -1" htmlembed>
+        <div class="presen">
+          <div class="icon">
+              <img src="../../assets/u.svg">
+          </div>
+          <div class="info">
+              <p class="title">Carolss Carreta</p>
+              <p class="subtitle">Cheerleader del mañanero</p>
+          </div>
+        </div>
+      </a-entity>
 
     <!--
       <a-plane
