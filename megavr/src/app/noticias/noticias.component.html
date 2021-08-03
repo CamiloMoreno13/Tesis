@@ -1,0 +1,69 @@
+<div class="parent">
+    <div class="contenido">
+        <div class="video">
+            <video src="../../assets/webm3.webm" [muted]="mute" autoplay="autoplay" #videopls loop></video>
+        </div>
+
+    </div>
+    <div class="menu">
+
+        <div class="menuplus" (click)="pop()" #pls>
+            <i class="fa fa-plus"></i>
+        </div>
+
+        <div class="menu-items">
+            <div (click)="locutor('mateo')" class="item1" id="item1 " #item1>
+                <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
+                <a>
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div (click)="locutor('caro')" class="item2" id="item2 " #item2>
+                <h1 class="name" *ngIf="bola">Caro Carreta</h1>
+                <a>
+                <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div (click)="locutor('shirry')" class="item3" id="item3 " #item3>
+                <h1 class="name" *ngIf="bola">El shirry</h1>
+                <a>
+                <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div (click)="locutor('carlos')" class="item4" id="item4 " #item4>
+                <h1 class="name" *ngIf="bola">Carlos Mira</h1>
+                <a>
+                <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div (click)="locutor('dani')" class="item5" id="item5 " #item5>
+                <h1 class="name" *ngIf="bola">Dani Murcia</h1>
+                <a>
+                <i class="fa fa-user"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="texto"  *ngIf="!bola">
+            
+            <h3>Cyberpunk afronta demandas</h3>
+            <p>ps5</p>
+        </div>
+
+    </div>
+    <div class="titular">
+        <h4>Nota</h4>
+        <h3>Tecnología</h3>
+    </div>
+    <div class="sonido">
+
+        <i id="sound" class="fa fa-volume-up"  (click)="mute()" #videoi></i>
+        <p *ngIf="aviso">activar sonido</p>
+    </div>
+    <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
+        <img src="../../assets/exit.svg">
+
+    </div>
+
+    <div class="espacio">   </div>
+</div>

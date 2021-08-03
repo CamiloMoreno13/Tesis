@@ -12,6 +12,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ProductoComponent } from './producto/producto.component';
+import { NoticiasComponent } from './noticias/noticias.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductoComponent } from './producto/producto.component';
     InicioComponent,
     MenuComponent,
     PerfilesComponent,
-    ProductoComponent
+    ProductoComponent,
+    NoticiasComponent
   ],
   imports: [
     BrowserModule,
