@@ -27,10 +27,13 @@
       <a-asset-item id="tree-obj" src="../../assets/Humvee.obj"></a-asset-item>
       <a-asset-item id="tree-mtl" src="../../assets/Humvee.mtl"></a-asset-item>
 
+      <a-asset-item id="laptop-glb" src="../../assets/laptop.glb"></a-asset-item>
+
       
     </a-assets>
 
     <!--Cargar archivo obj-->
+    <a-entity  id="pc" gltf-model="../../assets/laptop.glb" scale="3 3 3" position="-4.4 -1.3 -7.3" rotation="0 90 0"></a-entity>
         
     <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.001 0.001 0.001" position="-2 0 0"></a-entity>
 
@@ -41,6 +44,10 @@
     </a-entity>
 
     <a-image id="logo" geometry="height: 0.2" position="-2.00295 -1.2694 -3.76059" src="../../assets/mega.svg" ></a-image>
+    <!--
+    <a-image id="logo" width="3" height="3" position="-2.00295 -1.2694 -3.76059" src="../../assets/carreta.svg" ></a-image>
+  -->
+    
 
     <a-entity id="car" scale="0.36505 0.36505 0.36505" rotation="0 -7.670758961211462 0" position="1.72552 -2.5058 -3.50147"  gltf-model="../../assets/car.glb"
       animation__2="property: rotation; to: 0 360 0; loop: true; pauseEvents: click"></a-entity>
@@ -53,18 +60,12 @@
         
         
       ></a-plane>
-      <a-entity id="plspl" position="0 1.6 -1" htmlembed>
-        <div class="presen">
-          <div class="icon">
-              <img src="../../assets/u.svg">
-          </div>
-          <div class="info">
-              <p class="title">Carolss Carreta</p>
-              <p class="subtitle">Cheerleader del mañanero</p>
-          </div>
-        </div>
+      <a-entity id="ex1" position="-2.7 -0.9 -7.1" htmlembed (click)="playExam()">
+        <img src="../../assets/mac2.svg" width="900" >
       </a-entity>
-
+      <a-entity id="ex2" position="1.7 5.2 -8" htmlembed (click)="playExam()">
+        <img src="../../assets/carreta.svg" width="900" >
+      </a-entity>
     <!--
       <a-plane
       id="calvo" scale="2.16505 2.16505 2.16505" rotation="0 41.477560705110555 0"
@@ -74,21 +75,20 @@
     -->
     
     <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
-    material="color: #fff; opacity: 0.5"
-    animation="property: geometry.radiusOuter; from: 0.8; to: 1.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
+    material="color: #fff; opacity: 0.8"
+    animation="property: geometry.radiusOuter; from: 0; to: 0.1; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
 
     
-    <a-entity id="anillo" rotation="-29.051252044313262 49.11107740963851 22.779083061016138"
-    scale="0.39141 0.39141 0.39141" position="-5.23339 -1.12823 -3">
-    <a-entity mixin="icon-animation"></a-entity>
+    <a-entity id="anillo1" position="-3.3 -1.6 -6.8">
+      <a-entity mixin="icon-animation"></a-entity>
     </a-entity>
+
 
 
       
      
     
     <a-sky id="fondo" src="https://i.imgur.com/jL7ZMrY.jpeg"></a-sky>
-
     
 
   </a-scene>

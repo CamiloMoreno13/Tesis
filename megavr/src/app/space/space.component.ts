@@ -37,6 +37,10 @@ export class SpaceComponent implements OnInit  {
     console.log("pause")
     this.yellowBox.nativeElement.components.sound.pauseSound();
   }
+
+  playExam() {
+    console.log("Funciona enbebido")
+  }
   
   
 }
