@@ -32,6 +32,11 @@ export class SpaceComponent implements OnInit {
     valor?.setAttribute('color', 'red');
   }
 
+
+  playExam() {
+    console.log("Funciona enbebido")
+  }
+
   
 
 }

@@ -1,0 +1,27 @@
+<svg width="240" height="242" viewBox="0 0 240 242" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g filter="url(#filter0_d)">
+<rect width="240" height="58" rx="29" fill="white" fill-opacity="0.3"/>
+<rect x="1.5" y="1.5" width="237" height="55" rx="27.5" stroke="white" stroke-width="3"/>
+</g>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="21" font-weight="500" letter-spacing="0px"><tspan x="71.939" y="26.5285">Mateo</tspan></text>
+<text fill="white" xml:space="preserve" style="white-space: pre" font-family="Montserrat" font-size="13" font-weight="500" letter-spacing="0px"><tspan x="73.3438" y="45.6605">Dj del ma&#xf1;anero</tspan></text>
+<path d="M21.7084 39.875C21.7084 39.875 27.25 37.5 28.8334 35.9167C30.4167 34.3333 25.6667 34.3333 25.6667 26.4167C25.6667 18.5 32 18.5 32 18.5C32 18.5 38.3334 18.5 38.3334 26.4167C38.3334 34.3333 33.5834 34.3333 35.1667 35.9167C36.75 37.5 42.2917 39.875 42.2917 39.875" stroke="white" stroke-linecap="round"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32 43.8332C40.7445 43.8332 47.8333 36.7443 47.8333 27.9998C47.8333 19.2553 40.7445 12.1665 32 12.1665C23.2555 12.1665 16.1666 19.2553 16.1666 27.9998C16.1666 36.7443 23.2555 43.8332 32 43.8332Z" stroke="white"/>
+<path d="M88.9998 58L89 231" stroke="white"/>
+<rect x="78" y="222" width="20" height="20" fill="url(#pattern0)"/>
+<defs>
+<filter id="filter0_d" x="-4" y="0" width="248" height="66" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+<use xlink:href="#image0" transform="scale(0.05)"/>
+</pattern>
+<image id="image0" width="20" height="20" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAKElEQVQ4T2NkoDJgpLJ5DKMGUh6io2E4GoZkhMBosiEj0NC0jMAwBABIxgAVO+SUsAAAAABJRU5ErkJggg=="/>
+</defs>
+</svg>

@@ -21,6 +21,7 @@
     "@angular/router": "~12.0.5",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "aframe": "^1.2.0",
+    "aframe-htmlembed-component": "^1.0.0",
     "aframe-watcher": "^1.4.0",
     "bootstrap": "^4.5.0",
     "jquery": "^3.6.0",

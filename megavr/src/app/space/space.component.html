@@ -25,6 +25,23 @@
     </a-camera>
     <!-------------------------------------Elementos ------------------------------>
     <a-sky id="fondo" src="../../assets/fondo.jpg"></a-sky>
+    <a-entity  id="pc" gltf-model="../../assets/laptop.glb" scale="3 3 3" position="-4.4 -1.3 -7.3" rotation="0 90 0" (click)="playExam()"></a-entity>
+
+    <!-- Titulos de los locutores -->
+    <a-entity id="ex1" position="-2.7 -0.9 -7.1" htmlembed (click)="playExam()">
+      <img src="../../assets/mac2.svg" width="900" >
+    </a-entity>
+    <a-entity id="ex2" position="1.7 5.2 -8" htmlembed (click)="playExam()">
+      <img src="../../assets/carreta.svg" width="900" >
+    </a-entity>
+    
+    <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
+    material="color: #fff; opacity: 0.8"
+    animation="property: geometry.radiusOuter; from: 0; to: 0.1; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
+    
+    <a-entity id="anillo1" position="-3.3 -1.6 -6.8">
+      <a-entity mixin="icon-animation"></a-entity>
+    </a-entity>
     <!-- texto -->
     <a-entity text="value: Bienvenidos al megaespacio; color: blue; align: center; width : 60; letterSpacing: 10;"  position="0 20 -40"></a-entity>
     <a-text ></a-text>
