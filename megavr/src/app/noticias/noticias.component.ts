@@ -24,6 +24,7 @@ export class NoticiasComponent implements OnInit {
   public bola : boolean = false;
   public inicio: boolean = false;
   public aviso : boolean=true;
+  
   public parametro: string | null = "";
 
   constructor( private routes: ActivatedRoute,private renderer2: Renderer2, private router:Router) { }

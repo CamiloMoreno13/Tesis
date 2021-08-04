@@ -1,5 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
 *{
     margin: 0px;
-    padding: 0px;;
+    padding: 0px;
+}
+
+@font-face {
+    font-family: 'chivo';
+    
+    
+    src: url('../src/assets/fonts/chivo/chivo-bold-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/chivo/chivo-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'chivo';
+    src: url('../src/assets/fonts/chivo/chivo-bolditalic-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/chivo/chivo-bolditalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'chivo';
+    src: url('../src/assets/fonts/chivo/chivo-italic-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/chivo/chivo-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'chivo';
+    src: url('../src/assets/fonts/chivo/chivo-light-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/chivo/chivo-light-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'chivo';
+    src: url('../src/assets/fonts/chivo/chivo-lightitalic-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/chivo/chivo-lightitalic-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: italic;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'chivo';
+    src: url('../src/assets/fonts/chivo/chivo-regular-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/chivo/chivo-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }

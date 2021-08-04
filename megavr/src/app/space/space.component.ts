@@ -15,12 +15,12 @@ export class SpaceComponent implements OnInit {
   ngOnInit(): void {
     
     let caja = document.getElementById('caja');
-    let pc = document.getElementById('pc');
+    /*let pc = document.getElementById('pc');
 
     pc?.setAttribute('gltf-model','../../assets/laptop.glb');
     pc?.setAttribute('scale','3 3 3');
     pc?.setAttribute('position','-4.4 -1.3 -7.3'); 
-    pc?.setAttribute('rotation',' 0 90 0'); 
+    pc?.setAttribute('rotation',' 0 90 0'); */
    
 
 
