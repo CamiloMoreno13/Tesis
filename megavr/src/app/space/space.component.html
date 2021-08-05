@@ -16,6 +16,7 @@
     <a-assets>
       <audio id="bichota" src="../../assets/bichota.mp3"></audio>
       <video id="video" src="../../assets/p1.mp4" preload="auto" autoplay></video>
+      <img id="carreta" src="../../assets/carreta.png">
     </a-assets>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
@@ -24,22 +25,27 @@
       
     </a-camera>
     <!-------------------------------------Elementos ------------------------------>
-    <a-sky id="fondo" src="../../assets/fondo.jpg"></a-sky>
-    <a-entity  id="pc" ></a-entity>
-
+    <a-sky id="fondo" src="../../assets/cabina.png"></a-sky>
+    <a-entity  id="pc" (click)="product()"></a-entity>
     <!-- Titulos de los locutores -->
-    <a-entity id="ex1" position="-2.7 -0.9 -7.1" htmlembed (click)="playExam()">
-      <img src="../../assets/mac2.svg" width="900" >
+
+    <!--
+    <a-entity id="ex1" position="-0.6 0.8 -2.3" htmlembed >
+      <img src="../../assets/carreta2.png"  >
     </a-entity>
-    <a-entity id="ex2" position="1.7 5.2 -8" htmlembed (click)="playExam()">
-      <img src="../../assets/carreta.svg" width="900" >
+    -->
+    <a-plane id="ex2" position="0.5 0.8 -4.3" src="#carreta" transparent="true" scale="1.8 1.7 1.3" (click)="product()">
+    </a-plane>
+    <!--
+    <a-entity id="ex3" position="1.7 5.2 -8" htmlembed (click)="playExam()">
+      <img src="#carreta" >
     </a-entity>
-    
+    -->
     <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
     material="color: #fff; opacity: 0.8"
     animation="property: geometry.radiusOuter; from: 0; to: 0.1; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
     
-    <a-entity id="anillo1" position="-3.3 -1.6 -6.8">
+    <a-entity id="anillo1" position="-2.3 -2.3 7.0" rotation="0 180 0">
       <a-entity mixin="icon-animation"></a-entity>
     </a-entity>
     <!-- texto -->
