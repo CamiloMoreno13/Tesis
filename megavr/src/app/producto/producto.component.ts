@@ -13,10 +13,10 @@ export class ProductoComponent implements OnInit {
 
     let pc = document.getElementById('pc');
 
-    pc?.setAttribute('gltf-model','../../assets/laptop.glb');
-    pc?.setAttribute('scale','3 3 3');
-    pc?.setAttribute('position','-4.4 -1.3 -7.3'); 
-    pc?.setAttribute('rotation',' 0 0 0'); 
+    pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
+    pc?.setAttribute('scale','0.022 0.022 0.022');
+    pc?.setAttribute('position','49.2 -13.6 -7.9'); 
+    pc?.setAttribute('rotation','0 -45.5 0'); 
   }
   
 

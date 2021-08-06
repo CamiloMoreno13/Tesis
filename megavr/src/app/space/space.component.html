@@ -17,7 +17,8 @@
     <a-assets>
       <audio id="bichota" src=""></audio>
       <video id="videoId" src="../../assets/Noticias/cabina_caro_carreta.webm"  autoplay loop="true"></video>
-      <img id="carreta" src="../../assets/Space/carreta.png">
+      <img id="carreta" src="../../assets/Space/btn_caro_Carreta.png">
+      <img id="marca" src="../../assets/Space/btn_marca.png">
     </a-assets>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
@@ -31,7 +32,6 @@
     
     <!-------------------------------------Elementos ------------------------------>
     <a-sky id="fondo" src="../../assets/Space/cabina.png"></a-sky>
-    <img src="../../assets/Space/cabina.png" alt="">
     <a-entity  id="pc" (click)="product()"></a-entity>
 
 
@@ -46,20 +46,24 @@
 
     <!-- Titulos de los locutores -->
 
+    
+    
+  
+
     <!--
     <a-entity id="ex1" position="-0.6 0.8 -2.3" htmlembed >
       <img src="../../assets/carreta2.png"  >
     </a-entity>
     -->
-    <!--
-      <a-plane id="ex2" position="0.5 0.8 -4.3" src="#carreta" transparent="true" scale="1.8 1.7 1.3" (click)="product()">
-    </a-plane>
-    -->
-    <!--
-    <a-entity id="ex3" position="1.7 5.2 -8" htmlembed (click)="playExam()">
-      <img src="#carreta" >
-    </a-entity>
-    -->
+
+    <a-plane id="ex2" position="-4.2 0.3 3.9" src="#carreta" transparent="true" scale="1.7 0.5 0.4" rotation="0 146.1 0" (click)="locutor('caro')"></a-plane>
+    <a-plane id="ex3" position="-1.9 0.9 4.9" src="#marca" transparent="true" scale="1.7 0.5 0.4" rotation="0 172.9 0" (click)="product()"></a-plane>
+
+    <!-- Iluminacion de titulos y objeto -->
+
+    <a-light type="ambient" color="#FFF"></a-light>
+
+
     <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
     material="color: #fff; opacity: 0.8"
     animation="property: geometry.radiusOuter; from: 0; to: 0.1; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>

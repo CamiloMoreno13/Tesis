@@ -8,26 +8,23 @@
     <title>Document</title>
 </head>
 <body>
-    <a-scene class="escena" stats loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse"  >
+    <div class="titular">
+        <h4>Información</h4>
+        <h3>Comercial</h3>
+    </div>
+    <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse"  >
         <a-assets>
             <img id="logo" src="../../assets/Productos/logo_ishop.svg">
         </a-assets>
-
-        <a-asset-item id="tree-obj" src="../../assets/Shared/Notebook.obj"></a-asset-item>
-        <a-asset-item id="tree-mtl" src="../../assets/Shared/Notebook.mtl"></a-asset-item>
-
-        <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.001 0.001 0.001" position="0 1 -1.5"></a-entity>
+        <a-entity id="camera-container" rotation="0 -78 0">
+            <a-entity id="camera" look-controls camera="fov: 60; userHeight: 0" wasd-controls="enabled: false;"></a-entity>
+        </a-entity>
 
         <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
         <a-entity  id="pc"  ></a-entity>
-
-        <a-entity id="logo1" position="-1.6 1.6 -2.3" htmlembed (click)="goToUrl()" >
-            <img src="../../assets/Productos/logo_ishop.svg"  >
-        </a-entity>
-
         
 
-        <a-plane id="logo2" position="-1.6 1.3 -2.3" src="#logo" transparent="true" scale="0.7 0.23 0.5" (click)="goToUrl()">
+        <a-plane id="logo2" position="4.2 0.2 -1.7" src="#logo" transparent="true" scale="0.7 0.23 0.5" rotation="0 -57.8 0" (click)="goToUrl()">
         </a-plane>
 
     </a-scene>

@@ -17,10 +17,10 @@ export class SpaceComponent implements OnInit {
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
 
-    pc?.setAttribute('gltf-model','../../assets/Shared/mac.glb');
-    pc?.setAttribute('scale','13.3 13.3 13.3');
-    pc?.setAttribute('position','-10.8 -9.1 21.8'); 
-    pc?.setAttribute('rotation',' 0 90 0'); 
+    pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
+    pc?.setAttribute('scale','0.022 0.022 0.022');
+    pc?.setAttribute('position','-9.8 -14.3 26.6'); 
+    pc?.setAttribute('rotation',' 0 86.8 0'); 
 
     caja?.setAttribute('geometry', 'primitive: box');
     caja?.setAttribute('material', 'color:red');
@@ -43,6 +43,10 @@ export class SpaceComponent implements OnInit {
   playExam() {
     console.log("Funciona enbebido")
   }
+
+  locutor(cadena:string){
+    this.router.navigate(['/perfiles',cadena]);
+ }
 
   product() {
     this.router.navigate(['/producto'])
