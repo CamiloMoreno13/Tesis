@@ -14,9 +14,9 @@
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse"  >
     <!---------------------------------Elementos externos ------------------------>
     <a-assets>
-      <audio id="bichota" src="../../assets/bichota.mp3"></audio>
-      <video id="video" src="../../assets/p1.mp4" preload="auto" autoplay></video>
-      <img id="carreta" src="../../assets/carreta.png">
+      <audio id="bichota" src=""></audio>
+      <video id="video" src="" preload="auto" autoplay></video>
+      <img id="carreta" src="../../assets/Space/carreta.png">
     </a-assets>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
@@ -25,7 +25,8 @@
       
     </a-camera>
     <!-------------------------------------Elementos ------------------------------>
-    <a-sky id="fondo" src="../../assets/cabina.png"></a-sky>
+    <a-sky id="fondo" src="../../assets/Space/cabina.png"></a-sky>
+    <img src="../../assets/Space/cabina.png" alt="">
     <a-entity  id="pc" (click)="product()"></a-entity>
     <!-- Titulos de los locutores -->
 
@@ -34,8 +35,10 @@
       <img src="../../assets/carreta2.png"  >
     </a-entity>
     -->
-    <a-plane id="ex2" position="0.5 0.8 -4.3" src="#carreta" transparent="true" scale="1.8 1.7 1.3" (click)="product()">
+    <!--
+      <a-plane id="ex2" position="0.5 0.8 -4.3" src="#carreta" transparent="true" scale="1.8 1.7 1.3" (click)="product()">
     </a-plane>
+    -->
     <!--
     <a-entity id="ex3" position="1.7 5.2 -8" htmlembed (click)="playExam()">
       <img src="#carreta" >

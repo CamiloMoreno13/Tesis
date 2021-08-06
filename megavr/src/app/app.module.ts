@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SpaceComponent } from './space/space.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { SliderComponent } from './slider/slider.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
@@ -17,7 +16,6 @@ import { SharedComponent } from './shared/shared.component';
   declarations: [
     AppComponent,
     SpaceComponent,
-    SliderComponent,
     InicioComponent,
     MenuComponent,
     PerfilesComponent,

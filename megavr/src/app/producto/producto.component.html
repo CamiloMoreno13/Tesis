@@ -10,19 +10,19 @@
 <body>
     <a-scene class="escena" stats loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse"  >
         <a-assets>
-            <img id="logo" src="../../assets/logo_ishop.svg">
+            <img id="logo" src="../../assets/Productos/logo_ishop.svg">
         </a-assets>
 
-        <a-asset-item id="tree-obj" src="../../assets/Notebook.obj"></a-asset-item>
-        <a-asset-item id="tree-mtl" src="../../assets/Notebook.mtl"></a-asset-item>
+        <a-asset-item id="tree-obj" src="../../assets/Shared/Notebook.obj"></a-asset-item>
+        <a-asset-item id="tree-mtl" src="../../assets/Shared/Notebook.mtl"></a-asset-item>
 
         <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" scale="0.001 0.001 0.001" position="0 1 -1.5"></a-entity>
 
-        <a-sky id="fondo" src="../../assets/newplace.jpg"></a-sky>
+        <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
         <a-entity  id="pc"  ></a-entity>
 
         <a-entity id="logo1" position="-1.6 1.6 -2.3" htmlembed (click)="goToUrl()" >
-            <img src="../../assets/logo_ishop.svg"  >
+            <img src="../../assets/Productos/logo_ishop.svg"  >
         </a-entity>
 
         

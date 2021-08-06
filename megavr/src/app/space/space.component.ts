@@ -17,7 +17,7 @@ export class SpaceComponent implements OnInit {
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
 
-    pc?.setAttribute('gltf-model','../../assets/laptop.glb');
+    pc?.setAttribute('gltf-model','../../assets/Shared/laptop.glb');
     pc?.setAttribute('scale','13.3 13.3 13.3');
     pc?.setAttribute('position','-10.8 -9.1 21.8'); 
     pc?.setAttribute('rotation',' 0 90 0'); 
