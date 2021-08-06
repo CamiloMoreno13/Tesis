@@ -6,28 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script>
   <title>Prueba1</title>
 </head>
 
 <body>
   <app-menu></app-menu>
-  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse"  >
+  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse" >
     <!---------------------------------Elementos externos ------------------------>
     <a-assets>
       <audio id="bichota" src=""></audio>
-      <video id="video" src="" preload="auto" autoplay></video>
+      <video id="videoId" src="../../assets/Noticias/cabina_caro_carreta.webm"  autoplay loop="true"></video>
       <img id="carreta" src="../../assets/Space/carreta.png">
     </a-assets>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
     <!--<a-camera wasd-controls="enabled : false">-->
-    <a-camera wasd-controls="enabled : false">
+    <a-entity id="camera" rotation="0 85 0">
+      <a-camera wasd-controls="enabled : false"></a-camera>
+    </a-entity>
+
       
-    </a-camera>
+      
+    
     <!-------------------------------------Elementos ------------------------------>
     <a-sky id="fondo" src="../../assets/Space/cabina.png"></a-sky>
     <img src="../../assets/Space/cabina.png" alt="">
     <a-entity  id="pc" (click)="product()"></a-entity>
+
+
+
+  <a-entity id="plss"
+        material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
+        geometry="primitive: plane;
+                  width: 1;
+                  height: 1.8"
+                  position="-0.77762 1.83178 -1.53346">
+      </a-entity>
+
     <!-- Titulos de los locutores -->
 
     <!--

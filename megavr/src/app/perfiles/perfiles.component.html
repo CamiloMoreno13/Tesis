@@ -1,5 +1,10 @@
 <div class="contenedor">
+
+    <div class="video">
+        <video src="../../assets/Noticias/presentacion_caro_carreta.webm" [muted]="mute" autoplay="autoplay"  #videopls loop></video>
+    </div>
     <div class="menu">
+        <!--
         <div class="item1">
             <h6 class="name"> Tecnología</h6>
             <i class="fa fa-globe"></i>
@@ -8,10 +13,12 @@
             <h6 class="name"> Cine</h6>
             <i class="fa fa-video"></i>
         </div>
+        -->
         <div class="item3">
-            <h6 class="name"> VideoJuegos</h6>
+            <h6 class="name"> Tema de la semana</h6>
             <i class="fa fa-cube"></i>
         </div>
+      <!--
         <div class="item4">
             <h6 class="name"> Television</h6>
             <i class="fa fa-tv"></i>
@@ -20,23 +27,25 @@
             <h6 class="name"> Farándula</h6>
             <i class="fa fa-question-circle"></i>
         </div>
-    </div>
-    <div class="video">
-        <video src="../../assets/Noticias/webm2.webm" [muted]="mute" autoplay="autoplay"  #videopls loop></video>
+        --> 
     </div>
     
-    <div class="botones">
-        <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
-            <a>
-                <img src="../../assets/Shared/cross.svg">
-            </a>
-        </div>
-        <div class="plus" id="cerrar" #cerrar>
-            <a (click)="exit()">
-                <i class="fa fa-plus-circle"></i>
-            </a>
-        </div>
-        <i id="sound" class="fa fa-volume-up"  (click)="mute()" #videoi></i>
+    
+    <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
+        <img src="../../assets/Shared/exit.svg">
+
+    </div>
+
+    <div class="plus" id="plus" #cerrar>
+        <a (click)="exit()">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+    <div class="sonido">
+
+        <i id="sound" class="fa fa-volume-off" (click)="mute()"  *ngIf="aviso" #videoi></i>
+        <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
+        <p *ngIf="aviso">activar sonido</p>
     </div>
 </div>
 

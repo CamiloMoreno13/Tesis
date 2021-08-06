@@ -22,6 +22,7 @@
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "aframe": "^1.2.0",
     "aframe-htmlembed-component": "^1.0.0",
+    "aframe-transparent-video-shader": "^1.0.1",
     "aframe-watcher": "^1.4.0",
     "bootstrap": "^4.5.0",
     "jquery": "^3.6.0",

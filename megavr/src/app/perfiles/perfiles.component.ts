@@ -12,6 +12,7 @@ export class PerfilesComponent implements OnInit {
   @ViewChild('videoi') videoi!: ElementRef;
   //volume : boolean = true;
   public parametro: string | null = "";
+  public aviso : boolean=true;
   constructor(private renderer2: Renderer2, private routes: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -27,9 +28,11 @@ export class PerfilesComponent implements OnInit {
     if (this.videopls.nativeElement.muted) {
 
       this.videopls.nativeElement.muted = false;
+      this.aviso=false;
     }
     else {
       this.videopls.nativeElement.muted = true;
+      this.aviso=true;
     }
   }
 }

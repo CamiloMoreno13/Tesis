@@ -23,6 +23,7 @@ export class MenuComponent implements OnInit {
 
   public bola : boolean = false;
   public inicio: boolean = false;
+  public equis : boolean=true;
   constructor(private renderer2: Renderer2, private router:Router) { }
 
   ngOnInit(): void {
@@ -43,6 +44,7 @@ export class MenuComponent implements OnInit {
       this.renderer2.setStyle(b4,'transform','translate(60px,-50px)');
       this.renderer2.setStyle(b5,'transform','translate(120px,0px)');
       this.bola=true;
+      this.equis=false;
     }
     else{
       this.renderer2.setStyle(b1, 'transform', 'translate(0px)');
@@ -51,6 +53,7 @@ export class MenuComponent implements OnInit {
       this.renderer2.setStyle(b4,'transform', 'translate(0px)');
       this.renderer2.setStyle(b5,'transform', 'translate(0px)');
       this.bola=false;
+      this.equis=true;
     }
   }
   start(){
