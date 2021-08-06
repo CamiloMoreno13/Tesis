@@ -4,7 +4,8 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 60% 20% 20%; 
+    grid-template-rows: 50% 10% 20% 20%; 
+    /*grid-template-rows: 35% 15% 15% 15% 20%; */
 }
 /*pagina inicio mega*/
 .inicio .logo{
@@ -16,13 +17,12 @@
     border: none;
     position: fixed;
     z-index: 1;
-    grid-column: 1/4;
-    grid-row: 1/4;
 }
+
 /* Parte del texto*/
 .contenido{
     grid-column: 1/4;
-    grid-row: 1/2;
+    grid-row: 2/3;
     align-self: end;
     justify-self: center;
     position: relative;
@@ -38,7 +38,7 @@
 /*Indicadores*/
 .indicadores{
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 3/4;
     place-self: center;
     display: flex;
     justify-content: center;
@@ -50,21 +50,21 @@
     display: flex;
     place-self: center;
 }
-.indicadores ul a{
+.indicadores ul button{
     width: 22px;
     height:22px;
     border: 1px solid black;
     border-radius: 50px;
     margin: 5px;
 }
-.indicadores ul a{
+.indicadores ul button{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.indicadores ul a .active{
+.indicadores ul button .active{
     width: 14px;
     height: 14px;
     background-color:black;
@@ -73,7 +73,7 @@
 /*Boton derecho */
 .derecho{
     grid-column: 3/4;
-    grid-row: 3/4;
+    grid-row: 4/5;
     align-self: end;
     justify-self: end;
 }
@@ -91,7 +91,7 @@
 /*Boton izquierdo*/
 .izquierdo{
     grid-column: 1/2;
-    grid-row: 3/4;
+    grid-row: 4/5;
     align-self: end;
     justify-self: start;
 }
@@ -106,8 +106,59 @@
     background-size: cover;
     margin: 10px;
 }
+
+/* Boton exit */
+.cerrar{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: start;
+    justify-self: end;
+}
+
+.exit{
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    background-image: url(../../assets/Shared/exit.svg);
+    border: none;
+    background-position: center;
+    background-size: cover;
+    margin: 10px;
+}
+
+
+/* Restar */
 i{
     width: 100px;
     height: 100px;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+
+.ititle{
+    width: 150px;
+    height: 150px;
+}
+button{
+    background-color: white;
+}
+.home{
+    position: relative;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+    width: 70px;
+    height: 70px;
+}
+
+.home button{
+    border: none; 
+}
+.saltar{
+    border: none;
 }
 
