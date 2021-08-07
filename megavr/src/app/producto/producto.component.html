@@ -8,11 +8,67 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="titular">
-        <h4>Información</h4>
-        <h3>Comercial</h3>
+    <div class="parent">
+        <div class="titular">
+            <h4>Información</h4>
+            <h3>Comercial</h3>
+        </div>
+
+        <div class="menu">
+
+            <div class="menuplus" (click)="pop()" #pls>
+                <i class="fa fa-plus"></i>
+            </div>
+
+            <div class="menu-items">
+                <div class="item1" id="item1 " #item1>
+                    <h1 class="name" *ngIf="bola">Pantalla Retina</h1>
+                    <a>
+                        <i><img src="../../assets/Productos/eye.svg"></i>
+                    </a>
+                    
+                    
+                </div>
+                <div class="item2" id="item2 " #item2>
+                    <h1 class="name" *ngIf="bola">Procesadores Ultrarapidos</h1>
+                    <a>
+                        <i><img src="../../assets/Productos/chip.svg"></i>
+                    </a>
+                </div>
+                <div  class="item3" id="item3 " #item3>
+                    <h1 class="name" *ngIf="bola">Graficos Avanzados</h1>
+                    <a>
+                        <i><img src="../../assets/Productos/graficos.svg"></i>
+                    </a>
+                </div>
+                <div  class="item4" id="item4 " #item4>
+                    <h1 class="name" *ngIf="bola">Magic Keyboard</h1>
+                    <a>
+                        <i><img src="../../assets/Productos/teclado.svg"></i>
+                    </a>
+                </div>
+                <div class="item5" id="item5 " #item5>
+                    <h1 class="name" *ngIf="bola">Bateria</h1>
+                    <a>
+                        <i><img src="../../assets/Productos/battery.svg"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cerrar" id="cerrar" *ngIf="!bola" #cerrar>
+            <a (click)="exit()">
+              <i class="far fa-times-circle"></i>
+            </a>
+        </div>
+
+        <div class="espacio"> </div>
+
     </div>
+
     <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse"  >
+        
         <a-assets>
             <img id="logo" src="../../assets/Productos/logo_ishop.svg">
         </a-assets>
@@ -20,8 +76,12 @@
             <a-entity id="camera" look-controls camera="fov: 60; userHeight: 0" wasd-controls="enabled: false;"></a-entity>
         </a-entity>
 
+
         <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
-        <a-entity  id="pc"  ></a-entity>
+        <a-entity  id="pc"  (click)="goToAr()" 
+        animation__scale="property: scale; to: 0.025 0.025 0.025; dur: 200; startEvents: mouseenter"
+        animation__scale_reverse="property: scale; to: 0.022 0.022 0.022; dur: 200; startEvents: mouseleave"
+        ></a-entity>
         
 
         <a-plane id="logo2" position="4.2 0.2 -1.7" src="#logo" transparent="true" scale="0.7 0.23 0.5" rotation="0 -57.8 0" (click)="goToUrl()">

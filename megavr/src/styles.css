@@ -78,7 +78,7 @@
 
 /* Roboto Font */
 @font-face {
-    font-family: 'roboto_slabbold';
+    font-family: 'roboto';
     src: url('../src/assets/fonts/robotoslab/robotoslab-bold-webfont.woff2') format('woff2'),
          url('../src/assets/fonts/robotoslab/robotoslab-bold-webfont.woff') format('woff');
     font-weight: bold;
@@ -90,7 +90,7 @@
 
 
 @font-face {
-    font-family: 'roboto_slablight';
+    font-family: 'roboto';
     src: url('../src/assets/fonts/robotoslab/robotoslab-light-webfont.woff2') format('woff2'),
          url('../src/assets/fonts/robotoslab/robotoslab-light-webfont.woff') format('woff');
     font-weight: lighter;
@@ -102,7 +102,7 @@
 
 
 @font-face {
-    font-family: 'roboto_slabregular';
+    font-family: 'roboto';
     src: url('../src/assets/fonts/robotoslab/robotoslab-regular-webfont.woff2') format('woff2'),
          url('../src/assets/fonts/robotoslab/robotoslab-regular-webfont.woff') format('woff');
     font-weight: normal;
@@ -114,7 +114,7 @@
 
 
 @font-face {
-    font-family: 'roboto_slabthin';
+    font-family: 'roboto';
     src: url('../src/assets/fonts/robotoslab/robotoslab-thin-webfont.woff2') format('woff2'),
          url('../src/assets/fonts/robotoslab/robotoslab-thin-webfont.woff') format('woff');
     font-weight: lighter;
