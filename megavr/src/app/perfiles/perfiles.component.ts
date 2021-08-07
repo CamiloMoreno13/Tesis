@@ -35,4 +35,11 @@ export class PerfilesComponent implements OnInit {
       this.aviso=true;
     }
   }
+
+  noticias(){
+    
+      this.router.navigate(['/noticias']);
+    
+  }
+
 }

@@ -36,27 +36,27 @@ export class NoticiasComponent implements OnInit {
   }
 
   pop() {
-    var b1 = this.item1.nativeElement;
-    var b2 = this.item2.nativeElement;
+    //var b1 = this.item1.nativeElement;
+    //var b2 = this.item2.nativeElement;
     var b3 = this.item3.nativeElement;
-    var b4 = this.item4.nativeElement;
-    var b5 = this.item5.nativeElement;
+   // var b4 = this.item4.nativeElement;
+    //var b5 = this.item5.nativeElement;
     
 
     if (!this.bola) {
-      this.renderer2.setStyle(b1, 'transform', 'translate(-120px,0px)');
-      this.renderer2.setStyle(b2,'transform','translate(-60px,-50px)');
-      this.renderer2.setStyle(b3,'transform','translateY(-75px)');
+      /*this.renderer2.setStyle(b1, 'transform', 'translate(-120px,0px)');
+      this.renderer2.setStyle(b2,'transform','translate(-60px,-50px)');*/
+      this.renderer2.setStyle(b3,'transform','translateY(-50px)');/*
       this.renderer2.setStyle(b4,'transform','translate(60px,-50px)');
-      this.renderer2.setStyle(b5,'transform','translate(120px,0px)');
+      this.renderer2.setStyle(b5,'transform','translate(120px,0px)');*/
       this.bola=true;
     }
     else{
-      this.renderer2.setStyle(b1, 'transform', 'translate(0px)');
-      this.renderer2.setStyle(b2,'transform', 'translate(0px)');
-      this.renderer2.setStyle(b3,'transform', 'translate(0px)');
+      /*this.renderer2.setStyle(b1, 'transform', 'translate(0px)');
+      this.renderer2.setStyle(b2,'transform', 'translate(0px)');*/
+      this.renderer2.setStyle(b3,'transform', 'translate(0px)');/*
       this.renderer2.setStyle(b4,'transform', 'translate(0px)');
-      this.renderer2.setStyle(b5,'transform', 'translate(0px)');
+      this.renderer2.setStyle(b5,'transform', 'translate(0px)');*/
       this.bola=false;
     }
   }
@@ -69,7 +69,7 @@ export class NoticiasComponent implements OnInit {
   }
 
   exit() {
-    this.router.navigate(['/space']);
+    this.router.navigate(['/perfiles/caro']);
   }
 
   mute() {
