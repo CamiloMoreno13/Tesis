@@ -1,6 +1,7 @@
 import { createElementCssSelector } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
+import { AFrame } from 'aframe';
 
 @Component({
   selector: 'app-space',
@@ -9,6 +10,10 @@ import { Router } from '@angular/router';
 })
 
 export class SpaceComponent implements OnInit {
+
+  //@ViewChild('caroCab') caroCab!: HTMLElement;
+
+  @ViewChild('caroCab') Hs!: ElementRef;
 
   constructor(private router : Router) { }
 
@@ -39,6 +44,15 @@ export class SpaceComponent implements OnInit {
     valor?.setAttribute('color', 'red');
   }
 
+  /*videoHover(){
+    let x = document.getElementById("caroCab") as ;
+    x.
+    this.caroCab.
+  }*/
+
+  H(){
+    this.Hs.nativeElement.material.components.src.stopVideo();
+  }
 
   playExam() {
     console.log("Funciona enbebido")

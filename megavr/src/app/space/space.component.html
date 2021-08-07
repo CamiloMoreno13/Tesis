@@ -12,13 +12,17 @@
 
 <body>
   <app-menu></app-menu>
-  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse" >
+  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb  " cursor="rayOrigin:mouse" >
     <!---------------------------------Elementos externos ------------------------>
     <a-assets>
       <audio id="bichota" src=""></audio>
-      <video id="videoId" src="../../assets/Noticias/cabina_caro_carreta.webm"  autoplay loop="true"></video>
+
+     <!--
+      <video id="videoId" src="../../assets/Noticias/cabina_caro_carreta.webm"  mute autoplay ></video> -->
       <img id="carreta" src="../../assets/Space/btn_caro_Carreta.png">
       <img id="marca" src="../../assets/Space/btn_marca.png">
+      <img id="carreta" src="../../assets/Space/carreta.png">
+
     </a-assets>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
@@ -27,22 +31,27 @@
       <a-camera wasd-controls="enabled : false"></a-camera>
     </a-entity>
 
-      
-      
-    
     <!-------------------------------------Elementos ------------------------------>
     <a-sky id="fondo" src="../../assets/Space/cabina.png"></a-sky>
-    <a-entity  id="pc" (click)="product()"></a-entity>
+    <a-entity  id="pc" (click)="product()"
+    animation__scale="property: scale; to: 0.025 0.025 0.025; dur: 200; startEvents: mouseenter"
+    animation__scale_reverse="property: scale; to: 0.022 0.022 0.022; dur: 200; startEvents: mouseleave"
+    
+    ></a-entity>
 
 
-
-  <a-entity id="plss"
+    <!--
+<a-entity id="caroCab"
         material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
         geometry="primitive: plane;
                   width: 1;
                   height: 1.8"
-                  position="-0.77762 1.83178 -1.53346">
+                  position="-0.77762 1.83178 -1.53346" (click)="H()" #caroCab  >
+        
       </a-entity>
+
+    -->
+  
 
     <!-- Titulos de los locutores -->
 

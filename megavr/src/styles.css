@@ -4,6 +4,8 @@
     padding: 0px;
 }
 
+/* Chivo Font */
+
 @font-face {
     font-family: 'chivo';
     
@@ -65,12 +67,57 @@
 
 
 
-
 @font-face {
     font-family: 'chivo';
     src: url('../src/assets/fonts/chivo/chivo-regular-webfont.woff2') format('woff2'),
          url('../src/assets/fonts/chivo/chivo-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+
+}
+
+/* Roboto Font */
+@font-face {
+    font-family: 'roboto_slabbold';
+    src: url('../src/assets/fonts/robotoslab/robotoslab-bold-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/robotoslab/robotoslab-bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'roboto_slablight';
+    src: url('../src/assets/fonts/robotoslab/robotoslab-light-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/robotoslab/robotoslab-light-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'roboto_slabregular';
+    src: url('../src/assets/fonts/robotoslab/robotoslab-regular-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/robotoslab/robotoslab-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'roboto_slabthin';
+    src: url('../src/assets/fonts/robotoslab/robotoslab-thin-webfont.woff2') format('woff2'),
+         url('../src/assets/fonts/robotoslab/robotoslab-thin-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: italic;
 
 }
