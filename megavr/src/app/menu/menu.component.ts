@@ -61,7 +61,11 @@ export class MenuComponent implements OnInit {
   }
 
   locutor(cadena:string){
-     this.router.navigate(['/perfiles',cadena]);
+    if(cadena != "caro"){
+      
+    } else {
+      this.router.navigate(['/perfiles',cadena]);
+    }
   }
 
 

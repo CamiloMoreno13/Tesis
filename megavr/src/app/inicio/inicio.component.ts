@@ -121,7 +121,7 @@ export class InicioComponent implements OnInit {
     }
     if (index != 1 && index != 0 && index != this.tam) {
       this.bback = true;
-      this.bback = true;
+      this.bnext = true;
       this.btitle = false;
       this.bsub = false;
     }
@@ -140,9 +140,6 @@ export class InicioComponent implements OnInit {
   }
 
   exit(){
-    this.open = true;
-    this.indice = 0;  
-    this.indicadores(this.indice);
-    this.inicio();
+    this.router.navigate(['/space']);
   }
 }

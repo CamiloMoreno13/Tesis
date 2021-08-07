@@ -108,7 +108,9 @@ a{
     border-radius: 50%;
 }
 .cerrar a{
-    color:tomato;
+    position: relative;
+    right: 5px;
+    color:white;
 }
 
 h1{

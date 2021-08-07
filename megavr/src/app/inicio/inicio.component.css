@@ -125,7 +125,16 @@
     background-size: cover;
     margin: 10px;
 }
+/*Font */
+.title{
+    font-family: "chivo";
+    font-weight: bold;
+    font-style: italic;
+}
 
+.subtitle{
+    font-family: "roboto";
+}
 
 /* Restar */
 i{
