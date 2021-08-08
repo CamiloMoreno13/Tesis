@@ -9,8 +9,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NoticiasComponent implements OnInit {
 
-  
-
   @ViewChild('pls') pls!: ElementRef;
   @ViewChild('item1') item1!: ElementRef;
   @ViewChild('item2') item2!: ElementRef;
@@ -24,7 +22,7 @@ export class NoticiasComponent implements OnInit {
   public bola : boolean = false;
   public inicio: boolean = false;
   public aviso : boolean=true;
-  
+  public equis : boolean=true;
   public parametro: string | null = "";
 
   constructor( private routes: ActivatedRoute,private renderer2: Renderer2, private router:Router) { }
@@ -38,23 +36,23 @@ export class NoticiasComponent implements OnInit {
   pop() {
     //var b1 = this.item1.nativeElement;
     //var b2 = this.item2.nativeElement;
-    var b3 = this.item3.nativeElement;
+    //var b3 = this.item3.nativeElement;
    // var b4 = this.item4.nativeElement;
     //var b5 = this.item5.nativeElement;
     
 
     if (!this.bola) {
       /*this.renderer2.setStyle(b1, 'transform', 'translate(-120px,0px)');
-      this.renderer2.setStyle(b2,'transform','translate(-60px,-50px)');*/
-      this.renderer2.setStyle(b3,'transform','translateY(-50px)');/*
+      this.renderer2.setStyle(b2,'transform','translate(-60px,-50px)');
+      this.renderer2.setStyle(b3,'transform','translateY(-50px)');
       this.renderer2.setStyle(b4,'transform','translate(60px,-50px)');
       this.renderer2.setStyle(b5,'transform','translate(120px,0px)');*/
       this.bola=true;
     }
     else{
       /*this.renderer2.setStyle(b1, 'transform', 'translate(0px)');
-      this.renderer2.setStyle(b2,'transform', 'translate(0px)');*/
-      this.renderer2.setStyle(b3,'transform', 'translate(0px)');/*
+      this.renderer2.setStyle(b2,'transform', 'translate(0px)');
+      this.renderer2.setStyle(b3,'transform', 'translate(0px)');
       this.renderer2.setStyle(b4,'transform', 'translate(0px)');
       this.renderer2.setStyle(b5,'transform', 'translate(0px)');*/
       this.bola=false;
@@ -84,6 +82,7 @@ export class NoticiasComponent implements OnInit {
       this.aviso=true;
     }
   }
+  
 
 
 

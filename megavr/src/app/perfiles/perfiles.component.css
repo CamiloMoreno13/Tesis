@@ -104,12 +104,17 @@ i{
    position: absolute;
    margin: auto;
    top: 1;
-   bottom: 0;
+   bottom: 10px;
    left: 0;
    right: 0;
    font-size: 35px;
    z-index: 3;
    border: 2px solid black;
+}
+
+.plus a{
+   position: relative;
+   bottom: 2px;
 }
 
 

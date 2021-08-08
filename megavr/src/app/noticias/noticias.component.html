@@ -7,10 +7,10 @@
     </div>
     <div class="menu">
 
-        <div class="menuplus" (click)="pop()" #pls>
-            <i class="fa fa-plus"></i>
+        <div class="menuplus" (click)="exit()" #pls>
+            <i class="fa fa-plus" *ngIf="false"></i>
+            <i class="fas fa-minus" *ngIf="true"></i>
         </div>
-
         <div class="menu-items">
             <div (click)="locutor('mateo')" class="item1" id="item1 " #item1 *ngIf="false">
                 <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
@@ -24,7 +24,7 @@
                     <i class="fa fa-user"></i>
                 </a>
             </div>
-            <div class="item3" id="item3 " #item3>
+            <div class="item3" id="item3 " #item3 *ngIf="false">
 
                 <h1 class="name" *ngIf="bola">Tema de la semana</h1>
                 <a>
@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <div class="titularb" *ngIf="!bola">
+        <div class="titularb" *ngIf="true">
             <i class="fa fa-cube"></i>
             <h4>Nuevos gadgets tecnológicos</h4>
             <h3>Tecnologías activas</h3>
@@ -54,7 +54,7 @@
     </div>
     <div class="titular">
         <h4>Nota</h4>
-        <h3>Tecnología</h3>
+        <h3>Toxihistoria</h3>
     </div>
     <div class="sonido">
 
