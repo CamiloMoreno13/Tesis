@@ -67,7 +67,7 @@ import 'aframe';
 
 import 'aframe-htmlembed-component';
 
-import 'aframe-transparent-video-shader'
+import 'aframe-transparent-video-shader';
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

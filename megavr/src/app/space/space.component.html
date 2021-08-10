@@ -27,9 +27,9 @@
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
     <!--<a-camera wasd-controls="enabled : false">-->
-    <a-entity id="camera" rotation="0 85 0">
-      <a-camera wasd-controls="enabled : false"></a-camera>
-    </a-entity>
+      <a-entity id="rig" position="0 -80 0" rotation="0 85 0">
+        <a-entity id="camera" camera look-controls></a-entity>
+      </a-entity>
 
     <!-------------------------------------Elementos ------------------------------>
     <a-sky id="fondo" src="../../assets/Space/cabina.png"></a-sky>
