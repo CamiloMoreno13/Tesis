@@ -12,11 +12,11 @@
 </head>
 
 <body>
-  <app-menu></app-menu>
-  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb  "
+  <app-menu *ngIf="mostrar"></app-menu>
+  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
-    <a-assets>
+    <a-assets timeout="5000">
       <audio id="bichota" src=""></audio>
       <!--
       <video id="videoId" src="../../assets/Noticias/cabina_caro_carreta.webm"  mute autoplay ></video> -->

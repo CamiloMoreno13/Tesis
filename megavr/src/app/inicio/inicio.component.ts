@@ -21,6 +21,7 @@ export class InicioComponent implements OnInit {
   public btitle: boolean = false;
   public bsub: boolean = false;
   public indicador: boolean[] = [false, false, false, false, false];
+  public innerWidth : any; 
 
   constructor(private router: Router) { }
 
@@ -28,6 +29,8 @@ export class InicioComponent implements OnInit {
     this.indicadores(0);
     this.llenar();
     this.inicio();
+    //console.log("tamaño window" , window.innerWidth);
+    //console.log("tamaño height" , window.innerHeight); 
   }
   llenar() {
     this.informacion.push(new banner().createBanner("Bienvenida", "Hola te damos la bienvenida a la mega virtual"));

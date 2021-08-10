@@ -14,6 +14,7 @@ export class SpaceComponent implements OnInit {
   //@ViewChild('caroCab') caroCab!: HTMLElement;
 
   @ViewChild('caroCab') Hs!: ElementRef;
+  public mostrar: boolean = false; 
 
   constructor(private router : Router) { }
 
@@ -35,6 +36,12 @@ export class SpaceComponent implements OnInit {
     var entity= document.querySelector('#yellow') ;
     if(entity != null){
       console.log("enity" , entity);
+    }
+    
+    while(!this.mostrar){
+      if(document.querySelector("a-scene").hasLoaded){
+        this.mostrar = true; 
+      }
     }
   }
 

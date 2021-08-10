@@ -55,6 +55,8 @@ export class MenuComponent implements OnInit {
       this.bola=false;
       this.equis=true;
     }
+
+    
   }
   start(){
     this.router.navigate(['/inicio']);
