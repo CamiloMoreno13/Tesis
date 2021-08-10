@@ -23,15 +23,19 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit(): void {
 
+    
     let pc = document.getElementById('pc');
 
     pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale','0.022 0.022 0.022');
     pc?.setAttribute('position','49.2 -13.6 -7.9'); 
     pc?.setAttribute('rotation','0 -45.5 0'); 
+    /*let logo=document.getElementById('logo');
+    logo?.setAttribute('src','../../assets/Productos/logo_ishop.svg')*/
+ 
   }
 
-  pop() {
+    pop() {
     var b1 = this.item1.nativeElement;
     var b2 = this.item2.nativeElement;
     var b3 = this.item3.nativeElement;

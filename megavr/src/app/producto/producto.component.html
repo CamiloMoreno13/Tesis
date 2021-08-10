@@ -24,7 +24,7 @@
                 <div class="item1" id="item1 " #item1>
                     <h1 class="name" *ngIf="bola">Pantalla Retina</h1>
                     <a>
-                        <i><img src="../../assets/Productos/eye.svg"></i>
+                        <i class="fa fa-ban"></i>
                     </a>
                     
                     
@@ -32,25 +32,25 @@
                 <div class="item2" id="item2 " #item2>
                     <h1 class="name" *ngIf="bola">Procesadores Ultrarapidos</h1>
                     <a>
-                        <i><img src="../../assets/Productos/chip.svg"></i>
+                       <i class="fa fa-ban"></i>
                     </a>
                 </div>
                 <div  class="item3" id="item3 " #item3>
                     <h1 class="name" *ngIf="bola">Graficos Avanzados</h1>
                     <a>
-                        <i><img src="../../assets/Productos/graficos.svg"></i>
+                        <i class="fa fa-ban"></i>
                     </a>
                 </div>
                 <div  class="item4" id="item4 " #item4>
                     <h1 class="name" *ngIf="bola">Magic Keyboard</h1>
                     <a>
-                        <i><img src="../../assets/Productos/teclado.svg"></i>
+                        <i class="fa fa-ban"></i>
                     </a>
                 </div>
                 <div class="item5" id="item5 " #item5>
                     <h1 class="name" *ngIf="bola">Bateria</h1>
                     <a>
-                        <i><img src="../../assets/Productos/battery.svg"></i>
+                        <i class="fa fa-ban"></i>
                     </a>
                 </div>
             </div>
@@ -79,8 +79,9 @@
 
         <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
         <a-entity  id="pc"  (click)="goToAr()" 
-        animation__scale="property: scale; to: 0.025 0.025 0.025; dur: 200; startEvents: mouseenter"
-        animation__scale_reverse="property: scale; to: 0.022 0.022 0.022; dur: 200; startEvents: mouseleave"
+        animation__scale="property: scale; dir: alternate; dur: 1000;
+        easing: easeInSine; loop: true; to:0.025 0.025 0.025"
+        
         ></a-entity>
         
 

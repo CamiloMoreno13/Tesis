@@ -64,6 +64,9 @@
 
 }
 
+.menu-items i {
+    color: white;
+}
 .name{
     align-items: center;
     font-size: 15px;
