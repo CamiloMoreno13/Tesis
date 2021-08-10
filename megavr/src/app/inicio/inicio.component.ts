@@ -34,9 +34,9 @@ export class InicioComponent implements OnInit {
   }
   llenar() {
     this.informacion.push(new banner().createBanner("Bienvenida", "Hola te damos la bienvenida a la mega virtual"));
-    this.informacion.push(new banner().createBanner("", "Para navegar usa tu celular de la forma horizontal y conoce el contenido tocando sobre las diferentes iconos"));
-    this.informacion.push(new banner().createBanner("Sabes donde se sienta cada DJ", "Vas a poder interactuar con cada uno de los Dj's de la mega y saber las noticias del entretenimiento"));
-    this.informacion.push(new banner().createBanner("Sabes que?", "La mega se oye más del 50% de Colombia La Megaesta al aire desde 1993"));
+    this.informacion.push(new banner().createBanner("", "En tu dispositivo de escritorio presiona el clic izquierdo del ratón para navegar la experiencia y desde tu celular gira en 360° y empieza a disfrutar del contenido tocando sobre los diferentes iconos."));
+    this.informacion.push(new banner().createBanner("Sabes dónde se sienta cada dj?", "Vas a poder interactuar con cada uno de los dj's de la mega y saber las noticias del entretenimiento"));
+    this.informacion.push(new banner().createBanner("Sabías que?", "La Mega se oye más del 50% de Colombia La Mega esta al aire desde 1993"));
     this.informacion.push(new banner().createBanner("Compártelo con tus amigos", ""));
   }
   inicio() {
