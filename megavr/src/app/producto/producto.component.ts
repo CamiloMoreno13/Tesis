@@ -35,8 +35,7 @@ export class ProductoComponent implements OnInit {
     /*let logo=document.getElementById('logo');
     logo?.setAttribute('src','../../assets/Productos/logo_ishop.svg')*/
     
-    document.querySelector("a-scene").addEventListener("loaded",() =>{ setTimeout(()=>{ this.mostrar = true }, 700)}) /* This is the key*/
-
+    document.querySelector("a-scene").addEventListener("loaded",() =>{ setTimeout(()=>{ this.mostrar = true }, 1000)}) /* This is the key*/
   }
 
     pop() {

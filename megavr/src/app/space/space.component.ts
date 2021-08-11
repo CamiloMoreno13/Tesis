@@ -38,17 +38,7 @@ export class SpaceComponent implements OnInit {
     if (entity != null) {
       console.log("enity", entity);
     }
-    document.querySelector("a-scene").addEventListener("loaded",() =>{ this.mostrar=true;}) /* This is the key*/
-    /*let cont = 0;
-    setTimeout(() => {
-      console.log("magiaaaaa");
-      
-      let cons = document.querySelector("a-scene").hasLoaded;
-      console.log("cons es ",cons);
-      if (cons == true){
-        this.mostrar=true;
-      }
-    }, 8000);*/
+    document.querySelector("a-scene").addEventListener("loaded",() =>{setTimeout(() => {this.mostrar=true;}, 1000);}) /* This is the key*/
   }
 
 
