@@ -18,6 +18,8 @@ export class ProductoComponent implements OnInit {
   public bola : boolean = false;
   public inicio: boolean = false;
   public equis : boolean=true;
+  public mostrar: boolean = false;
+
 
   constructor( private routes: ActivatedRoute,private renderer2: Renderer2, private router:Router) { }
 
@@ -32,7 +34,9 @@ export class ProductoComponent implements OnInit {
     pc?.setAttribute('rotation','0 -45.5 0'); 
     /*let logo=document.getElementById('logo');
     logo?.setAttribute('src','../../assets/Productos/logo_ishop.svg')*/
- 
+    
+    document.querySelector("a-scene").addEventListener("loaded",() =>{ setTimeout(()=>{ this.mostrar = true }, 700)}) /* This is the key*/
+
   }
 
     pop() {
