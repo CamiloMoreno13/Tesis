@@ -21,7 +21,7 @@
 
 /* Parte del texto*/
 .contenido{
-    grid-column: 1/4;
+    grid-column: 2/3;
     grid-row: 2/3;
     align-self: end;
     justify-self: center;
@@ -149,6 +149,8 @@ img{
 .ititle{
     width: 150px;
     height: 150px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 button{
     background-color: white;
@@ -171,3 +173,17 @@ button{
     border: none;
 }
 
+@media (max-width: 480px) {
+    .contenido{
+        grid-column: 1/4;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .ititle{
+        width: 80px;
+        height: 80px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+  }
