@@ -13,7 +13,8 @@
     height: 50px ;
     width: 50px ;
     text-align: center;
-    background-color: tomato;
+    background-color: black;
+    color: white;
     border-radius: 50%;
     position: absolute;
     margin: auto;
@@ -23,6 +24,7 @@
     right: 0;
     font-size: 35px;
     z-index: 3;
+    border: 2px solid white;
 }
   
 .menu-items{
@@ -34,10 +36,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    }
+}
+
 .menu-items > div{
     text-align: center;
-    background-color: black;    
+    background-color: transparent;   
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -45,6 +48,15 @@
     position: relative;
     transition: 0.5s linear;
     z-index: 2;
+    
+    border: 2px solid white;
+
+
+}
+
+.menu i{
+    position: relative;
+    bottom: 4px;
 }
 .name{
     font-size: 15px;
@@ -84,6 +96,10 @@ a{
     color: white ;
 }
 
+.menu-items>div>a{
+    color: white;
+}
+
 .cerrar{
     z-index: 3;
     position: absolute;
@@ -98,7 +114,9 @@ a{
     border-radius: 50%;
 }
 .cerrar a{
-    color:tomato;
+    position: relative;
+    right: 5px;
+    color:white;
 }
 
 h1{

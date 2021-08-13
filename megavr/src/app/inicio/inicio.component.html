@@ -1,96 +1,42 @@
-<div class="contenedor">
-    <div class="uno">
-        <input type="button" value="" class="logo" (click)="fprimera()" *ngIf="primera">
-    </div>
-    <div class="slider" id="dos" *ngIf="segunda">
-        <div class="texto">
-            <h3>Bienvenido</h3>
-            <p>Hola te damos la bienvenida a la mega virtual</p>
-        </div>
-        <div class="botones">
-            <input type="button" value="" class="next" (click)="next2()">
-        </div>
-        <div class="indicadores">
-            <ul>
-                <a (click)="indi1()">
-                    <li class="active"></li>
-                </a>
-                <a (click)="indi2()"></a>
-                <a (click)="indi3()"></a>
-                <a (click)="indi4()"></a>
-            </ul>
-            <p> <u (click)="space()">saltar</u></p>
-        </div>
-    </div>
-    <div class="slider" id="tres" *ngIf="tercera">
-        <div class="texto">
-            <div class="final" id="icono">
-                <button (click)="space()"><img src="../../assets/celular128.png" alt=""></button>
-            </div>
-            <p>Para navegar usa tu celular de la forma horizontal y conoce el contenido
-                tocando sobre las diferentes iconos
-            </p>
-        </div>
-        <div class="botones">
-            <input type="button" value="" class="next" (click)="next3()">
-            <input type="button" value="" class="back" (click)="back3()">
-        </div>
-        <div class="indicadores">
-            <ul>
-                <a (click)="indi1()"></a>
-                <a (click)="indi2()">
-                    <li class="active"></li>
-                </a>
-                <a (click)="indi3()"></a>
-                <a (click)="indi4()"></a>
-            </ul>
-            <p> <u (click)="space()">saltar</u></p>
-        </div>
-    </div>
-    <div class="slider" id="cuarta" *ngIf="cuarta">
-        <div class="texto">
-            <h3>Sabes donde se sienta cada DJ</h3>
-            <p>Vas a poder interactuar con cada uno de los Dj's de la mega y saber las noticias del entretenimiento
-            </p>
-        </div>
-        <div class="botones">
-            <input type="button" value="" class="next" (click)="next4()">
-            <input type="button" value="" class="back" (click)="back4()">
-        </div>
-        <div class="indicadores">
-            <ul>
-                <a (click)="indi1()"></a>
-                <a (click)="indi2()"></a>
-                <a (click)="indi3()">
-                    <li class="active"></li>
-                </a>
-                <a (click)="indi4()"></a>
-            </ul>
-            <p> <u (click)="space()">saltar</u></p>
-        </div>
-    </div>
-    <div class="slider" id="quinta" *ngIf="quinta">
-        <div class="texto">
-            <h3>Comparte con tus amigos</h3>
-            <p>Vas a poder interactuar con cada uno de los Dj's de la mega y saber las noticias del entretenimiento
-            </p>
-        </div>
-        <div class="botones">
-            <input type="button" value="" class="back" (click)="back5()">
+<div class="inicio">
+    <input type="button" value="" class="logo" (click)="principal()" *ngIf="open">
+</div>
 
-            <div class="final">
-                <button (click)="space()"><img src="../../assets/home64.png
-                " alt=""></button>
-                <p class="inicio">Inicio</p>
-            </div>
+<div class="contenedor">
+
+    <div class="contenido">
+        <div class="texto">
+            <h3 class="title">{{title}}</h3>
+            <img class="ititle" src="../../assets/Onboarding/camera.png" alt="Icono de una camara" *ngIf="btitle">
+            <img class="ititle" src="../../assets/Onboarding/virtual-reality.png" alt="Icono de ambiente de RV" *ngIf="btitle">
+            <p class="subtitle">{{sub}}</p>
         </div>
-        <div class="indicadores" id="footer">
-            <ul>
-                <a (click)="indi1()"></a>
-                <a (click)="indi2()"></a>
-                <a (click)="indi3()"></a>
-                <a (click)="indi4()"><li class="active"></li></a>
-            </ul>
+    </div>
+
+    <div class="indicadores">
+        <ul>
+            <button (click)="saltar(0)"><li class="active" *ngIf="indicador[0]"></li></button>
+            <button (click)="saltar(1)"><li class="active" *ngIf="indicador[1]"></li></button>
+            <button (click)="saltar(2)"><li class="active" *ngIf="indicador[2]"></li></button>
+            <button (click)="saltar(3)"><li class="active" *ngIf="indicador[3]"></li></button>
+            <button (click)="saltar(4)"><li class="active" *ngIf="indicador[4]"></li></button>
+        </ul>
+        <input type="button" value="Saltar>" class="saltar" (click)="saltar(4)" *ngIf="!bsub">
+        <div class="home" *ngIf="bsub">
+            <button (click)=space()><img src="../../assets/Onboarding/home128.png" alt="Icono de una casa" ></button>
+            <p>Inicio</p>
         </div>
+    </div>
+
+    <div class="derecho" *ngIf="bnext">
+        <input type="button" value="" class="next" (click)="next()">
+    </div>
+
+    <div class="izquierdo" *ngIf="bback">
+        <input type="button" value="" class="back" (click)="back()">
+    </div>
+
+    <div class="cerrar">
+        <input type="button" value="" class="exit" (click)="exit()">
     </div>
 </div>

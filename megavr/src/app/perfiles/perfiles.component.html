@@ -1,0 +1,51 @@
+<div class="contenedor">
+
+    <div class="video">
+        <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop></video>
+    </div>
+    <div class="menu">
+        <!--
+        <div class="item1">
+            <h6 class="name"> Tecnología</h6>
+            <i class="fa fa-globe"></i>
+        </div>
+        <div class="item2">
+            <h6 class="name"> Cine</h6>
+            <i class="fa fa-video"></i>
+        </div>
+        -->
+        <div class="item3" (click)="noticias()">
+            <h6 class="name"> Haz clic para ver la noticia</h6>
+            <i class="fa fa-cube" ></i>
+        </div>
+      <!--
+        <div class="item4">
+            <h6 class="name"> Television</h6>
+            <i class="fa fa-tv"></i>
+        </div>
+        <div class="item5">
+            <h6 class="name"> Farándula</h6>
+            <i class="fa fa-question-circle"></i>
+        </div>
+        --> 
+    </div>
+    
+    
+    <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
+        <img src="../../assets/Shared/exit.svg">
+
+    </div>
+
+    <div class="plus" id="plus" #cerrar>
+        <a (click)="exit()">
+            <i class="fas fa-minus"></i>
+        </a>
+    </div>
+    <div class="sonido">
+
+        <i id="sound" class="fa fa-volume-off" (click)="mute()"  *ngIf="aviso" #videoi></i>
+        <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
+        <p *ngIf="aviso">activar sonido</p>
+    </div>
+</div>
+

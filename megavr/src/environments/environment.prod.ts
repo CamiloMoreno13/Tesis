@@ -1,13 +1,12 @@
 export const environment = {
   production: true,
-  firebaseConfig : {
-  apiKey: "AIzaSyCHR1kCr7uRTA_h5ESTaiKenk7Jo18yuuU",
-    authDomain: "tesisvr-21.firebaseapp.com",
-    databaseURL: "https://tesisvr-21-default-rtdb.firebaseio.com",
-    projectId: "tesisvr-21",
-    storageBucket: "tesisvr-21.appspot.com",
-    messagingSenderId: "979640409708",
-    appId: "1:979640409708:web:ef6f3bc2734ca0fd3fc249",
-    measurementId: "G-ZD874PGVQY"
-
-}}
+  firebaseConfig:{
+    apiKey: "AIzaSyDq4M_70SwXu8rkL9uU2pvMqKJ7n72pzM8",
+    authDomain: "tesisvr-space.firebaseapp.com",
+    projectId: "tesisvr-space",
+    storageBucket: "tesisvr-space.appspot.com",
+    messagingSenderId: "940609855938",
+    appId: "1:940609855938:web:3bee8cdee77f0ba9f8365b",
+    measurementId: "G-5HTLP8S03J"
+  }
+};

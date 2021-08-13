@@ -64,6 +64,10 @@ import '@angular/localize/init';
 import 'zone.js';  // Included with Angular CLI.
 
 import 'aframe';
+
+import 'aframe-htmlembed-component';
+
+import 'aframe-transparent-video-shader';
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */

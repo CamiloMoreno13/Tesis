@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent" *ngIf="mostrar">
+        <div class="titular">
+            <h4>Información</h4>
+            <h3>Comercial</h3>
+        </div>
+
+        <div class="menu"  >
+
+            <div class="menuplus" (click)="pop()" #pls>
+                <i class="fa fa-plus"></i>
+            </div>
+
+            <div class="menu-items">
+                <div class="item1" id="item1 " #item1>
+                    <h1 class="name" *ngIf="bola">Pantalla Retina</h1>
+                    <a>
+                        <i class="fa fa-ban"></i>
+                    </a>
+                    
+                    
+                </div>
+                <div class="item2" id="item2 " #item2>
+                    <h1 class="name" *ngIf="bola">Procesadores Ultrarapidos</h1>
+                    <a>
+                       <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+                <div  class="item3" id="item3 " #item3>
+                    <h1 class="name" *ngIf="bola">Graficos Avanzados</h1>
+                    <a>
+                        <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+                <div  class="item4" id="item4 " #item4>
+                    <h1 class="name" *ngIf="bola">Magic Keyboard</h1>
+                    <a>
+                        <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+                <div class="item5" id="item5 " #item5>
+                    <h1 class="name" *ngIf="bola">Bateria</h1>
+                    <a>
+                        <i class="fa fa-ban"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cerrar" id="cerrar" *ngIf="!bola" #cerrar>
+            <a (click)="exit()">
+              <i class="far fa-times-circle"></i>
+            </a>
+        </div>
+
+        <div class="espacio"> </div>
+
+    </div>
+
+    <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  " cursor="rayOrigin:mouse">
+        
+        <a-assets>
+            <img id="logo" src="../../assets/Productos/logo_ishop.svg">
+            <img id="info_mac" src="../../assets/Productos/Info_mac.png">
+            <img id="ar_tittle" src="../../assets/Productos/AR_tittle1.png">
+            <img id="apple" src="../../assets/Productos/apple.png">
+            <img id="vista_3d" src="../../assets/Productos/Vista_3d.png">
+            <img id="ar_icon" src="../../assets/Productos/AR_icon.png">
+
+        </a-assets>
+        <a-entity id="camera-container" rotation="0 -78 0">
+            <a-entity id="camera" look-controls rotation="-13 0.7 0"  camera="fov: 60; userHeight: 0" wasd-controls="enabled: false;"></a-entity>
+        </a-entity>
+
+
+        <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
+        <a-entity  id="pc"  (click)="goToAr()" 
+        animation__scale="property: scale; dir: alternate; dur: 1000;
+        easing: easeInSine; loop: true; to:0.025 0.025 0.025"
+        
+        ></a-entity>
+        
+
+        <a-plane id="logo2" position="4.2 0.2 -1.7" src="#logo" transparent="true" scale="0.7 0.23 0.5" rotation="0 -57.8 0" (click)="goToUrl()" *ngIf="mostrar">
+        </a-plane>
+
+        <a-plane id="info_mac" position="3.8 -0.3 1.0" src="#info_mac" transparent="true" scale="1.6 1.1 1.1"  rotation="0 -100 0"  *ngIf="mostrar" emissive="#FFF">
+        </a-plane>
+        <a-plane id="ar_tittle" position="2.4 0.2 -5.5" src="#ar_tittle" transparent="true" scale="2.3 1.3 1.3"  rotation="0 -15.7 0"  *ngIf="mostrar">
+        </a-plane>
+        <a-plane id="apple" position="3.8 -0.2 0.3" src="#apple" transparent="true"   scale="0.1 0.1 0.2" rotation="0 -100 0"  *ngIf="mostrar">
+        </a-plane>
+        <a-plane id="vista_3d" position="2.4 -1.1 -5.5" src="#vista_3d" scale="0.3 0.09 0.6" transparent="true" rotation="0 -15.7 0" *ngIf="mostrar" (click)="goToAr()" >
+        </a-plane>
+        <a-plane id="ar_icon" position="2.4 -0.7 -5.5" src="#ar_icon" scale="0.3 0.3 0.6" transparent="true" rotation="0 -15.7 0"  *ngIf="mostrar" (click)="goToAr()">
+        </a-plane>
+
+
+
+    </a-scene>
+</body>
+</html>

@@ -6,27 +6,80 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <title>Prueba1</title>
+  <script
+    src="https://unpkg.com/aframe-transparent-video-shader@1.0.1/dist/aframe-transparent-video-shader.umd.js"></script>
+  <title>MVP V1</title>
 </head>
 
 <body>
-  <app-menu></app-menu>
-  <a-scene class="escena">
+  <app-menu *ngIf="mostrar"></app-menu>
+  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
+    cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
-    <a-assets>
-      <audio id="bichota" src="../../assets/bichota.mp3"></audio>
-      <video id="video" src="../../assets/p1.mp4" preload="auto" autoplay></video>
+    <a-assets timeout="5000">
+      <audio id="bichota" src=""></audio>
+      <!--
+      <video id="videoId" src="../../assets/Noticias/cabina_caro_carreta.webm"  mute autoplay ></video> -->
+      <img id="carreta" src="../../assets/Space/btn_caro_Carreta.png">
+      <img id="marca" src="../../assets/Space/btn_marca.png">
+      <img id="img_caro" src="../../assets/Space/caro_carreta.png">
+
+
     </a-assets>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
     <!--<a-camera wasd-controls="enabled : false">-->
-    <a-camera wasd-controls="enabled : false">
-      <a-cursor></a-cursor>
-    </a-camera>
+    
+    
+    <a-entity id="camera" rotation="0 81 0" position="0 -80 0" >
+        <a-camera camera="fov: 60; userHeight: 0" wasd-controls="enabled : false"></a-camera>
+    </a-entity>
+    
+
     <!-------------------------------------Elementos ------------------------------>
-    <a-sky id="fondo" src="../../assets/fondo.jpg"></a-sky>
+    <a-sky id="fondo" src="../../assets/Space/cabina.png" ></a-sky>
+    <a-entity  id="pc" (click)="product()" 
+    animation__scale="property: scale; to: 0.05 0.05 0.05; dur: 200; startEvents: mouseenter"
+    animation__scale_reverse="property: scale; to: 0.04 0.04 0.04; dur: 200; startEvents: mouseleave"
+    
+    ></a-entity>
+    <!--
+    <a-entity id="caroCab"
+        material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
+        geometry="primitive: plane;
+                  width: 1;
+                  height: 1.8"
+                  position="-0.77762 1.83178 -1.53346" (click)="H()" #caroCab  >
+        
+      </a-entity>
+
+    -->
+    <!-- Titulos de los locutores -->
+
+    <a-plane id="ex2" position="-2.5 -77.4 -3.4" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="0 20 0" (click)="locutor('caro')"
+    animation__scale="property: scale; to: 2.4 0.8 0.7; dur: 200; startEvents: mouseenter"
+    animation__scale_reverse="property: scale; to: 2.3 0.7 0.6; dur: 200; startEvents: mouseleave" *ngIf="mostrar"></a-plane>
+    <a-plane id="ex3" position="-1.7 -78.5 4.9" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="0 172.9 0" (click)="product()"
+    animation__scale="property: scale; to: 2.4 0.8 0.7; dur: 200; startEvents: mouseenter"
+    animation__scale_reverse="property: scale; to: 2.3 0.7 0.6; dur: 200; startEvents: mouseleave" *ngIf="mostrar"></a-plane>
+    <a-plane id="ex4" position="-2.41 -78.6 -3.9" src="#img_caro" transparent="true" scale="1.6 2.4 1.4" rotation="0 0 0" *ngIf="mostrar"></a-plane>
+
+
+    <!-- Iluminacion de titulos y objeto -->
+    <a-light type="ambient" color="#FFF"></a-light>
+
+    <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
+    material="color: #fff; opacity: 0.8"
+    animation="property: geometry.radiusOuter; from: 0; to: 0.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
+    
+    <a-entity id="anillo1" position="-5.9 -84.9 16.6" rotation="0 180 0">
+      <a-entity mixin="icon-animation"></a-entity>
+    </a-entity>
+
+    <a-entity id="anillo2" position="-1.9 -78.9 -3.8" rotation="0 10 0" scale="0.3 0.3 0.3">
+      <a-entity mixin="icon-animation"></a-entity>
+    </a-entity>
     <!-- texto -->
-    <a-entity text="value: Bienvenidos al megaespacio; color: blue; align: center; width : 60; letterSpacing: 10;"  position="0 20 -40"></a-entity>
     <a-text ></a-text>
   </a-scene>
 </body>
