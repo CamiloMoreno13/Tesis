@@ -100,9 +100,9 @@
         </a-plane>
         <a-plane id="apple" position="3.8 -0.2 0.3" src="#apple" transparent="true"   scale="0.1 0.1 0.2" rotation="0 -100 0"  *ngIf="mostrar">
         </a-plane>
-        <a-plane id="vista_3d" position="2.4 -1.1 -5.5" src="#vista_3d" scale="0.3 0.09 0.6" transparent="true" rotation="0 -15.7 0" *ngIf="mostrar">
+        <a-plane id="vista_3d" position="2.4 -1.1 -5.5" src="#vista_3d" scale="0.3 0.09 0.6" transparent="true" rotation="0 -15.7 0" *ngIf="mostrar" (click)="goToAr()" >
         </a-plane>
-        <a-plane id="ar_icon" position="2.4 -0.7 -5.5" src="#ar_icon" scale="0.3 0.3 0.6" transparent="true" rotation="0 -15.7 0"  *ngIf="mostrar">
+        <a-plane id="ar_icon" position="2.4 -0.7 -5.5" src="#ar_icon" scale="0.3 0.3 0.6" transparent="true" rotation="0 -15.7 0"  *ngIf="mostrar" (click)="goToAr()">
         </a-plane>
 
 
