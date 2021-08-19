@@ -11,6 +11,7 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ProductoComponent } from './producto/producto.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { SharedComponent } from './shared/shared.component';
+import { ProductvrComponent } from './productvr/productvr.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SharedComponent } from './shared/shared.component';
     PerfilesComponent,
     ProductoComponent,
     NoticiasComponent,
-    SharedComponent
+    SharedComponent,
+    ProductvrComponent
   ],
   imports: [
     BrowserModule,

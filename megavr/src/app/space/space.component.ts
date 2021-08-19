@@ -12,10 +12,11 @@ import { AFrame } from 'aframe';
 
 export class SpaceComponent implements OnInit {
 
-  //@ViewChild('caroCab') caroCab!: HTMLElement;
-
-  @ViewChild('caroCab') Hs!: ElementRef;
+  @ViewChild('carovideo') carovideo!: HTMLElement;
+  @ViewChild('videoId') videoid! : HTMLElement;
+ 
   public mostrar: boolean = false;
+  public playsonido: boolean = false;
 
   constructor(private router: Router) { }
 
@@ -23,10 +24,14 @@ export class SpaceComponent implements OnInit {
 
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
+    
+    let vol=<HTMLVideoElement>document.getElementById("videoId");
+    vol.volume=0;
 
     pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale','0.04 0.04 0.04');
     pc?.setAttribute('position','-19.2 -99.9 52.3'); 
+    //pc?.setAttribute('position','-19.2 -19.9 52.3'); 
     pc?.setAttribute('rotation',' -0.42 86.8 -7.5');
 
     caja?.setAttribute('geometry', 'primitive: box');
@@ -48,15 +53,22 @@ export class SpaceComponent implements OnInit {
     valor?.setAttribute('color', 'red');
   }
 
-  /*videoHover(){
-    let x = document.getElementById("caroCab") as ;
-    x.
-    this.caroCab.
-  }*/
+  videoHover(){ 
 
-  H() {
-    this.Hs.nativeElement.material.components.src.stopVideo();
+       if (this.playsonido==false){
+      let carosonido = document.getElementById("videoId")as HTMLVideoElement;
+      console.log("clic");
+      carosonido.volume=1;
+      this.playsonido=true;
+    }else{
+      let carosonido = <HTMLVideoElement>document.getElementById("videoId");
+      carosonido.volume=0;
+      this.playsonido=false;
+    }
+
+    
   }
+ 
 
   playExam() {
     console.log("Funciona enbebido")
