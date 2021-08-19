@@ -5,12 +5,17 @@
         </div>
 
     </div>
+    <app-menu ></app-menu>
+    <!--
     <div class="menu">
+        <app-menu ></app-menu>
 
         <div class="menuplus" (click)="exit()" #pls>
             <i class="fa fa-plus" *ngIf="false"></i>
             <i class="fas fa-minus" *ngIf="true"></i>
         </div>
+        -->
+        <!--
         <div class="menu-items">
             <div (click)="locutor('mateo')" class="item1" id="item1 " #item1 *ngIf="false">
                 <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
@@ -44,12 +49,13 @@
                 </a>
             </div>
         </div>
-
-        <div class="titularb" *ngIf="true">
-            <i class="fa fa-cube"> <h4>Las Toxihistorias</h4> </i>
-            <h3>Relaciones quebradas</h3>
-        </div>
-
+        -->
+        <!--
+    </div>
+    -->
+    <div class="titularb" *ngIf="true">
+        <i class="fa fa-cube"> <h4>Las Toxihistorias</h4> </i>
+        <h3>Relaciones quebradas</h3>
     </div>
     <div class="titular">
         <h4>Nota</h4>
@@ -61,10 +67,12 @@
         <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
         <p *ngIf="aviso">activar sonido</p>
     </div>
+    <!--
     <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
         <img src="../../assets/Shared/exit.svg">
 
     </div>
+    -->
 
     <div class="espacio"> </div> <!-- no borrar-->
 </div>

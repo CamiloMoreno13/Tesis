@@ -5,9 +5,9 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     height: 100vh;
-    } 
+} 
     
-    .contenido { grid-area: 2 / 2 / 3 / 3;
+.contenido { grid-area: 2 / 2 / 3 / 3;
     text-align: center;
 }
 
@@ -15,8 +15,14 @@
     width: 100%;
     height: 62vh;
  }
-    .menu {  grid-area:  4 / 2 / 5 / 3;
-         }
+
+.menu {  
+     grid-area:  4 / 2 / 5 / 3;
+}
+
+.titularb{
+    grid-area:  4 / 2 / 5 / 3;
+}
 
     .menuplus{
         
@@ -112,10 +118,10 @@
     }
     
 
-    .titular {  grid-area: 1 / 2 / 2 / 3; 
-        margin-top: 15px;
-
-        }
+.titular {  
+    grid-area: 1 / 2 / 2 / 3; 
+    margin-top: 15px;
+}
 
         .titular h4{
             

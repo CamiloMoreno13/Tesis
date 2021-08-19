@@ -1,4 +1,5 @@
 <div class="contenedor">
+    <app-menu ></app-menu>
 
     <div class="video">
         <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop></video>
@@ -30,17 +31,19 @@
         --> 
     </div>
     
-    
+    <!--
     <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
         <img src="../../assets/Shared/exit.svg">
 
     </div>
-
+    
     <div class="plus" id="plus" #cerrar>
         <a (click)="exit()">
             <i class="fas fa-minus"></i>
         </a>
     </div>
+    -->
+    
     <div class="sonido">
 
         <i id="sound" class="fa fa-volume-off" (click)="mute()"  *ngIf="aviso" #videoi></i>

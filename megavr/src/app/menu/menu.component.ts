@@ -1,9 +1,6 @@
 import { style } from '@angular/animations';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import * as $ from 'jquery';
-import { Injectable } from '@angular/core';
-
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -22,13 +19,49 @@ export class MenuComponent implements OnInit {
   @ViewChild('menu-items') menu!: ElementRef;
 
   public bola : boolean = false;
+  public perfiles : boolean = false;
+  public noticias : boolean = false;
+  public producto : boolean = false;
   public inicio: boolean = false;
-  public equis : boolean=true;
-  constructor(private renderer2: Renderer2, private router:Router) { }
+  public equis : boolean = true;
+  public href: string = "";
+
+  constructor(private renderer2: Renderer2, private router:Router) {
+  }
 
   ngOnInit(): void {
-    this.inicio = true;
+    this.inicio = false;
+    this.perfiles = false;
+    this.noticias = false;
+    this.producto = false;
+    this.href = this.router.url;
+    if (this.href == "/space"){
+      console.log("Puede funcionar");
+      this.inicio = true;
+    } 
+    if (this.href == "/perfiles/caro"){
+      console.log("Puede funcionar 2");
+      this.perfiles = true;
+    } 
+    if (this.href == "/noticias"){
+      console.log("Puede funcionar 3");
+      this.noticias = true;
+    } 
+    if (this.href == "/producto"){
+      console.log("Puede funcionar 3");
+      this.producto = true;
+    } 
+    //console.log(this.router.url);
   }
+
+  exit() {
+    this.router.navigate(['/space']);
+  }
+
+  exitNoticias() {
+    this.router.navigate(['/perfiles/caro']);
+  }
+
   pop() {
     var b1 = this.item1.nativeElement;
     var b2 = this.item2.nativeElement;
@@ -58,6 +91,7 @@ export class MenuComponent implements OnInit {
 
     
   }
+  
   start(){
     this.router.navigate(['/inicio']);
   }

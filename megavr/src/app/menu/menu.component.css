@@ -48,16 +48,14 @@
     position: relative;
     transition: 0.5s linear;
     z-index: 2;
-    
     border: 2px solid white;
-
-
 }
 
 .menu i{
     position: relative;
     bottom: 4px;
 }
+
 .name{
     font-size: 15px;
     color: white;
@@ -68,11 +66,6 @@
     left: 0;
     right: 0;
 }
-/*
-.fa{
-    position: relative;
-    top: 17px;
-}*/
 
 a{
     color:tomato;
@@ -108,18 +101,48 @@ a{
     top: 0;
     bottom: 1;
     left: 1;
-    right: 0;
+    right: 10px;
     height: 45px ;
     width: 45px ;
     border-radius: 50%;
 }
+
 .cerrar a{
     position: relative;
     right: 5px;
     color:white;
 }
 
+.cerrar  img {
+    color: white;
+    height: 60px;
+    width: 60px;
+}
+
 h1{
     color: white;
     font-size: 15px;
 }
+
+.plus{
+    height: 50px ;
+    width: 50px ;
+    text-align: center;
+    
+    color: white;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 1;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font-size: 35px;
+    z-index: 3;
+    border: 2px solid black;
+ }
+
+ .plus a{
+    position: relative;
+    bottom: 2px;
+ }
