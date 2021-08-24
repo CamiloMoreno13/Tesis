@@ -17,6 +17,7 @@ export class SpaceComponent implements OnInit {
  
   public mostrar: boolean = false;
   public playsonido: boolean = false;
+  public primercaro: boolean = true; // temporary
 
   constructor(private router: Router) { }
 
@@ -25,8 +26,10 @@ export class SpaceComponent implements OnInit {
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
     
-    let vol=<HTMLVideoElement>document.getElementById("videoId");
-    vol.volume=0;
+    let caro=<HTMLVideoElement>document.getElementById("videoId");
+    caro.volume=0;
+    caro.currentTime=1;
+    caro.pause();
 
     pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale','0.04 0.04 0.04');
@@ -53,21 +56,40 @@ export class SpaceComponent implements OnInit {
     valor?.setAttribute('color', 'red');
   }
 
-  videoHover(){ 
+  caroEnter(){ 
 
        if (this.playsonido==false){
       let carosonido = document.getElementById("videoId")as HTMLVideoElement;
-      console.log("clic");
-      carosonido.volume=1;
-      this.playsonido=true;
-    }else{
-      let carosonido = <HTMLVideoElement>document.getElementById("videoId");
-      carosonido.volume=0;
-      this.playsonido=false;
-    }
-
-    
+      if (this.primercaro==true){
+        this.primercaro=false;
+        carosonido.currentTime=0;
+        console.log("primer");
+        carosonido.play();
+        carosonido.volume=1;
+        this.playsonido=true;
+      }
+      else{
+        
+        console.log("segundo o mas");
+        carosonido.play();
+        carosonido.volume=1;
+        this.playsonido=true
+      }
+      
+    }    
   }
+
+
+  caroLeave(){ 
+    if (this.playsonido==true){
+    let carosonido = <HTMLVideoElement>document.getElementById("videoId");
+  carosonido.volume=0;
+   this.playsonido=false;
+   carosonido.pause();
+ }
+}
+
+ 
  
 
   playExam() {

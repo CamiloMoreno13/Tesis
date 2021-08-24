@@ -24,7 +24,7 @@
       <img id="carreta" src="../../assets/Space/btn_caro_Carreta.png">
       <img id="marca" src="../../assets/Space/btn_marca.png">
       <img id="img_caro" src="../../assets/Space/caro_carreta.png">
-      <video id="videoId" src="../../assets/Noticias/cabina_caro.webm" muted loop autoplay #videoid></video>
+      <video id="videoId" src="../../assets/Noticias/cabina_caro.webm#" muted loop autoplay #videoid></video>
 
     </a-assets>
 
@@ -32,8 +32,8 @@
     <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 46.49323324368578 0"
     material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
         position="-2.41 -79.75826 -3.9"
-        scale="1.79604 1.79604 1.79604" *ngIf="mostrar" 
-       (click)=videoHover() ></a-entity>
+        scale="1.79604 1.79604 1.79604"  
+       (mouseenter)=caroEnter() (mouseleave)=caroLeave()></a-entity>
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
     <!--<a-camera wasd-controls="enabled : false">-->
@@ -45,7 +45,7 @@
     
 
     <!-------------------------------------Elementos ------------------------------>
-    <a-sky id="fondo" src="../../assets/Space/cabina.png" ></a-sky>
+   <a-sky id="fondo" src="../../assets/Space/cabina.png" ></a-sky>
     <a-entity  id="pc" (click)="product()" 
     animation__scale="property: scale; to: 0.05 0.05 0.05; dur: 200; startEvents: mouseenter"
     animation__scale_reverse="property: scale; to: 0.04 0.04 0.04; dur: 200; startEvents: mouseleave"
