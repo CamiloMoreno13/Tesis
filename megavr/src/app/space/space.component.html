@@ -14,6 +14,7 @@
 
 <body>
   <app-menu *ngIf="mostrar"></app-menu>
+  <div class="prueba">hello</div>
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
@@ -31,7 +32,7 @@
     
     <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 46.49323324368578 0"
     material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
-        position="-2.41 -79.75826 -3.9"
+        position="-2.41 0 -3.9"
         scale="1.79604 1.79604 1.79604"  
        (mouseenter)=caroEnter() (mouseleave)=caroLeave()></a-entity>
     <!----------------------------------------------------------------------------->
@@ -39,13 +40,13 @@
     <!--<a-camera wasd-controls="enabled : false">-->
     
     
-    <a-entity id="camera" rotation="0 81 0" position="0 -80 0" >
-        <a-camera camera="fov: 60; userHeight: 0" wasd-controls="enabled : false"></a-camera>
+    <a-entity id="camera" rotation="0 -98 0" >
+        <a-camera wasd-controls="enabled : false"></a-camera>
     </a-entity>
     
 
     <!-------------------------------------Elementos ------------------------------>
-   <a-sky id="fondo" src="../../assets/Space/cabina.png" ></a-sky>
+   <a-sky id="fondo" src="../../assets/Space/nueva_cabina.jpg" ></a-sky>
     <a-entity  id="pc" (click)="product()" 
     animation__scale="property: scale; to: 0.05 0.05 0.05; dur: 200; startEvents: mouseenter"
     animation__scale_reverse="property: scale; to: 0.04 0.04 0.04; dur: 200; startEvents: mouseleave"
@@ -55,14 +56,13 @@
     
     <!-- Titulos de los locutores -->
 
-    <a-plane id="ex2" position="-2.5 -77.4 -3.4" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="0 20 0" (click)="locutor('caro')"
+    <a-plane id="ex2" position="-2.5 0 -3.4" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="0 20 0" (click)="locutor('caro')"
     animation__scale="property: scale; to: 2.4 0.8 0.7; dur: 200; startEvents: mouseenter"
     animation__scale_reverse="property: scale; to: 2.3 0.7 0.6; dur: 200; startEvents: mouseleave" *ngIf="mostrar"></a-plane>
-    <a-plane id="ex3" position="-1.7 -78.5 4.9" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="0 172.9 0" (click)="product()"
+    <a-plane id="ex3" position="-1.7 0 4.9" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="0 172.9 0" (click)="product()"
     animation__scale="property: scale; to: 2.4 0.8 0.7; dur: 200; startEvents: mouseenter"
     animation__scale_reverse="property: scale; to: 2.3 0.7 0.6; dur: 200; startEvents: mouseleave" *ngIf="mostrar"></a-plane>
-  <!--  <a-plane id="ex4" position="-2.41 -78.6 -3.9" src="#img_caro" transparent="true" scale="1.6 2.4 1.4" rotation="0 0 0" *ngIf="mostrar"></a-plane>
--->
+  <!--  <a-plane id="ex4" position="-2.41 -78.6 -3.9" src="#img_caro" transparent="true" scale="1.6 2.4 1.4" rotation="0 0 0" *ngIf="mostrar"></a-plane> -->
 
     <!-- Iluminacion de titulos y objeto -->
     <a-light type="ambient" color="#FFF"></a-light>
@@ -71,11 +71,11 @@
     material="color: #fff; opacity: 0.8"
     animation="property: geometry.radiusOuter; from: 0; to: 0.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
     
-    <a-entity id="anillo1" position="-5.9 -84.9 16.6" rotation="0 180 0">
+    <a-entity id="anillo1" position="-5.9 -6 16.6" rotation="0 180 0"> 16.1 -22.5 -53.1
       <a-entity mixin="icon-animation"></a-entity>
     </a-entity>
 
-    <a-entity id="anillo2" position="-1.9 -78.9 -3.8" rotation="0 10 0" scale="0.3 0.3 0.3">
+    <a-entity id="anillo2" position="-1.9 0 -3.8" rotation="0 10 0" scale="0.3 0.3 0.3">
       <a-entity mixin="icon-animation"></a-entity>
     </a-entity>
     <!-- texto -->

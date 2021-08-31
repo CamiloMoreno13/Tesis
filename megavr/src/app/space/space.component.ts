@@ -31,11 +31,11 @@ export class SpaceComponent implements OnInit {
     caro.currentTime = 1;
     caro.pause();
 
-    pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
-    pc?.setAttribute('scale', '0.04 0.04 0.04');
-    pc?.setAttribute('position', '-19.2 -99.9 52.3');
+    pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
+    pc?.setAttribute('scale','0.04 0.04 0.04');
+    pc?.setAttribute('position','16.1 -22.5 -53.1'); 
     //pc?.setAttribute('position','-19.2 -19.9 52.3'); 
-    pc?.setAttribute('rotation', ' -0.42 86.8 -7.5');
+    pc?.setAttribute('rotation',' 0.92 -86.8 -7.4');
 
     caja?.setAttribute('geometry', 'primitive: box');
     caja?.setAttribute('material', 'color:red');

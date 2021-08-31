@@ -1,3 +1,12 @@
+.prueba {
+    width: 500px;
+    height: 300px;
+    margin: 50px;
+    box-shadow: inset 0px 0px 40px 40px #DBA632; /* change to alter the effect*/
+    z-index: 5;
+}
+
+
 #ex2{
     z-index: 4;
 }
