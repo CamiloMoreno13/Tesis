@@ -1,1 +1,23 @@
 <p>shared works!</p>
+<div class="prueba" hidden>
+    <input type="file" name="foto" id="valorfile" #valor>
+    <button (click)="prueba()" > cargar</button>
+</div>
+
+<div class="clics" style="display: flex; flex-direction: column; width: 150px; height: 10px;" >
+    <button style="margin: 10px;" (click)="create()"> create </button>
+    <button style="margin: 10px;" (click)="read()"> read </button>
+    <button style="margin: 10px;" (click)="update()"> update </button>
+    <button style="margin: 10px;" (click)="delete()"> delete </button>
+</div>
+
+<div class="clics" style="display: flex; flex-direction: column; width: 150px; height: 10px;" hidden>
+    <button style="margin: 10px;" (click)="create()"> create file </button>
+    <button style="margin: 10px;" (click)="read()"> read file</button>
+    <button style="margin: 10px;" (click)="update()"> update file</button>
+    <button style="margin: 10px;" (click)="delete()"> delete file</button>
+</div>
+
+<div class="imagen" style="width: 300px; height: 00px; margin-left: 200px ; background-color: aqua;" hidden>
+    <video [src]="imagen" alt="" style="width: 300px; height: 300px;" autoplay></video>
+</div>

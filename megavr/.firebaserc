@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "tesisvr-space"
+  },
+  "targets": {
+    "tesisvr-space": {
+      "hosting": {
+        "megavr": [
+          "tesisvr-space"
+        ]
+      }
+    }
   }
 }
