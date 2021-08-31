@@ -13,8 +13,8 @@ import { AFrame } from 'aframe';
 export class SpaceComponent implements OnInit {
 
   @ViewChild('carovideo') carovideo!: HTMLElement;
-  @ViewChild('videoId') videoid! : HTMLElement;
- 
+  @ViewChild('videoId') videoid!: HTMLElement;
+
   public mostrar: boolean = false;
   public playsonido: boolean = false;
   public primercaro: boolean = true; // temporary
@@ -25,17 +25,17 @@ export class SpaceComponent implements OnInit {
 
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
-    
-    let caro=<HTMLVideoElement>document.getElementById("videoId");
-    caro.volume=0;
-    caro.currentTime=1;
+
+    let caro = <HTMLVideoElement>document.getElementById("videoId");
+    caro.volume = 0;
+    caro.currentTime = 1;
     caro.pause();
 
-    pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
-    pc?.setAttribute('scale','0.04 0.04 0.04');
-    pc?.setAttribute('position','-19.2 -99.9 52.3'); 
+    pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    pc?.setAttribute('scale', '0.04 0.04 0.04');
+    pc?.setAttribute('position', '-19.2 -99.9 52.3');
     //pc?.setAttribute('position','-19.2 -19.9 52.3'); 
-    pc?.setAttribute('rotation',' -0.42 86.8 -7.5');
+    pc?.setAttribute('rotation', ' -0.42 86.8 -7.5');
 
     caja?.setAttribute('geometry', 'primitive: box');
     caja?.setAttribute('material', 'color:red');
@@ -46,7 +46,7 @@ export class SpaceComponent implements OnInit {
     if (entity != null) {
       console.log("enity", entity);
     }
-    document.querySelector("a-scene").addEventListener("loaded",() =>{setTimeout(() => {this.mostrar=true;}, 1000);}) /* This is the key*/
+    document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); }) /* This is the key*/
   }
 
 
@@ -56,41 +56,41 @@ export class SpaceComponent implements OnInit {
     valor?.setAttribute('color', 'red');
   }
 
-  caroEnter(){ 
+  caroEnter() {
 
-       if (this.playsonido==false){
-      let carosonido = document.getElementById("videoId")as HTMLVideoElement;
-      if (this.primercaro==true){
-        this.primercaro=false;
-        carosonido.currentTime=0;
+    if (this.playsonido == false) {
+      let carosonido = document.getElementById("videoId") as HTMLVideoElement;
+      if (this.primercaro == true) {
+        this.primercaro = false;
+        carosonido.currentTime = 0;
         console.log("primer");
         carosonido.play();
-        carosonido.volume=1;
-        this.playsonido=true;
+        carosonido.volume = 1;
+        this.playsonido = true;
       }
-      else{
-        
+      else {
+
         console.log("segundo o mas");
         carosonido.play();
-        carosonido.volume=1;
-        this.playsonido=true
+        carosonido.volume = 1;
+        this.playsonido = true
       }
-      
-    }    
+
+    }
   }
 
 
-  caroLeave(){ 
-    if (this.playsonido==true){
-    let carosonido = <HTMLVideoElement>document.getElementById("videoId");
-  carosonido.volume=0;
-   this.playsonido=false;
-   carosonido.pause();
- }
-}
+  caroLeave() {
+    if (this.playsonido == true) {
+      let carosonido = <HTMLVideoElement>document.getElementById("videoId");
+      carosonido.volume = 0;
+      this.playsonido = false;
+      carosonido.pause();
+    }
+  }
 
- 
- 
+
+
 
   playExam() {
     console.log("Funciona enbebido")
