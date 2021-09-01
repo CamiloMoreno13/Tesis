@@ -18,6 +18,8 @@ export class SpaceComponent implements OnInit {
   public mostrar: boolean = false;
   public playsonido: boolean = false;
   public primercaro: boolean = true; // temporary
+  public imagen : boolean = false;
+  public sonidoclick : boolean = false;
 
   constructor(private router: Router) { }
 
@@ -30,6 +32,14 @@ export class SpaceComponent implements OnInit {
     caro.volume = 0;
     caro.currentTime = 1;
     caro.pause();
+
+
+    let caro2 = <HTMLVideoElement>document.getElementById("v2");
+    caro.volume = 0;
+    caro.currentTime = 1;
+    caro2.pause();
+    
+    
 
     pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale','0.04 0.04 0.04');
@@ -54,6 +64,21 @@ export class SpaceComponent implements OnInit {
     let valor = document.querySelector('#caja');
     console.log(valor);
     valor?.setAttribute('color', 'red');
+  }
+
+  caroclick(){
+    if (this.sonidoclick==false){
+      this.sonidoclick=true;
+      this.imagen=true;
+      let carosonido2 = document.getElementById("v2") as HTMLVideoElement;
+      carosonido2.play();
+
+    }else{
+      let carosonido2 = document.getElementById("v2") as HTMLVideoElement;
+      carosonido2.pause();
+      this.sonidoclick=false;
+    }
+    
   }
 
   caroEnter() {

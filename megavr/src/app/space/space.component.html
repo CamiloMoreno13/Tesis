@@ -15,7 +15,7 @@
 <body>
   <app-menu *ngIf="mostrar"></app-menu>
   <div class="prueba">hello</div>
-  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
+  <a-scene stats class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
     <a-assets timeout="5000">
@@ -26,15 +26,26 @@
       <img id="marca" src="../../assets/Space/btn_marca.png">
       <img id="img_caro" src="../../assets/Space/caro_carreta.png">
       <video id="videoId" src="../../assets/Noticias/cabina_caro.webm#" muted loop autoplay #videoid></video>
+      <video id="v2" src="../../assets/Noticias/perfil_caro.webm" muted loop autoplay #videoid></video>
 
     </a-assets>
-
+    <a-plane id="caroc" position="7.93848 1.21832 -0.29466" src="#img_caro" transparent="true" scale="3.51525 5.27287 9.50187" rotation="0 -84.36688941742347 0" *ngIf="!imagen" ></a-plane>
     
-    <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 46.49323324368578 0"
-    material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
-        position="-2.41 0 -3.9"
+    <a-entity id="carovideo2" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
+    material="shader: transparent-video; src: #v2; alphaTest: 0.5; side: front"
+        position="4.88336 0.98349 -0.29431"
         scale="1.79604 1.79604 1.79604"  
-       (mouseenter)=caroEnter() (mouseleave)=caroLeave()></a-entity>
+        (click)=caroclick()
+        ></a-entity>
+
+
+       <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 165.91826422957405 0"
+    material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
+        position="0.4061 0 10.97853"
+        scale="4.04319 4.04319 4.04319"
+        (mouseenter)=caroEnter() (mouseleave)=caroLeave()  
+       ></a-entity>
+
     <!----------------------------------------------------------------------------->
     <!-------------------------------Camara---------------------------------------->
     <!--<a-camera wasd-controls="enabled : false">-->
