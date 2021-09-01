@@ -15,7 +15,7 @@
 <body>
   <app-menu *ngIf="mostrar"></app-menu>
   <div class="prueba">hello</div>
-  <a-scene stats class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
+  <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
     <a-assets timeout="5000">
@@ -34,7 +34,7 @@
     <a-entity id="carovideo2" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
     material="shader: transparent-video; src: #v2; alphaTest: 0.5; side: front"
         position="4.88336 0.98349 -0.29431"
-        scale="1.79604 1.79604 1.79604"  
+        scale="2.15239 2.15239 2.15239"  
         (click)=caroclick()
         ></a-entity>
 
@@ -59,20 +59,24 @@
     <!-------------------------------------Elementos ------------------------------>
    <a-sky id="fondo" src="../../assets/Space/nueva_cabina.jpg" ></a-sky>
     <a-entity  id="pc" (click)="product()" 
-    animation__scale="property: scale; to: 0.05 0.05 0.05; dur: 200; startEvents: mouseenter"
-    animation__scale_reverse="property: scale; to: 0.04 0.04 0.04; dur: 200; startEvents: mouseleave"
-    
+    animation__scale="property: scale; dir: alternate; dur: 2000;
+    easing: easeInSine; loop: true; to:0.050 0.050 0.050"
+    animation__rotation="property: rotation; to: 0.837 -76 -6.732; loop: true; dur: 8000"
     ></a-entity>
    
     
     <!-- Titulos de los locutores -->
 
-    <a-plane id="ex2" position="-2.5 0 -3.4" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="0 20 0" (click)="locutor('caro')"
-    animation__scale="property: scale; to: 2.4 0.8 0.7; dur: 200; startEvents: mouseenter"
-    animation__scale_reverse="property: scale; to: 2.3 0.7 0.6; dur: 200; startEvents: mouseleave" *ngIf="mostrar"></a-plane>
-    <a-plane id="ex3" position="-1.7 0 4.9" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="0 172.9 0" (click)="product()"
-    animation__scale="property: scale; to: 2.4 0.8 0.7; dur: 200; startEvents: mouseenter"
-    animation__scale_reverse="property: scale; to: 2.3 0.7 0.6; dur: 200; startEvents: mouseleave" *ngIf="mostrar"></a-plane>
+    <a-plane id="banner_caro" position="2.93463 2.58451 -0.27046" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
+    animation__scale="property: scale; dir: alternate; dur: 2000;
+    easing: easeInSine; loop: true; to:2.5 0.9 0.8"
+    *ngIf="mostrar" (click)="locutor('caro')"></a-plane>
+    <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="0 -34.698324073122656 0" 
+    animation__scale="property: scale; dir: alternate; dur: 1000;
+    easing: easeInSine; loop: true; to:2.5 0.9 0.8"
+    
+    *ngIf="mostrar"
+    (click)="product()"></a-plane>
   <!--  <a-plane id="ex4" position="-2.41 -78.6 -3.9" src="#img_caro" transparent="true" scale="1.6 2.4 1.4" rotation="0 0 0" *ngIf="mostrar"></a-plane> -->
 
     <!-- Iluminacion de titulos y objeto -->
