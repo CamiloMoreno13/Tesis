@@ -5,11 +5,8 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ProductoComponent } from './producto/producto.component';
 import { SpaceComponent } from './space/space.component';
 import { NoticiasComponent } from './noticias/noticias.component';
-<<<<<<< Updated upstream
 import { ProductvrComponent } from './productvr/productvr.component';
-=======
 import { SharedComponent } from './shared/shared.component';
->>>>>>> Stashed changes
 
 const routes: Routes = [{ path: 'space', component: SpaceComponent },
 { path: 'inicio', component: InicioComponent },
@@ -17,12 +14,8 @@ const routes: Routes = [{ path: 'space', component: SpaceComponent },
 { path: 'perfiles/:id', component: PerfilesComponent },
 { path: 'noticias', component: NoticiasComponent },  
 { path: 'producto', component: ProductoComponent },
-<<<<<<< Updated upstream
-{ path: 'productvr', component: ProductvrComponent }];
-=======
-{ path: 'pruebas', component: SharedComponent}
-];
->>>>>>> Stashed changes
+{ path: 'productvr', component: ProductvrComponent },
+{ path: 'pruebas', component: SharedComponent} ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

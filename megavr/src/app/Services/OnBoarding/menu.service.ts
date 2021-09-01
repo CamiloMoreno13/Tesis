@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class MenuService {
 
   constructor() { }
+
+  clicObjeto(){
+    //this.real.createReal('computar')
+  }
 }

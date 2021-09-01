@@ -38,5 +38,6 @@ export class StorageService {
 
   deleteStore(){
     this.storage.storage.ref('OnBoarding/camera.png').delete();
+    this.storage.ref('OnBoarding').delete(); 
   }
 }

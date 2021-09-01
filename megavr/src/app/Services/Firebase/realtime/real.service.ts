@@ -15,21 +15,14 @@ export class RealService {
     this.item = real.list(this.path); // realtime 
   }
 
-  createReal(){
+  createReal(path: string){
     
     this.item.push("1");
     this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
-    this.item.push("1");
+    //clic-ob
+    //clic-space
+    this.real.database.ref('pruebas').child('clic').push();
+    this.real.list('p2').push("p2");
     /*
     console.log(this.item);
     const valor = {
@@ -40,11 +33,12 @@ export class RealService {
   }
 
   readReal(){
-    //suscribirse a escuchar 
+    //suscribirse a escuchar
+     /*
     console.log(this.real.list('clic').snapshotChanges().subscribe(res => {
       console.log("res" , res);
-    }));
-/*
+    }));*/
+
     var valor = this.real.object('clic');
     console.log("valor" , valor.query.get().then(res =>{
       console.log("res" , res.exportVal());
@@ -53,7 +47,7 @@ export class RealService {
       console.log("res4", res.val());
       console.log("res5", res.numChildren());
 
-    }));*/
+    }));
   
   }
 
@@ -61,8 +55,6 @@ export class RealService {
   updateReal(){
     // Cambiar el nombre de la lista
     //this.real.database.ref('clic').set("valor");
-    
-
   }
 
   deleteReal(){

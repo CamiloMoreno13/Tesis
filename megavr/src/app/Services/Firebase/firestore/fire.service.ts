@@ -19,12 +19,11 @@ export class FireService {
   createFire() {
     //no se crea si no es llave valor 
     this.fire.collection('prueba').doc('1').set({name: "valor"});
+    this.fire.collection('nuevo').add({prueba: "valor"});
+    this.fire.collection('nuevo2').doc('personas').set({nuevo2: "valor2"})
   }
 
   readFire() {
-    var letra = {
-      "name" : ""
-    }
     var valor = this.fire.collection('prueba').doc('1').ref.get().then(res => {
       console.log(res.data());
       console.log(res.id);

@@ -20,6 +20,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule} from '@angular/fire/auth'
 
 @NgModule({
   declarations: [
@@ -40,8 +41,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule, //Realtime
     AngularFirestoreModule, //Firestore
-    AngularFireStorageModule
-    
+    AngularFireStorageModule, //Storage
+    AngularFireAuthModule
 
   ],
   providers: [],
