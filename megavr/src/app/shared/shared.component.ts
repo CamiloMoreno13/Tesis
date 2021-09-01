@@ -35,11 +35,11 @@ export class SharedComponent implements OnInit {
   }
 
   create(){
-    //this.real.createReal();
+    this.real.createReal();
     //this.fire.createFire();
     /*this.file = this.valor.nativeElement.files; 
     this.store.createStore(this.file);*/
-    this.auth.create();
+    //this.auth.create();
   }
 
   read(){

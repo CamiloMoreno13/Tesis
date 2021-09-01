@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  firebase : {
+  firebaseConfig: {
     apiKey: "AIzaSyDq4M_70SwXu8rkL9uU2pvMqKJ7n72pzM8",
     authDomain: "tesisvr-space.firebaseapp.com",
     databaseURL: "https://tesisvr-space-default-rtdb.firebaseio.com",

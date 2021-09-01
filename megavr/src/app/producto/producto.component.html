@@ -87,14 +87,16 @@
 
 
         <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
-        <a-entity  id="pc"  (click)="goToAr()" 
+
+        <!-- clic pc -->
+        <a-entity  id="clic_pc"  (click)="goToAr('pc')" 
         animation__scale="property: scale; dir: alternate; dur: 1000;
         easing: easeInSine; loop: true; to:0.025 0.025 0.025"
         
         ></a-entity>
         
-
-        <a-plane id="logo2" position="4.2 0.2 -1.7" src="#logo" transparent="true" scale="0.7 0.23 0.5" rotation="0 -57.8 0" (click)="goToUrl()" *ngIf="mostrar">
+        <!-- clic logo -->
+        <a-plane id="clic_logo" position="4.2 0.2 -1.7" src="#logo" transparent="true" scale="0.7 0.23 0.5" rotation="0 -57.8 0" (click)="goToUrl('logo')" *ngIf="mostrar">
         </a-plane>
 
         <a-plane id="info_mac" position="3.8 -0.3 1.0" src="#info_mac" transparent="true" scale="1.6 1.1 1.1"  rotation="0 -100 0"  *ngIf="mostrar" emissive="#FFF">
@@ -103,9 +105,11 @@
         </a-plane>
         <a-plane id="apple" position="3.8 -0.2 0.3" src="#apple" transparent="true"   scale="0.1 0.1 0.2" rotation="0 -100 0"  *ngIf="mostrar">
         </a-plane>
-        <a-plane id="vista_3d" position="2.4 -1.1 -5.5" src="#vista_3d" scale="0.3 0.09 0.6" transparent="true" rotation="0 -15.7 0" *ngIf="mostrar" (click)="goToAr()" >
+        <!--clic texto-->
+        <a-plane id="clic_texto" position="2.4 -1.1 -5.5" src="#vista_3d" scale="0.3 0.09 0.6" transparent="true" rotation="0 -15.7 0" *ngIf="mostrar" (click)="goToAr('texto')" >
         </a-plane>
-        <a-plane id="ar_icon" position="2.4 -0.7 -5.5" src="#ar_icon" scale="0.3 0.3 0.6" transparent="true" rotation="0 -15.7 0"  *ngIf="mostrar" (click)="goToAr()">
+        <!-- clic icono-->
+        <a-plane id="clic_icon" position="2.4 -0.7 -5.5" src="#ar_icon" scale="0.3 0.3 0.6" transparent="true" rotation="0 -15.7 0"  *ngIf="mostrar" (click)="goToAr('icono')">
         </a-plane>
 
 

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
 import { HighlightSpanKind } from 'typescript';
+import { ProductoService } from '../../Producto/producto.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +12,20 @@ export class RealService {
   item!: AngularFireList<string>;
   item2!: AngularFireList<string>;
 
-  constructor(private real: AngularFireDatabase) { 
+  constructor(private real: AngularFireDatabase, private prueba: ProductoService) { 
     this.item = real.list(this.path); // realtime 
   }
 
-  createReal(path: string){
-    
-    this.item.push("1");
-    this.item.push("1");
-    //clic-ob
-    //clic-space
-    this.real.database.ref('pruebas').child('clic').push();
-    this.real.list('p2').push("p2");
+  createReal(){
     /*
-    console.log(this.item);
-    const valor = {
-      "name": "tris",
-      "valor" : "que"
-    };
-    this.real.database.ref().child('clic2').push("prueba");*/
+    this.real.database.ref('valor').child('path').get().then(res => {
+      this.real.database.ref('valor').child('path').set(res.val()+1);
+    });*/
+
+    this.prueba.clic('logo');
+    this.prueba.clic('texto');
+    this.prueba.clic('icono');
+    this.prueba.clic('pc');
   }
 
   readReal(){
