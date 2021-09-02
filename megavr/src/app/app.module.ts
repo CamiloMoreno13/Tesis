@@ -38,7 +38,7 @@ import { AngularFireAuthModule} from '@angular/fire/auth'
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule, //Realtime
     AngularFirestoreModule, //Firestore
     AngularFireStorageModule, //Storage

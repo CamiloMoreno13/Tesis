@@ -8,7 +8,7 @@ declare var gtag: (arg0: string, arg1: any, arg2: { page_path: string; }) => voi
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent {
 
   constructor(public router: Router) {
     this.router.events.subscribe(event => {
