@@ -31,13 +31,13 @@ export class SpaceComponent implements OnInit {
     let caro = <HTMLVideoElement>document.getElementById("videoId");
     caro.volume = 0;
     caro.currentTime = 1;
-    caro.pause();
+    
 
 
     let caro2 = <HTMLVideoElement>document.getElementById("v2");
-    caro.volume = 0;
-    caro.currentTime = 1;
-    caro2.pause();
+    caro2.volume = 0;
+    caro2.play();
+    
     
     
 
@@ -71,11 +71,11 @@ export class SpaceComponent implements OnInit {
       this.sonidoclick=true;
       this.imagen=true;
       let carosonido2 = document.getElementById("v2") as HTMLVideoElement;
-      carosonido2.play();
+      carosonido2.volume=1;
 
     }else{
       let carosonido2 = document.getElementById("v2") as HTMLVideoElement;
-      carosonido2.pause();
+      carosonido2.volume=0;
       this.sonidoclick=false;
     }
     

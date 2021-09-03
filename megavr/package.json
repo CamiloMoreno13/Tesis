@@ -23,16 +23,18 @@
     "@egjs/view3d": "^1.0.1",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "aframe": "^1.2.0",
+    "aframe-animation-component": "^5.1.2",
+    "aframe-animation-timeline-component": "^2.0.0",
     "aframe-htmlembed-component": "^1.0.0",
     "aframe-transparent-video-shader": "^1.0.1",
     "aframe-watcher": "^1.4.0",
     "bootstrap": "^4.5.0",
+    "firebase": "^7.0 || ^8.0",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
     "three": "^0.129.0",
     "tslib": "^2.1.0",
-    "zone.js": "~0.11.4",
-    "firebase": "^7.0 || ^8.0"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/architect": ">= 0.900 < 0.1300",
