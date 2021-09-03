@@ -26,7 +26,7 @@
       <img id="marca" src="../../assets/Space/btn_marca.png">
       <img id="img_caro" src="../../assets/Space/mute3.png">
       <video id="videoId" src="../../assets/Noticias/cabina_caro.webm#" muted loop autoplay #videoid></video>
-      <video id="v2" src="../../assets/Noticias/perfil_caro.webm" muted loop autoplay #videoid></video>
+      <video id="v2" src="../../assets/Noticias/cabina_caro.webm" muted loop autoplay #videoid></video>
 
     </a-assets>
 
@@ -60,20 +60,19 @@
     <!-------------------------------------Elementos ------------------------------>
    <a-sky id="fondo" src="../../assets/Space/nueva_cabina.jpg" ></a-sky>
     <a-entity  id="pc" (click)="product()" 
-    animation__scale="property: scale; dir: alternate; dur: 2000;
+    animation__scale="property: scale; dir: alternate; dur: 400;
     easing: easeInSine; loop: true; to:0.050 0.050 0.050"
-    animation__rotation="property: rotation; to: 0.837 -76 -6.732; loop: true; dur: 8000"
+    
     ></a-entity>
    
     
     <!-- Titulos de los locutores -->
 
-    <a-plane id="banner_caro" position="2.93463 2.58451 -0.27046" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
+    <a-plane id="banner_caro" material="side: double" position="2.93463 2.58451 -0.27046" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
+    animation__spin="property: rotation; dur: 8000; loop: true; easing: easeInOutElastic; to: 0 269 0; elasticity:45"
+    (click)="locutor('caro')"></a-plane>
+    <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -34.698324073122656 -0.265852416940702" 
     animation__scale="property: scale; dir: alternate; dur: 400;
-    easing: easeInSine; loop: true; delay:4000 ;to:2.5 0.9 0.8"
-    *ngIf="mostrar" (click)="locutor('caro')"></a-plane>
-    <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="0 -34.698324073122656 0" 
-    animation__scale="property: scale; dir: alternate; dur: 1000;
     easing: easeInSine; loop: true; to:2.5 0.9 0.8"
     
     *ngIf="mostrar"

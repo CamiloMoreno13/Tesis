@@ -15,11 +15,13 @@ export class ProductoComponent implements OnInit {
   @ViewChild('item4') item4!: ElementRef;
   @ViewChild('item5') item5!: ElementRef;
   @ViewChild('menu-items') menu!: ElementRef;
+  @ViewChild('camita') mover!: ElementRef;
 
   public bola: boolean = false;
   public inicio: boolean = false;
   public equis: boolean = true;
   public mostrar: boolean = false;
+  public movimiento: boolean = false;
 
 
   constructor(private renderer2: Renderer2, private router: Router, private productoService: ProductoService) { }
@@ -78,6 +80,37 @@ export class ProductoComponent implements OnInit {
   goToAr(objeto: string) {
     this.productoService.clic(objeto);
     window.location.href = "https://www.vectary.com/viewer-ar/v1/?model=07041aab-469e-42a5-932b-9d9cdbb09dbd&allowScaling=";
+  }
+
+  cameraMove() {
+    if (this.movimiento == false) {
+      let cam = document.getElementById('camera-container');
+      console.log(this.movimiento);
+      //cam?.setAttribute('rotation', '0 90 0');
+      cam?.setAttribute('animation', 'property:rotation;to: 0 -20 0;dur: 1000;easing: easeInSine');
+
+
+      console.log("A 90");
+
+      //cam?.setAttribute('animation','dur:10000')
+      //this.movimiento = true;
+    }
+
+  }
+  cameraMove2() {
+    if (this.movimiento == false) {
+      let cam = document.getElementById('camera-container');
+      console.log("segundo coso");
+     //cam?.setAttribute('rotation', '0 90 0');
+      cam?.setAttribute('animation', 'property:rotation;to: 0 -80 0;dur: 1000;easing: easeInSine');
+
+
+      console.log("A 90");
+
+      //cam?.setAttribute('animation','dur:10000')
+      //this.movimiento = true;
+    }
+
   }
 
 
