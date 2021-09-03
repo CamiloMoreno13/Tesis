@@ -14,7 +14,9 @@
 
 <body>
   <app-menu *ngIf="mostrar"></app-menu>
-  
+  <div class="titular">
+    <img id="shop" src="../../assets/Productos/logo_ishop.svg">
+  </div>
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
@@ -86,7 +88,7 @@
     material="color: #fff; opacity: 0.8"
     animation="property: geometry.radiusOuter; from: 0; to: 0.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
     
-    <a-entity id="anillo1" position="-5.9 -6 16.6" rotation="0 180 0"> 16.1 -22.5 -53.1
+    <a-entity id="anillo1" position="-5.9 -6 16.6" rotation="0 180 0"> 
       <a-entity mixin="icon-animation"></a-entity>
     </a-entity>
 

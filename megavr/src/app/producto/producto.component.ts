@@ -70,7 +70,7 @@ export class ProductoComponent implements OnInit {
 
   goToUrl(objeto: string) {
     this.productoService.clic(objeto);
-    window.location.href = "https://tiendasishop.com/co/apple-macbook-pro-16-2019-touch-bar-intel-i9-de-2-3-ghz-ram-16gb-1tb-gris-espacial-mvvk2ea";
+    window.open('https://www.apple.com/macbook-pro-16/', '_blank');
   }
 
   exit() {
@@ -79,7 +79,7 @@ export class ProductoComponent implements OnInit {
 
   goToAr(objeto: string) {
     this.productoService.clic(objeto);
-    window.location.href = "https://www.vectary.com/viewer-ar/v1/?model=07041aab-469e-42a5-932b-9d9cdbb09dbd&allowScaling=";
+    window.open('https://www.vectary.com/viewer-ar/v1/?model=07041aab-469e-42a5-932b-9d9cdbb09dbd&allowScaling=', '_blank');
   }
 
   cameraMove() {

@@ -10,3 +10,10 @@
 #ex2{
     z-index: 4;
 }
+
+.titular {  
+    position: relative;
+    left: 5%;
+    margin-top: 15px;
+    z-index: 3;
+}
