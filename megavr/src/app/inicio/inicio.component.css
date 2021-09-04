@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 20% 60% 20%;
     grid-template-rows: 50% 10% 20% 20%; 
+    user-select: none;
     /*grid-template-rows: 35% 15% 15% 15% 20%; */
 }
 /*pagina inicio mega*/
@@ -105,6 +106,25 @@
     background-position: center;
     background-size: cover;
     margin: 10px;
+}
+
+/*Boton siguiente*/
+
+.derecho2{
+    grid-column: 2/3;
+    grid-row: 4/4;
+    align-self: end;
+    justify-self: center;
+}
+.siguiente{
+    width: 131px;
+    height: 33px;
+    background-image: url(../../assets/Onboarding/btn_siguiente.svg);
+    background-color: white;
+    border: none;
+    margin: 10px;
+    background-position: center;
+    background-size: cover;
 }
 
 /* Boton exit */

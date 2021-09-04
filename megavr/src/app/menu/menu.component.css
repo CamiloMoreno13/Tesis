@@ -146,3 +146,10 @@ h1{
     position: relative;
     bottom: 2px;
  }
+/*
+ @media (max-width: 480px) {
+    .sonido {
+      font-size: 35px;
+    }
+  }
+  */

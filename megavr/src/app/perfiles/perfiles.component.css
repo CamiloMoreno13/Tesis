@@ -129,4 +129,8 @@ i{
        font-size: 9px;
    }
 
-   
+   @media (max-width: 480px) {
+      .sonido {
+        font-size: 35px;
+      }
+    }

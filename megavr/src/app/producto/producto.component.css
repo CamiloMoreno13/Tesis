@@ -113,6 +113,8 @@ a{
     left: 5%;
     margin-top: 15px;
     z-index: 3;
+    width: 328px;
+    user-select: none;
 }
 
 .titular h4{

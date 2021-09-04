@@ -13,10 +13,18 @@
 </head>
 
 <body>
+  <div class="parent" *ngIf="mostrar">
+    <div class="titular">
+       <img id="shop" src="../../assets/Productos/logo_ishop.svg">
+    </div>
+     
+<!-- si se daña algo es esto :
+    <div class="espacio"> </div>
+-->
+</div>
+
   <app-menu *ngIf="mostrar"></app-menu>
-  <div class="titular">
-    <img id="shop" src="../../assets/Productos/logo_ishop.svg">
-  </div>
+  
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
     <!---------------------------------Elementos externos ------------------------>
@@ -69,12 +77,11 @@
    
     
     <!-- Titulos de los locutores -->
-    <!--material="side: double"-->
-    <a-plane material="color: red" position="2.93463 2.58451 -0.27046" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702">
-      
-    </a-plane>
-    
-    <a-plane id="banner_ishop" material="side: double" position="0.32695 1.53303 -5.79656" src="#marca" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -34.698324073122656 -0.265852416940702" 
+
+    <a-plane id="banner_caro" material="side: double" position="2.93463 2.58451 -0.27046" src="#carreta" material="alphaTest: 0.2;metalness:0.9" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
+    animation__spin="property: rotation; dur: 8000; loop: true; easing: easeInOutElastic; to: 0 269 0; elasticity:45"
+    (click)="locutor('caro')"></a-plane>
+    <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca"  material="roughness:0.1;transparent:true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -34.698324073122656 -0.265852416940702" 
     animation__scale="property: scale; dir: alternate; dur: 400;
     easing: easeInSine; loop: true; to:2.5 0.9 0.8"
     
@@ -99,6 +106,7 @@
     <!-- texto -->
     <a-text ></a-text>
   </a-scene>
+  
 </body>
 
 </html>
