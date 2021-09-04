@@ -17,3 +17,7 @@
     margin-top: 15px;
     z-index: 3;
 }
+
+#banner_caro {
+    background-color: red;
+}
