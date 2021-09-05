@@ -17,13 +17,8 @@
     <div class="titular">
        <img id="shop" src="../../assets/Productos/logo_ishop.svg">
     </div>
-     
-<!-- si se daña algo es esto :
-    <div class="espacio"> </div>
--->
-</div>
-
-  <app-menu *ngIf="mostrar"></app-menu>
+    <app-menu *ngIf="mostrar"></app-menu>
+  </div>
   
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse">
@@ -40,7 +35,7 @@
 
     </a-assets>
 
-    <a-plane id="caroc" position="1.06471 1.11973 0.21977" src="#img_caro"  transparent="true" scale="0.14064 0.21096 0.62393" rotation="0 -103.63202232090227 0" (click)=caroclick() ></a-plane>
+    <a-plane id="caroc" position="1 1.13 0.2" src="#img_caro"  transparent="true" scale="0.1 0.1 0.4" rotation="0 -103.63202232090227 0" (click)=caroclick() ></a-plane>
     
     <a-entity id="carovideo2" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
     material="shader: transparent-video; src: #v2; alphaTest: 0.5; side: front"

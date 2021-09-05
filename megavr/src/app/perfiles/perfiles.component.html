@@ -1,22 +1,23 @@
 <div class="contenedor">
     <app-menu ></app-menu>
-
-    <div class="video">
-        <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop playsinline></video>
-        <!--
-        <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop playsinline></video>
-        <video  [muted]="mute" autoplay="autoplay"  #videopls loop playsinline>
-            <source src="../../assets/Pruebas/puppets_with_alpha_hevc.mov" type='video/mp4; codecs="hvc1"'>
-            <source src="../../assets/Noticias/perfil_caro.webm" type="video/webm">
-            
-            <source src="../../assets/Pruebas/salida2.mov" type='video/mp4; codecs="hvc1"'>
-            <source src="../../assets/Noticias/perfil_caro.webm" type="video/webm">
-            
-            <source src="../../assets/Pruebas/caro.mp4" />
-            <source src="../../assets/Pruebas/presentacion.mov" />
-            <source src="../../assets/Pruebas/example.mov" />
-            <source src="../../assets/Noticias/perfil_caro.webm">
-        -->
+    <div class="contenido">
+        <div class="video">
+            <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop playsinline></video>
+            <!--
+            <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop playsinline></video>
+            <video  [muted]="mute" autoplay="autoplay"  #videopls loop playsinline>
+                <source src="../../assets/Pruebas/puppets_with_alpha_hevc.mov" type='video/mp4; codecs="hvc1"'>
+                <source src="../../assets/Noticias/perfil_caro.webm" type="video/webm">
+                
+                <source src="../../assets/Pruebas/salida2.mov" type='video/mp4; codecs="hvc1"'>
+                <source src="../../assets/Noticias/perfil_caro.webm" type="video/webm">
+                
+                <source src="../../assets/Pruebas/caro.mp4" />
+                <source src="../../assets/Pruebas/presentacion.mov" />
+                <source src="../../assets/Pruebas/example.mov" />
+                <source src="../../assets/Noticias/perfil_caro.webm">
+            -->
+        </div>
     </div>
     <div class="menu">
         <!--
@@ -30,8 +31,8 @@
         </div>
         -->
         <div class="item3" (click)="noticias()">
-            <h6 class="name"> Haz clic para ver la noticia</h6>
             <i class="fa fa-cube" ></i>
+            <h6 class="name"> Haz clic para ver la noticia</h6>
         </div>
       <!--
         <div class="item4">
@@ -45,24 +46,12 @@
         --> 
     </div>
     
-    <!--
-    <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
-        <img src="../../assets/Shared/exit.svg">
-
-    </div>
-    
-    <div class="plus" id="plus" #cerrar>
-        <a (click)="exit()">
-            <i class="fas fa-minus"></i>
-        </a>
-    </div>
-    -->
-    
     <div class="sonido">
 
         <i id="sound" class="fa fa-volume-off" (click)="mute()"  *ngIf="aviso" #videoi></i>
         <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
         <p *ngIf="aviso">activar sonido</p>
     </div>
+    <div class="espacio"> </div> <!-- no borrar-->
 </div>
 
