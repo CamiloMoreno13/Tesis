@@ -21,7 +21,9 @@
   </div>
   
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
-    cursor="rayOrigin:mouse">
+    cursor="rayOrigin:mouse"
+    animation-timeline__1="timeline: #myTimeline;loop:true"
+    >
     <!---------------------------------Elementos externos ------------------------>
     <a-assets timeout="5000">
       <audio id="bichota" src=""></audio>
@@ -73,13 +75,27 @@
     
     <!-- Titulos de los locutores -->
 
-    <a-plane id="banner_caro" material="side: double" position="2.93463 2.58451 -0.27046" src="#carreta" material="alphaTest: 0.2;metalness:0.9" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
-    animation__spin="property: rotation; dur: 8000; loop: true; easing: easeInOutElastic; to: 0 269 0; elasticity:45"
+    <a-timeline id="myTimeline">
+
+      <a-timeline-animation select="#banner_caro" name="a"></a-timeline-animation>
+      <a-timeline-animation select="#banner_caro" name="b"></a-timeline-animation>
+      <a-timeline-animation select="#banner_caro" name="c"></a-timeline-animation>
+      
+      
+      
+    </a-timeline>
+
+    <a-plane id="banner_caro" material="side: double" position="2.93463 2.58451 -0.27046" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
+    animation__a = "property: scale; dir: alternate; dur: 200;
+    easing: easeInSine;  to:3 0.9 0.8"
+    animation__b = "property: scale; dir: alternate; dur: 200;
+    easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6"
+     
+     animation__c = "property:scale; to : 2.3 0.7 0.6;dur:4000;"
     (click)="locutor('caro')"></a-plane>
     <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca"  material="roughness:0.1;transparent:true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -34.698324073122656 -0.265852416940702" 
     animation__scale="property: scale; dir: alternate; dur: 400;
-    easing: easeInSine; loop: true; to:2.5 0.9 0.8"
-    
+    easing: easeInSine; loop: true; to:2.5 0.9 0.8"    
     *ngIf="mostrar"
     (click)="product()"></a-plane>
   <!--  <a-plane id="ex4" position="-2.41 -78.6 -3.9" src="#img_caro" transparent="true" scale="1.6 2.4 1.4" rotation="0 0 0" *ngIf="mostrar"></a-plane> -->

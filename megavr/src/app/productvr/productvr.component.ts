@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import View3D from '@egjs/view3d/declaration/View3D';
+import {CargarScriptsService} from "./../cargar-scripts.service";
 
 @Component({
   selector: 'app-productvr',
@@ -10,7 +11,9 @@ export class ProductvrComponent implements OnInit {
 
   
 
-  constructor() { }
+  constructor(private _CargarScripts:CargarScriptsService) {
+    _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);
+   }
 
   ngOnInit(): void {
 

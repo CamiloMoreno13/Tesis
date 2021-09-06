@@ -2,6 +2,7 @@ import { createElementCssSelector } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AFrame } from 'aframe';
+import {CargarScriptsService} from "./../cargar-scripts.service";
 
 
 @Component({
@@ -11,6 +12,7 @@ import { AFrame } from 'aframe';
 })
 
 export class SpaceComponent implements OnInit {
+  
 
   @ViewChild('carovideo') carovideo!: HTMLElement;
   @ViewChild('videoId') videoid!: HTMLElement;
@@ -21,8 +23,11 @@ export class SpaceComponent implements OnInit {
   public imagen : boolean = false;
   public sonidoclick : boolean = false;
 
-  constructor(private router: Router) { }
-
+  
+  constructor(private _CargarScripts:CargarScriptsService,private router: Router) {
+    _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);
+   }
+  
   ngOnInit(): void {
 
     let caja = document.getElementById('caja');

@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core'; 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//Servicios
+import {CargarScriptsService} from "./cargar-scripts.service";
 //Componentes
 import { AppComponent } from './app.component';
 import { SpaceComponent } from './space/space.component';
@@ -45,7 +47,9 @@ import { AngularFireAuthModule} from '@angular/fire/auth'
     AngularFireAuthModule
 
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
