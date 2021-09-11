@@ -1,3 +1,4 @@
+<!--
 <div class="inicio">
     <input type="button" value="" class="logo" (click)="principal()" *ngIf="open">
 </div>
@@ -44,3 +45,31 @@
         <input type="button" value="" class="exit" (click)="exit()">
     </div>
 </div>
+-->
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide" style="background-color:rebeccapurple;" >Slide 2</div>
+      <div class="swiper-slide" style="background-color:orange;" >Slide 3</div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    
+    <!-- If we need navigation buttons -->
+    <!--
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    -->
+  
+    <!-- If we need scrollbar -->
+    <!--
+    <div class="swiper-scrollbar"></div>
+    -->
+  </div>
+  <link 
+  rel="stylesheet"
+  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>

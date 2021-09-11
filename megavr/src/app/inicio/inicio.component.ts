@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { transpileModule } from 'typescript';
 import { banner } from './banner';
+ import Swiper from 'swiper';
+ import 'swiper/css';
 
 @Component({
   selector: 'app-inicio',
@@ -30,7 +32,30 @@ export class InicioComponent implements OnInit {
     this.llenar();
     this.inicio();
     //console.log("tamaño window" , window.innerWidth);
-    //console.log("tamaño height" , window.innerHeight); 
+    //console.log("tamaño height" , window.innerHeight);
+
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      //direction: 'vertical',
+      loop: true,
+    
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    
+      // Navigation arrows
+      /*
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },*/
+    
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+    }); 
   }
   llenar() {
     this.informacion.push(new banner().createBanner("Bienvenida", "Hola te damos la bienvenida a la mega virtual"));
