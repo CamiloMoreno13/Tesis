@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { NgbButtonLabel } from '@ng-bootstrap/ng-bootstrap';
 import { FileLoader } from 'three';
 import { AuthService } from '../Services/Firebase/authentication/auth.service';
 import { FireService } from '../Services/Firebase/firestore/fire.service';
@@ -13,6 +14,7 @@ import { StorageService } from '../Services/Firebase/storage/storage.service';
 export class SharedComponent implements OnInit {
   public file!: FileList ; 
   public imagen : string = "";
+  public texto: string = "Pruebas";
   
 
   @ViewChild("valor" , {read: ElementRef}) valor!: ElementRef; 
@@ -24,10 +26,15 @@ export class SharedComponent implements OnInit {
     //this.fire.agregar();
   }
 
-  ngOnDestroy(): void{
+  p1(){
+    this.texto = "entro al evento"; 
+  }
+
+  prueba(){
     
   }
 
+  /*
   prueba(){
     this.file = this.valor.nativeElement.files;
     console.log("file 2", this.file); 
@@ -38,7 +45,7 @@ export class SharedComponent implements OnInit {
     this.real.createReal();
     //this.fire.createFire();
     /*this.file = this.valor.nativeElement.files; 
-    this.store.createStore(this.file);*/
+    this.store.createStore(this.file);
     //this.auth.create();
   }
 
@@ -48,19 +55,19 @@ export class SharedComponent implements OnInit {
     /*
     var valor  = this.store.readStore(); 
     console.log("imagen" , valor);
-    this.imagen = valor[0];*/
+    this.imagen = valor[0];
   }
   update(){
     //this.real.updateReal();
-    this.fire.updateFire();
+    //this.fire.updateFire();
     //this.file = this.valor.nativeElement.files;
     //this.store.updateStore(this.file);
   }
 
   delete(){
-    this.real.deleteReal();
+    //this.real.deleteReal();
     //this.fire.deleteFire();
     //this.store.deleteStore();
-  }
+  }*/
 
 }

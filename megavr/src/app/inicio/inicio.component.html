@@ -1,8 +1,4 @@
 <!--
-<div class="inicio">
-    <input type="button" value="" class="logo" (click)="principal()" *ngIf="open">
-</div>
-
 <div class="contenedor">
 
     <div class="contenido">
@@ -46,30 +42,130 @@
     </div>
 </div>
 -->
+<!-- Links para funcionamiento del swiper -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<!---->
+
+<div class="inicio">
+    <input type="button" value="" class="logo" (click)="logo()" *ngIf="open">
+</div>
+
 <div class="swiper">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
-      <!-- Slides -->
-      <div class="swiper-slide">Slide 1</div>
-      <div class="swiper-slide" style="background-color:rebeccapurple;" >Slide 2</div>
-      <div class="swiper-slide" style="background-color:orange;" >Slide 3</div>
+        <!-- Slides -->
+        <div class="swiper-slide slide">
+            <div class="slider1">
+                <div class="container-slide">
+                    <div class="slider">
+                        <h3 class="title">{{informacion[0].title}}</h3>
+                        <p class="subtitle">{{informacion[0].subtitle}}</p>
+                        <div class="indicadores">
+                            <ul>
+                                <button (click)="indicadores(0)"><li class="active" *ngIf="true"></li></button>
+                                <button (click)="indicadores(1)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(2)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(3)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(4)"><li class="active" *ngIf="false"></li></button>
+                            </ul>
+                            <input type="button" value="Saltar>" class="saltar" (click)="indicadores(4)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide slider">
+            <div class="slider2">
+                <div class="container-slide">
+                    <div class="slider">
+                        <div class="imagenes">
+                            <img class="ititle" src="../../assets/Onboarding/camera.png" alt="Icono de una camara">
+                            <img class="ititle" src="../../assets/Onboarding/virtual-reality.png"
+                            alt="Icono de ambiente de RV">
+                        </div>
+                        <p class="subtitle">{{informacion[1].subtitle}}</p>
+                        <div class="indicadores">
+                            <ul>
+                                <button (click)="indicadores(0)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(1)"><li class="active" *ngIf="true"></li></button>
+                                <button (click)="indicadores(2)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(3)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(4)"><li class="active" *ngIf="false"></li></button>
+                            </ul>
+                            <input type="button" value="Saltar>" class="saltar" (click)="indicadores(4)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide3">
+                <div class="container-slide">
+                    <div class="slider">
+                        <h3 class="title">{{informacion[2].title}}</h3>
+                        <p class="subtitle">{{informacion[2].subtitle}}</p>
+                        <div class="indicadores">
+                            <ul>
+                                <button (click)="indicadores(0)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(1)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(2)"><li class="active" *ngIf="true"></li></button>
+                                <button (click)="indicadores(3)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(4)"><li class="active" *ngIf="false"></li></button>
+                            </ul>
+                            <input type="button" value="Saltar>" class="saltar" (click)="indicadores(4)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide4">
+                <div class="container-slide">
+                    <div class="slider">
+                        <h3 class="title">{{informacion[3].title}}</h3>
+                        <p class="subtitle">{{informacion[3].subtitle}}</p>
+                        <div class="indicadores">
+                            <ul>
+                                <button (click)="indicadores(0)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(1)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(2)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(3)"><li class="active" *ngIf="true"></li></button>
+                                <button (click)="indicadores(4)"><li class="active" *ngIf="false"></li></button>
+                            </ul>
+                            <input type="button" value="Saltar>" class="saltar" (click)="indicadores(4)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="slide5">
+                <div class="container-slide">
+                    <div class="slider">
+                        <h3 class="title">{{informacion[4].title}}</h3>
+                        <p class="subtitle">{{informacion[4].subtitle}}</p>
+                        <div class="indicadores">
+                            <ul>
+                                <button (click)="indicadores(0)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(1)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(2)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(3)"><li class="active" *ngIf="false"></li></button>
+                                <button (click)="indicadores(4)"><li class="active" *ngIf="true"></li></button>
+                            </ul>
+                            <div class="home">
+                                <input type="button" value="" class="home-img" (click)="space()">
+                                <p>Inicio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
+    <input type="button" value="Siguiente" class="siguiente" (click)="next()">
+</div>
+<input type="button" value="" class="exit" (click)="exit()">
 
-    
-    <!-- If we need navigation buttons -->
-    <!--
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    -->
-  
-    <!-- If we need scrollbar -->
-    <!--
-    <div class="swiper-scrollbar"></div>
-    -->
-  </div>
-  <link 
-  rel="stylesheet"
-  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+

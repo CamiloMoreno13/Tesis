@@ -28,7 +28,7 @@
     "aframe-htmlembed-component": "^1.0.0",
     "aframe-transparent-video-shader": "^1.0.1",
     "aframe-watcher": "^1.4.0",
-    "bootstrap": "^4.5.0",
+    "bootstrap": "^5.1.1",
     "firebase": "^7.0 || ^8.0",
     "jquery": "^3.6.0",
     "rxjs": "~6.6.0",
