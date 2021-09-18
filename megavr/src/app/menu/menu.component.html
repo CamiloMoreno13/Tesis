@@ -1,16 +1,16 @@
-<div class="menu-inicio" *ngIf="inicio">
-    <div class="cerrar" id="cerrar" *ngIf="!bola"  #cerrar>
-        <a (click)="start()" >
-          <i class="far fa-times-circle"></i>
-        </a>
-      </div>
-      <div class="contenedor" *ngIf="inicio">
+<div class="parent">
+    <!--<div class="prueba"></div>-->
+    <!--<div class="efecto"> </div>-->
+
+    <!------------------- Menu de Inicio ------------------------>
+
+    <div class="menu-contenedor" *ngIf="inicio" >
         <div class="menu" (click)="pop()" #pls>
             <i class="fa fa-plus" *ngIf="equis"></i>
             <i class="fa fa-times" *ngIf="!equis"></i>
         </div>
         <div class="menu-items">
-            <div (click)="locutor('mateo')" class="item1" id="item1 " #item1>
+            <div (click)="locutor('mateo')" class="item1" id="item1" #item1>
                 <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
                 <a>
                     <i class="fa fa-ban"></i>
@@ -19,49 +19,53 @@
             <div (click)="locutor('caro')" class="item2" id="item2 " #item2>
                 <h1 class="name" *ngIf="bola">Caro Carreta</h1>
                 <a>
-                <i class="fa fa-user"></i>
+                    <i class="fa fa-user"></i>
                 </a>
             </div>
             <div (click)="locutor('shirry')" class="item3" id="item3 " #item3>
-                <h1 class="name" *ngIf="bola">El shirry</h1>
+                <h1 class="name" *ngIf="bola">El Shirry</h1>
                 <a>
-                <i class="fa fa-ban"></i>
+                    <i class="fa fa-ban"></i>
                 </a>
             </div>
             <div (click)="locutor('carlos')" class="item4" id="item4 " #item4>
                 <h1 class="name" *ngIf="bola">Carlos Mira</h1>
                 <a>
-                <i class="fa fa-ban"></i>
+                    <i class="fa fa-ban"></i>
                 </a>
             </div>
             <div (click)="locutor('dani')" class="item5" id="item5 " #item5>
                 <h1 class="name" *ngIf="bola">Dani Murcia</h1>
                 <a>
-                <i class="fa fa-ban"></i>
+                    <i class="fa fa-ban"></i>
                 </a>
             </div>
         </div>
-      </div>
-</div>
-<div class="perfiles" *ngIf="perfiles">
-    <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
-        <img src="../../assets/Shared/exit.svg">
+    </div>
+    <div class="cerrar-contenedor" *ngIf="inicio" >
+        <div class="cerrar" id="cerrar" *ngIf="!bola" (click)="start()" #cerrar>
+            <img src="../../assets/Shared/white_exit.svg">
+        </div>
     </div>
 
-    <div class="contenedor">
+    <!------------------- Menu de Perfiles ------------------------>
+
+    <div class="menu-contenedor" *ngIf="perfiles" >
         <div class="menu" id="menu" #cerrar>
             <a (click)="exit()">
                 <i class="fas fa-minus"></i>
             </a>
         </div>
     </div>
-</div>
-<div class="noticias" *ngIf="noticias">
-    <div class="cerrar" id="cerrar" (click)="exitNoticias()" #cerrar>
-        <img src="../../assets/Shared/exit.svg">
+    <div class="cerrar-contenedor" *ngIf="perfiles" >
+        <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
+            <img src="../../assets/Shared/exit.svg">
+        </div>
     </div>
 
-    <div class="contenedor">
+    <!------------------- Menu de Noticias ------------------------>
+
+    <div class="menu-contenedor" *ngIf="noticias" >
         <div class="menu" (click)="exitNoticias()" #pls>
             <i class="fas fa-minus"></i>
         </div>
@@ -100,19 +104,16 @@
             </div>
         </div>
         -->
-
-        
-
+    </div>
+    <div class="cerrar-contenedor" *ngIf="noticias" >
+        <div class="cerrar" id="cerrar" (click)="exitNoticias()" #cerrar>
+            <img src="../../assets/Shared/exit.svg">
+        </div>
     </div>
 
-</div>
-<div class="producto" *ngIf="producto">
-    <div class="cerrar" id="cerrar" *ngIf="!bola" #cerrar>
-        <a (click)="exit()">
-          <i class="far fa-times-circle"></i>
-        </a>
-    </div>
-    <div class="contenedor">
+    <!------------------- Menu de Producto ------------------------>
+
+    <div class="menu-contenedor" *ngIf="producto" >
         <div class="menu" (click)="pop()" #pls>
             <i class="fa fa-plus"></i>
         </div>
@@ -123,22 +124,22 @@
                 <a>
                     <i class="fa fa-ban"></i>
                 </a>
-                
-                
+
+
             </div>
             <div class="item2" id="item2 " #item2>
                 <h1 class="name" *ngIf="bola">Procesadores Ultrarapidos</h1>
                 <a>
-                   <i class="fa fa-ban"></i>
+                    <i class="fa fa-ban"></i>
                 </a>
             </div>
-            <div  class="item3" id="item3 " #item3>
+            <div class="item3" id="item3 " #item3>
                 <h1 class="name" *ngIf="bola">Graficos Avanzados</h1>
                 <a>
                     <i class="fa fa-ban"></i>
                 </a>
             </div>
-            <div  class="item4" id="item4 " #item4>
+            <div class="item4" id="item4 " #item4>
                 <h1 class="name" *ngIf="bola">Magic Keyboard</h1>
                 <a>
                     <i class="fa fa-ban"></i>
@@ -150,6 +151,11 @@
                     <i class="fa fa-ban"></i>
                 </a>
             </div>
+        </div>
+    </div>
+    <div class="cerrar-contenedor" *ngIf="producto" >
+        <div class="cerrar" id="cerrar" *ngIf="!bola" (click)="exit()" #cerrar>
+            <img src="../../assets/Shared/white_exit.svg">
         </div>
     </div>
 </div>

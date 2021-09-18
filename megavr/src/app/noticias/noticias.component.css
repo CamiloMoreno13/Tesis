@@ -1,150 +1,140 @@
 .contenedor {
-    display: grid;
-    grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 13% 56% 1% 30%;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    height: 100vh;
-} 
-    
-.contenido { 
-    grid-area: 2 / 2 / 3 / 3;
-    text-align: center;
+  display: grid;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: 13% 50% 17% 20%;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
-
-.video video{
-    width: 100%;
-    height: 60vh;
+.video {
+  grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.titularb{
-    grid-area:  4 / 2 / 5 / 3;
+.video video {
+  height: 90%;
 }
-
-.titular {  
-    grid-area: 1 / 2 / 2 / 3; 
-    margin-top: 15px;
+.informacion {
+  grid-area: 3 / 2 / 4 / 3;
 }
-
-.titular h4{
-    width: 159px;
-    height: 27px;
-    top: 39px;
-     /* 21 - Medium */
-    font-family: Montserrat;
-    font-style: normal;
-    font-size: 21px;
-    font-weight: 500;
-    /* or 133% */
-    line-height: 28px;
-    text-align: left;
-    /* Colors / Black 800 */
-    color: #474A57;
+.titular {
+  grid-area: 1 / 2 / 2 / 3;
 }
-
-.titular h3{
-    width: 327px;
-    position: static;
-    height: 40px;
-    left: 0px;
-    top: 0px;
-    font-family: "chivo";
-    font-style: italic;
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 40px;
-    text-align: left;
-    /* Inside Auto Layout */
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+.titular h4 {
+  width: 50%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #474a57;
+  text-align: left;
+  position: relative;
+  top: 20%;
+  left: 5%;
+  user-select: none;
 }
-
-.titularb h4{
-    position: static;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 17px;
-    line-height: 24px;
-    display: block;
+.titular h3 {
+  display: block;
+  width: 90%;
+  font-family: "chivo";
+  font-style: italic;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: left;
+  position: relative;
+  top: 16%;
+  left: 5%;
+  user-select: none;
 }
-
-.titularb h4{
-    position: static;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 450;
-    font-size: 17px;
-    line-height: 24px;
-    display: block;
+.informacion h4 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 27px;
+  line-height: 24px;
+  position: relative;
+  width: 80%;
+  top: 16%;
+  left: 15%;
+  user-select: none;
 }
-
-
-.titularb h3{
-    position: relative;
-    font-family: "montserrat";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    text-align: left;
-    color: #969BAB;
-    display: block;
+.informacion h3 {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 18px;
+  position: relative;
+  width: 80%;
+  top: 16%;
+  left: 15%;
+  user-select: none;
 }
-
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  top: 40%;
+  left: 5%;
+}
+.circle img {
+  height: 20px;
+  width: 20px;
+}
 .sonido {
-    grid-area:  1 / 1 / 2 / 2;
-    font-size: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-
 .sonido p {
-    font-size: 9px;
-    width: 50px;
-    text-align: center;
+  position: absolute;
+  font-size: 12px;
+  width: 50px;
+  text-align: center;
+  user-select: none;
+  top: 9%;
 }
-
-.espacio { 
-    grid-area: 3 / 2 / 4 / 3;
-}
-
-@media (min-width: 1024px) {
-    .titular h4{
-        font-size: 30px;
-    }
-    
-    .titular h3{
-        font-size: 50px;
-    }
-
-    .titularb h4 {  
-        font-size: 23px;
-    }
-
-    .titularb h3 {
-        font-size: 20px;
-    }
-}
-
 @media (max-width: 480px) {
-    .titularb h4 {
-        font-size: 20px;
-    }
-    .sonido {
-        font-size: 25px;
-    }
+  .titular h4 {
+    font-size: 18px;
+  }
+  .titular h3 {
+    font-size: 26px;
+  }
+  .informacion h4 {
+    font-size: 17px;
+  }
+  .informacion h3 {
+    font-size: 13px;
+  }
+  .sonido {
+    font-size: 25px;
+  }
+  .sonido p {
+    font-size: 9px;
+  }
 }
-
-@media (max-width: 375px) {
-    .video video{
-        width: 100%;
-        height: 55vh;
-    }
+@media (max-width: 550px) {
+  .informacion h4 {
+    top: 3%;
+    left: 25%;
+  }
+  .informacion h3 {
+    top: 3%;
+    left: 25%;
+  }
 }
-
-
-
-    

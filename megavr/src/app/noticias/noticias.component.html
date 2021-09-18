@@ -1,25 +1,23 @@
 <div class="contenedor">
-    <div class="contenido">
-        
-        <div class="video" >
-            <video src="../../assets/Noticias/noticias_caro.webm" [muted]="mute" autoplay="autoplay" #videopls loop playsinline></video>
-        </div>
-        
-    </div>
-    <app-menu ></app-menu>
-    <div class="titularb" *ngIf="true">
-        <i class="fa fa-cube"> <h4>Las Toxihistorias</h4> </i>
-        <h3>Relaciones quebradas</h3>
-    </div>
     <div class="titular">
         <h4>Nota</h4>
-        <h3>Toxihistoria</h3>
+        <h3>Tema de opinión</h3>
+    </div>
+    <div class="video">
+        <video src="../../assets/Noticias/noticias_caro.webm" [muted]="mute" autoplay="autoplay" #videopls loop
+            playsinline></video>
+    </div>
+    <div class="informacion" *ngIf="true">
+        <div class="circle">
+            <img src="../../assets/Shared/icon_world.svg">
+        </div>
+        <h4>Las Toxihistorias</h4>
+        <h3>Relaciones quebradas</h3>
     </div>
     <div class="sonido">
-        <i id="sound" class="fa fa-volume-off" (click)="mute()"  *ngIf="aviso" #videoi></i>
+        <i id="sound" class="fa fa-volume-off" (click)="mute()" *ngIf="aviso" #videoi></i>
         <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
         <p *ngIf="aviso">activar sonido</p>
     </div>
-
-    <div class="espacio"> </div> <!-- no borrar-->
 </div>
+<app-menu></app-menu>

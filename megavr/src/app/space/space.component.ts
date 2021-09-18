@@ -17,7 +17,7 @@ export class SpaceComponent implements OnInit {
   @ViewChild('carovideo') carovideo!: HTMLElement;
   @ViewChild('videoId') videoid!: HTMLElement;
 
-  public mostrar: boolean = false;
+  //public mostrar: boolean = false;
   public playsonido: boolean = false;
   public primercaro: boolean = true; // temporary
   public imagen : boolean = false;
@@ -61,7 +61,7 @@ export class SpaceComponent implements OnInit {
     if (entity != null) {
       console.log("enity", entity);
     }
-    document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); }) /* This is the key*/
+    /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
   }
 
 
