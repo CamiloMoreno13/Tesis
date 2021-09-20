@@ -82,6 +82,7 @@ export class ProductoComponent implements OnInit {
     window.open('https://www.vectary.com/viewer-ar/v1/?model=07041aab-469e-42a5-932b-9d9cdbb09dbd&allowScaling=', '_blank');
   }
 
+  /*
   cameraMove() {
     if (this.movimiento == false) {
       let cam = document.getElementById('camera-container');
@@ -112,6 +113,7 @@ export class ProductoComponent implements OnInit {
     }
 
   }
+  */
 
 
 }

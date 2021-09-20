@@ -1,346 +1,138 @@
-
-
-
-/* .contenedor{
-    width: 100%;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 50% 10% 20% 20%; 
-    user-select: none;
-}
-.inicio .logo{
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../assets/Onboarding/mega.jpg);
-    background-position: center;
-    background-size: cover;
-    border: none;
-    position: fixed;
-    z-index: 1;
-}
-.contenido{
-    grid-column: 2/3;
-    grid-row: 2/3;
-    align-self: end;
-    justify-self: center;
-    position: relative;
-    bottom: 20%;
-    text-align: center;
-}
-.texto h3{
-    font-size: 2.5rem;
-}
-.texto p{
-    font-size: 1.2rem;
-}
-.indicadores{
-    grid-column: 2/3;
-    grid-row: 3/4;
-    place-self: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-}
-.indicadores ul{
-    list-style: none;
-    display: flex;
-    place-self: center;
-}
-.indicadores ul button{
-    width: 22px;
-    height:22px;
-    border: 1px solid black;
-    border-radius: 50px;
-    margin: 5px;
-}
-.indicadores ul button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.indicadores ul button .active{
-    width: 14px;
-    height: 14px;
-    background-color:black;
-    border-radius: 40px;
-}
-.derecho{
-    grid-column: 3/4;
-    grid-row: 4/5;
-    align-self: end;
-    justify-self: end;
-}
-.next{
-    width: 46px;
-    height: 46px;
-    background-image: url(../../assets/Onboarding/next.svg);
-    background-color: white;
-    border: none;
-    margin: 10px;
-    background-position: center;
-    background-size: cover;
-}
-.izquierdo{
-    grid-column: 1/2;
-    grid-row: 4/5;
-    align-self: end;
-    justify-self: start;
-}
-
-.back{
-    width: 46px;
-    height: 46px;
-    background-color: white;
-    background-image: url(../../assets/Onboarding/back.svg);
-    border: none;
-    background-position: center;
-    background-size: cover;
-    margin: 10px;
-}
-
-
-.derecho2{
-    grid-column: 2/3;
-    grid-row: 4/4;
-    align-self: end;
-    justify-self: center;
-}
-.siguiente{
-    width: 131px;
-    height: 33px;
-    background-image: url(../../assets/Onboarding/btn_siguiente.svg);
-    background-color: white;
-    border: none;
-    margin: 10px;
-    background-position: center;
-    background-size: cover;
-}
-
-.cerrar{
-    grid-column: 3/4;
-    grid-row: 1/2;
-    align-self: start;
-    justify-self: end;
-}
-
-.exit{
-    width: 60px;
-    height: 60px;
-    background-color: white;
-    background-image: url(../../assets/Shared/exit.svg);
-    border: none;
-    background-position: center;
-    background-size: cover;
-    margin: 10px;
-}
-.title{
-    font-family: "chivo";
-    font-weight: bold;
-    font-style: italic;
-}
-
-.subtitle{
-    font-family: "roboto";
-}
-
-i{
-    width: 100px;
-    height: 100px;
-}
-img{
-    width: 50px;
-    height: 50px;
-}
-
-.ititle{
-    width: 150px;
-    height: 150px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-button{
-    background-color: white;
-}
-.home{
-    position: relative;
-    top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
-    width: 70px;
-    height: 70px;
-}
-
-.home button{
-    border: none; 
-}
-.saltar{
-    border: none;
+.inicio .logo {
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/Onboarding/mega.jpg);
+  background-position: center;
+  background-size: cover;
+  border: none;
+  position: fixed;
+  z-index: 3;
 }
 
 .swiper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height:100vh;
-    margin: 0px;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  text-align: center;
+}
+.container-slide {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+}
+.slider {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  place-self: center;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+p {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.imagenes {
+  display: flex;
+  align-items: center;
+}
+.ititle {
+  width: 150px;
+  height: 150px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.indicadores {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.indicadores ul {
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  right: 10px;
+}
+.indicadores ul button {
+  width: 22px;
+  height: 22px;
+  border: 1px solid black;
+  border-radius: 50px;
+  margin: 5px;
+}
+.indicadores ul button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.indicadores ul button .active {
+  width: 14px;
+  height: 14px;
+  background-color: black;
+  border-radius: 40px;
+}
+
+.saltar {
+  text-align: center;
+  border: none;
+}
+button {
+  background-color: white;
+}
+.home {
+  width: 100%;
+  text-align: center;
+}
+.home-img {
+  width: 100px;
+  height: 100px;
+  background-image: url(../../assets/Onboarding/home128.png);
+  background-position: center;
+  background-size: cover;
+  border: none;
+}
+
+.exit {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+
+  background-color: white;
+  background-image: url(../../assets/Shared/exit.svg);
+  border: none;
+  background-position: center;
+  background-size: cover;
+}
+
+.siguiente {
+  width: 100px;
+  height: 30px;
+  position: relative;
+  bottom: 50px;
+  z-index: 1;
 }
 
 @media (max-width: 480px) {
-    .contenido{
-        grid-column: 1/4;
-        margin-right: 10px;
-        margin-left: 10px;
-    }
-    .ititle{
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-  } */
-.inicio .logo{
-    width: 100%;
-    height: 100vh;
-    background-image: url(../../assets/Onboarding/mega.jpg);
-    background-position: center;
-    background-size: cover;
-    border: none;
-    position: fixed;
-    z-index: 3;
-}
-
-.swiper{
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    text-align: center;
-}
-.container-slide{
-    width: 100%;
-    height: 100vh;
-    display: grid;
-}
-.slider{
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    place-self: center;
-}
-
-h3{
-    font-size: 2.5rem;
-}
-p{
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-.imagenes{
-    display: flex;
-    align-items: center;
-}
-.ititle{
-    width: 150px;
-    height: 150px;
-    margin-left: 40px;
-    margin-right: 40px;
-}
-.indicadores{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.indicadores ul{
-    position: relative;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    right: 10px;
-    
-}
-.indicadores ul button{
-    width: 22px;
-    height:22px;
-    border: 1px solid black;
-    border-radius: 50px;
-    margin: 5px;
-}
-.indicadores ul button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.indicadores ul button .active{
-    width: 14px;
-    height: 14px;
-    background-color:black;
-    border-radius: 40px;
-}
-
-.saltar{text-align: center;
-    border: none;
-}
-button{
-    background-color: white;
-}
-.home{
-    width: 100%;
-    text-align: center;
-}
-.home-img{
-    width: 100px;
-    height: 100px;
-    background-image: url(../../assets/Onboarding/home128.png);
-    background-position: center;
-    background-size: cover;
-    border: none;
-}
-
-.exit{
-
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 1;
-
-    background-color: white;
-    background-image: url(../../assets/Shared/exit.svg);
-    border: none;
-    background-position: center;
-    background-size: cover;
-}
-
-.siguiente{
-    width: 100px;
-    height: 30px;
-    position: relative;
-    bottom: 50px;
-    z-index: 1;
-}
-
-@media (max-width: 480px) {
-    .ititle{
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .home-img{
-        width: 80px;
-        height: 80px;
-    }
+  .ititle {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
+  .home-img {
+    width: 80px;
+    height: 80px;
+  }
+}

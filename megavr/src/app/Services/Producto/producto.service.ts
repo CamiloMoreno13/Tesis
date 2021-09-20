@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { RealService } from '../Firebase/realtime/real.service';
 
 @Injectable({
   providedIn: 'root'
