@@ -2,15 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core'; 
 import { AppRoutingModule } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+//Servicios
+import {CargarScriptsService} from "./cargar-scripts.service";
+//Componentes
 import { AppComponent } from './app.component';
 import { SpaceComponent } from './space/space.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { InicioComponent } from './inicio/inicio.component';
 import { MenuComponent } from './menu/menu.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ProductoComponent } from './producto/producto.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { SharedComponent } from './shared/shared.component';
+import { ProductvrComponent } from './productvr/productvr.component';
+
+//Firebase
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule} from '@angular/fire/auth'
 
 @NgModule({
   declarations: [
@@ -21,14 +33,23 @@ import { SharedComponent } from './shared/shared.component';
     PerfilesComponent,
     ProductoComponent,
     NoticiasComponent,
-    SharedComponent
+    SharedComponent,
+    ProductvrComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule, //Realtime
+    AngularFirestoreModule, //Firestore
+    AngularFireStorageModule, //Storage
+    AngularFireAuthModule
+
   ],
-  providers: [],
+  providers: [
+    CargarScriptsService
+  ],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
