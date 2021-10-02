@@ -9,7 +9,8 @@ declare var gtag: (arg0: string, arg1: any, arg2: { page_path: string; }) => voi
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  title: 'megavr' | undefined;
+  
   constructor(public router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
