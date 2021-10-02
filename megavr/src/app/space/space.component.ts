@@ -2,6 +2,7 @@ import { createElementCssSelector } from '@angular/compiler';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { AFrame } from 'aframe';
+import { SpaceService } from '../Services/Space/space.service';
 import {CargarScriptsService} from "./../cargar-scripts.service";
 
 
@@ -24,7 +25,7 @@ export class SpaceComponent implements OnInit {
   public sonidoclick : boolean = false;
 
   
-  constructor(private _CargarScripts:CargarScriptsService,private router: Router) {
+  constructor(private _CargarScripts:CargarScriptsService,private router: Router, private spaceService: SpaceService) {
     _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);
    }
   
@@ -127,10 +128,12 @@ export class SpaceComponent implements OnInit {
   }
 
   locutor(cadena: string) {
+    this.spaceService.clic(cadena);
     this.router.navigate(['/perfiles', cadena]);
   }
 
-  product() {
+  product(cadena: string) {
+    this.spaceService.clic(cadena);
     this.router.navigate(['/producto'])
   }
 

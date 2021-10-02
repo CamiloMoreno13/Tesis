@@ -22,7 +22,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule} from '@angular/fire/auth'
+import { AngularFireAuthModule} from '@angular/fire/auth';
+import { AdministracionComponent } from './administracion/administracion.component';
+import { EstadisticaComponent } from './estadistica/estadistica.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { AngularFireAuthModule} from '@angular/fire/auth'
     ProductoComponent,
     NoticiasComponent,
     SharedComponent,
-    ProductvrComponent
+    ProductvrComponent,
+    AdministracionComponent,
+    EstadisticaComponent
   ],
   imports: [
     BrowserModule,
