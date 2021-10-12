@@ -29,33 +29,27 @@ export class SharedComponent implements OnInit {
   p1(){
     this.texto = "entro al evento"; 
   }
-
-  prueba(){
-    
-  }
-
-  /*
+  
   prueba(){
     this.file = this.valor.nativeElement.files;
-    console.log("file 2", this.file); 
+    console.log("file 2", this.file,this.file[0]); 
     //this.store.img(this.file);
   }
 
   create(){
-    this.real.createReal();
+    //this.real.createReal();
     //this.fire.createFire();
-    /*this.file = this.valor.nativeElement.files; 
-    this.store.createStore(this.file);
+    this.file = this.valor.nativeElement.files; 
+    //this.store.createStore(this.file);
     //this.auth.create();
   }
 
   read(){
-    this.real.readReal();
+    //this.real.readReal();
     //this.fire.readFire();
-    /*
     var valor  = this.store.readStore(); 
-    console.log("imagen" , valor);
-    this.imagen = valor[0];
+    //console.log("imagen" , valor);
+    //this.imagen = valor[0];
   }
   update(){
     //this.real.updateReal();
@@ -68,6 +62,5 @@ export class SharedComponent implements OnInit {
     //this.real.deleteReal();
     //this.fire.deleteFire();
     //this.store.deleteStore();
-  }*/
-
+  }
 }

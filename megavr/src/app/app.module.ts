@@ -24,7 +24,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { AdministracionComponent } from './administracion/administracion.component';
-import { EstadisticaComponent } from './estadistica/estadistica.component'
+import { EstadisticaComponent } from './estadistica/estadistica.component';
+import { SpaceAdminComponent } from './administracion/space-admin/space-admin.component';
+import { PerfilAdminComponent } from './administracion/perfil-admin/perfil-admin.component';
+import { NoticiaAdminComponent } from './administracion/noticia-admin/noticia-admin.component';
+import { ProductoAdminComponent } from './administracion/producto-admin/producto-admin.component';
+import { OnboardingAdminComponent } from './administracion/onboarding-admin/onboarding-admin.component'
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { EstadisticaComponent } from './estadistica/estadistica.component'
     SharedComponent,
     ProductvrComponent,
     AdministracionComponent,
-    EstadisticaComponent
+    EstadisticaComponent,
+    SpaceAdminComponent,
+    PerfilAdminComponent,
+    NoticiaAdminComponent,
+    ProductoAdminComponent,
+    OnboardingAdminComponent
   ],
   imports: [
     BrowserModule,

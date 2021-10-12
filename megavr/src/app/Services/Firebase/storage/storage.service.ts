@@ -19,6 +19,7 @@ export class StorageService {
 
   readStore(){// option 1 getValue list 
     var valor = this.storage.storage.ref('OnBoarding').listAll();
+    console.log(valor); 
     console.log("lsta" , valor.then(res => {
       var valor = res.items[2];
       console.log("name" , valor.name);
@@ -28,7 +29,7 @@ export class StorageService {
         this.imagen.push(res1);
       }));
     }));
-    return this.imagen;
+    //return this.imagen;
   }
 
   updateStore(file: FileList){

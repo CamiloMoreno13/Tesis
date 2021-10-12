@@ -7,18 +7,25 @@ import { SpaceComponent } from './space/space.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { ProductvrComponent } from './productvr/productvr.component';
 import { SharedComponent } from './shared/shared.component';
+import { OnboardingAdminComponent } from './administracion/onboarding-admin/onboarding-admin.component';
+import { SpaceAdminComponent } from './administracion/space-admin/space-admin.component';
 
-const routes: Routes = [{ path: 'space', component: SpaceComponent },
-{ path: 'inicio', component: InicioComponent },
-{ path: '', redirectTo: '/inicio', pathMatch: 'full' }, 
-{ path: 'perfiles/:id', component: PerfilesComponent },
-{ path: 'noticias', component: NoticiasComponent },  
-{ path: 'producto', component: ProductoComponent },
-{ path: 'productvr', component: ProductvrComponent },
-{ path: 'pruebas', component: SharedComponent} ];
+const routes: Routes = [
+  
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'space', component: SpaceComponent },
+  { path: 'inicio', component: InicioComponent },
+  { path: 'perfiles/:id', component: PerfilesComponent },
+  { path: 'noticias', component: NoticiasComponent },
+  { path: 'producto', component: ProductoComponent },
+  { path: 'productvr', component: ProductvrComponent },
+  { path: 'pruebas', component: SharedComponent },
+  { path: 'onboarding-admin', component: OnboardingAdminComponent },
+  { path: 'space-admin', component: SpaceAdminComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

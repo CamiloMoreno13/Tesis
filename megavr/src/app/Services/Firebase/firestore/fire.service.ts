@@ -16,20 +16,27 @@ export class FireService {
     
   }
 
-  createFire() {
-    //no se crea si no es llave valor 
-    this.fire.collection('prueba').doc('1').set({name: "valor"});
-    this.fire.collection('nuevo').add({prueba: "valor"});
-    this.fire.collection('nuevo2').doc('personas').set({nuevo2: "valor2"})
+  async llenarInformacion(){
+    var respuesta = await this.fire.collection('onboarding').get();
+    return respuesta;
+  }
+
+  createFire(collection : string, dato : any) {
+    var nroSlider;
+    this.fire.collection('onboarding').get().subscribe(res => {
+      nroSlider = res.docs.length+1;
+      this.fire.collection(collection).doc(""+nroSlider).set(dato);
+    });
   }
 
   readFire() {
+    
+    /*
     var valor = this.fire.collection('prueba').doc('1').ref.get().then(res => {
-      console.log(res.data());
-      console.log(res.id);
-      console.log(res.ref);
-      console.log(res.metadata);
-    });
+      console.log("data" , res.data());
+      console.log("id" , res.id);
+      console.log("ref" , res.ref);
+    });*/
   }
 
   updateFire() {

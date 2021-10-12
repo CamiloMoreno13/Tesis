@@ -1,0 +1,40 @@
+<app-administracion></app-administracion>
+<div class="contenedor">
+    <div class="row">
+        <div class="col-2">
+            <h3>Titulo</h3>
+            <input type="text" name="" id="titulo" placeholder="Titulo">
+            <h3>Subtitulo</h3>
+            <input type="text" name="" id="sub" placeholder="Subtitulo">
+            <br>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" type="button" (click)="prueba()">Update</button>
+                </div>
+                <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon" ngModel="slider" >
+                  <option selected>Elegir slider</option>
+                  <option value="{{slider}}" *ngFor="let opt of informacion; let slider = index">slide {{slider}}</option>
+                </select>
+              </div>
+        </div>
+        <div class="col-9">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-1">Indice</th>
+                        <th class="col-1">Titulo</th>
+                        <th class="col-1">Subtitulo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let slide of informacion; let valor = index;">
+                        <td>{{valor}}</td>
+                        <td>{{slide.title}}</td>
+                        <td>{{slide.subtitle}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
