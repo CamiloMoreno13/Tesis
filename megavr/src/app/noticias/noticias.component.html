@@ -1,7 +1,7 @@
 <div class="contenedor">
     <div class="titular">
         <h4>Nota</h4>
-        <h3>Tema de opinión</h3>
+        <h3>{{titular}}</h3>
     </div>
     <div class="video">
         <video src="../../assets/Noticias/noticias_caro.webm" [muted]="mute" autoplay="autoplay" #videopls loop
@@ -11,8 +11,8 @@
         <div class="circle">
             <img src="../../assets/Shared/icon_world.svg">
         </div>
-        <h4>Las Toxihistorias</h4>
-        <h3>Relaciones quebradas</h3>
+        <h4>{{informacion_h4}}</h4>
+        <h3>{{informacion_h3}}</h3>
     </div>
     <div class="sonido">
         <i id="sound" class="fa fa-volume-off" (click)="mute()" *ngIf="aviso" #videoi></i>

@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'space', component: SpaceComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'perfiles/:id', component: PerfilesComponent },
-  { path: 'noticias', component: NoticiasComponent },
+  { path: 'perfiles/:id_locutor/noticias/:id', component: NoticiasComponent },
   { path: 'producto', component: ProductoComponent },
   { path: 'productvr', component: ProductvrComponent },
   { path: 'pruebas', component: SharedComponent },

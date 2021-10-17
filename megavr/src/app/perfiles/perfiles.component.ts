@@ -13,11 +13,34 @@ export class PerfilesComponent implements OnInit {
   //volume : boolean = true;
   public parametro: string | null = "";
   public aviso: boolean = true;
+  public perfil_caro : boolean = false;
+  public perfil_mateo : boolean = false;
+  public perfil_shirry : boolean = false;
+  public perfil_carlos : boolean = false;
+  public perfil_dani : boolean = false;
+
   constructor(private renderer2: Renderer2, private routes: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.parametro = this.routes.snapshot.paramMap.get('id');
     console.log(this.parametro);
+    switch (this.parametro){
+      case 'caro':
+        this.perfil_caro = true;
+        break;
+      case 'mateo':
+        this.perfil_mateo = true;
+        break;
+      case 'shirry':
+        this.perfil_shirry = true;
+        break;
+      case 'carlos':
+        this.perfil_carlos = true;
+        break;
+      case 'dani':
+        this.perfil_dani = true;
+        break;
+    }
   }
   exit() {
     this.router.navigate(['/space']);
@@ -36,10 +59,8 @@ export class PerfilesComponent implements OnInit {
     }
   }
 
-  noticias() {
-
-    this.router.navigate(['/noticias']);
-
+  noticias(cadena:string) {
+    this.router.navigate(['/perfiles/'+this.parametro+'/noticias',cadena]);
   }
 
 }

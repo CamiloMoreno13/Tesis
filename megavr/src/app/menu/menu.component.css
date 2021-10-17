@@ -7,15 +7,12 @@
   height: 100vh;
   background-color: white;
 }
-/*
 .prueba {
-  grid-area: 4 / 2 / 5 / 3;
-  height: 100%;
-  width: 100%;
-  background-color: brown;
-  z-index: 5;
+  grid-area: 1 / 1 / 4 / 4;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
-*/
 .menu-contenedor {
   grid-area: 3 / 2 / 4 / 3;
   height: 100%;
@@ -26,19 +23,24 @@
   flex-direction: column;
 }
 .menu {
-  height: 50px;
-  width: 50px;
-  background-color: rgba(0, 0, 0, 1);
+  height: 70px;
+  width: 70px;
+  z-index: 3;
   color: white;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   font-size: 35px;
-  z-index: 3;
   border: 2px solid white;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+.menu img {
+  height: 35px;
+  width: 35px;
+  user-select: none;
 }
 .menu-items {
   height: 40px;
@@ -59,16 +61,38 @@
   align-items: center;
   flex-direction: column;
 }
+.menu-producto {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+}
+.menu-producto > div{
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 .name {
   font-size: 15px;
   color: white;
-  top: -40px;
+  top: -33px;
   position: absolute;
+  font-family: "chivo";
+  font-style: italic;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
+  user-select: none;
 }
 a {
   position: absolute;
@@ -104,6 +128,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  user-select: none;
 }
 .cerrar img {
   height: 50px;
@@ -146,3 +171,22 @@ a {
     filter: blur(500px);
     -webkit-filter: blur(8px);
 }*/
+
+/* Seccion Pruebas */
+.item1{
+  left: -140px;
+}
+.item2{
+  left: -75px;
+  top: -50px;
+}
+.item3{
+  top: -90px;
+}
+.item4{
+  left: 75px;
+  top: -50px;
+}
+.item5{
+  left: 140px;
+}

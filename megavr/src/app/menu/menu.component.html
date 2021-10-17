@@ -1,45 +1,32 @@
 <div class="parent">
-    <!--<div class="prueba"></div>-->
-    <!--<div class="efecto"> </div>-->
-
-    <!------------------- Menu de Inicio ------------------------>
-
+    <div class="prueba" (click)="pop()" *ngIf="bola"></div>
+    <!------------------- Menu de Cabina ------------------------>
     <div class="menu-contenedor" *ngIf="inicio" >
         <div class="menu" (click)="pop()" #pls>
-            <i class="fa fa-plus" *ngIf="equis"></i>
-            <i class="fa fa-times" *ngIf="!equis"></i>
+            <img src="../../assets/Shared/menu.svg" *ngIf="equis">
+            <img src="../../assets/Shared/menu_abre.svg" *ngIf="!equis">
         </div>
         <div class="menu-items">
-            <div (click)="locutor('mateo')" class="item1" id="item1" #item1>
-                <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
+            <div (click)="locutor('mateo')" *ngIf="bola" class="item1" id="item1" #item1 >
+                <h1 class="name" >Mateo Ramirez</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('caro')" class="item2" id="item2 " #item2>
-                <h1 class="name" *ngIf="bola">Caro Carreta</h1>
-                <a>
-                    <i class="fa fa-user"></i>
-                </a>
+            <div (click)="locutor('caro')" *ngIf="bola" class="item2" id="item2 " #item2 >
+                <h1 class="name" >Caro Carreta</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('shirry')" class="item3" id="item3 " #item3>
-                <h1 class="name" *ngIf="bola">El Shirry</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
+            <div (click)="locutor('shirry')" *ngIf="bola" class="item3" id="item3 " #item3 >
+                <h1 class="name" >El Shirry</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('carlos')" class="item4" id="item4 " #item4>
-                <h1 class="name" *ngIf="bola">Carlos Mira</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
+            <div (click)="locutor('carlos')" *ngIf="bola" class="item4" id="item4 " #item4 >
+                <h1 class="name" >Carlos Mira</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('dani')" class="item5" id="item5 " #item5>
-                <h1 class="name" *ngIf="bola">Dani Murcia</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
-            </div>
+            <div (click)="locutor('dani')" *ngIf="bola" class="item5" id="item5 " #item5 >
+                <h1 class="name" >Dani Murcia</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>            
         </div>
     </div>
     <div class="cerrar-contenedor" *ngIf="inicio" >
@@ -51,63 +38,69 @@
     <!------------------- Menu de Perfiles ------------------------>
 
     <div class="menu-contenedor" *ngIf="perfiles" >
-        <div class="menu" id="menu" #cerrar>
-            <a (click)="exit()">
-                <i class="fas fa-minus"></i>
-            </a>
+        <div class="menu" id="menu" #cerrar (click)="exit()">
+            <img src="../../assets/Shared/icon_rest.svg">
         </div>
     </div>
     <div class="cerrar-contenedor" *ngIf="perfiles" >
         <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
-            <img src="../../assets/Shared/exit.svg">
+            <img src="../../assets/Shared/btn_Cerrar.svg">
         </div>
     </div>
 
     <!------------------- Menu de Noticias ------------------------>
 
     <div class="menu-contenedor" *ngIf="noticias" >
-        <div class="menu" (click)="exitNoticias()" #pls>
-            <i class="fas fa-minus"></i>
+        <div class="menu" (click)="pop()" #pls>
+            <img src="../../assets/Shared/menu.svg" *ngIf="equis">
+            <img src="../../assets/Shared/menu_abre.svg" *ngIf="!equis">
         </div>
-        <!--
-        <div class="menu-items">
-            <div (click)="locutor('mateo')" class="item1" id="item1 " #item1 *ngIf="false">
-                <h1 class="name" *ngIf="bola">Mateo Ramirez</h1>
-                <a>
-                    <i class="fa fa-user"></i>
-                </a>
+        <div class="menu-items" *ngIf="menu_5_items">
+            <div (click)="locutor('mateo')" *ngIf="bola" class="item1" id="item1" #item1 >
+                <h1 class="name" >{{item_names[0]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('caro')" class="item2" id="item2 " #item2 *ngIf="false">
-                <h1 class="name" *ngIf="bola">Caro Carreta</h1>
-                <a>
-                    <i class="fa fa-user"></i>
-                </a>
+            <div (click)="locutor('caro')" *ngIf="bola" class="item2" id="item2 " #item2 >
+                <h1 class="name" >{{item_names[1]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div class="item3" id="item3 " #item3 *ngIf="false">
-
-                <h1 class="name" *ngIf="bola">Tema de la semana</h1>
-                <a>
-                    <i class="fa fa-cube"></i>
-                </a>
+            <div (click)="locutor('shirry')" *ngIf="bola" class="item3" id="item3 " #item3 >
+                <h1 class="name" >{{item_names[2]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('carlos')" class="item4" id="item4 " #item4 *ngIf="false">
-                <h1 class="name" *ngIf="bola">Carlos Mira</h1>
-                <a>
-                    <i class="fa fa-user"></i>
-                </a>
+            <div (click)="locutor('carlos')" *ngIf="bola" class="item4" id="item4 " #item4 >
+                <h1 class="name" >{{item_names[3]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
             </div>
-            <div (click)="locutor('dani')" class="item5" id="item5 " #item5 *ngIf="false">
-                <h1 class="name" *ngIf="bola">Dani Murcia</h1>
-                <a>
-                    <i class="fa fa-user"></i>
-                </a>
-            </div>
+            <div (click)="locutor('dani')" *ngIf="bola" class="item5" id="item5 " #item5 >
+                <h1 class="name" >{{item_names[4]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>            
         </div>
-        -->
+        <div class="menu-items" *ngIf="menu_3_items">
+            <div (click)="locutor('caro')" *ngIf="bola" class="item2" id="item2 " #item2 >
+                <h1 class="name" >{{item_names[0]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>
+            <div (click)="locutor('shirry')" *ngIf="bola" class="item3" id="item3 " #item3 >
+                <h1 class="name" >{{item_names[1]}}</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>
+            <div (click)="locutor('carlos')" *ngIf="bola" class="item4" id="item4 " #item4 >
+                <h1 class="name" >Carlos Mira</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>          
+        </div>
+        <div class="menu-items" *ngIf="menu_1_items">
+            <div (click)="locutor('shirry')" *ngIf="bola" class="item3" id="item3 " #item3 >
+                <h1 class="name" >El Shirry</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>            
+        </div>
     </div>
     <div class="cerrar-contenedor" *ngIf="noticias" >
         <div class="cerrar" id="cerrar" (click)="exitNoticias()" #cerrar>
-            <img src="../../assets/Shared/exit.svg">
+            <img src="../../assets/Shared/btn_Cerrar.svg">
         </div>
     </div>
 
@@ -115,42 +108,30 @@
 
     <div class="menu-contenedor" *ngIf="producto" >
         <div class="menu" (click)="pop()" #pls>
-            <i class="fa fa-plus"></i>
+            <img src="../../assets/Shared/menu.svg" *ngIf="equis">
+            <img src="../../assets/Shared/menu_abre.svg" *ngIf="!equis">
         </div>
-
-        <div class="menu-items">
-            <div class="item1" id="item1 " #item1>
-                <h1 class="name" *ngIf="bola">Pantalla Retina</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
-
-
+        <div class="menu-producto">
+            <div *ngIf="bola" class="item1" id="item1" #item1 >
+                <h1 class="name" >Pantalla Retina</h1>
+                <img src="../../assets/Productos/eye.svg"  >
             </div>
-            <div class="item2" id="item2 " #item2>
-                <h1 class="name" *ngIf="bola">Procesadores Ultrarapidos</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
+            <div *ngIf="bola" class="item2" id="item2 " #item2 >
+                <h1 class="name" >Procesadores Ultrarapidos</h1>
+                <img src="../../assets/Productos/chip.svg"  >
             </div>
-            <div class="item3" id="item3 " #item3>
-                <h1 class="name" *ngIf="bola">Graficos Avanzados</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
+            <div *ngIf="bola" class="item3" id="item3 " #item3 >
+                <h1 class="name" >Graficos Avanzados</h1>
+                <img src="../../assets/Productos/graficos.svg"  >
             </div>
-            <div class="item4" id="item4 " #item4>
-                <h1 class="name" *ngIf="bola">Magic Keyboard</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
+            <div *ngIf="bola" class="item4" id="item4 " #item4 >
+                <h1 class="name" >Magic Keyboard</h1>
+                <img src="../../assets/Productos/teclado.svg"  >
             </div>
-            <div class="item5" id="item5 " #item5>
-                <h1 class="name" *ngIf="bola">Bateria</h1>
-                <a>
-                    <i class="fa fa-ban"></i>
-                </a>
-            </div>
+            <div *ngIf="bola" class="item5" id="item5 " #item5 >
+                <h1 class="name" >Bateria</h1>
+                <img src="../../assets/Productos/battery.svg"  >
+            </div>            
         </div>
     </div>
     <div class="cerrar-contenedor" *ngIf="producto" >

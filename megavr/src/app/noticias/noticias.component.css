@@ -7,6 +7,9 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  background-image: url(../../assets/Onboarding/fondo_desktop.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .video {
   grid-area: 2 / 2 / 3 / 3;
@@ -24,13 +27,13 @@
   grid-area: 1 / 2 / 2 / 3;
 }
 .titular h4 {
+  color: white;
   width: 50%;
   font-family: Montserrat;
   font-style: normal;
   font-size: 21px;
   font-weight: 500;
   line-height: 28px;
-  color: #474a57;
   text-align: left;
   position: relative;
   top: 20%;
@@ -38,6 +41,7 @@
   user-select: none;
 }
 .titular h3 {
+  color: rgba(255, 67, 29, 1);
   display: block;
   width: 90%;
   font-family: "chivo";
@@ -52,6 +56,7 @@
   user-select: none;
 }
 .informacion h4 {
+  color: rgba(255, 67, 29, 1);
   font-family: Montserrat;
   font-style: normal;
   font-weight: 600;
@@ -64,6 +69,7 @@
   user-select: none;
 }
 .informacion h3 {
+  color: white;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 500;
@@ -76,10 +82,11 @@
   user-select: none;
 }
 .circle {
+  background-color: rgba(255, 67, 29, 1);
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 2px solid white;
   position: relative;
   display: flex;
   justify-content: center;
@@ -93,6 +100,7 @@
   width: 20px;
 }
 .sonido {
+  color: white;
   grid-area: 1 / 1 / 2 / 2;
   font-size: 40px;
   display: flex;

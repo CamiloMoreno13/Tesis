@@ -7,8 +7,12 @@
   position: absolute;
   height: 100%;
   width: 100%;
+  background-image: url(../../assets/Onboarding/fondo_desktop.jpg);
+  background-position: center;
+  background-size: cover;
 }
 .video {
+  background-color: cadetblue;
   grid-area: 2 / 2 / 3 / 3;
   display: flex;
   justify-content: center;
@@ -17,12 +21,16 @@
 .video video {
   height: 90%;
 }
+.video img {
+  height: 90%;
+}
 .titular {
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
   align-items: center;
 }
 .titular h4 {
+  color:white;
   width: 50%;
   font-family: Montserrat;
   font-style: normal;
@@ -35,27 +43,34 @@
   user-select: none;
 }
 .menu {
-  grid-area: 3 / 2 / 4 / 3;
+  background-color: brown;
+  color:white;
+  height: 100%;
   width: 100%;
+  grid-area: 3 / 2 / 4 / 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
 }
 .menu div {
+  background-color: rgba(255, 67, 29, 1);
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid black;
-  position: absolute;
+  border: 2px solid white;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .name {
+  background-color: coral;
+  color:white;
   width: 200px;
+  height: 40px;
   z-index: 3;
   font-size: 15px;
-  color: black;
   position: absolute;
   top: 130%;
   display: flex;
@@ -66,49 +81,50 @@
   user-select: none;
   font-family: "chivo";
   font-style: italic;
-  font-weight: 500;
+  font-weight: normal;
   font-size: 20px;
   line-height: 14px;
+  line-height: 1;
 }
-.item3 img {
-  position: absolute;
-  user-select: none;
+.menu div img{
+  height: 30px;
+  width: 30px;
 }
-/*
 .item1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(-80px);
+  left: -300px;
+  top: -50px;
 }
 .item2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(-20px);
-}
-.item3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  left: -150px;
+  top: -15px;
 }
 .item4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(-20px);
+  left: 150px;
+  top: -15px;
 }
 .item5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  transform: translateY(-80px);
-}*/
+  left: 300px;
+  top: -50px;
+}
+
+/*
+.item1 {
+  left: -75px;
+}
+.item2 {
+  left: 20px;
+}
+.item4 {
+  left: 30px;
+}
+.item5 {
+  left: 100px;
+}
+*/
+
+
 .sonido {
+  color:white;
   grid-area: 1 / 1 / 2 / 2;
   font-size: 40px;
   display: flex;

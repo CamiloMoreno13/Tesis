@@ -23,14 +23,66 @@ export class NoticiasComponent implements OnInit {
   public inicio: boolean = false;
   public aviso : boolean=true;
   public equis : boolean=true;
+  public tecnologia : boolean = false;
+  public cine : boolean = false;
+  public videojuegos : boolean = false;
+  public television : boolean = false;
+  public farandula : boolean = false;
+  public tema_semana : boolean = false;
+  public musica : boolean = false;
+  public eventos : boolean = false;
+  public actualidad : boolean = false;
+  public famosos : boolean = false;
+  public artistas : boolean = false;
+  public chiste_semana : boolean = false;
+  public cafe_vilma : boolean = false;
+  public meme_semana : boolean = false;
+  public redes_mega : boolean = false;
   public parametro: string | null = "";
+  public titular: string | null = "";
+  public informacion_h4: string | null = "";
+  public informacion_h3: string | null = "";
+
+  public books: Array<object> = [
+    { title: "book1", description: "book desc 1" },
+    { title: "book2", description: "book desc 2" },
+    { title: "book3", description: "book desc 3" },
+    { title: "book4", description: "book desc 4 " }
+  ];
+
+  // icono y video
+  public informacion: { id: number, titular: string, informacion_h4: string, informacion_h3: string }[] = [
+    { "id": 0, "titular": "tecnologia", "informacion_h4": "Nuevos gadgets tecnologicos", "informacion_h3": "Tecnologias activas" },
+    { "id": 1, "titular": "cine", "informacion_h4": "La nueva pelicula de Tim Burton", "informacion_h3": "Peliculas independientes" },
+    { "id": 2, "titular": "videojuegos", "informacion_h4": "CyberPunk afronta demandas", "informacion_h3": "Juego en PS5" },
+    { "id": 3, "titular": "series", "informacion_h4": "El legado de jupiter vs Invincible", "informacion_h3": "Netflix vs Amazon" },
+    { "id": 4, "titular": "farandula", "informacion_h4": "Jessica Cediel nuevo cambio", "informacion_h3": "Tema de opinión" },
+    
+    { "id": 5, "titular": "tema_semana", "informacion_h4": "Las toxihistorias", "informacion_h3": "Relaciones quebradas" },
+    
+    { "id": 6, "titular": "musica", "informacion_h4": "Musica en la mega sonando duro", "informacion_h3": "Los nuevos hits" },
+    { "id": 7, "titular": "eventos", "informacion_h4": "Eventos en la mega", "informacion_h3": "Eventos en la mega" },
+    { "id": 8, "titular": "actualidad", "informacion_h4": "Famosos", "informacion_h3": "Famosos en la Mega" },
+    { "id": 9, "titular": "famosos", "informacion_h4": "Guerra de divas", "informacion_h3": "No solo la musica las hace mejores" },
+    { "id": 10, "titular": "artistas", "informacion_h4": "J Balvin rompe records", "informacion_h3": "Artistas la mega" },
+    { "id": 11, "titular": "chiste_semana", "informacion_h4": "Los del Pasto son mas inteligentes", "informacion_h3": "El chiste de la region" },
+    { "id": 12, "titular": "cafe_vilma", "informacion_h4": "Vilma nos cuenta como hacer cafe", "informacion_h3": "Cafe o chocolate" },
+    { "id": 13, "titular": "meme_semana", "informacion_h4": "Papá corre detras de sus hijos", "informacion_h3": "Caida libre en escaleras" },
+    { "id": 14, "titular": "redes_mega", "informacion_h4": "Los mejores reels de instagram", "informacion_h3": "El nuevo reel de la mega" },
+  ];
 
   constructor( private routes: ActivatedRoute,private renderer2: Renderer2, private router:Router) { }
 
   ngOnInit(): void {
     this.parametro = this.routes.snapshot.paramMap.get('id');
-    console.log(this.parametro);
     this.inicio = true;
+    for(let info of this.informacion ){
+      if (this.parametro == info.titular){
+        this.titular = info.titular;
+        this.informacion_h3 = info.informacion_h3;
+        this.informacion_h4 = info.informacion_h4;
+      }
+    }
   }
 
   pop() {
@@ -82,9 +134,5 @@ export class NoticiasComponent implements OnInit {
       this.aviso=true;
     }
   }
-  
-
-
-
 }
 
