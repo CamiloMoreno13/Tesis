@@ -29,7 +29,7 @@ export class ProductoComponent implements OnInit {
   ngOnInit(): void {
 
 
-    let pc = document.getElementById('clic_pc');
+   let pc = document.getElementById('clic_pc');
 
     pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale', '0.022 0.022 0.022');
@@ -38,6 +38,19 @@ export class ProductoComponent implements OnInit {
     /*let logo=document.getElementById('logo');
     logo?.setAttribute('src','../../assets/Productos/logo_ishop.svg')*/
 
+    let retina = document.getElementById('retina');
+
+    retina?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    retina?.setAttribute('scale', '0.020 0.020 0.020');
+    retina?.setAttribute('position', '12.13 -13.6 29.535');
+    retina?.setAttribute('rotation', '0 -153.267 0');
+
+    let procesadores = document.getElementById('procesadores');
+
+    procesadores?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    procesadores?.setAttribute('scale', '0.015 0.015 0.015');
+    procesadores?.setAttribute('position', '-25.3 -12.019 9.689');
+    procesadores?.setAttribute('rotation', '0 -153.267 0');
     document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true }, 1000) }) /* This is the key*/
   }
 
