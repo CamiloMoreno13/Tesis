@@ -30,6 +30,7 @@ import { PerfilAdminComponent } from './administracion/perfil-admin/perfil-admin
 import { NoticiaAdminComponent } from './administracion/noticia-admin/noticia-admin.component';
 import { ProductoAdminComponent } from './administracion/producto-admin/producto-admin.component';
 import { OnboardingAdminComponent } from './administracion/onboarding-admin/onboarding-admin.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { OnboardingAdminComponent } from './administracion/onboarding-admin/onbo
     AngularFireDatabaseModule, //Realtime
     AngularFirestoreModule, //Firestore
     AngularFireStorageModule, //Storage
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FormsModule
 
   ],
   providers: [

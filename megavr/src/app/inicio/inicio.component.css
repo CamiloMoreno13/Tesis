@@ -105,7 +105,7 @@ p {
 .saltar {
   text-align: center;
   border: none;
-  background-color: rgba(32, 0, 127, 1);
+  cursor: pointer;
   color: rgba(248, 88, 88, 1);
 }
 button {
@@ -115,14 +115,11 @@ button {
   width: 100%;
   text-align: center;
 }
-.home-img {
+
+.home-img{
   width: 250px;
   height: 60px;
-  background-image: url(../../assets/Onboarding/logo-mega.svg);
-  background-color: rgba(32, 0, 127, 1);
-  background-position: center;
-  background-size: cover;
-  border: none;
+  cursor: pointer;
 }
 
 .exit {

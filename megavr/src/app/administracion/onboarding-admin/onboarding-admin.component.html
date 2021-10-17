@@ -1,24 +1,24 @@
 <app-administracion></app-administracion>
 <div class="contenedor">
     <div class="row">
-        <div class="col-2">
+        <div class="col-3">
             <h3>Titulo</h3>
-            <input type="text" name="" id="titulo" placeholder="Titulo">
+            <input type="text" name="" id="titulo" placeholder="Titulo" [(ngModel)]="title">
             <h3>Subtitulo</h3>
-            <input type="text" name="" id="sub" placeholder="Subtitulo">
+            <input type="text" name="" id="sub" placeholder="Subtitulo" [(ngModel)]="subtitle">
             <br>
             <br>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary" type="button" (click)="prueba()">Update</button>
+                  <button class="btn btn-outline-secondary" type="button" (click)="updateSlider()">Update</button>
                 </div>
-                <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon" ngModel="slider" >
+                <select class="custom-select" aria-label="Example select with button addon" [(ngModel)]="selection" >
                   <option selected>Elegir slider</option>
-                  <option value="{{slider}}" *ngFor="let opt of informacion; let slider = index">slide {{slider}}</option>
+                  <option value="{{slider+1}}" *ngFor="let opt of informacion; let slider = index">slide {{slider+1}}</option>
                 </select>
               </div>
         </div>
-        <div class="col-9">
+        <div class="col-8">
             <table class="table">
                 <thead>
                     <tr>
@@ -29,7 +29,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let slide of informacion; let valor = index;">
-                        <td>{{valor}}</td>
+                        <td>{{valor+1}}</td>
                         <td>{{slide.title}}</td>
                         <td>{{slide.subtitle}}</td>
                     </tr>

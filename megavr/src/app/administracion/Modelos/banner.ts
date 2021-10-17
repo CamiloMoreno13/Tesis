@@ -1,14 +1,8 @@
 export class banner{
-    public title: string;
-    public subtitle : string;
-    public imagenes : string[]; 
-
-    constructor(){
-        this.title = "";
-        this.subtitle = "";
-        this.imagenes = [];
-    }
-
+    public title: string = '';
+    public subtitle : string = '';
+    public imagenes : string[] = []; 
+    
     createBanner (title: string, sub: string): banner{
         let nuevo = new banner();
         nuevo.title = title;

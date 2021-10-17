@@ -9,42 +9,47 @@ import { banner } from '../Modelos/banner';
 })
 export class OnboardingAdminComponent implements OnInit {
 
-  public urls : string[] = [];
-  public file! : FileList ; 
-  public slider: string  = '';
+  public urls: string[] = [];
+  public file!: FileList;
 
-  intento : number = 0;
+  public title!: string; 
+  public subtitle !: string;
+  public selection: string = '';
+
   public informacion: banner[] = [];
 
   constructor(private fire: FireService) { }
 
   ngOnInit(): void {
-    this.llenar();
+    this.llenarSliders();
+
+  }
+  
+  createSlider(){
+    //this.fire.createFire('onboarding',JSON.parse(JSON.stringify(slider)));
   }
 
-  addSlider(){
-    var titulo = (document.getElementById('titulo') as HTMLInputElement).value;
-    var subtitulo = (document.getElementById('sub') as HTMLInputElement).value;
+  llenarSliders() {
+    this.fire.llenarInformacionOnboarding().subscribe(res => {
+      res.docs.forEach((res3: any) => {
+        let ban = new banner();
+        ban = res3.data();
+        this.informacion.push(ban)
+      });
+    });
+  }
+
+  updateSlider(){
+    var slide = {
+      'title' : this.title,
+      'subtitle' : this.subtitle
+    }
+
+    this.fire.updateSlide(this.selection, JSON.parse(JSON.stringify(slide)));
+
+    console.log(this.selection);
     
-    var slider = new banner(); 
-    slider.title = titulo; 
-    slider.subtitle  = subtitulo; 
-    slider.imagenes = [];
-    this.fire.createFire('onboarding',JSON.parse(JSON.stringify(slider)));
-  }
-
-  llenar(){
-    this.fire.llenarInformacion().then(res => 
-      { res.subscribe(res2 => 
-        { res2.forEach((res3 : any )=> 
-          { let ban = new banner(); 
-            ban = res3.data();
-            this.informacion.push(ban)
-          }) }) });
-  }
-
-  prueba(){
-    var p = this.slider;
-    console.log(p)
+    this.informacion[Number(this.selection)-1].title = this.title;
+    this.informacion[Number(this.selection)-1].subtitle = this.subtitle;
   }
 }

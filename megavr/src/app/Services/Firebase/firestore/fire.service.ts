@@ -8,6 +8,19 @@ export class FireService {
 
   constructor(private fire: AngularFirestore) { }
 
+  //Funciones 
+  llenarInformacionOnboarding(){
+    var respuesta = this.fire.collection('onboarding').get();
+    return respuesta;
+  }
+
+  updateSlide(index: string,  slide: any) {
+    this.fire.collection('onboarding').doc(index).update(slide);
+  }
+
+  changes(){}
+
+  // Funciones de prueba 
   agregar() {
     console.log("entro")
     let valor = this.fire.createId();
@@ -15,12 +28,7 @@ export class FireService {
     this.fire.collection('respirar').add({ name: "buena", apellido: "valor" });
     
   }
-
-  async llenarInformacion(){
-    var respuesta = await this.fire.collection('onboarding').get();
-    return respuesta;
-  }
-
+  
   createFire(collection : string, dato : any) {
     var nroSlider;
     this.fire.collection('onboarding').get().subscribe(res => {
@@ -30,7 +38,6 @@ export class FireService {
   }
 
   readFire() {
-    
     /*
     var valor = this.fire.collection('prueba').doc('1').ref.get().then(res => {
       console.log("data" , res.data());

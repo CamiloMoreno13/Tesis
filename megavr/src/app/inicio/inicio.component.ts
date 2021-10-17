@@ -14,7 +14,7 @@ export class InicioComponent implements OnInit {
 
   
   public open: boolean = true;
-  public informacion: banner[] = [];
+  public informacion: banner[] = [new banner(), new banner() , new banner(), new banner(), new banner(), new banner() ];
   public indicador: boolean[] = [false, false, false, false, false, false];
 
   swiper !: Swiper;
@@ -22,6 +22,7 @@ export class InicioComponent implements OnInit {
   constructor(private router: Router, private fire: FireService) { }
 
   async ngOnInit(): Promise<void> {
+
 
     await this.llenar();
     this.indicador[0] = true;
@@ -36,21 +37,17 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  llenar_init(){
-    this.informacion.push(new banner())
-
-  }
-
   llenar() {
-    this.fire.llenarInformacion().then(res => 
-      { res.subscribe(res2 => 
-        { res2.forEach((res3 : any )=> 
-          { let ban = new banner(); 
-            ban = res3.data();
-            this.informacion.push(ban)
-          }) }) });
-    }
-
+    this.fire.llenarInformacionOnboarding().subscribe(res => {
+      let index = 0; 
+      res.docs.forEach((res3: any) => {
+        let ban = new banner();
+        ban = res3.data();
+        this.informacion[index] = ban
+        index += 1;
+      });
+    });
+  }
   logo(){
       this.open = false;
     }
