@@ -18,6 +18,17 @@ export class FireService {
     this.fire.collection('onboarding').doc(index).update(slide);
   }
 
+  llenarInfoPerfil(perfil: string){
+    var respuesta = this.fire.collection('perfiles').doc(perfil).get();
+    return respuesta;
+  }
+
+  llenarInfoNoticias(){
+    var respuesta = this.fire.collection('noticia').get();
+    return respuesta; 
+  }
+
+
   changes(){}
 
   // Funciones de prueba 

@@ -1,6 +1,9 @@
 import { Route } from '@angular/compiler/src/core';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Noticia } from '../models/noticia';
+import { Perfil } from '../models/perfil';
+import { FireService } from '../Services/Firebase/firestore/fire.service';
 
 @Component({
   selector: 'app-perfiles',
@@ -13,35 +16,23 @@ export class PerfilesComponent implements OnInit {
   //volume : boolean = true;
   public parametro: string | null = "";
   public aviso: boolean = true;
-  public perfil_caro : boolean = false;
-  public perfil_mateo : boolean = false;
-  public perfil_shirry : boolean = false;
-  public perfil_carlos : boolean = false;
-  public perfil_dani : boolean = false;
 
-  constructor(private renderer2: Renderer2, private routes: ActivatedRoute, private router: Router) { }
+  public perfil !: Perfil;
+  public listNoticias !: Noticia[]; 
 
-  ngOnInit(): void {
+  public entro : string = 'mateo'; 
+
+  constructor(private renderer2: Renderer2, private routes: ActivatedRoute, private router: Router, private fire: FireService) { }
+
+  async ngOnInit(){
     this.parametro = this.routes.snapshot.paramMap.get('id');
     console.log(this.parametro);
-    switch (this.parametro){
-      case 'caro':
-        this.perfil_caro = true;
-        break;
-      case 'mateo':
-        this.perfil_mateo = true;
-        break;
-      case 'shirry':
-        this.perfil_shirry = true;
-        break;
-      case 'carlos':
-        this.perfil_carlos = true;
-        break;
-      case 'dani':
-        this.perfil_dani = true;
-        break;
-    }
+    var respuesta : any; 
+    respuesta = (await this.fire.llenarInfoPerfil('mateo').toPromise()).data();
+    this.perfil = respuesta; 
+    this.listNoticias = this.perfil.noticias;
   }
+
   exit() {
     this.router.navigate(['/space']);
   }
@@ -59,8 +50,7 @@ export class PerfilesComponent implements OnInit {
     }
   }
 
-  noticias(cadena:string) {
+  redireccionar(cadena:string) {
     this.router.navigate(['/perfiles/'+this.parametro+'/noticias',cadena]);
   }
-
 }

@@ -1,8 +1,7 @@
 import { style } from '@angular/animations';
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
-import { Informacion } from '../models/informacion';
-import { Locutor } from '../models/locutor';
+import { FireService } from '../Services/Firebase/firestore/fire.service';
 
 
 @Component({
@@ -30,66 +29,30 @@ export class MenuComponent implements OnInit {
   public menu_5_items : boolean = false;
   public menu_3_items : boolean = false;
   public menu_1_items : boolean = false;
-  public info : Informacion = new Informacion();
 
   public item_names : string[] = [];
 
   public href: string = "";
 
-  /*
+  
   public informacion: { id: number, titular: string, informacion_h4: string, informacion_h3: string }[] = [
     { "id": 0, "titular": "tecnologia", "informacion_h4": "Nuevos gadgets tecnologicos", "informacion_h3": "Tecnologias activas" },
     { "id": 0, "titular": "tecnologia", "informacion_h4": "Nuevos gadgets tecnologicos", "informacion_h3": "Tecnologias activas" }
   ];
-  */
+  
 
-  constructor(private routes: ActivatedRoute, private renderer2: Renderer2, private router:Router) {
+  constructor(private routes: ActivatedRoute, private renderer2: Renderer2, private router:Router, private fire: FireService) {
   }
 
+  @Input() set pruebas(palabra : any){
+    this.fire.llenarInfoPerfil(palabra).subscribe((res:any) => {
+      console.log("informacion locutor" , res.data())
+    });
+  }
+
+  
+
   ngOnInit(): void {
-    this.menu_5_items = false;
-    this.menu_3_items = false;
-    this.menu_1_items = false;
-    this.inicio = false;
-    this.perfiles = false;
-    this.noticias = false;
-    this.producto = false;
-    this.href = this.router.url;
-    switch (this.href){
-      case "/space":
-        this.inicio = true;
-        break;
-      case "/producto":
-        this.producto = true;
-        break;
-    }
-    // Cambios en los menus de noticias y perfiles - Mantener orden
-    this.noticias = this.href.includes('noticias') ? true : false;
-    this.perfiles = (this.href.includes('perfiles') && !this.noticias) ? true : false;
-
-    // Cambios en la cantidad de items por locutor
-    this.menu_5_items = this.href.includes('mateo') || this.href.includes('shirry')  ? true : false;
-    this.menu_3_items = this.href.includes('carlos') ? true : false;
-    this.menu_1_items = this.href.includes('caro') || this.href.includes('dani') ? true : false;
-
-    // Setiar la informacion en el menu de noticias
-    var locutor_actual: Locutor = new Locutor('', '', '', '', '', '', [], '', '', ''); 
-    var parametro = this.routes.snapshot.paramMap.get('id_locutor');
-    console.log(parametro);
-
-    for (let locutor of this.info.locutores){
-      if (locutor.path_url == parametro){
-        locutor_actual = locutor;
-      }
-    }
-    for (var i = 0; i < locutor_actual.secciones.length; i++){
-      this.item_names[i] = locutor_actual.secciones[i].id;
-    }
-    console.log(locutor_actual);
-    console.log(this.item_names);
-
-
-    //console.log(this.perfiles);
   }
 
   exit() {

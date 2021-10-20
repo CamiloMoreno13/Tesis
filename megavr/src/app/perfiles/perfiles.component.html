@@ -7,123 +7,15 @@
         <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
         <p *ngIf="aviso" (click)="mute()">activar sonido</p>
     </div>
-
-    <!------------------- Perfil de Mateo ------------------------>
-
-    <div class="video" *ngIf="perfil_mateo">
+    <!------------------- Perfil dinamico ------------------------>
+    <div class="video">
         <img src="../../assets/Shared/mateo.svg" >
     </div>
-    <div class="menu" *ngIf="perfil_mateo">
-        <div class="item1" (click)="noticias('tecnologia')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Tecnología</h6>
-        </div>
-        <div class="item2" (click)="noticias('cine')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Cine</h6>
-        </div>
-        <div class="item3" (click)="noticias('videojuegos')">
-            <img src="../../assets/Shared/box.svg">
-            <h1 class="name">Videojuegos</h1>
-        </div>
-        <div class="item4" (click)="noticias('series')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Series</h6>
-        </div>
-        <div class="item5" (click)="noticias('farandula')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Farándula</h6>
+    <div class="menu">
+        <div *ngFor="let noticias of listNoticias; let i = index" class="item{{i+1}}" (click)="redireccionar(noticias.nombre)">
+            <img src="{{noticias.icono}}">
+            <h6 class="name">{{noticias.nombre}}</h6>
         </div>
     </div>
-
-    <!------------------- Perfil de Caro ------------------------>
-
-    <div class="video" *ngIf="perfil_caro">
-        <!--
-            <video src="../../assets/Noticias/perfil_caro.webm" [muted]="mute" autoplay="autoplay"  #videopls loop playsinline></video>
-            style="background-color: aqua;"
-            -->
-
-        <video [muted]="mute" autoplay="autoplay" #videopls loop playsinline id="myVideo">
-            <source src="../../assets/Pruebas/prueba_5.mov" type='video/mp4; codecs="hvc1"'>
-            <source src="../../assets/Noticias/perfil_caro.webm" type="video/webm">
-
-            <source src="../../assets/Pruebas/salida2.mov" type='video/mp4; codecs="hvc1"'>
-            <source src="../../assets/Noticias/perfil_caro.webm" type="video/webm">
-
-            <source src="../../assets/Pruebas/caro.mp4" />
-            <source src="../../assets/Pruebas/presentacion.mov" />
-            <source src="../../assets/Pruebas/example.mov" />
-            <source src="../../assets/Noticias/perfil_caro.webm">
-        </video>
-
-    </div>
-    <div class="menu" *ngIf="perfil_caro">
-        <div class="item3" (click)="noticias('tema_semana')">
-            <img src="../../assets/Shared/box.svg">
-            <h1 class="name">Tema de la semana</h1>
-        </div>
-    </div>
-
-    <!------------------- Perfil de El Shirry ------------------------>
-
-    <div class="video" *ngIf="perfil_shirry">
-        <img src="../../assets/Shared/base.svg" >
-    </div>
-    <div class="menu" *ngIf="perfil_shirry">
-        <div class="item1" (click)="noticias('musica')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Música</h6>
-        </div>
-        <div class="item2" (click)="noticias('eventos')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Eventos</h6>
-        </div>
-        <div class="item3" (click)="noticias('actualidad')">
-            <img src="../../assets/Shared/box.svg">
-            <h1 class="name">Actualidad</h1>
-        </div>
-        <div class="item4" (click)="noticias('famosos')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Famosos</h6>
-        </div>
-        <div class="item5" (click)="noticias('artistas')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Artistas</h6>
-        </div>
-    </div>
-
-    <!------------------- Perfil de Carlos ------------------------>
-
-    <div class="video" *ngIf="perfil_carlos">
-        <img src="../../assets/Shared/base.svg" >
-    </div>
-    <div class="menu" *ngIf="perfil_carlos">
-        <div class="item2" (click)="noticias('chiste_semana')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">Chiste de la semana</h6>
-        </div>
-        <div class="item3" (click)="noticias('cafe_vilma')">
-            <img src="../../assets/Shared/box.svg">
-            <h1 class="name">El café de Vilma</h1>
-        </div>
-        <div class="item4" (click)="noticias('meme_semana')">
-            <img src="../../assets/Shared/box.svg">
-            <h6 class="name">El meme de la semana</h6>
-        </div>
-    </div>
-
-    <!------------------- Perfil de Dani ------------------------>
-
-    <div class="video" *ngIf="perfil_dani">
-        <img src="../../assets/Shared/dani.svg" >
-    </div>
-    <div class="menu" *ngIf="perfil_dani">
-        <div class="item3" (click)="noticias('redes_mega')">
-            <img src="../../assets/Shared/box.svg">
-            <h1 class="name">Que pasa en las redes de la Mega</h1>
-        </div>
-    </div>
-
 </div>
-<app-menu></app-menu>
+<app-menu [prueba]="entro"></app-menu>

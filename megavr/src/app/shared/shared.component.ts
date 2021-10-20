@@ -1,6 +1,9 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { NgbButtonLabel } from '@ng-bootstrap/ng-bootstrap';
 import { FileLoader } from 'three';
+import { Noticia } from '../models/noticia';
+import { Perfil } from '../models/perfil';
 import { AuthService } from '../Services/Firebase/authentication/auth.service';
 import { FireService } from '../Services/Firebase/firestore/fire.service';
 import { RealService } from '../Services/Firebase/realtime/real.service';
@@ -18,12 +21,23 @@ export class SharedComponent implements OnInit {
   
 
   @ViewChild("valor" , {read: ElementRef}) valor!: ElementRef; 
+  parametro: string | null | undefined;
 
-  constructor(private real: RealService, private fire: FireService, private store: StorageService, private auth: AuthService) { }
+  
+  public perfil !: Perfil;
+  public listNoticias !: Noticia[]; 
 
-  ngOnInit(): void {
-    //this.real.realtime(); 
-    //this.fire.agregar();
+  constructor(private real: RealService, private fire: FireService, private store: StorageService, private auth: AuthService, private renderer2: Renderer2, private routes: ActivatedRoute) { }
+
+  async ngOnInit(): Promise<void> {
+    this.parametro = this.routes.snapshot.paramMap.get('id');
+    console.log(this.parametro);
+    var respuesta : any; 
+    respuesta = (await this.fire.llenarInfoPerfil('mateo').toPromise()).data();
+    this.perfil = respuesta; 
+    this.listNoticias = this.perfil.noticias;
+
+    console.log("noticias" , this.listNoticias)
   }
 
   p1(){
