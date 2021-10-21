@@ -14,8 +14,14 @@
         <div class="swiper-slide slide">
             <div class="slider1">
                 <div class="container-slide">
-                    <div class="slider">
-                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" autoplay muted></video>
+                    <div class="sonido" >
+                        <i id="sound" class="fa fa-volume-off" (click)="mute(1)" *ngIf="aviso[0]" #videoi></i>
+                        <i id="muted" class="fa fa-volume-up" (click)="mute(1)" *ngIf="!aviso[0]" #videoi></i>
+                        <p *ngIf="aviso[0]" (click)="mute(1)">activar sonido</p>
+                    </div>
+                    <div class="slider" >
+                        <!--src="../../assets/Noticias/cabina_caro.webm"-->
+                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute" autoplay="autoplay" #video1 loop playsinline id="video-slider1"></video>
                         <h3 class="title">{{informacion[0].title}}</h3>
                         <p class="subtitle">{{informacion[0].subtitle}}</p>
                         <div class="indicadores">
@@ -28,20 +34,25 @@
                                 <button (click)="indicadores(5)"><li class="active" *ngIf="false"></li></button>
                             </ul>
                             <img src="../../assets/Onboarding/saltar.svg" class="saltar" (click)="indicadores(5)">
-                            <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                         </div>
+                        <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="swiper-slide slider">
-            <div class="slider2">
-                <div class="container-slide">
-                    <div class="slider">
-                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99; width: 250px; height: 250px;" autoplay muted></video>
+        <div class="swiper-slide slide">
+            <div class="slider2" >
+                <div class="container-slide" >
+                    <div class="sonido" >
+                        <i id="sound" class="fa fa-volume-off" (click)="mute(2)" *ngIf="aviso[1]" #videoi></i>
+                        <i id="muted" class="fa fa-volume-up" (click)="mute(2)" *ngIf="!aviso[1]" #videoi></i>
+                        <p *ngIf="aviso[1]" (click)="mute(2)">activar sonido</p>
+                    </div>
+                    <div class="slider" >
+                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute" autoplay="autoplay" #video2 loop playsinline id="video-slider2"></video>
                         <div class="imagenes">
-                            <img class="ititle" src="../../assets/Onboarding/camera-white.png" alt="Icono de una camara">
-                            <img class="ititle" src="../../assets/Onboarding/virtual-reality-white.png"
+                            <img class="ititle" src="../../assets/Onboarding/camera-white.svg" alt="Icono de una camara">
+                            <img class="ititle" src="../../assets/Onboarding/virtual-reality-white.svg"
                             alt="Icono de ambiente de RV">
                         </div>
                         <p class="subtitle">{{informacion[1].subtitle}}</p>
@@ -55,8 +66,8 @@
                                 <button (click)="indicadores(5)"><li class="active" *ngIf="false"></li></button>
                             </ul>
                             <img src="../../assets/Onboarding/saltar.svg" class="saltar" (click)="indicadores(5)">
-                            <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                         </div>
+                        <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                     </div>
                 </div>
             </div>
@@ -64,10 +75,18 @@
         <div class="swiper-slide">
             <div class="slide3">
                 <div class="container-slide">
+                    <div class="sonido" >
+                        <i id="sound" class="fa fa-volume-off" (click)="mute(3)" *ngIf="aviso[2]" #videoi></i>
+                        <i id="muted" class="fa fa-volume-up" (click)="mute(3)" *ngIf="!aviso[2]" #videoi></i>
+                        <p *ngIf="aviso[2]" (click)="mute(3)">activar sonido</p>
+                    </div>
                     <div class="slider">
-                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" autoplay muted></video>
-                        <img class="ititle" src="../../assets/Onboarding/mobile.svg" alt="Icono de una camara">
-                        <h3 class="title">{{informacion[2].title}}</h3>
+                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute" autoplay="autoplay" #video3 loop playsinline id="video-slider3"></video>
+                        <div class="imagenes">
+                            <img class="ititle" src="../../assets/Onboarding/mobile.svg" alt="Icono de una camara">
+                        </div>
+                        <!-- Esta monda descuadra mucho la posicion del subtitulo -->
+                        <!--<h3 class="title">{{informacion[2].title}}</h3>-->
                         <p class="subtitle">{{informacion[2].subtitle}}</p>
                         <div class="indicadores">
                             <ul>
@@ -79,8 +98,8 @@
                                 <button (click)="indicadores(5)"><li class="active" *ngIf="false"></li></button>
                             </ul>
                             <img src="../../assets/Onboarding/saltar.svg" class="saltar" (click)="indicadores(5)">
-                            <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                         </div>
+                        <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                     </div>
                 </div>
             </div>
@@ -88,8 +107,13 @@
         <div class="swiper-slide">
             <div class="slide4">
                 <div class="container-slide">
+                    <div class="sonido" >
+                        <i id="sound" class="fa fa-volume-off" (click)="mute(4)" *ngIf="aviso[3]" #videoi></i>
+                        <i id="muted" class="fa fa-volume-up" (click)="mute(4)" *ngIf="!aviso[3]" #videoi></i>
+                        <p *ngIf="aviso[3]" (click)="mute(4)">activar sonido</p>
+                    </div>
                     <div class="slider">
-                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" autoplay muted></video>
+                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute" autoplay="autoplay" #video4 loop playsinline id="video-slider4"></video>
                         <h3 class="title">{{informacion[3].title}}</h3>
                         <p class="subtitle">{{informacion[3].subtitle}}</p>
                         <div class="indicadores">
@@ -102,8 +126,8 @@
                                 <button (click)="indicadores(5)"><li class="active" *ngIf="false"></li></button>
                             </ul>
                             <img src="../../assets/Onboarding/saltar.svg" class="saltar" (click)="indicadores(5)">
-                            <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                         </div>
+                        <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                     </div>
                 </div>
             </div>
@@ -111,8 +135,13 @@
         <div class="swiper-slide">
             <div class="slide5">
                 <div class="container-slide">
+                    <div class="sonido" >
+                        <i id="sound" class="fa fa-volume-off" (click)="mute(5)" *ngIf="aviso[4]" #videoi></i>
+                        <i id="muted" class="fa fa-volume-up" (click)="mute(5)" *ngIf="!aviso[4]" #videoi></i>
+                        <p *ngIf="aviso[4]" (click)="mute(5)">activar sonido</p>
+                    </div>
                     <div class="slider">
-                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" autoplay muted></video>
+                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute" autoplay="autoplay" #video5 loop playsinline id="video-slider5"></video>
                         <h3 class="title">{{informacion[4].title}}</h3>
                         <p class="subtitle">{{informacion[4].subtitle}}</p>
                         <div class="indicadores">
@@ -125,8 +154,8 @@
                                 <button (click)="indicadores(5)"><li class="active" *ngIf="false"></li></button>
                             </ul>
                             <img src="../../assets/Onboarding/saltar.svg" class="saltar" (click)="indicadores(5)">
-                            <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                         </div>
+                        <input type="button" value="Siguiente" class="siguiente" (click)="next()">
                     </div>
                 </div>
             </div>
@@ -134,10 +163,18 @@
         <div class="swiper-slide">
             <div class="slide6">
                 <div class="container-slide">
+                    <div class="sonido" >
+                        <i id="sound" class="fa fa-volume-off" (click)="mute(6)" *ngIf="aviso[5]" #videoi></i>
+                        <i id="muted" class="fa fa-volume-up" (click)="mute(6)" *ngIf="!aviso[5]" #videoi></i>
+                        <p *ngIf="aviso[5]" (click)="mute(6)">activar sonido</p>
+                    </div>
                     <div class="slider">
-                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" autoplay muted></video>
+                        <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute" autoplay="autoplay" #video6 loop playsinline id="video-slider6"></video>
                         <h3 class="title">{{informacion[5].title}}</h3>
                         <p class="subtitle">{{informacion[5].subtitle}}</p>
+                        <div class="home">
+                            <img src="../../assets/Onboarding/logo-mega.svg" alt="imagen de la mega" class="home-img" (click)="space()">
+                        </div>
                         <div class="indicadores">
                             <ul>
                                 <button (click)="indicadores(0)"><li class="active" *ngIf="false"></li></button>
@@ -147,18 +184,17 @@
                                 <button (click)="indicadores(4)"><li class="active" *ngIf="false"></li></button>
                                 <button (click)="indicadores(5)"><li class="active" *ngIf="true"></li></button>
                             </ul>
-                            <div class="home">
-                                <img src="../../assets/Onboarding/logo-mega.svg" alt="imagen de la mega" class="home-img" (click)="space()">
-                                <p>Empezar</p>
-                            </div>
                         </div>
+                        <input type="button" value="Empezar" class="siguiente" (click)="space()">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<img src="../../assets/Shared/btn_Cerrar.svg" class="exit" (click)="exit()">
+<div class="exit" *ngIf="!open">
+    <img src="../../assets/Shared/btn_Cerrar.svg" (click)="exit()">
+</div>
 
 
 

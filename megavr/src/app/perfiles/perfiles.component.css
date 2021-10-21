@@ -12,7 +12,6 @@
   background-size: cover;
 }
 .video {
-  background-color: cadetblue;
   grid-area: 2 / 2 / 3 / 3;
   display: flex;
   justify-content: center;
@@ -43,7 +42,6 @@
   user-select: none;
 }
 .menu {
-  background-color: brown;
   color:white;
   height: 100%;
   width: 100%;
@@ -65,7 +63,6 @@
   align-items: center;
 }
 .name {
-  background-color: coral;
   color:white;
   width: 200px;
   height: 40px;

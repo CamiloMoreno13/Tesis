@@ -5,7 +5,6 @@
   background-position: center;
   background-size: cover;
   border: none;
-  position: fixed;
   z-index: 99;
 }
 .swiper {
@@ -13,7 +12,6 @@
   height: 100vh;
   z-index: 1;
   text-align: center;
-  background-color: rgba(32, 0, 127, 1);
 }
 .container-slide {
   width: 100%;
@@ -26,7 +24,10 @@
 }
 
 .slider {
-  width: 80%;
+  position: relative;
+  background-color: transparent;
+  width: 30%;
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,11 +35,14 @@
 }
 
 video{
+  background-color: transparent;
   width: 288px;
   height: 356px;
 }
 
 h3 {
+  margin-top: 3%;
+  background-color:transparent;
   font-family: Chivo;
   font-style: italic;
   font-size: 40px;
@@ -49,25 +53,37 @@ h3 {
 }
 
 p {
+  margin-top: 1%;
+  background-color: transparent;
   font-family: Roboto Slab;
   font-style: normal;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: normal;
+  line-height: 24px;
   text-align: center;
   color: rgba(248, 88, 88, 1);
+  user-select: none;
 }
 
 .imagenes {
+  margin-top: 1%;
+  width: 90%;
+  height: 12%;
+  background-color: transparent;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .ititle {
-  width: 100px;
-  height: 100px;
-  margin-left: 40px;
-  margin-right: 40px;
+  height: 80%;
+  background-color: transparent;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 .indicadores {
+  position: absolute;
+  top: 80%;
+  background-color: transparent;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -78,7 +94,6 @@ p {
   list-style: none;
   display: flex;
   align-items: center;
-  right: 10px;
 }
 .indicadores ul button {
   width: 22px;
@@ -87,22 +102,19 @@ p {
   border-radius: 50px;
   margin: 5px;
   background-color: rgba(32, 0, 127, 1);
-}
-.indicadores ul button {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
 .indicadores ul button .active {
   width: 14px;
   height: 14px;
   background-color: rgba(248, 88, 88, 1);
   border-radius: 40px;
 }
-
 .saltar {
+  background-color: transparent;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -112,32 +124,45 @@ button {
   background-color: white;
 }
 .home {
-  width: 100%;
-  text-align: center;
+  background-color: transparent;
+  position: absolute;
+  top: 65%;
+  width: 90%;
+  height: 12%;
+  display: block;
+  align-items: center;
+  justify-content: center;
 }
-
 .home-img{
-  width: 250px;
-  height: 60px;
+  background-color: transparent;
+  height: 100%;
   cursor: pointer;
 }
-
+.title-start{
+  display: block;
+  color: white;
+}
 .exit {
-  width: 60px;
-  height: 60px;
+  background-color: transparent;
+  width: 20%;
+  height: 20%;
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 1;
+  z-index: 90;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .siguiente {
   width: 150px;
   height: 40px;
   position: absolute;
-  bottom: 5%;
+  top: 108%;
   z-index: 10;
   color: white;
   background-color: rgba(32, 0, 127, 1);
@@ -145,17 +170,103 @@ button {
   border-radius: 5px;
   font-size: large;
 }
-
-@media (max-width: 480px) {
-  .ititle {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+@media (max-width: 1680px) {
+  .slider{
+    top: -8%;
+    width: 40%;
+    height: 72%;
   }
-  .home-img {
-    width: 150px;
-    height: 40px;
+  .indicadores {
+    top: 90%;
+  }
+  .home{
+    top: 80%;
+  }
+  .exit {
+    height: 15%;
+    width: 15%;
+  }
+  .conteiner-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    place-self: center;
   }
 }
+@media (max-width: 1366px) {
+  .slider{
+    width: 50%;
+  }
+  h3 {
+    margin-top: 2%;
+    font-size: 30px;
+  }
+  .imagenes{
+    height: 10%;
+  }
+  .sonido {
+    height: 15%;
+    width: 15%;
+  }
+  .indicadores ul button {
+    width: 18px;
+    height: 18px;
+  }
+  .indicadores ul button .active {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  video{
+    height: 288px;
+  }
+  .slider{
+    width: 85%;
+  }
+  h3 {
+    margin-top: 1%;
+    font-size: 26px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .exit {
+    height: 40px;
+    width: 40px;
+  }
+  .imagenes{
+    height: 8%;
+  }
+}
+
+.sonido {
+  width: 20%;
+  height: 20%;
+  background-color: transparent;
+  top: 10px;
+  left: 10px;
+  color:white;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  cursor: pointer;
+  z-index: 99;
+}
+.sonido p {
+  color:white;
+  font-size: 12px;
+  width: 50px;
+  text-align: center;
+  user-select: none;
+  top: 9%;
+}
+/*
+1680x1050
+1024x768
+480x320
+*/
