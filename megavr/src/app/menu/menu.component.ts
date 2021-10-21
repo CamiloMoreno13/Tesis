@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
+import { Noticia } from '../models/noticia';
 import { FireService } from '../Services/Firebase/firestore/fire.service';
 
 
@@ -30,7 +31,11 @@ export class MenuComponent implements OnInit {
   public menu_3_items : boolean = false;
   public menu_1_items : boolean = false;
 
-  public item_names : string[] = [];
+  public locutores : string[] = []; 
+
+  public item_menu !: Noticia[] ;
+
+
 
   public href: string = "";
 
@@ -41,18 +46,38 @@ export class MenuComponent implements OnInit {
   ];
   
 
-  constructor(private routes: ActivatedRoute, private renderer2: Renderer2, private router:Router, private fire: FireService) {
+  constructor(private router:Router, private fire: FireService) {
   }
 
-  @Input() set pruebas(palabra : any){
-    this.fire.llenarInfoPerfil(palabra).subscribe((res:any) => {
-      console.log("informacion locutor" , res.data())
-    });
+  @Input() set perfil(menu : any){
+    console.log("tipo " , menu);
+    if(menu.tipo = 'perfiles') this.perfiles = true; 
+    this.item_menu = menu.menu;
+    console.log(this.item_menu, menu.menu[0].nombre); 
+  }
+
+  @Input() set space(menu : any){
+    console.log("entro a space menu")
+    //this.inicio= true;
+  }
+
+  @Input() set noticia(menu : any){
+    console.log("entro a noticia menu")
+
+    console.log(this.item_menu); 
+    this.noticias = true; 
+    //this.noticias= true;
+  }
+
+  @Input() set menus(tipo : any){
+    console.log("entro a menus");
+    if(tipo == 'space') {this.locutores =  this.fire.getLocutores(); this.inicio = true;}
   }
 
   
 
   ngOnInit(): void {
+
   }
 
   exit() {

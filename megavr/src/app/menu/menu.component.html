@@ -1,6 +1,8 @@
 <div class="parent">
+
     <div class="prueba" (click)="pop()" *ngIf="bola"></div>
-    <!------------------- Menu de Cabina ------------------------>
+
+    <!------------------------------------------- Menú inicio -------------------------------------------->
     <div class="menu-contenedor" *ngIf="inicio" >
         <div class="menu" (click)="pop()" #pls>
             <img src="../../assets/Shared/menu.svg" *ngIf="equis">
@@ -35,7 +37,7 @@
         </div>
     </div>
 
-    <!------------------- Menu de Perfiles ------------------------>
+    <!------------------------------------------- Perfiles -------------------------------------------->
 
     <div class="menu-contenedor" *ngIf="perfiles" >
         <div class="menu" id="menu" #cerrar (click)="exit()">
@@ -48,7 +50,77 @@
         </div>
     </div>
 
-    <!------------------- Menu de Noticias ------------------------>
+    <!------------------------------------------- Noticias -------------------------------------------->
+    
+    <div class="menu-contenedor" *ngIf="noticias" >
+        <div class="menu" (click)="pop()" #pls>
+            <img src="../../assets/Shared/menu.svg" *ngIf="equis">
+            <img src="../../assets/Shared/menu_abre.svg" *ngIf="!equis">
+        </div>
+        <div class="menu-items">
+            <div *ngFor="let items of item_menu; let i = index">
+                <div class="item{{i+1}}" *ngIf="bola">
+                    <h1 class="name">{{items.nombre}}</h1>
+                    <img src="../../assets/Shared/user.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cerrar-contenedor" *ngIf="noticias" >
+        <div class="cerrar" id="cerrar" (click)="exitNoticias()" #cerrar>
+            <img src="../../assets/Shared/btn_Cerrar.svg">
+        </div>
+    </div>
+</div>
+<!--
+<div class="parent">
+    <div class="prueba" (click)="pop()" *ngIf="bola"></div>
+    <div class="menu-contenedor" *ngIf="inicio" >
+        <div class="menu" (click)="pop()" #pls>
+            <img src="../../assets/Shared/menu.svg" *ngIf="equis">
+            <img src="../../assets/Shared/menu_abre.svg" *ngIf="!equis">
+        </div>
+        <div class="menu-items">
+            <div (click)="locutor('mateo')" *ngIf="bola" class="item1" id="item1" #item1 >
+                <h1 class="name" >Mateo Ramirez</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>
+            <div (click)="locutor('caro')" *ngIf="bola" class="item2" id="item2 " #item2 >
+                <h1 class="name" >Caro Carreta</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>
+            <div (click)="locutor('shirry')" *ngIf="bola" class="item3" id="item3 " #item3 >
+                <h1 class="name" >El Shirry</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>
+            <div (click)="locutor('carlos')" *ngIf="bola" class="item4" id="item4 " #item4 >
+                <h1 class="name" >Carlos Mira</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>
+            <div (click)="locutor('dani')" *ngIf="bola" class="item5" id="item5 " #item5 >
+                <h1 class="name" >Dani Murcia</h1>
+                <img src="../../assets/Shared/user.svg"  >
+            </div>            
+        </div>
+    </div>
+    <div class="cerrar-contenedor" *ngIf="inicio" >
+        <div class="cerrar" id="cerrar" *ngIf="!bola" (click)="start()" #cerrar>
+            <img src="../../assets/Shared/white_exit.svg">
+        </div>
+    </div>
+
+
+    <div class="menu-contenedor" *ngIf="perfiles" >
+        <div class="menu" id="menu" #cerrar (click)="exit()">
+            <img src="../../assets/Shared/icon_rest.svg">
+        </div>
+    </div>
+    <div class="cerrar-contenedor" *ngIf="perfiles" >
+        <div class="cerrar" id="cerrar" (click)="exit()" #cerrar>
+            <img src="../../assets/Shared/btn_Cerrar.svg">
+        </div>
+    </div>
+
 
     <div class="menu-contenedor" *ngIf="noticias" >
         <div class="menu" (click)="pop()" #pls>
@@ -104,7 +176,6 @@
         </div>
     </div>
 
-    <!------------------- Menu de Producto ------------------------>
 
     <div class="menu-contenedor" *ngIf="producto" >
         <div class="menu" (click)="pop()" #pls>
@@ -140,3 +211,5 @@
         </div>
     </div>
 </div>
+
+-->

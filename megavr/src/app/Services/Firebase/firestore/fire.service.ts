@@ -20,12 +20,37 @@ export class FireService {
 
   llenarInfoPerfil(perfil: string){
     var respuesta = this.fire.collection('perfiles').doc(perfil).get();
+    console.log("respuesta" , respuesta)
     return respuesta;
   }
 
-  llenarInfoNoticias(){
-    var respuesta = this.fire.collection('noticia').get();
-    return respuesta; 
+  llenarInfoNoticias(locutor: string , noticia : string){
+    var respuesta = this.fire.collection('noticia').doc(locutor).get();
+    return respuesta;
+  }
+
+  llenarInfoAll(){
+    var arreglo : any[]; 
+    var valor = this.fire.collection('perfiles').get().toPromise();
+    valor.then(res => {
+      console.log("res docs" , res.docs.forEach((res2:any) => {
+        console.log("red for  " , res2.data().nombre)
+        sessionStorage.setItem(res2.data().nombre, JSON.stringify(res2.data()));
+        
+      }))
+    })
+
+    var persona = sessionStorage.getItem('Mateo'); 
+    if(persona != null) var p1 = JSON.parse(persona);
+
+    console.log("esta personas" , p1.nombre, p1.noticias )
+    console.log("valor" , valor)
+  }
+
+  getLocutores(){
+    var locutores : string[] = [] ; 
+    this.fire.collection('perfiles').get().subscribe(x =>{ x.docs.forEach( y => { locutores.push(y.id); })});
+    return locutores;
   }
 
 

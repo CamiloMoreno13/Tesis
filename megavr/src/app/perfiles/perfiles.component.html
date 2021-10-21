@@ -1,4 +1,7 @@
-<div class="contenedor">
+<div class="spinner-border text-primary" role="status" *ngIf="!mostrarPerfil">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+<div class="contenedor" *ngIf="mostrarPerfil">
     <div class="titular">
         <h4>Menu</h4>
     </div>
@@ -17,5 +20,6 @@
             <h6 class="name">{{noticias.nombre}}</h6>
         </div>
     </div>
+    
 </div>
-<app-menu [prueba]="entro"></app-menu>
+<app-menu [perfil]="menu"></app-menu>

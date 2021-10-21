@@ -23,6 +23,8 @@ export class SpaceComponent implements OnInit {
   public primercaro: boolean = true; // temporary
   public imagen : boolean = false;
   public sonidoclick : boolean = false;
+  public menu : string = 'space'; 
+  
 
   
   constructor(private _CargarScripts:CargarScriptsService,private router: Router, private spaceService: SpaceService) {

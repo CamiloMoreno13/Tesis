@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FireService } from '../Services/Firebase/firestore/fire.service';
 
 
 @Component({
@@ -19,29 +20,31 @@ export class NoticiasComponent implements OnInit {
   @ViewChild('videopls') videopls!: ElementRef;
   @ViewChild('videoi') videoi!: ElementRef;
 
-  public bola : boolean = false;
+  public bola: boolean = false;
   public inicio: boolean = false;
-  public aviso : boolean=true;
-  public equis : boolean=true;
-  public tecnologia : boolean = false;
-  public cine : boolean = false;
-  public videojuegos : boolean = false;
-  public television : boolean = false;
-  public farandula : boolean = false;
-  public tema_semana : boolean = false;
-  public musica : boolean = false;
-  public eventos : boolean = false;
-  public actualidad : boolean = false;
-  public famosos : boolean = false;
-  public artistas : boolean = false;
-  public chiste_semana : boolean = false;
-  public cafe_vilma : boolean = false;
-  public meme_semana : boolean = false;
-  public redes_mega : boolean = false;
+  public aviso: boolean = true;
+  public equis: boolean = true;
+  public tecnologia: boolean = false;
+  public cine: boolean = false;
+  public videojuegos: boolean = false;
+  public television: boolean = false;
+  public farandula: boolean = false;
+  public tema_semana: boolean = false;
+  public musica: boolean = false;
+  public eventos: boolean = false;
+  public actualidad: boolean = false;
+  public famosos: boolean = false;
+  public artistas: boolean = false;
+  public chiste_semana: boolean = false;
+  public cafe_vilma: boolean = false;
+  public meme_semana: boolean = false;
+  public redes_mega: boolean = false;
   public parametro: string | null = "";
   public titular: string | null = "";
   public informacion_h4: string | null = "";
   public informacion_h3: string | null = "";
+
+  public menu2 !: string;
 
   public books: Array<object> = [
     { title: "book1", description: "book desc 1" },
@@ -57,9 +60,9 @@ export class NoticiasComponent implements OnInit {
     { "id": 2, "titular": "videojuegos", "informacion_h4": "CyberPunk afronta demandas", "informacion_h3": "Juego en PS5" },
     { "id": 3, "titular": "series", "informacion_h4": "El legado de jupiter vs Invincible", "informacion_h3": "Netflix vs Amazon" },
     { "id": 4, "titular": "farandula", "informacion_h4": "Jessica Cediel nuevo cambio", "informacion_h3": "Tema de opinión" },
-    
+
     { "id": 5, "titular": "tema_semana", "informacion_h4": "Las toxihistorias", "informacion_h3": "Relaciones quebradas" },
-    
+
     { "id": 6, "titular": "musica", "informacion_h4": "Musica en la mega sonando duro", "informacion_h3": "Los nuevos hits" },
     { "id": 7, "titular": "eventos", "informacion_h4": "Eventos en la mega", "informacion_h3": "Eventos en la mega" },
     { "id": 8, "titular": "actualidad", "informacion_h4": "Famosos", "informacion_h3": "Famosos en la Mega" },
@@ -71,13 +74,24 @@ export class NoticiasComponent implements OnInit {
     { "id": 14, "titular": "redes_mega", "informacion_h4": "Los mejores reels de instagram", "informacion_h3": "El nuevo reel de la mega" },
   ];
 
-  constructor( private routes: ActivatedRoute,private renderer2: Renderer2, private router:Router) { }
+  constructor(private routes: ActivatedRoute, private renderer2: Renderer2, private router: Router, private fire: FireService) { }
 
   ngOnInit(): void {
-    this.parametro = this.routes.snapshot.paramMap.get('id');
-    this.inicio = true;
-    for(let info of this.informacion ){
-      if (this.parametro == info.titular){
+    var parametro = this.routes.snapshot.paramMap.get('id');
+    console.log(this.parametro);
+
+    var parametro2 = this.routes.snapshot.paramMap.get('id_locutor');
+    console.log(parametro2);
+    if (parametro != null && parametro2 != null) {
+      this.fire.llenarInfoNoticias(parametro, parametro2).subscribe(res => {
+        console.log("res menu " , res)
+      });
+    }
+
+    this.fire.llenarInfoAll();
+
+    for (let info of this.informacion) {
+      if (this.parametro == info.titular) {
         this.titular = info.titular;
         this.informacion_h3 = info.informacion_h3;
         this.informacion_h4 = info.informacion_h4;
@@ -89,9 +103,9 @@ export class NoticiasComponent implements OnInit {
     //var b1 = this.item1.nativeElement;
     //var b2 = this.item2.nativeElement;
     //var b3 = this.item3.nativeElement;
-   // var b4 = this.item4.nativeElement;
+    // var b4 = this.item4.nativeElement;
     //var b5 = this.item5.nativeElement;
-    
+
 
     if (!this.bola) {
       /*this.renderer2.setStyle(b1, 'transform', 'translate(-120px,0px)');
@@ -99,23 +113,23 @@ export class NoticiasComponent implements OnInit {
       this.renderer2.setStyle(b3,'transform','translateY(-50px)');
       this.renderer2.setStyle(b4,'transform','translate(60px,-50px)');
       this.renderer2.setStyle(b5,'transform','translate(120px,0px)');*/
-      this.bola=true;
+      this.bola = true;
     }
-    else{
+    else {
       /*this.renderer2.setStyle(b1, 'transform', 'translate(0px)');
       this.renderer2.setStyle(b2,'transform', 'translate(0px)');
       this.renderer2.setStyle(b3,'transform', 'translate(0px)');
       this.renderer2.setStyle(b4,'transform', 'translate(0px)');
       this.renderer2.setStyle(b5,'transform', 'translate(0px)');*/
-      this.bola=false;
+      this.bola = false;
     }
   }
-  start(){
+  start() {
     this.router.navigate(['/inicio']);
   }
 
-  locutor(cadena:string){
-     this.router.navigate(['/perfiles',cadena]);
+  locutor(cadena: string) {
+    this.router.navigate(['/perfiles', cadena]);
   }
 
   exit() {
@@ -127,11 +141,11 @@ export class NoticiasComponent implements OnInit {
     if (this.videopls.nativeElement.muted) {
 
       this.videopls.nativeElement.muted = false;
-      this.aviso=false;
+      this.aviso = false;
     }
     else {
       this.videopls.nativeElement.muted = true;
-      this.aviso=true;
+      this.aviso = true;
     }
   }
 }

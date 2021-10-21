@@ -1,3 +1,8 @@
+.contenedor{
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
 .parent {
   display: grid;
   grid-template-columns: 15% 70% 15%;
@@ -5,7 +10,6 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 100vh;
-  background-color: white;
 }
 .prueba {
   grid-area: 1 / 1 / 4 / 4;
@@ -47,7 +51,7 @@
   width: 40px;
   position: absolute;
 }
-.menu-items > div {
+.menu-items > div > div{
   height: 100%;
   width: 100%;
   border-radius: 50%;
@@ -102,13 +106,13 @@ a {
   flex-direction: column;
   color: tomato;
 }
-.menu-items > div:hover {
+.menu-items > div > div:hover {
   background-color: tomato;
 }
-.menu-items > div:hover a {
+.menu-items > div > div:hover a {
   color: white;
 }
-.menu-items > div > a {
+.menu-items > div > div > a {
   color: white;
 }
 .cerrar-contenedor {
@@ -144,7 +148,7 @@ a {
     height: 30px;
     width: 30px;
   }
-  .menu-items > div {
+  .menu-items > div > div{
     font-size: 15px;
   }
   .cerrar img {
