@@ -31,13 +31,7 @@ export class SharedComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.parametro = this.routes.snapshot.paramMap.get('id');
-    console.log(this.parametro);
-    var respuesta : any; 
-    respuesta = (await this.fire.llenarInfoPerfil('mateo').toPromise()).data();
-    this.perfil = respuesta; 
-    this.listNoticias = this.perfil.noticias;
 
-    console.log("noticias" , this.listNoticias)
   }
 
   p1(){

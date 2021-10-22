@@ -3,7 +3,7 @@ import { Noticia } from "./noticia";
 export interface Perfil {
     nombre:    string;
     video:     string;
-    noticias:  Noticia[];
+    noticias:  any[];
     titulo:    string;
     ocupacion: string;
 }

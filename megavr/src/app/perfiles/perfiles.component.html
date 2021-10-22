@@ -1,7 +1,7 @@
-<div class="spinner-border text-primary" role="status" *ngIf="!mostrarPerfil">
+<div class="spinner-border text-primary" role="status" *ngIf="mostrarSpinner">
     <span class="visually-hidden">Loading...</span>
   </div>
-<div class="contenedor" *ngIf="mostrarPerfil">
+<div class="contenedor" *ngIf="!mostrarSpinner">
     <div class="titular">
         <h4>Menu</h4>
     </div>
@@ -20,6 +20,5 @@
             <h6 class="name">{{noticias.nombre}}</h6>
         </div>
     </div>
-    
 </div>
-<app-menu [perfil]="menu"></app-menu>
+<app-menu [menus]="menu"></app-menu>
