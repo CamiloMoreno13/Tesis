@@ -58,7 +58,7 @@ export class MenuComponent implements OnInit {
 
   @Input() set space(menu : any){
     console.log("entro a space menu")
-    //this.inicio= true;
+    console.log(menu)
   }
 
   @Input() set noticia(menu : any){
@@ -77,7 +77,6 @@ export class MenuComponent implements OnInit {
   
 
   ngOnInit(): void {
-
   }
 
   exit() {

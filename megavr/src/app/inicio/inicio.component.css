@@ -25,7 +25,7 @@
 
 .slider {
   position: relative;
-  background-color: transparent;
+  background-color: rgba(102, 51, 153, 0.5);
   width: 30%;
   height: 70%;
   display: flex;
@@ -35,14 +35,14 @@
 }
 
 video{
-  background-color: transparent;
+  background-color: aqua;
   width: 288px;
   height: 356px;
 }
 
 h3 {
   margin-top: 3%;
-  background-color:transparent;
+  background-color:tan;
   font-family: Chivo;
   font-style: italic;
   font-size: 40px;
@@ -54,7 +54,7 @@ h3 {
 
 p {
   margin-top: 1%;
-  background-color: transparent;
+  background-color: teal;
   font-family: Roboto Slab;
   font-style: normal;
   font-size: 18px;
@@ -69,21 +69,21 @@ p {
   margin-top: 1%;
   width: 90%;
   height: 12%;
-  background-color: transparent;
+  background-color: yellow;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .ititle {
   height: 80%;
-  background-color: transparent;
+  background-color: navajowhite;
   margin-left: 20px;
   margin-right: 20px;
 }
 .indicadores {
   position: absolute;
   top: 80%;
-  background-color: transparent;
+  background-color: violet;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@ p {
   border-radius: 40px;
 }
 .saltar {
-  background-color: transparent;
+  background-color: tan;
   text-align: center;
   border: none;
   cursor: pointer;
@@ -124,7 +124,7 @@ button {
   background-color: white;
 }
 .home {
-  background-color: transparent;
+  background-color: tan;
   position: absolute;
   top: 65%;
   width: 90%;
@@ -134,7 +134,7 @@ button {
   justify-content: center;
 }
 .home-img{
-  background-color: transparent;
+  background-color: salmon;
   height: 100%;
   cursor: pointer;
 }
@@ -143,7 +143,7 @@ button {
   color: white;
 }
 .exit {
-  background-color: transparent;
+  background-color: salmon;
   width: 20%;
   height: 20%;
   position: absolute;
@@ -244,7 +244,7 @@ button {
 .sonido {
   width: 20%;
   height: 20%;
-  background-color: transparent;
+  background-color: salmon;
   top: 10px;
   left: 10px;
   color:white;
