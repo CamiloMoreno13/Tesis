@@ -1,6 +1,9 @@
-export interface Noticia {
-    nombre:     string;
-    icono:       string;
-    encabezado:  string;
-    descripcion: string;
+export class Noticia {
+    public nombre:     string;
+    public icono:       string;
+
+    constructor(){
+        this.nombre = ''; 
+        this.icono = '';
+    }
 }

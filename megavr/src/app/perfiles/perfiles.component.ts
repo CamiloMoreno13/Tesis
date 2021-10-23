@@ -18,33 +18,21 @@ export class PerfilesComponent implements OnInit {
   public parametro: string | null = "";
   public aviso: boolean = true;
 
-  public perfil !: Perfil;
-  public listNoticias !: Noticia[]; 
+  public perfil !: any;
+  public listNoticias !: any[]; 
 
-  public menu : menu = new menu(); 
-
-  public entro : string = 'mateo'; 
-
-  public mostrarPerfil : boolean = false; 
+  public menu : string = 'perfiles'; 
+  public mostrarSpinner : boolean = true; 
 
   constructor(private renderer2: Renderer2, private routes: ActivatedRoute, private router: Router, private fire: FireService) { }
 
   async ngOnInit(){
     this.parametro = this.routes.snapshot.paramMap.get('id');
-    console.log(this.parametro);
-    var respuesta : any; 
-    respuesta = (await this.fire.llenarInfoPerfil('mateo').toPromise()).data();
-    this.perfil = respuesta; 
-    this.listNoticias = this.perfil.noticias;
-    this.menu.tipo = await 'perfiles';  
-    this.menu.menu = await this.listNoticias ; 
-
-    var persona = sessionStorage.getItem('Mateo'); 
-    if(persona != null) var p1 = JSON.parse(persona);
-
-    console.log("esta personas 23123123" , p1.nombre, p1.noticias )
-
-    this.mostrarPerfil = true;
+    if(this.parametro != null){
+      this.perfil = await this.fire.llenarInfoPerfil(this.parametro);
+      this.listNoticias = this.perfil.noticias;
+    }
+    this.mostrarSpinner = false;
   }
 
   exit() {
