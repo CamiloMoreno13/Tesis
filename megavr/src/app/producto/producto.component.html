@@ -17,6 +17,9 @@
         <img id="apple" src="../../assets/Productos/apple.png">
         <img id="vista_3d" src="../../assets/Productos/Vista_3d.png">
         <img id="ar_icon" src="../../assets/Productos/AR_icon.png">
+        <img id="bn_retina" src="../../assets/Productos/banner_retina.png">
+        <img id="cn_retina" src="../../assets/Productos/conoce_retina.png">
+        <img id="pc" src="../../assets/Productos/pc.png">
 
     </a-assets>
     <!--
@@ -36,13 +39,17 @@
 
     <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
 
-    <!-- Retina display -->
+    <!--
 
-    <a-entity  id="retina" rotation="0 -154.69688581193688 0" position="12.61047 -13.6 33.82095"></a-entity>
 
-    <!-- Procesadores display -->
+<a-plane id="banner_retina2" compila position="2.29291 5 4.74821" src="#bn_retina"
+        material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6" rotation="0 210 0"
+        animation-manager
+        animation__play="property: scale; from: 1 1 1; to: 5 5 5; dur: 2000; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__rewind="property: scale; to: 1 1 1; easing: linear; startEvents: rewind-anim"></a-plane>
 
-    <a-entity  id="procesadores" rotation="0 -154.69688581193688 0" position="12.61047 -13.6 33.82095"></a-entity>
+
+        -->
 
     <!-- clic pc -->
     <a-entity id="clic_pc" (click)="goToAr('pc')" animation__scale="property: scale; dir: alternate; dur: 1000;
@@ -68,6 +75,103 @@
     <a-plane id="clic_icon" position="8.3 -0.5 -0.9" src="#ar_icon" scale="0.5 0.5 1.0" transparent="true"
         rotation="0 -90 0" *ngIf="mostrar" (click)="goToAr('icono')"></a-plane>
 
+
+    <!-- Retina ---------------------------------------------------------------------------------------- -->
+
+    <a-entity id="retina" rotation="0 -154.69688581193688 0" position="12.13 -13.6 29.535" rotation="0 27.13 0"
+        scale=" 0.020 0.020 0.020" retina-manager
+        animation__move="property: position; to:9.476 -13.6 19.236; dur: 2000; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 0.030 0.030 0.030; dur: 2000; 
+dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0.020 0.020 0.020; easing: easeOutBack; startEvents: rewind-animRE"
+        animation__mrewind="property: position; to: 012.13 -13.6 29.535; easing: easeOutBack; startEvents: rewind_moveRE">
+    </a-entity>
+
+    <a-circle id="close_retina" visible="false" material="color:red;side:double" radius="0.0001"
+        position="0.876 0.052 1.336" rotation="0 27.13" retina-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+    dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:alternate; startEvents: rewind-animRE">
+    </a-circle>
+
+    <a-plane id="ghost1" visible="false" material="color:#808080;side:double;opacity:0.4" position="1.272 -0.11 1.204"
+        rotation="0 27.13 0" scale=" 0.1 0.1 0.1" retina-manager
+        animation__move="property: position; to:1.272 -0.11 1.204; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 1 0.5 1.5; dur: 2000; 
+      dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animRE"></a-plane>
+
+
+    <a-plane id="ghost2" visible="false" material="color:#808080;side:double;opacity:0.4" position="0.161 -0.11 1.792"
+        rotation="0 207.13 0" scale=" 0.1 0.1 0.1" retina-manager
+        animation__move="property: position; to:0.161 -0.11 1.792; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 1 0.5 1.5; dur: 2000; 
+   dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animRE">
+        <a-image id="ghost1_a" geometry="height: 0.382; width: 0.197" position="0 0.26752 0" src="#pc" height=".5"
+            width=".5" material="transparent:true"></a-image>
+        <a-image id="ghost1_b" geometry="width: 1; height: 0.3" position="0 -0.26432 0" src="#cn_retina" height=".5"
+            width=".5"></a-image>
+    </a-plane>
+
+    <a-plane id="banner_retina" position="2.29291 -0.16318 4.74821" src="#bn_retina"
+        material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6" rotation="0 210 0"
+        retina-manager animation__scale="property: scale; dir: alternate; dur: 1000;
+        easing: easeInSine; loop: true; to:2.5 0.9 0.8">
+
+    </a-plane>
+
+    <a-plane id="texto_retina" position="2.29291 -0.91186 4.74821" src="#cn_retina"
+        material="opacity:1;transparent:true" scale="4 0.3 1" rotation="0 210 0"></a-plane>
+
+
+    <!-- procesadores ---------------------------------------------------------------------------------------- -->
+
+    <a-entity id="procesador" rotation="0 113.3 0" position="-25.3 -12.019 9.689" scale=" 0.020 0.020 0.020" procesador-manager 
+        animation__move="property: position; to:-15.4 -14.5 5.621; dur: 2000; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 0.030 0.030 0.030; dur: 2000; 
+dir: alternate; easing: easeInOutCubic; startEvents: second"
+        animation__rewind="property: scale; to: 0.020 0.020 0.020; easing: easeOutBack; startEvents: rewind-animPR"
+        animation__mrewind="property: position; to: -25.3 -12.019 9.689; easing: easeOutBack; startEvents: rewind-movePR">
+
+
+        ></a-entity>
+
+    <a-plane id="banner_procesador"  position="-3.52 0.143 1.81" src="#bn_retina"
+        material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6"
+        rotation="0 110.74987700981248 0" procesador-manager animation__scale="property: scale; dir: alternate; dur: 1000;
+    easing: easeInOutCubic; loop: true; to:2.5 0.9 0.8">
+
+    </a-plane>
+
+    <a-circle id="close_procesador" visible="false" material="color:red;side:double" radius="0.0001"
+        position="-1.14 0.019 0.334" rotation="0  110.74987700981248 0" procesador-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+    dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:alternate; startEvents: rewind-animPR">
+    </a-circle>
+
+    <a-plane id="ghost1_procesador" visible="false" material="color:orange;side:double;opacity:0.4"
+        position="-0.99188 -0.11 1.87133" rotation="0 -61.02688067497425 0" scale=" 0 0 1.5" procesador-manager 
+        animation__move="property:position;to :-0.99188 -0.11 1.87133; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to:  2 1 1.5; dur: 2000; 
+      dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animPR"></a-plane>
+
+
+    <a-plane id="ghost2_procesador" scale="0 0 1.5" visible="false" material="color:red;side:double;opacity:0.4"
+        position="-1.71115 -0.11224 -0.40278" rotation="-7.807695874247728 87.99772296516748 -0.3380450991271857"
+        procesador-manager
+        animation__move="property: position; to:-1.71115 -0.11224 -0.40278; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 1 2 1.5; dur: 2000; 
+   dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animPR">
+
+    </a-plane>
+    <!-- Ambient Light-->
+    <a-entity light="type:ambient;color: #BBB"></a-entity>
+    <!-- Directional Light-->
+    <a-entity light="type:directional;color: #BBB;intensity:0.6;castShadow:false" position=" -0.5 1 1"></a-entity>
+    <!-- Custom Ambient Light
+    <a-entity id="test" light="type:ambient;color: #BBB"></a-entity> -->
 
 
 </a-scene>
