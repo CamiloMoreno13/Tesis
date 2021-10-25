@@ -1,10 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  OnInit,
-  Renderer2,
-  ViewChild,
-} from '@angular/core';
+import {Component, ElementRef,OnInit,Renderer2,ViewChild,} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductoService } from '../Services/Producto/producto.service';
 import { AFrame } from 'aframe';
@@ -14,7 +8,6 @@ import { AFrame } from 'aframe';
   templateUrl: './producto.component.html',
   styleUrls: ['./producto.component.css'],
 })
-
 
 export class ProductoComponent implements OnInit {
   @ViewChild('item1') item1!: ElementRef;
@@ -38,11 +31,8 @@ export class ProductoComponent implements OnInit {
   ) { }
 
 
-
-
   ngOnInit(): void {
     let pc = document.getElementById('clic_pc');
-
     pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale', '0.022 0.022 0.022');
     pc?.setAttribute('position', '49.2 -13.6 -7.9');
@@ -51,14 +41,12 @@ export class ProductoComponent implements OnInit {
     logo?.setAttribute('src','../../assets/Productos/logo_ishop.svg')*/
 
     let retina = document.getElementById('retina');
-
-    retina?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    retina?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb'); // xbox.glb
     //retina?.setAttribute('scale', '0.020 0.020 0.020');
     //retina?.setAttribute('position', '12.13 -13.6 29.535');
     retina?.setAttribute('rotation', '0 -153.267 0');
 
     let banner_retina = document.getElementById('banner_retina');
-
     //banner_retina?.setAttribute('src', '../../assets/Productos/banner_retina.png');
     banner_retina?.setAttribute('scale', '2.3 0.7 0.6');
     banner_retina?.setAttribute('position', '2.29291 -0.16318 4.74821');
@@ -66,7 +54,6 @@ export class ProductoComponent implements OnInit {
     //banner_retina?.setAttribute('material', 'transparent:true');
 
     let procesador = document.getElementById('procesador');
-
     procesador?.setAttribute(
       'gltf-model',
       '../../assets/Shared/Notebook.glb'
@@ -79,53 +66,22 @@ export class ProductoComponent implements OnInit {
         this.mostrar = true;
       }, 1000);
     }); /* This is the key*/
+
+    let bateria = document.getElementById('bateria');
+    bateria?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
   }
 
   ngAfterViewInit(): void {
 
-    /* AFRAME.registerComponent('compila', {
-       init: function () {
-         let v = this.el;
-         this.el.addEventListener('click', function () {
-           console.log('clickcito');
-           //v.setAttribute('rotation', '0 180 0');
-           v?.setAttribute(
-             'animation_scale',
-             ' property: scale; dir: alternate; dur: 1000 ; easing: easeInSine; loop: true; to:0.025 0.025 0.025 ;  startEvents: click '
-           );
-         });
-       },
-     });*/
-
-    /*AFRAME.registerComponent('attention', {
-      init: function () {
-        let v = this.el;
-
-        v.addEventListener('loaded', function () {
-        
-        //v.emit('scale1');
-       
-        v.addEventListener('animationcomplete',function(e){
-          //v.emit('scale2');
-          console.log('pruebita de dios');
-        } )
-              
-        });
-      },
-    });*/
-
-
     AFRAME.registerComponent('retina-manager', {
       init: function () {
-
+        
         let retina = document.getElementById("retina")
         let playBtn = document.getElementById('banner_retina');
         let texto = document.getElementById('texto_retina');
         let rewindBtn = document.getElementById('close_retina');
         let ghost1 = document.getElementById('ghost1');
         let ghost2 = document.getElementById('ghost2');
-        
-
 
         if (playBtn != null) {
           playBtn.addEventListener('click', (e) => {
@@ -140,7 +96,6 @@ export class ProductoComponent implements OnInit {
             }
           });
         }
-
 
         if (retina != null) {
           retina.addEventListener('click', (e) => {
@@ -159,71 +114,77 @@ export class ProductoComponent implements OnInit {
         if (rewindBtn != null) {
           rewindBtn.addEventListener('click', (e) => {
             // set the current scale as the "starting point"
-
-
-
             this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
             this.el.emit('pause-anim');
             this.el.emit('rewind-animRE');
-            this.el.emit('rewind_moveRE');
-
+            this.el.emit('rewind-moveRE');
 
             setTimeout(() => {
               if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
                 texto.setAttribute('visible', 'true');
               }
-
             }, 200);
-
-
           });
         }
 
-        // RETINA OBJECT AND RETINA BANNER
+        // PROCESADOR OBJECT AND PROCESADOR BANNER
         let banner_procesador = document.getElementById('banner_procesador')
         let procesador = document.getElementById('procesador')
         if (banner_procesador != null && procesador!=null) {
-
           banner_procesador.addEventListener('click', (e) => {
-
             this.el.emit('rewind-animRE');
             this.el.emit('rewind-moveRE');
-
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
-
             }, 200);
-
-          });
+          })
 
           procesador.addEventListener('click', (e) => {
-
             this.el.emit('rewind-animRE');
             this.el.emit('rewind-moveRE');
-
             setTimeout(() => {
               if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
               }
-
             }, 200);
-
           });
-
-
         }
+
+         // BATERIA OBJECT AND BATERIA BANNER
+         let bateria = document.getElementById('bateria')
+         let banner_bateria = document.getElementById('banner_bateria')
+         if (banner_bateria != null && bateria!=null)  {
+           banner_bateria.addEventListener('click', (e) => {
+             this.el.emit('rewind-animRE');
+             this.el.emit('rewind-moveRE');
+             setTimeout(() => {
+               if (playBtn != null && texto != null) {
+                 playBtn.setAttribute('visible', 'true');
+                 texto.setAttribute('visible', 'true');
+               }
+             }, 200);
+           });
+ 
+           bateria.addEventListener('click', (e) => {
+             this.el.emit('rewind-animRE');
+             this.el.emit('rewind-moveRE');
+             setTimeout(() => {
+               if (playBtn != null) {
+                 playBtn.setAttribute('visible', 'true');
+                 //texto.setAttribute('visible', 'true');
+               }
+             }, 200);
+           });
+         }
 
 
       },
     });
-
-
-
 
     AFRAME.registerComponent('procesador-manager', {
       init: function () {
@@ -266,24 +227,17 @@ export class ProductoComponent implements OnInit {
         if (rewindBtn != null) {
           rewindBtn.addEventListener('click', (e) => {
             // set the current scale as the "starting point"
-
-
-
             this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
             this.el.emit('pause-anim');
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
-
 
             setTimeout(() => {
               if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
               }
-
             }, 200);
-
-
           });
         }
 
@@ -293,48 +247,167 @@ export class ProductoComponent implements OnInit {
         let banner_retina = document.getElementById('banner_retina')
         let retina = document.getElementById('retina')
         if (banner_retina != null && retina!=null) {
-
           banner_retina.addEventListener('click', (e) => {
-
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
-
             setTimeout(() => {
               if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
               }
-
             }, 200);
-
           });
 
           retina.addEventListener('click', (e) => {
-
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
-
             setTimeout(() => {
               if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
               }
-
             }, 200);
-
+          });
+        }
+        // BATERIA OBJECT AND BATERIA BANNER
+        let bateria = document.getElementById('bateria')
+        let banner_bateria = document.getElementById('banner_bateria')
+        if (banner_bateria != null && bateria!=null) {
+          banner_bateria.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
           });
 
-
+          bateria.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
         }
 
       },
     });
 
+    AFRAME.registerComponent('bateria-manager', {
+      init: function () {
+        let bateria = document.getElementById("bateria")
+        let playBtn = document.getElementById('banner_bateria');
+        // let texto = document.getElementById('texto_retina');
+        let rewindBtn = document.getElementById('close_bateria');
+        let ghost1 = document.getElementById('ghost1_bateria');       
 
+        if (playBtn != null) {
+          playBtn.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim');
+            if (playBtn != null && ghost1 != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              //texto.setAttribute('visible', "false");
+              ghost1.setAttribute('visible', "true");
+              rewindBtn.setAttribute('visible', "true");
+            }
+          });
+        }
+        if (bateria != null) {
+          bateria.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim');
+            if (playBtn != null && ghost1 != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              //texto.setAttribute('visible', "false");
+              ghost1.setAttribute('visible', "true");
+              rewindBtn.setAttribute('visible', "true");
+            }
+          });
+        }
+
+        if (rewindBtn != null) {
+          rewindBtn.addEventListener('click', (e) => {
+            // set the current scale as the "starting point"
+
+            this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
+            this.el.emit('pause-anim');
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+
+
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        /* Other objects and elements that will hide the current object*/
+
+        // RETINA OBJECT AND RETINA BANNER
+        let banner_retina = document.getElementById('banner_retina')
+        let retina = document.getElementById('retina')
+        if (banner_retina != null && retina!=null) {
+          banner_retina.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }}, 200);
+          });
+          retina.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }}, 200)
+          });
+        }
+
+         // PROCESADOR OBJECT AND PROCESADOR BANNER
+         let banner_procesador = document.getElementById('banner_procesador')
+         let procesador = document.getElementById('procesador')
+         if (banner_procesador != null && procesador!=null) { 
+           banner_procesador.addEventListener('click', (e) => {
+             this.el.emit('rewind-animBA');
+             this.el.emit('rewind-moveBA'); 
+             setTimeout(() => {
+               if (playBtn != null ) {
+                 playBtn.setAttribute('visible', 'true');
+                 //texto.setAttribute('visible', 'true');
+               } 
+             }, 200); 
+           })
+ 
+           procesador.addEventListener('click', (e) => { 
+             this.el.emit('rewind-animBA');
+             this.el.emit('rewind-moveBA');
+ 
+             setTimeout(() => {
+               if (playBtn != null) {
+                 playBtn.setAttribute('visible', 'true');
+                 //texto.setAttribute('visible', 'true');
+               } 
+             }, 200); 
+           }); 
+         }   
+      },
+    });
 
   }
-
-
 
   pop() {
     var b1 = this.item1.nativeElement;
