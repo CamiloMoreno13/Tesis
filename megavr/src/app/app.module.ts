@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core'; 
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'; 
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 //Servicios
-import {CargarScriptsService} from "./cargar-scripts.service";
+import { CargarScriptsService } from "../app/Services/Carga/cargar-scripts.service";
 //Componentes
 import { AppComponent } from './app.component';
 import { SpaceComponent } from './space/space.component';
@@ -14,15 +15,6 @@ import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ProductoComponent } from './producto/producto.component';
 import { NoticiasComponent } from './noticias/noticias.component';
 import { SharedComponent } from './shared/shared.component';
-import { ProductvrComponent } from './productvr/productvr.component';
-
-//Firebase
-import { environment } from 'src/environments/environment';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireStorageModule } from '@angular/fire/storage';
-import { AngularFireAuthModule} from '@angular/fire/auth';
 import { AdministracionComponent } from './administracion/administracion.component';
 import { EstadisticaComponent } from './estadistica/estadistica.component';
 import { SpaceAdminComponent } from './administracion/space-admin/space-admin.component';
@@ -30,7 +22,13 @@ import { PerfilAdminComponent } from './administracion/perfil-admin/perfil-admin
 import { NoticiaAdminComponent } from './administracion/noticia-admin/noticia-admin.component';
 import { ProductoAdminComponent } from './administracion/producto-admin/producto-admin.component';
 import { OnboardingAdminComponent } from './administracion/onboarding-admin/onboarding-admin.component'
-import { FormsModule } from '@angular/forms';
+//Firebase
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule} from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -42,7 +40,6 @@ import { FormsModule } from '@angular/forms';
     ProductoComponent,
     NoticiasComponent,
     SharedComponent,
-    ProductvrComponent,
     AdministracionComponent,
     EstadisticaComponent,
     SpaceAdminComponent,

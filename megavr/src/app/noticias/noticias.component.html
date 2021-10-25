@@ -1,6 +1,6 @@
 <div class="spinner-border text-primary" role="status" *ngIf="mostrarSpinner">
     <span class="visually-hidden">Loading...</span>
-  </div>
+</div>
 <div class="contenedor" *ngIf="!mostrarSpinner">
     <div class="titular">
         <h4>Nota</h4>
@@ -18,9 +18,9 @@
         <h3>{{noticia.descripcion}}</h3>
     </div>
     <div class="sonido">
-        <i id="sound" class="fa fa-volume-off" (click)="mute()" *ngIf="aviso" #videoi></i>
-        <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!aviso" #videoi></i>
-        <p *ngIf="aviso">activar sonido</p>
+        <i id="sound" class="fa fa-volume-off" (click)="mute()" *ngIf="sonido" #videoi></i>
+        <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!sonido" #videoi></i>
+        <p *ngIf="sonido">activar sonido</p>
     </div>
 </div>
-<app-menu [menus]="menus"></app-menu>
+<app-menu [menus]="menus" (nuevoLocutor)="changeNoticia($event)"></app-menu>

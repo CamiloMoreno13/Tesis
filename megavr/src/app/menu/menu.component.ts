@@ -1,8 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Router} from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Noticia } from '../models/noticia';
 import { FireService } from '../Services/Firebase/firestore/fire.service';
-
 
 @Component({
   selector: 'app-menu',
@@ -12,29 +11,41 @@ import { FireService } from '../Services/Firebase/firestore/fire.service';
 
 export class MenuComponent implements OnInit {
 
-  public bola : boolean = false;
-  public perfiles : boolean = false;
-  public noticias : boolean = false;
-  public producto : boolean = false;
-  public inicio: boolean = false;
-  public equis : boolean = true;
-
-  public locutores : {menuName : string, nombre : string}[] = [] ; 
-  public listNoticias : Noticia[] = [];
+  public difuminado: boolean = false;
+  public perfiles: boolean = false;
+  public noticias: boolean = false;
+  public producto: boolean = false;
+  public space: boolean = false;
+  public equis: boolean = true;
+  public locutores: { menuName: string, nombre: string }[] = [];
+  public listNoticias: Noticia[] = [];
   public href: string = "";
-  public href_noticia: string ="";
 
-  constructor(private router:Router, private fire: FireService) {
+  constructor(private router: Router, private fire: FireService) { }
+
+  @Input() set menus(tipo: any) {
+    if (tipo == 'space') { this.locutores = this.fire.getLocutores(); this.space = true; }
+    if (tipo == 'perfiles') { this.perfiles = true }
+    if (tipo.tipo == 'noticias') { this.listNoticias = this.fire.getNoticias(tipo.locutor); this.noticias = true; }
   }
 
-  @Input() set menus(tipo : any){
-    if(tipo == 'space') {this.locutores =  this.fire.getLocutores(); this.inicio = true;}
-    if(tipo == 'perfiles') { this.perfiles = true }
-    if(tipo.tipo == 'noticias') { this.listNoticias = this.fire.getNoticias(tipo.locutor); this.noticias = true;}
-  }
+  @Output() nuevoLocutor = new EventEmitter<string>();
 
   ngOnInit(): void {
     this.href = this.router.url;
+  }
+
+  perfil(cadena: string) {
+    if (this.space == true) {
+      this.router.navigate(['/perfiles', cadena])
+    }
+  }
+
+  noticia(cadena: string) {
+    this.difuminado = false;
+    var splits = this.href.split('/noticias');
+    this.router.navigate([splits[0] + '/noticias/', cadena]);
+    this.nuevoLocutor.emit(cadena);
   }
 
   exit() {
@@ -46,25 +57,18 @@ export class MenuComponent implements OnInit {
     this.router.navigate([splits[0]]);
   }
 
-  pop() {
-    if (!this.bola) {
-      this.bola=true;
-      this.equis=false;
+  menuDifuminado() {
+    if (!this.difuminado) {
+      this.difuminado = true;
+      this.equis = false;
     }
-    else{
-      this.bola=false;
-      this.equis=true;
+    else {
+      this.difuminado = false;
+      this.equis = true;
     }
-  }
-  
-  start(){
-    this.router.navigate(['/inicio']);
   }
 
-  locutor(cadena:string){
-    //console.log("entro locuro");
-    var splits = this.href.split('/noticias');
-    //console.log("splits" , splits[0]+'/noticias/'+cadena);
-    this.router.navigate([splits[0]+'/noticias/',cadena]);
+  onboarding() {
+    this.router.navigate(['/inicio']);
   }
 }

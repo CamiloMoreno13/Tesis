@@ -1,9 +1,7 @@
-import { createElementCssSelector } from '@angular/compiler';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
-import { AFrame } from 'aframe';
 import { SpaceService } from '../Services/Space/space.service';
-import {CargarScriptsService} from "./../cargar-scripts.service";
+import { CargarScriptsService } from "../Services/Carga/cargar-scripts.service";
 
 
 @Component({
