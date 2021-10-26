@@ -35,6 +35,12 @@ export class FireService {
     return noticias;
   }
 
+  async obtenerPerfiles(){
+    var perfiles : any[] = []; 
+    (await this.fire.collection('perfiles').ref.get()).docs.forEach( (x:any) => { perfiles.push(x.data())});
+    return perfiles;
+  }
+
   getLocutores(){
     var locutores : {menuName : string, nombre : string}[] = [] ; 
     this.fire.collection('perfiles').get().subscribe(x =>{ x.docs.forEach( (y:any) => { locutores.push({menuName : y.data().menuName , nombre : y.data().nombre}); })});
@@ -52,7 +58,15 @@ export class FireService {
     return noticias; 
   }
 
+  getLocutoresAdmin(){
+    var locutores : any[] = []; 
+    this.fire.collection('perfiles').get().subscribe(x => { x.docs.forEach( y => {locutores.push(y.id)})});
+    return locutores;
+  }
 
+  updatePerfil(locutor: string, data: any){
+    this.fire.collection('perfiles').doc(locutor).set(data);
+  }
   changes(){}
 
   // Funciones de prueba 

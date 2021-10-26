@@ -6,17 +6,17 @@
             <input type="text" name="" id="titulo" placeholder="Titulo" [(ngModel)]="title">
             <h3>Subtitulo</h3>
             <input type="text" name="" id="sub" placeholder="Subtitulo" [(ngModel)]="subtitle">
-            <br>
-            <br>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <button class="btn btn-outline-secondary" type="button" (click)="updateSlider()">Update</button>
-                </div>
-                <select class="custom-select" aria-label="Example select with button addon" [(ngModel)]="selection" >
-                  <option selected>Elegir slider</option>
-                  <option value="{{slider+1}}" *ngFor="let opt of informacion; let slider = index">slide {{slider+1}}</option>
+            <br><br>
+            <h3>Seleccionar el slide</h3>
+            <div class="input-group">
+                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon"
+                    [(ngModel)]="selection">
+                    <option value="{{slider+1}}" *ngFor="let opt of informacion; let slider = index">slide {{slider+1}}</option>
                 </select>
-              </div>
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" (click)="updateSlider()">Update</button>
+                </div>
+            </div>
         </div>
         <div class="col-8">
             <table class="table">

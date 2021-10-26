@@ -14,7 +14,7 @@ export class OnboardingAdminComponent implements OnInit {
 
   public title!: string; 
   public subtitle !: string;
-  public selection: string = '';
+  public selection !: string ;
 
   public informacion: banner[] = [];
 
