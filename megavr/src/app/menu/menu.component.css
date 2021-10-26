@@ -137,11 +137,32 @@ a {
   width: 50px;
   cursor: pointer;
 }
+.item1{
+  left: -140px;
+}
+.item2{
+  left: -75px;
+  top: -50px;
+}
+.item3{
+  top: -90px;
+}
+.item4{
+  left: 75px;
+  top: -50px;
+}
+.item5{
+  left: 140px;
+}
 @media (max-width: 480px) {
   .menu {
     height: 40px;
     width: 40px;
     font-size: 25px;
+  }
+  .menu img{
+    height: 20px;
+    width: 20px;
   }
   .menu-items {
     height: 30px;
@@ -153,6 +174,27 @@ a {
   .cerrar img {
     height: 40px;
     width: 40px;
+  }
+  .img-item{
+    height: 30px;
+    width: 30px;
+  }
+  .item1{
+    left: -100px;
+  }
+  .item2{
+    left: -55px;
+    top: -50px;
+  }
+  .item3{
+    top: -80px;
+  }
+  .item4{
+    left: 55px;
+    top: -50px;
+  }
+  .item5{
+    left: 100px;
   }
 }
 
@@ -176,20 +218,4 @@ a {
 }*/
 
 /* Seccion Pruebas */
-.item1{
-  left: -140px;
-}
-.item2{
-  left: -75px;
-  top: -50px;
-}
-.item3{
-  top: -90px;
-}
-.item4{
-  left: 75px;
-  top: -50px;
-}
-.item5{
-  left: 140px;
-}
+

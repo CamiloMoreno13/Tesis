@@ -10,7 +10,7 @@
             <div *ngFor="let locutor of locutores; let i = index">
                 <div (click)="perfil(locutor.nombre)" *ngIf="difuminado" class="item{{i+1}}">
                     <h1 class="name">{{locutor.menuName}}</h1>
-                    <img src="../../assets/Shared/user.svg">
+                    <img class="img-item" src="../../assets/Shared/user.svg">
                 </div>
             </div>
         </div>
