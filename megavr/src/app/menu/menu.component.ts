@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
 
   public difuminado: boolean = false;
   public perfiles: boolean = false;
+  public isMobile !: boolean ;
   public noticias: boolean = false;
   public producto: boolean = false;
   public space: boolean = false;
@@ -25,7 +26,7 @@ export class MenuComponent implements OnInit {
 
   @Input() set menus(tipo: any) {
     if (tipo == 'space') { this.locutores = this.fire.getLocutores(); this.space = true; }
-    if (tipo == 'perfiles') { this.perfiles = true }
+    if (tipo.tipoMenu == 'perfiles') { this.listNoticias = this.fire.getNoticias(tipo.locutor); this.perfiles = true ; this.isMobile = tipo.isMobile}
     if (tipo.tipo == 'noticias') { this.listNoticias = this.fire.getNoticias(tipo.locutor); this.noticias = true; }
   }
 

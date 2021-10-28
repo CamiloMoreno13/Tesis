@@ -15,13 +15,26 @@ export class PerfilesComponent implements OnInit {
   public sonido: boolean = true;
   public perfil !: any;
   public listNoticias !: any[]; 
-  public tipoMenu : string = 'perfiles'; 
   public mostrarSpinner : boolean = true; 
+  public isMobile : boolean = false; 
+  public tipoMenu : any = {tipoMenu : 'perfiles' , isMobile : this.isMobile , locutor : ''}; 
 
   constructor(private routes: ActivatedRoute, private router: Router, private fire: FireService) { }
 
   async ngOnInit(){
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // Es mobile
+      this.isMobile = true; 
+      this.tipoMenu.isMobile = true;
+    }else{
+      // No es mobile 
+      this.isMobile = false;
+      this.tipoMenu.isMobile = false; 
+    }
+    
+    
     this.locutor = this.routes.snapshot.paramMap.get('id');
+    this.tipoMenu.locutor = this.locutor;
     if(this.locutor != null){
       this.perfil = await this.fire.llenarInfoPerfil(this.locutor);
       this.listNoticias = this.perfil.noticias;

@@ -5,7 +5,7 @@
 <div class="contenedor" *ngIf="!mostrarSpinner">
     <h3>Elegir locutor</h3>
     <div class="input-group" style="margin-bottom: 50px;">
-        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" [(ngModel)]="indice">
+        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" [(ngModel)]="indice" >
           <option value="{{i}}" *ngFor="let locutor of selectLocutores; let i = index">{{locutor}}</option>
         </select>
         <div class="input-group-append">

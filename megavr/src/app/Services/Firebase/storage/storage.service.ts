@@ -21,11 +21,11 @@ export class StorageService {
     var valor = this.storage.storage.ref('OnBoarding').listAll();
     console.log(valor); 
     console.log("lsta" , valor.then(res => {
-      var valor = res.items[2];
-      console.log("name" , valor.name);
-      console.log("metadata" , valor.getMetadata());
-      console.log("valor" ,valor.getDownloadURL().then(res1 => {
-        console.log(res1)
+      var valor2 = res.items[0];
+      console.log("name" , valor2.name);
+      console.log("metadata" , valor2.getMetadata());
+      console.log("valor2" ,valor2.getDownloadURL().then(res1 => {
+        console.log("URL " , res1)
         this.imagen.push(res1);
       }));
     }));

@@ -12,7 +12,7 @@ export class PerfilAdminComponent implements OnInit {
   
   public locutores: any[] = [];
   public locutor : any;  
-  public indice !: number;
+  public indice : number = 0;
   public mostrarSpinner : boolean = true;
   public mostrarLocutor : boolean = false;
   public nombre : string = ''; 
@@ -23,7 +23,6 @@ export class PerfilAdminComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.selectLocutores = await this.fire.getLocutoresAdmin();
     this.locutores = await this.fire.obtenerPerfiles();
-    console.log("select" , this.selectLocutores);
     this.mostrarSpinner = false;
   }
 

@@ -15,7 +15,7 @@
     <div class="video">
         <img src="../../assets/Shared/mateo.svg">
     </div>
-    <div class="menu">
+    <div class="menu" *ngIf="!isMobile">
         <div *ngFor="let noticias of listNoticias; let i = index" class="item{{i+1}}"
             (click)="redireccionar(noticias.nombre)">
             <img src="{{noticias.icono}}">
