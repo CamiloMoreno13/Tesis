@@ -9,6 +9,7 @@
 
 <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+      
 </head>
 
 <body>
@@ -25,6 +26,8 @@
             <img id="bn_retina" src="../../assets/Productos/banner_retina.png">
             <img id="cn_retina" src="../../assets/Productos/conoce_retina.png">
             <img id="pc" src="../../assets/Productos/pc.png">
+            <img id ="gif" src="../../assets/Productos/gif.gif">
+
 
         </a-assets>
         <!--
@@ -40,9 +43,9 @@
         <a-entity id="camera-container" rotation="0 -77 0" #camita>
             <a-entity id="camera" camera="fov:80" look-controls></a-entity>
         </a-entity>
+        <a-entity id ="testH" geometry="primitive:plane;" material="shader:gif;src:#gif;" gif="" rotation  = " 0 -86.9 0" position = "2.18 1.00 0.6919"></a-entity>
 
-
-        <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
+            <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
 
         <!--
 
@@ -132,44 +135,44 @@ dir: alternate; easing: linear; startEvents: second"
         <!-- procesadores ---------------------------------------------------------------------------------------- -->
 
         <a-entity id="procesador" rotation="0 113.3 0" position="-25.3 -12.019 9.689" scale=" 0.020 0.020 0.020"
-            procesador-manager
-            animation__move="property: position; to:-15.4 -14.5 5.621; dur: 2000; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
-            animation__scale="property: scale; to: 0.030 0.030 0.030; dur: 2000; 
+        procesador-manager
+        animation__move="property: position; to:-15.4 -14.5 5.621; dur: 2000; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 0.030 0.030 0.030; dur: 2000; 
 dir: alternate; easing: easeInOutCubic; startEvents: second"
-            animation__rewind="property: scale; to: 0.020 0.020 0.020; easing: easeOutBack; startEvents: rewind-animPR"
-            animation__mrewind="property: position; to: -25.3 -12.019 9.689; easing: easeOutBack; startEvents: rewind-movePR">
+        animation__rewind="property: scale; to: 0.020 0.020 0.020; easing: easeOutBack; startEvents: rewind-animPR"
+        animation__mrewind="property: position; to: -25.3 -12.019 9.689; easing: easeOutBack; startEvents: rewind-movePR">
 
 
-            ></a-entity>
+        ></a-entity>
 
-        <a-plane id="banner_procesador" position="-3.52 0.143 1.81" src="#bn_retina"
-            material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6"
-            rotation="0 110.74987700981248 0" procesador-manager animation__scale="property: scale; dir: alternate; dur: 1000;
-    easing: easeInOutCubic; loop: true; to:2.5 0.9 0.8">
+    <a-plane id="banner_procesador" position="-3.52 0.143 1.81" src="#bn_retina"
+        material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6"
+        rotation="0 110.74987700981248 0" procesador-manager animation__scale="property: scale; dir: alternate; dur: 1000;
+easing: easeInOutCubic; loop: true; to:2.5 0.9 0.8">
 
-        </a-plane>
+    </a-plane>
 
-        <a-circle id="close_procesador" visible="false" material="color:red;side:double" radius="0.0001"
-            position="-1.14 0.019 0.334" rotation="0  110.74987700981248 0" procesador-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
-    dir: alternate; easing: linear; startEvents: second"
-            animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:alternate; startEvents: rewind-animPR">
-        </a-circle>
+    <a-circle id="close_procesador" visible="false" material="color:red;side:double" radius="0.0001"
+        position="-1.14 0.019 0.334" rotation="0  110.74987700981248 0" procesador-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:alternate; startEvents: rewind-animPR">
+    </a-circle>
 
-        <a-plane id="ghost1_procesador" visible="false" material="color:orange;side:double;opacity:0.4"
-            position="-0.99188 -0.11 1.87133" rotation="0 -61.02688067497425 0" scale=" 0 0 1.5" procesador-manager
-            animation__move="property:position;to :-0.99188 -0.11 1.87133; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
-            animation__scale="property: scale; to:  2 1 1.5; dur: 2000; 
-      dir: alternate; easing: linear; startEvents: second"
-            animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animPR"></a-plane>
+    <a-plane id="ghost1_procesador" visible="false" material="color:orange;side:double;opacity:0.4"
+        position="-0.99188 -0.11 1.87133" rotation="0 -61.02688067497425 0" scale=" 0 0 1.5" procesador-manager
+        animation__move="property:position;to :-0.99188 -0.11 1.87133; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to:  2 1 1.5; dur: 2000; 
+  dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animPR"></a-plane>
 
 
-        <a-plane id="ghost2_procesador" scale="0 0 1.5" visible="false" material="color:red;side:double;opacity:0.4"
-            position="-1.71115 -0.11224 -0.40278" rotation="-7.807695874247728 87.99772296516748 -0.3380450991271857"
-            procesador-manager
-            animation__move="property: position; to:-1.71115 -0.11224 -0.40278; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
-            animation__scale="property: scale; to: 1 2 1.5; dur: 2000; 
-   dir: alternate; easing: linear; startEvents: second"
-            animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animPR">
+    <a-plane id="ghost2_procesador" scale="0 0 1.5" visible="false" material="color:red;side:double;opacity:0.4"
+        position="-1.71115 -0.11224 -0.40278" rotation="-7.807695874247728 87.99772296516748 -0.3380450991271857"
+        procesador-manager
+        animation__move="property: position; to:-1.71115 -0.11224 -0.40278; dur: 300; dir: alternate; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__scale="property: scale; to: 1 2 1.5; dur: 2000; 
+dir: alternate; easing: linear; startEvents: second"
+        animation__rewind="property: scale; to: 0 0 1.5; easing: easeOutBack; startEvents: rewind-animPR">
 
         </a-plane>
         <!-- Ambient Light-->
