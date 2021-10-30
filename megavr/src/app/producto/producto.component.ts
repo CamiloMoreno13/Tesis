@@ -1,4 +1,4 @@
-import {Component, ElementRef,OnInit,Renderer2,ViewChild,} from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild, } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductoService } from '../Services/Producto/producto.service';
 import { AFrame } from 'aframe';
@@ -73,9 +73,134 @@ export class ProductoComponent implements OnInit {
 
   ngAfterViewInit(): void {
 
+
+    AFRAME.registerComponent('retina-manager-object', {
+      init: function () {
+
+        let retina = document.getElementById("retina")
+        let playBtn = document.getElementById('banner_retina');
+        let texto = document.getElementById('texto_retina');
+        let rewindBtn = document.getElementById('close_retina');
+        let posinicial = this.el.getAttribute('position').x
+
+        if (playBtn != null) {
+          playBtn.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim-object');
+            if (playBtn != null && texto != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              texto.setAttribute('visible', "false");
+            }
+          });
+        }
+
+        if (retina != null) {
+          retina.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim-object');
+            if (playBtn != null && texto != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              texto.setAttribute('visible', "false");
+            }
+          });
+        }
+
+        if (rewindBtn != null) {
+          rewindBtn.addEventListener('click', (e) => {
+            this.el.emit('pause-anim');
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+          });
+        }
+
+        // PROCESADOR OBJECT AND PROCESADOR BANNER
+        let banner_procesador = document.getElementById('banner_procesador')
+        let procesador = document.getElementById('procesador')
+        if (banner_procesador != null && procesador != null) {
+          banner_procesador.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-moveRE');
+              this.el.emit('rewind-animRE');
+              setTimeout(() => {
+                if (playBtn != null && texto != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+            ;
+          })
+
+          procesador.addEventListener('click', (e) => {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        // BATERIA OBJECT AND BATERIA BANNER
+        let bateria = document.getElementById('bateria')
+        let banner_bateria = document.getElementById('banner_bateria')
+        if (banner_bateria != null && bateria != null) {
+          banner_bateria.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+
+
+              this.el.emit('rewind-animRE');
+              this.el.emit('rewind-moveRE');
+
+              setTimeout(() => {
+                if (playBtn != null && texto != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          });
+
+          bateria.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animRE');
+              this.el.emit('rewind-moveRE');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          });
+        }
+
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null) {
+          teclado.addEventListener('click', (e) => {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null && texto != null) {
+                playBtn.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+      }
+    })
+
     AFRAME.registerComponent('retina-manager', {
       init: function () {
-        
+
         let retina = document.getElementById("retina")
         let playBtn = document.getElementById('banner_retina');
         let texto = document.getElementById('texto_retina');
@@ -85,36 +210,42 @@ export class ProductoComponent implements OnInit {
 
         if (playBtn != null) {
           playBtn.addEventListener('click', (e) => {
-            this.el.emit('second');
-            this.el.emit('play-anim');
-            if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
-              playBtn.setAttribute('visible', "false");
-              texto.setAttribute('visible', "false");
-              ghost1.setAttribute('visible', "true");
-              ghost2.setAttribute('visible', "true");
-              rewindBtn.setAttribute('visible', "true");
-            }
+            setTimeout(() => {
+              this.el.emit('second');
+              this.el.emit('play-anim-object');
+
+              this.el.emit('second');
+              this.el.emit('play-anim');
+              if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
+                playBtn.setAttribute('visible', "false");
+                texto.setAttribute('visible', "false");
+                ghost1.setAttribute('visible', "true");
+                ghost2.setAttribute('visible', "true");
+                rewindBtn.setAttribute('visible', "true");
+              }
+            }, 1500);
           });
         }
 
         if (retina != null) {
           retina.addEventListener('click', (e) => {
-            this.el.emit('second');
-            this.el.emit('play-anim');
-            if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
-              playBtn.setAttribute('visible', "false");
-              texto.setAttribute('visible', "false");
-              ghost1.setAttribute('visible', "true");
-              ghost2.setAttribute('visible', "true");
-              rewindBtn.setAttribute('visible', "true");
-            }
+            setTimeout(() => {
+
+              this.el.emit('second');
+              this.el.emit('play-anim');
+              if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
+                playBtn.setAttribute('visible', "false");
+                texto.setAttribute('visible', "false");
+                ghost1.setAttribute('visible', "true");
+                ghost2.setAttribute('visible', "true");
+                rewindBtn.setAttribute('visible', "true");
+              }
+            }, 1000);
           });
         }
 
         if (rewindBtn != null) {
           rewindBtn.addEventListener('click', (e) => {
-            // set the current scale as the "starting point"
-            this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
             this.el.emit('pause-anim');
             this.el.emit('rewind-animRE');
             this.el.emit('rewind-moveRE');
@@ -131,7 +262,7 @@ export class ProductoComponent implements OnInit {
         // PROCESADOR OBJECT AND PROCESADOR BANNER
         let banner_procesador = document.getElementById('banner_procesador')
         let procesador = document.getElementById('procesador')
-        if (banner_procesador != null && procesador!=null) {
+        if (banner_procesador != null && procesador != null) {
           banner_procesador.addEventListener('click', (e) => {
             this.el.emit('rewind-animRE');
             this.el.emit('rewind-moveRE');
@@ -155,36 +286,173 @@ export class ProductoComponent implements OnInit {
           });
         }
 
-         // BATERIA OBJECT AND BATERIA BANNER
-         let bateria = document.getElementById('bateria')
-         let banner_bateria = document.getElementById('banner_bateria')
-         if (banner_bateria != null && bateria!=null)  {
-           banner_bateria.addEventListener('click', (e) => {
-             this.el.emit('rewind-animRE');
-             this.el.emit('rewind-moveRE');
-             setTimeout(() => {
-               if (playBtn != null && texto != null) {
-                 playBtn.setAttribute('visible', 'true');
-                 texto.setAttribute('visible', 'true');
-               }
-             }, 200);
-           });
- 
-           bateria.addEventListener('click', (e) => {
-             this.el.emit('rewind-animRE');
-             this.el.emit('rewind-moveRE');
-             setTimeout(() => {
-               if (playBtn != null) {
-                 playBtn.setAttribute('visible', 'true');
-                 //texto.setAttribute('visible', 'true');
-               }
-             }, 200);
-           });
-         }
+        // BATERIA OBJECT AND BATERIA BANNER
+        let bateria = document.getElementById('bateria')
+        let banner_bateria = document.getElementById('banner_bateria')
+        if (banner_bateria != null && bateria != null) {
+          banner_bateria.addEventListener('click', (e) => {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null && texto != null) {
+                playBtn.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
 
+          bateria.addEventListener('click', (e) => {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null) {
+          teclado.addEventListener('click', (e) => {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null && texto != null) {
+                playBtn.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
 
       },
     });
+
+    AFRAME.registerComponent('procesador-manager-object', {
+      init: function () {
+
+        let procesador = document.getElementById("procesador")
+        let playBtn = document.getElementById('banner_procesador');
+        //let texto = document.getElementById('texto_retina');
+        let rewindBtn = document.getElementById('close_procesador');
+        let posinicial = this.el.getAttribute('position').x
+
+        if (playBtn != null) {
+          playBtn.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim-object');
+            if (playBtn != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              //texto.setAttribute('visible', "false");
+            }
+          });
+        }
+
+        if (procesador != null) {
+          procesador.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim-object');
+            if (playBtn != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              //texto.setAttribute('visible', "false");
+            }
+          });
+        }
+
+        if (rewindBtn != null) {
+          rewindBtn.addEventListener('click', (e) => {
+            this.el.emit('pause-anim');
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+          });
+        }
+        // RETINA OBJECT AND RETINA BANNER
+
+        let banner_retina = document.getElementById('banner_retina')
+        let retina = document.getElementById('retina')
+        if (banner_retina != null && retina != null) {
+          banner_retina.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animPR');
+              this.el.emit('rewind-movePR');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            };
+          });
+
+          retina.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        // BATERIA OBJECT AND BATERIA BANNER
+        let bateria = document.getElementById('bateria')
+        let banner_bateria = document.getElementById('banner_bateria')
+        if (banner_bateria != null && bateria != null) {
+          banner_bateria.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animPR');
+              this.el.emit('rewind-movePR');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          });
+
+          bateria.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null) {
+          teclado.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animPR');
+              this.el.emit('rewind-movePR');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          })
+        }
+
+      }
+    })
+
+
 
     AFRAME.registerComponent('procesador-manager', {
       init: function () {
@@ -197,30 +465,35 @@ export class ProductoComponent implements OnInit {
 
         if (playBtn != null) {
           playBtn.addEventListener('click', (e) => {
-            this.el.emit('second');
-            this.el.emit('play-anim');
-            if (playBtn != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
-              playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
-              ghost1.setAttribute('visible', "true");
-              ghost2.setAttribute('visible', "true");
-              rewindBtn.setAttribute('visible', "true");
-            }
+            setTimeout(() => {
+              this.el.emit('second');
+              this.el.emit('play-anim');
+              if (playBtn != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
+                playBtn.setAttribute('visible', "false");
+                //texto.setAttribute('visible', "false");
+                ghost1.setAttribute('visible', "true");
+                ghost2.setAttribute('visible', "true");
+                rewindBtn.setAttribute('visible', "true");
+              }
+            }, 1500)
           });
         }
 
 
         if (cpu != null) {
           cpu.addEventListener('click', (e) => {
-            this.el.emit('second');
-            this.el.emit('play-anim');
-            if (playBtn != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
-              playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
-              ghost1.setAttribute('visible', "true");
-              ghost2.setAttribute('visible', "true");
-              rewindBtn.setAttribute('visible', "true");
-            }
+            setTimeout(() => {
+
+              this.el.emit('second');
+              this.el.emit('play-anim');
+              if (playBtn != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
+                playBtn.setAttribute('visible', "false");
+                //texto.setAttribute('visible', "false");
+                ghost1.setAttribute('visible', "true");
+                ghost2.setAttribute('visible', "true");
+                rewindBtn.setAttribute('visible', "true");
+              }
+            }, 1500);
           });
         }
 
@@ -246,7 +519,7 @@ export class ProductoComponent implements OnInit {
         // RETINA OBJECT AND RETINA BANNER
         let banner_retina = document.getElementById('banner_retina')
         let retina = document.getElementById('retina')
-        if (banner_retina != null && retina!=null) {
+        if (banner_retina != null && retina != null) {
           banner_retina.addEventListener('click', (e) => {
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
@@ -272,7 +545,7 @@ export class ProductoComponent implements OnInit {
         // BATERIA OBJECT AND BATERIA BANNER
         let bateria = document.getElementById('bateria')
         let banner_bateria = document.getElementById('banner_bateria')
-        if (banner_bateria != null && bateria!=null) {
+        if (banner_bateria != null && bateria != null) {
           banner_bateria.addEventListener('click', (e) => {
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
@@ -296,39 +569,181 @@ export class ProductoComponent implements OnInit {
           });
         }
 
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null) {
+          teclado.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200)
+
+          })
+        }
+
+
       },
     });
 
+    AFRAME.registerComponent('bateria-manager-object', {
+      init: function () {
+
+        let bateria = document.getElementById("bateria")
+        let playBtn = document.getElementById("banner_bateria");
+        // let texto = document.getElementById('texto_retina');
+        let rewindBtn = document.getElementById('close_bateria');
+        let posinicial = this.el.getAttribute('position').x
+
+        if (playBtn != null) {
+          playBtn.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim-object');
+            if (playBtn != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              //texto.setAttribute('visible', "false");
+            }
+          });
+        }
+
+        if (bateria != null) {
+          bateria.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim-object');
+            if (playBtn != null && rewindBtn != null) {
+              playBtn.setAttribute('visible', "false");
+              //texto.setAttribute('visible', "false");
+            }
+          });
+        }
+
+        if (rewindBtn != null) {
+          rewindBtn.addEventListener('click', (e) => {
+            this.el.emit('pause-anim');
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+          });
+        }
+
+        // RETINA OBJECT AND RETINA BANNER
+        let banner_retina = document.getElementById('banner_retina')
+        let retina = document.getElementById('retina')
+        if (banner_retina != null && retina != null) {
+          banner_retina.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animBA');
+              this.el.emit('rewind-moveBA');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          });
+          retina.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200)
+          });
+        }
+
+        // PROCESADOR OBJECT AND PROCESADOR BANNER
+        let banner_procesador = document.getElementById('banner_procesador')
+        let procesador = document.getElementById('procesador')
+        if (banner_procesador != null && procesador != null) {
+          banner_procesador.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animBA');
+              this.el.emit('rewind-moveBA');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          })
+
+          procesador.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null){
+          teclado.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+            setTimeout(() => {
+              if (playBtn != null ) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200)
+          }
+          })
+        }
+
+
+
+      }
+    })
     AFRAME.registerComponent('bateria-manager', {
       init: function () {
         let bateria = document.getElementById("bateria")
         let playBtn = document.getElementById('banner_bateria');
         // let texto = document.getElementById('texto_retina');
         let rewindBtn = document.getElementById('close_bateria');
-        let ghost1 = document.getElementById('ghost1_bateria');       
+        let ghost1 = document.getElementById('ghost1_bateria');
 
         if (playBtn != null) {
           playBtn.addEventListener('click', (e) => {
-            this.el.emit('second');
-            this.el.emit('play-anim');
-            if (playBtn != null && ghost1 != null && rewindBtn != null) {
-              playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
-              ghost1.setAttribute('visible', "true");
-              rewindBtn.setAttribute('visible', "true");
-            }
+            setTimeout(() => {
+              this.el.emit('second');
+              this.el.emit('play-anim');
+              if (playBtn != null && ghost1 != null && rewindBtn != null) {
+                playBtn.setAttribute('visible', "false");
+                //texto.setAttribute('visible', "false");
+                ghost1.setAttribute('visible', "true");
+                rewindBtn.setAttribute('visible', "true");
+              }
+            }, 1500)
           });
         }
         if (bateria != null) {
           bateria.addEventListener('click', (e) => {
-            this.el.emit('second');
-            this.el.emit('play-anim');
-            if (playBtn != null && ghost1 != null && rewindBtn != null) {
-              playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
-              ghost1.setAttribute('visible', "true");
-              rewindBtn.setAttribute('visible', "true");
-            }
+            setTimeout(() => {
+              this.el.emit('second');
+              this.el.emit('play-anim');
+              if (playBtn != null && ghost1 != null && rewindBtn != null) {
+                playBtn.setAttribute('visible', "false");
+                //texto.setAttribute('visible', "false");
+                ghost1.setAttribute('visible', "true");
+                rewindBtn.setAttribute('visible', "true");
+              }
+            }, 1500);
           });
         }
 
@@ -336,7 +751,7 @@ export class ProductoComponent implements OnInit {
           rewindBtn.addEventListener('click', (e) => {
             // set the current scale as the "starting point"
 
-            this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
+            //this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
             this.el.emit('pause-anim');
             this.el.emit('rewind-animBA');
             this.el.emit('rewind-moveBA');
@@ -356,7 +771,7 @@ export class ProductoComponent implements OnInit {
         // RETINA OBJECT AND RETINA BANNER
         let banner_retina = document.getElementById('banner_retina')
         let retina = document.getElementById('retina')
-        if (banner_retina != null && retina!=null) {
+        if (banner_retina != null && retina != null) {
           banner_retina.addEventListener('click', (e) => {
             this.el.emit('rewind-animBA');
             this.el.emit('rewind-moveBA');
@@ -364,7 +779,8 @@ export class ProductoComponent implements OnInit {
               if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
-              }}, 200);
+              }
+            }, 200);
           });
           retina.addEventListener('click', (e) => {
             this.el.emit('rewind-animBA');
@@ -373,39 +789,166 @@ export class ProductoComponent implements OnInit {
               if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
-              }}, 200)
+              }
+            }, 200)
           });
         }
 
-         // PROCESADOR OBJECT AND PROCESADOR BANNER
-         let banner_procesador = document.getElementById('banner_procesador')
-         let procesador = document.getElementById('procesador')
-         if (banner_procesador != null && procesador!=null) { 
-           banner_procesador.addEventListener('click', (e) => {
-             this.el.emit('rewind-animBA');
-             this.el.emit('rewind-moveBA'); 
-             setTimeout(() => {
-               if (playBtn != null ) {
-                 playBtn.setAttribute('visible', 'true');
-                 //texto.setAttribute('visible', 'true');
-               } 
-             }, 200); 
-           })
- 
-           procesador.addEventListener('click', (e) => { 
-             this.el.emit('rewind-animBA');
-             this.el.emit('rewind-moveBA');
- 
-             setTimeout(() => {
-               if (playBtn != null) {
-                 playBtn.setAttribute('visible', 'true');
-                 //texto.setAttribute('visible', 'true');
-               } 
-             }, 200); 
-           }); 
-         }   
+        // PROCESADOR OBJECT AND PROCESADOR BANNER
+        let banner_procesador = document.getElementById('banner_procesador')
+        let procesador = document.getElementById('procesador')
+        if (banner_procesador != null && procesador != null) {
+          banner_procesador.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          })
+
+          procesador.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null){
+          teclado.addEventListener('click', (e) => {
+            this.el.emit('rewind-animBA');
+            this.el.emit('rewind-moveBA');
+            setTimeout(() => {
+              if (playBtn != null ) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200)
+          
+          })
+        }
       },
     });
+
+
+    AFRAME.registerComponent('teclado-manager', {
+      init: function () {
+
+        let teclado = document.getElementById("teclado")
+        //let texto = document.getElementById('texto_retina');
+        let rewindBtn = document.getElementById('close_teclado');
+        let posinicial = this.el.getAttribute('position').x
+
+        if (teclado != null) {
+          teclado.addEventListener('click', (e) => {
+            this.el.emit('second');
+            this.el.emit('play-anim')
+            teclado?.setAttribute('visible', 'false')
+          });
+        }
+
+        if (rewindBtn != null) {
+          rewindBtn.addEventListener('click', (e) => {
+            this.el.emit('pause-anim');
+            this.el.emit('rewind-animTE');
+            this.el.emit('rewind-moveTE');
+            setTimeout(() => {
+              teclado?.setAttribute('visible', 'true')
+            }, 1150);
+
+          });
+        }
+
+        // RETINA OBJECT AND RETINA BANNER
+
+        let banner_retina = document.getElementById('banner_retina')
+        let retina = document.getElementById('retina')
+        if (banner_retina != null && retina != null) {
+          banner_retina.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animTE');
+              this.el.emit('rewind-moveTE');
+              setTimeout(() => {
+                teclado?.setAttribute('visible', 'true')
+              }, 1150);
+            };
+          });
+
+          retina.addEventListener('click', (e) => {
+            this.el.emit('rewind-animTE');
+            this.el.emit('rewind-moveTE');
+            setTimeout(() => {
+              teclado?.setAttribute('visible', 'true')
+            }, 1150);
+          });
+        }
+
+        // PROCESADOR OBJECT AND PROCESADOR BANNER
+        let banner_procesador = document.getElementById('banner_procesador')
+        let procesador = document.getElementById('procesador')
+        if (banner_procesador != null && procesador != null) {
+          banner_procesador.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-moveTE');
+              this.el.emit('rewind-animTE');
+              setTimeout(() => {
+                teclado?.setAttribute('visible', 'true')
+              }, 1150);
+            }
+            ;
+          })
+
+          procesador.addEventListener('click', (e) => {
+            this.el.emit('rewind-animTE');
+            this.el.emit('rewind-moveTE');
+            setTimeout(() => {
+              teclado?.setAttribute('visible', 'true')
+            }, 1150);
+          });
+        }
+
+        // BATERIA OBJECT AND BATERIA BANNER
+        let bateria = document.getElementById('bateria')
+        let banner_bateria = document.getElementById('banner_bateria')
+        if (banner_bateria != null && bateria != null) {
+          banner_bateria.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animTE');
+              this.el.emit('rewind-moveTE');
+              setTimeout(() => {
+                teclado?.setAttribute('visible', 'true')
+              }, 1150);
+            }
+          });
+
+          bateria.addEventListener('click', (e) => {
+            this.el.emit('rewind-animTE');
+            this.el.emit('rewind-moveTE');
+            setTimeout(() => {
+              teclado?.setAttribute('visible', 'true')
+            }, 1150);
+          });
+
+        }
+
+
+
+      }
+    })
+
 
   }
 
