@@ -22,10 +22,8 @@
     </div>
     <!------------------------------------------- Perfiles -------------------------------------------->
     <div class="menu-contenedor" *ngIf="perfiles && !isMobile">
-        <div>
-            <div class="menu" id="menu" (click)="exit()">
-                <img src="../../assets/Shared/icon_rest.svg">
-            </div>
+        <div class="menu" (click)="exit()">
+            <img src="../../assets/Shared/icon_rest.svg">
         </div>
     </div>
     <div class="menu-contenedor" *ngIf="perfiles && isMobile">
@@ -37,7 +35,7 @@
             <div *ngFor="let items of listNoticias; let i = index">
                 <div class="item{{i+1}}" *ngIf="difuminado" (click)="noticia(items.nombre)">
                     <h1 class="name">{{items.nombre}}</h1>
-                    <img src="../../assets/Shared/user.svg" alt="">
+                    <img class="img-item" src="../../assets/Shared/user.svg" alt="">
                 </div>
             </div>
         </div>
@@ -57,7 +55,7 @@
             <div *ngFor="let items of listNoticias; let i = index">
                 <div class="item{{i+1}}" *ngIf="difuminado" (click)="noticia(items.nombre)">
                     <h1 class="name">{{items.nombre}}</h1>
-                    <img src="../../assets/Shared/user.svg" alt="">
+                    <img class="img-item" src="../../assets/Shared/user.svg" alt="">
                 </div>
             </div>
         </div>

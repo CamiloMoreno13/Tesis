@@ -47,6 +47,7 @@ export class MenuComponent implements OnInit {
     var splits = this.href.split('/noticias');
     this.router.navigate([splits[0] + '/noticias/', cadena]);
     this.nuevoLocutor.emit(cadena);
+    this.equis = true;
   }
 
   exit() {

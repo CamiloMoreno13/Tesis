@@ -12,21 +12,26 @@
   background-size: cover;
 }
 .video {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 4 / 3;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .video video {
-  height: 90%;
+  height: 95%;
 }
 .video img {
-  height: 90%;
+  height: 95%;
 }
 .titular {
   grid-area: 1 / 2 / 2 / 3;
   display: flex;
   align-items: center;
+  color: white;
+  background-color: tomato;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .titular h4 {
   color:white;
@@ -37,19 +42,46 @@
   font-weight: 600;
   line-height: 28px;
   text-align: left;
-  position: relative;
+  position: absolute;
   left: 5%;
+  user-select: none;
+  display: block;
+  background-color: rgba(255, 0, 0, 0.438);
+}
+.titular h5 {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 25px;
+  background-color: saddlebrown;
+  position: absolute;
+  display: block;
+  left: 5%;
+  top: 70%;
+  user-select: none;
+
+}
+.titular p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+  background-color: salmon;
+  position: absolute;
+  display: block;
+  left: 5%;
+  top: 100%;
   user-select: none;
 }
 .menu {
   color:white;
   height: 100%;
   width: 100%;
-  grid-area: 3 / 2 / 4 / 3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-area: 2 / 2 / 4 / 3;
   position: absolute;
+  background-color: rgba(238, 130, 238, 0.5);
 }
 .menu div {
   background-color: rgba(255, 67, 29, 1);
@@ -57,14 +89,15 @@
   height: 40px;
   border-radius: 50%;
   border: 2px solid white;
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .name {
+  background-color: black;
   color:white;
-  width: 200px;
+  width: 90px;
   height: 40px;
   z-index: 3;
   font-size: 15px;
@@ -79,31 +112,33 @@
   font-family: "chivo";
   font-style: italic;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 14px;
-  line-height: 1;
+  font-size: 14px;
+  line-height: 16px;
 }
 .menu div img{
   height: 30px;
   width: 30px;
 }
 .item1 {
-  left: -300px;
-  top: -50px;
+  left: 48.5%;
+  top: 80%;
 }
 .item2 {
-  left: -150px;
-  top: -15px;
+  left: 58.5%;
+  top: 78%;
+}
+.item3 {
+  left: 38.5%;
+  top: 78%;
 }
 .item4 {
-  left: 150px;
-  top: -15px;
+  left: 68.5%;
+  top: 70%;
 }
 .item5 {
-  left: 300px;
-  top: -50px;
+  left: 28.5%;
+  top: 70%;
 }
-
 /*
 .item1 {
   left: -75px;
@@ -159,6 +194,9 @@ Para hacer zoom de los videos
 @media (max-width: 480px) {
   .titular h4 {
     font-size: 21px;
+  }
+  .titular p {
+    top: 110%;
   }
   .sonido {
     font-size: 25px;
