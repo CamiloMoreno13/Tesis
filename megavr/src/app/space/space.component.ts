@@ -19,7 +19,6 @@ export class SpaceComponent implements OnInit {
   //public mostrar: boolean = false;
   public playsonido: boolean = false;
   public primercaro: boolean = true; // temporary
-  public imagen : boolean = false;
   public sonidoclick : boolean = false;
   public menu : string = 'space'; 
   
@@ -40,7 +39,7 @@ export class SpaceComponent implements OnInit {
     
 
 
-    let caro2 = <HTMLVideoElement>document.getElementById("v2");
+    let caro2 = <HTMLVideoElement>document.getElementById("cabina-caro");
     caro2.volume = 0;
     caro2.play();
     
@@ -75,12 +74,13 @@ export class SpaceComponent implements OnInit {
   caroclick(){
     if (this.sonidoclick==false){
       this.sonidoclick=true;
-      this.imagen=true;
-      let carosonido2 = document.getElementById("v2") as HTMLVideoElement;
+      let carosonido2 = document.getElementById("cabina-caro") as HTMLVideoElement;
       carosonido2.volume=1;
+     document.getElementById('#parlante')?.setAttribute('src','../../assets/Space/volumeup.png')
+      //parlante?.setAttribute('src','../../assets/Space/volumeup.png');
 
     }else{
-      let carosonido2 = document.getElementById("v2") as HTMLVideoElement;
+      let carosonido2 = document.getElementById("cabina-caro") as HTMLVideoElement;
       carosonido2.volume=0;
       this.sonidoclick=false;
     }
