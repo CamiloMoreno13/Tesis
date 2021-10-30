@@ -12,23 +12,27 @@
   background-size: cover;
 }
 .video {
-  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 4 / 3;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .video video {
-  height: 90%;
+  height: 95%;
 }
 .informacion {
   grid-area: 3 / 2 / 4 / 3;
+  background-color: rgba(0, 255, 255, 0.5);
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 .titular {
   grid-area: 1 / 2 / 2 / 3;
 }
 .titular h4 {
   color: white;
-  width: 50%;
+  width: 100%;
   font-family: Montserrat;
   font-style: normal;
   font-size: 21px;
@@ -56,29 +60,30 @@
   user-select: none;
 }
 .informacion h4 {
+  background-color: rebeccapurple;
   color: rgba(255, 67, 29, 1);
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 27px;
-  line-height: 24px;
-  position: relative;
+  font-family: Chivo;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 40px;
+  position: absolute;
   width: 80%;
-  top: 16%;
-  left: 15%;
+  top: 30%;
+  left: 40%;
   user-select: none;
 }
 .informacion h3 {
   color: white;
-  font-family: Montserrat;
+  font-family: Roboto Slab;
   font-style: normal;
-  font-weight: 500;
-  font-size: 23px;
-  line-height: 18px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 25px;
   position: relative;
   width: 80%;
-  top: 16%;
-  left: 15%;
+  top: 30%;
+  left: 40%;
   user-select: none;
 }
 .circle {
@@ -93,7 +98,7 @@
   align-items: center;
   flex-direction: column;
   top: 40%;
-  left: 5%;
+  left: 35%;
 }
 .circle img {
   height: 20px;
@@ -116,18 +121,10 @@
   user-select: none;
   top: 9%;
 }
-@media (max-width: 480px) {
-  .titular h4 {
-    font-size: 18px;
-  }
-  .titular h3 {
-    font-size: 26px;
-  }
-  .informacion h4 {
-    font-size: 17px;
-  }
-  .informacion h3 {
-    font-size: 13px;
+@media (max-width: 1366px) {
+  .informacion {
+    width: 130%;
+    left: -15%;
   }
   .sonido {
     font-size: 25px;
@@ -135,14 +132,62 @@
   .sonido p {
     font-size: 9px;
   }
-}
-@media (max-width: 550px) {
   .informacion h4 {
-    top: 3%;
-    left: 25%;
+    font-size: 16px;
+    left: 15%;
   }
   .informacion h3 {
-    top: 3%;
-    left: 25%;
+    left: 15%;
+  }
+  .circle {
+    top: 30%;
+    left: 5%;
+  }
+}
+@media (max-width: 480px) {
+  .informacion {
+    width: 120%;
+    left: -10%;
+  }
+  .sonido {
+    font-size: 25px;
+  }
+  .sonido p {
+    font-size: 9px;
+  }
+  .informacion h4 {
+    font-size: 16px;
+    left: 20%;
+  }
+  .informacion h3 {
+    left: 20%;
+  }
+  .circle {
+    left: 5%;
+  }
+  .titular h4 {
+    font-size: 16px;
+  }
+  .titular h3 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 380px) {
+  .informacion h4 {
+    font-size: 14px;
+    top: 18%;
+    left: 15%;
+    width: 90%;
+  }
+  .informacion h3 {
+    font-size: 12px;
+    top: 18%;
+    left: 15%;
+  }
+  .circle {
+    left: 0%;
+  }
+  .titular h3 {
+    font-size: 22px;
   }
 }
