@@ -16,7 +16,7 @@ export class SpaceComponent implements OnInit {
   @ViewChild('carovideo') carovideo!: HTMLElement;
   @ViewChild('videoId') videoid!: HTMLElement;
 
-  //public mostrar: boolean = false;
+  public mostrar: boolean = false;
   public playsonido: boolean = false;
   public primercaro: boolean = true; // temporary
   public sonidoclick : boolean = false;
@@ -43,8 +43,7 @@ export class SpaceComponent implements OnInit {
     caro2.volume = 0;
     caro2.play();
     
-    
-    
+       
 
     pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale','0.04 0.04 0.04');
@@ -61,9 +60,17 @@ export class SpaceComponent implements OnInit {
     if (entity != null) {
       console.log("enity", entity);
     }
+/*
+    document.addEventListener('DOMContentLoaded', (e) => {
+      var scene = document.querySelector('a-scene');
+      scene.addEventListener('loaded',  (e) => {
+          this.mostrar=true;
+      });
+  });*/
     /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
   }
 
+  
 
   prueba() {
     let valor = document.querySelector('#caja');

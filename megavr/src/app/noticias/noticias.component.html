@@ -1,6 +1,8 @@
 <div class="spinner-border text-primary" role="status" *ngIf="mostrarSpinner">
     <span class="visually-hidden">Loading...</span>
 </div>
+
+<div class="loading" *ngIf="mostrarSpinner"></div>
 <div class="contenedor" *ngIf="!mostrarSpinner">
     <div class="titular">
         <h4>Nota</h4>

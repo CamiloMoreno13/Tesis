@@ -23,7 +23,7 @@ export class ProductoComponent implements OnInit {
   public equis: boolean = true;
   public mostrar: boolean = false;
   public movimiento: boolean = false;
-
+  
   constructor(
     private renderer2: Renderer2,
     private router: Router,
@@ -61,17 +61,27 @@ export class ProductoComponent implements OnInit {
     //procesador?.setAttribute('scale', '0.015 0.015 0.015');
     //procesadores?.setAttribute('position', '-25.3 -12.019 9.689');
     //procesadores?.setAttribute('rotation', '0 -153.267 0');
+
     document.querySelector('a-scene').addEventListener('loaded', () => {
       setTimeout(() => {
         this.mostrar = true;
       }, 1000);
-    }); /* This is the key*/
+    }); /* This is the key
+
+    /*document.addEventListener('DOMContentLoaded', (e) => {
+      var scene = document.querySelector('a-scene');
+      scene.addEventListener('loaded',  (e) => {
+        console.log("AAAAAAAAAAAAAAAAAAAAAAA")
+          this.mostrar=true;
+      });
+  });*/
 
     let bateria = document.getElementById('bateria');
     bateria?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
   }
 
-  ngAfterViewInit(): void {
+ 
+  ngAfterContentInit(): void {
 
 
     AFRAME.registerComponent('retina-manager-object', {
@@ -500,7 +510,7 @@ export class ProductoComponent implements OnInit {
         if (rewindBtn != null) {
           rewindBtn.addEventListener('click', (e) => {
             // set the current scale as the "starting point"
-            this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
+            //this.el.setAttribute('animation__rewind', 'from', this.el.getAttribute('scale'))
             this.el.emit('pause-anim');
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
