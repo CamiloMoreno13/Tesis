@@ -12,17 +12,17 @@
         <video [src]="noticia.video" [muted]="mute" autoplay="autoplay" #videopls loop
             playsinline></video>
     </div>
+    <div class="sonido">
+        <i id="sound" class="fa fa-volume-off" (click)="mute()" [hidden]="!sonido" #videoi></i>
+        <i id="muted" class="fa fa-volume-up" (click)="mute()" [hidden]="sonido" #videoi></i>
+        <p [hidden]="!sonido">activar sonido</p>
+    </div>
     <div class="informacion" *ngIf="true">
         <div class="circle">
             <img [src]="noticia.icono">
         </div>
         <h4>{{noticia.encabezado}}</h4>
         <h3>{{noticia.descripcion}}</h3>
-    </div>
-    <div class="sonido">
-        <i id="sound" class="fa fa-volume-off" (click)="mute()" *ngIf="sonido" #videoi></i>
-        <i id="muted" class="fa fa-volume-up" (click)="mute()" *ngIf="!sonido" #videoi></i>
-        <p *ngIf="sonido">activar sonido</p>
     </div>
 </div>
 <app-menu [menus]="menus" (nuevoLocutor)="changeNoticia($event)"></app-menu>

@@ -16,7 +16,8 @@
         <p *ngIf="sonido" (click)="mute()">activar sonido</p>
     </div>
     <div class="video">
-        <video [src]="perfil.video"></video>
+        <video [src]="perfil.video" [muted]="mute" autoplay="autoplay" #videopls loop
+        playsinline></video>
     </div>
     <div class="menu" *ngIf="!isMobile">
         <div *ngFor="let noticias of listNoticias; let i = index" class="item{{i+1}}"

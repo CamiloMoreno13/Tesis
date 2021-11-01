@@ -11,7 +11,6 @@ import { FireService } from '../Services/Firebase/firestore/fire.service';
 export class NoticiasComponent implements OnInit {
 
   @ViewChild('videopls') videopls!: ElementRef;
-  @ViewChild('videoi') videoi!: ElementRef;
 
   public sonido: boolean = true;
   public nameNoticia: string | null = "";
@@ -34,19 +33,23 @@ export class NoticiasComponent implements OnInit {
   }
 
   async changeNoticia(event: any){
-    this.mostrarSpinner = true; 
+    this.mostrarSpinner = true;
+    this.sonido = true; 
     if(this.locutor != null){
-      this.noticia = await this.fire.llenarInfoNoticias(this.locutor , event);
+      this.noticia = await this.fire.llenarInfoNoticias(this.locutor , event)
       this.mostrarSpinner = false;
     }
   }
   
   mute() {
+    console.log("entro mute");
     if (this.videopls.nativeElement.muted) {
+      console.log("if")
       this.videopls.nativeElement.muted = false;
       this.sonido = false;
     }
     else {
+      console.log("else")
       this.videopls.nativeElement.muted = true;
       this.sonido = true;
     }
