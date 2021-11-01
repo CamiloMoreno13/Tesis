@@ -11,6 +11,7 @@ import { FireService } from '../Services/Firebase/firestore/fire.service';
 
 export class MenuComponent implements OnInit {
 
+  public selectLocutores : any[] = []; 
   public difuminado: boolean = false;
   public perfiles: boolean = false;
   public isMobile !: boolean ;
@@ -26,19 +27,20 @@ export class MenuComponent implements OnInit {
 
   @Input() set menus(tipo: any) {
     if (tipo == 'space') { this.locutores = this.fire.getLocutores(); this.space = true; }
-    if (tipo.tipoMenu == 'perfiles') { this.listNoticias = this.fire.getNoticias(tipo.locutor); this.perfiles = true ; this.isMobile = tipo.isMobile}
+    if (tipo.tipoMenu == 'perfiles') {  this.listNoticias = this.fire.getNoticias(tipo.locutor); this.perfiles = true ; this.isMobile = tipo.isMobile}
     if (tipo.tipo == 'noticias') { this.listNoticias = this.fire.getNoticias(tipo.locutor); this.noticias = true; }
   }
 
   @Output() nuevoLocutor = new EventEmitter<string>();
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.href = this.router.url;
+    this.selectLocutores = await this.fire.getLocutoresAdmin();
   }
 
-  perfil(cadena: string) {
+  perfil(indice: number) {
     if (this.space == true) {
-      this.router.navigate(['/perfiles', cadena])
+      this.router.navigate(['/perfiles', this.selectLocutores[indice]])
     }
   }
 

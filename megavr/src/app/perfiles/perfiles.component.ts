@@ -11,6 +11,7 @@ export class PerfilesComponent implements OnInit {
   @ViewChild('videopls') videopls!: ElementRef;
   @ViewChild('videoi') videoi!: ElementRef;
 
+  public selectLocutores : any[] = []; 
   public locutor: string | null = "";
   public sonido: boolean = true;
   public perfil !: any;
@@ -31,8 +32,7 @@ export class PerfilesComponent implements OnInit {
       this.isMobile = false;
       this.tipoMenu.isMobile = false; 
     }
-    
-    
+
     this.locutor = this.routes.snapshot.paramMap.get('id');
     this.tipoMenu.locutor = this.locutor;
     if(this.locutor != null){

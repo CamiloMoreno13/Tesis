@@ -1,0 +1,19 @@
+@import '../../../assets/style/boost.css';
+
+.contenedor{
+    width: 100%;
+    padding: 20px;
+}
+
+.icon{
+    width: 200px;
+    height: 180px;
+    padding: 10px;
+    background-color: grey;
+    background-position: center;
+}
+
+input{
+    width: 100%;
+    color: grey;
+}

@@ -9,6 +9,7 @@ import { SharedComponent } from './shared/shared.component';
 import { OnboardingAdminComponent } from './administracion/onboarding-admin/onboarding-admin.component';
 import { SpaceAdminComponent } from './administracion/space-admin/space-admin.component';
 import { PerfilAdminComponent } from './administracion/perfil-admin/perfil-admin.component';
+import { NoticiaAdminComponent } from './administracion/noticia-admin/noticia-admin.component';
 
 const routes: Routes = [
   
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'pruebas', component: SharedComponent },
   { path: 'onboarding-admin', component: OnboardingAdminComponent },
   { path: 'space-admin', component: SpaceAdminComponent },
-  { path: 'perfil-admin', component: PerfilAdminComponent}
+  { path: 'perfil-admin', component: PerfilAdminComponent},
+  { path: 'noticias-admin' , component: NoticiaAdminComponent}
 ];
 
 @NgModule({

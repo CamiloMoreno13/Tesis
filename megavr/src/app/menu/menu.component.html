@@ -8,7 +8,7 @@
         </div>
         <div class="menu-items">
             <div *ngFor="let locutor of locutores; let i = index">
-                <div (click)="perfil(locutor.nombre)" *ngIf="difuminado" class="item{{i+1}}">
+                <div (click)="perfil(i)" *ngIf="difuminado" class="item{{i+1}}">
                     <h1 class="name">{{locutor.menuName}}</h1>
                     <img class="img-item" src="../../assets/Shared/user.svg">
                 </div>

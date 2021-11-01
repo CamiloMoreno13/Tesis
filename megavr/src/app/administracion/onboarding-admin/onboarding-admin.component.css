@@ -5,7 +5,15 @@
     padding: 20px;
 }
 
+.icon{
+    width: 200px;
+    height: 180px;
+    padding: 10px;
+    background-color: grey;
+    background-position: center;
+}
+
 input{
     width: 100%;
-    height: 50px;
+    color: grey;
 }

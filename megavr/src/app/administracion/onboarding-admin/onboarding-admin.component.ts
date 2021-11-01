@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FireService } from 'src/app/Services/Firebase/firestore/fire.service';
-import { banner } from '../Modelos/banner';
+import { StorageService } from 'src/app/Services/Firebase/storage/storage.service';
 
 @Component({
   selector: 'app-onboarding-admin',
@@ -9,47 +9,77 @@ import { banner } from '../Modelos/banner';
 })
 export class OnboardingAdminComponent implements OnInit {
 
-  public urls: string[] = [];
-  public file!: FileList;
+  constructor(private fire: FireService, private storage: StorageService) { }
 
-  public title!: string; 
-  public subtitle !: string;
-  public selection !: string ;
-
-  public informacion: banner[] = [];
-
-  constructor(private fire: FireService) { }
-
-  ngOnInit(): void {
-    this.llenarSliders();
-
-  }
+  @ViewChild("video" , {read: ElementRef}) video!: ElementRef; 
+  @ViewChild("img" , {read: ElementRef}) img!: ElementRef; 
   
-  createSlider(){
-    //this.fire.createFire('onboarding',JSON.parse(JSON.stringify(slider)));
+  public indice : number = 0;
+  public mostrarSpinner = true;
+  public mostrarSlider = false;
+  public sliders: any[] = [];
+  public slider : any; 
+  public valor : any ;
+  public iconos: boolean[] = [true, false]; 
+  public indexIcono : number = 0; 
+  
+  public fileVideo : string = '';
+  public fileUpVideo !: FileList;
+  public videoTempo : boolean = false; 
+  public showVideoTempo : boolean = true;
+
+  public fileImg : string = '';
+  public fileUpImg !: FileList;
+  public imgTempo : boolean = false;
+  public showImgTempo : boolean = true; 
+
+
+  async ngOnInit(): Promise<void> {
+    this.sliders = await this.fire.llenarInformacionOnboarding();
+    this.slider = this.sliders[this.indice];
+    if(this.slider.video != '') this.showVideoTempo = true;
+    if(this.slider.imagenes.length > 0) this.showImgTempo = false;  
+    this.mostrarSpinner = false;
+    this.mostrarSlider = true; 
   }
 
-  llenarSliders() {
-    this.fire.llenarInformacionOnboarding().subscribe(res => {
-      res.docs.forEach((res3: any) => {
-        let ban = new banner();
-        ban = res3.data();
-        this.informacion.push(ban)
-      });
-    });
+  eleccion(){
+    this.slider = this.sliders[this.indice];
+   (document.getElementById('image')as HTMLInputElement).value = '';
+   (document.getElementById('videos')as HTMLInputElement).value = '';
+   this.fileUpImg = this.img.nativeElement.files;
+   this.fileUpVideo = this.video.nativeElement.files;
+   if(this.slider.video != '') {this.showVideoTempo = false;} else {this.showVideoTempo = true};
+   if(this.slider.imagenes.length > 0) {this.showImgTempo = false;} else { this.showImgTempo = true};  
+    this.indexIcono = 0;
+    this.fileImg = ''; 
+    this.fileVideo = '';
+    this.imgTempo = false;
+    this.videoTempo = false;
   }
 
-  updateSlider(){
-    var slide = {
-      'title' : this.title,
-      'subtitle' : this.subtitle
-    }
+  async cargarVideo(){
+    this.videoTempo = false;
+    this.fileVideo = 'cargando';
+    this.fileUpVideo = this.video.nativeElement.files;
+    this.fileVideo = await this.storage.videoTemporal('onboarding', 'tempo_video' , this.fileUpVideo);
+    this.videoTempo = true;
+  }
 
-    this.fire.updateSlide(this.selection, JSON.parse(JSON.stringify(slide)));
+  async cargarImagen(){
+    this.imgTempo = false; 
+    this.fileImg = 'cargando';
+    this.fileUpImg = this.img.nativeElement.files;
+    this.fileImg = await this.storage.videoTemporal('onboarding', 'tempo_img' , this.fileUpImg);
+    this.imgTempo = true; 
+  }
 
-    console.log(this.selection);
-    
-    this.informacion[Number(this.selection)-1].title = this.title;
-    this.informacion[Number(this.selection)-1].subtitle = this.subtitle;
+  update(){
+    console.log("entro ")
+    var slide = this.indice ;
+    var index = this.indexIcono; 
+    ++slide;
+    ++index;
+    this.fire.updateOnBoarding('onboarding', 'slide'+slide+'_'+index ,'slide'+slide ,this.slider , this.fileUpVideo, this.fileUpImg);
   }
 }

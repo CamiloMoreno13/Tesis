@@ -53,6 +53,7 @@ export class InicioComponent implements OnInit {
   }
 
   llenar() {
+    /*
     this.fire.llenarInformacionOnboarding().subscribe(res => {
       let index = 0;
       res.docs.forEach((res3: any) => {
@@ -61,7 +62,7 @@ export class InicioComponent implements OnInit {
         this.informacion[index] = ban
         index += 1;
       });
-    });
+    });*/
   }
   logo() {
     this.open = false;

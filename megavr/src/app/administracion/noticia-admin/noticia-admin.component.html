@@ -1,1 +1,74 @@
-<p>noticia-admin works!</p>
+<app-administracion></app-administracion>
+
+<div class="spinner-border text-primary" role="status" *ngIf="mostrarSpinner">
+    <span class="sr-only">Loading...</span>
+</div>
+<div class="contenedor" *ngIf="!mostrarSpinner">
+    <h3>Elegir Locutor</h3>
+    <div class="input-group" style="margin-bottom: 50px">
+        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon"
+            [(ngModel)]="indice" (change)="eleccion('locutor')">
+            <option value="{{ i }}" *ngFor="let locutor of selectLocutores; let i = index">
+                {{ locutor }}
+            </option>
+        </select>
+    </div>
+    <h3>Elegir la noticia</h3>
+    <div class="input-group" style="margin-bottom: 50px">
+        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon"
+            [(ngModel)]="indiceNoticia" (change)="eleccion('noticia')">
+            <option value="{{ i }}" *ngFor="let noticia of noticias; let i = index">
+                {{ noticia.nombre }}
+            </option>
+        </select>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h1>Actual</h1>
+            <h4>Nombre menu</h4>
+            <p>{{noticia.nombre}}</p>
+            <h4>Encabezado</h4>
+            <p>{{noticia.encabezado}}</p>
+            <h4>Descripción</h4>
+            <p>{{noticia.descripcion}}</p>
+            <h4>Icono</h4>
+            <img [src]="noticia.icono" alt="" class="icon">
+            <h4>Video</h4>
+            <video [src]="noticia.video" controls style="width: 200px !important; height: 200px !important"></video>
+        </div>
+        <div class="col">
+            <div class="row">
+                <div class="col"> <h1>Modificar</h1> </div>
+                <div class="col" style=" align-self: center;"> 
+                    <button (click)="update()">Update</button>
+                </div>
+            </div>
+            <h4>Nombre menu</h4>
+            <input type="text" placeholder="{{noticia.nombre}}" [(ngModel)]="noticia.nombre">
+            <h4>Encabezado</h4>
+            <input type="text" placeholder="{{noticia.encabezado}}" [(ngModel)]="noticia.encabezado">
+            <h4>Descripción</h4>
+            <input type="text" placeholder="{{noticia.descripcion}}" [(ngModel)]="noticia.descripcion">
+            <h4>Icono</h4>
+                <input type="file" (change)="cargarImagen()" #img id="image">
+
+                <div class="spinner-border text-primary" role="status" *ngIf="!imgTempo && fileImg != ''">
+                    <span class="sr-only">Loading...</span>
+                </div>
+
+                <img [src]="fileImg" id="charger" style="width: 250px !important; height: 250px !important; background-color: grey; padding: 20px;"
+                    *ngIf="imgTempo">
+            <h4>Video</h4>
+                <input type="file" (change)="cargarVideo()" #video id="videos">
+
+                <div class="spinner-border text-primary" role="status" *ngIf="!videoTempo && fileVideo != ''">
+                    <span class="sr-only">Loading...</span>
+                </div>
+
+                <video [src]="fileVideo" id="charger" controls style="width: 200px !important; height: 200px !important"
+                    *ngIf="videoTempo"></video>
+
+        </div>
+    </div>
+</div>

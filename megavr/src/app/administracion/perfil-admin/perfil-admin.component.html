@@ -4,37 +4,52 @@
 </div>
 <div class="contenedor" *ngIf="!mostrarSpinner">
     <h3>Elegir locutor</h3>
-    <div class="input-group" style="margin-bottom: 50px;">
-        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon" [(ngModel)]="indice" >
-          <option value="{{i}}" *ngFor="let locutor of selectLocutores; let i = index">{{locutor}}</option>
+    <div class="input-group" style="margin-bottom: 50px">
+        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon"
+            [(ngModel)]="indice" (change)="eleccion()">
+            <option value="{{ i }}" *ngFor="let locutor of selectLocutores; let i = index">
+                {{ locutor }}
+            </option>
         </select>
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button" (click)="eleccion()">Elegir</button>
-        </div>
     </div>
     <div class="row" *ngIf="mostrarLocutor">
         <div class="col">
             <h1>Actual</h1>
 
             <h4>Nombre</h4>
-            <p>{{locutor.nombre}}</p>
+            <p>{{ locutor.nombre }}</p>
             <h4>Nombre de Menu</h4>
-            <p>{{locutor.menuName}}</p>
+            <p>{{ locutor.menuName }}</p>
             <h4>Ocupación</h4>
-            <p>{{locutor.ocupacion}}</p>
+            <p>{{ locutor.ocupacion }}</p>
+            <br>
+            <h4>Video</h4>
+            <video [src]="locutor.video" controls style="width: 200px !important; height: 200px !important"></video>
         </div>
         <div class="col">
-            <h1>Modificar</h1>
-
+            <div class="row">
+                <div class="col">
+                    <h1>Modificar</h1>
+                </div>
+                <div class="col" style=" align-self: center;"> 
+                    <button (click)="update()">Update</button>
+                </div>
+            </div>
             <h4>Nombre</h4>
-            <input type="text" name="" id="" placeholder="{{nombre}}" [(ngModel)]="nombre">
+            <input type="text" placeholder="{{ locutor.nombre }}" [(ngModel)]="locutor.nombre" />
             <h4>Nombre de Menu</h4>
-            <input type="text" name="" id="" placeholder="{{nombreMenu}}" [(ngModel)]="nombreMenu">
+            <input type="text" placeholder="{{ locutor.menuName }}" [(ngModel)]="locutor.menuName" />
             <h4>Ocupación</h4>
-            <input type="text" name="" id="" placeholder="{{ocupacion}}" [(ngModel)]="ocupacion">
-            <br>
-            <button style="margin-top: 30px;" (click)="update()">Update</button>
+            <input type="text" placeholder="{{ locutor.ocupacion }}" [(ngModel)]="locutor.ocupacion" />
+            <h4>Video</h4>
+            <input type="file" (change)="cargarVideo()" #video id="videos">
+            <div>
+                <div class="spinner-border text-primary" role="status" *ngIf="!videoTempo && file != ''">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <video [src]="file" id="charger" controls style="width: 200px !important; height: 200px !important"
+                    *ngIf="videoTempo"></video>
+            </div>
         </div>
     </div>
-
 </div>
