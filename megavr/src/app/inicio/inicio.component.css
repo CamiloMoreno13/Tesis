@@ -234,6 +234,7 @@ p {
   background-color: transparent;
   height: 50%;
   width: 100%;
+  margin : 10px ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,8 +302,9 @@ button {
   justify-content: center;
 }
 .home-img{
-  width : 120px !important;
-  height: 70px !important;
+  margin-top: 5px;
+  width: 150px;
+  height: 80px;
   position: absolute;
   background-color: transparent;
   height: 160%;
