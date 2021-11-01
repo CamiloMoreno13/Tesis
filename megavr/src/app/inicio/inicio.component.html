@@ -18,10 +18,8 @@
                             <i id="muted" class="fa fa-volume-up" (click)="mute(1)" *ngIf="!aviso[0]" #videoi></i>
                             <p *ngIf="aviso[0]" (click)="mute(1)">activar sonido</p>
                         </div>
-                        <!--src="../../assets/Noticias/cabina_caro.webm"-->
                         <div class="video">
-                            <img class="ititle" src="../../assets/Onboarding/logo_la_mega.svg"
-                                alt="Icono de la Mega">
+                            <img [src]="informacion[0].imagenes[0]" alt="">
                         </div>
                         <div class="info-title">
                             <h3 class="title">{{informacion[0].title}}</h3>
@@ -72,14 +70,11 @@
                             <p *ngIf="aviso[1]" (click)="mute(2)">activar sonido</p>
                         </div>
                         <div class="video">
-                            <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute"
+                            <video [src]="informacion[1].video" style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video2 loop playsinline id="video-slider2"></video>
                         </div>
-                        <div class="imagenes">
-                            <img class="ititle" src="../../assets/Onboarding/camera-white.svg"
-                                alt="Icono de una camara">
-                            <img class="ititle" src="../../assets/Onboarding/virtual-reality-white.svg"
-                                alt="Icono de ambiente de RV">
+                        <div class="imagenes" >
+                            <img class="ititle" *ngFor="let img of informacion[1].imagenes; let i = index;" [src]="informacion[1].imagenes[i]">
                         </div>
                         <div class="info">
                             <p class="subtitle">{{informacion[1].subtitle}}</p>
@@ -127,11 +122,11 @@
                             <p *ngIf="aviso[2]" (click)="mute(3)">activar sonido</p>
                         </div>
                         <div class="video">
-                            <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute"
+                            <video [src]="informacion[2].video" style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video3 loop playsinline id="video-slider3"></video>
                         </div>
                         <div class="imagenes">
-                            <img class="ititle" src="../../assets/Onboarding/mobile.svg" alt="Icono de una camara">
+                            <img class="ititle" [src]="informacion[2].imagenes[0]" alt="Icono de una camara">
                         </div>
                         <!-- Esta monda descuadra mucho la posicion del subtitulo -->
                         <!--<h3 class="title">{{informacion[2].title}}</h3>-->
@@ -181,7 +176,7 @@
                             <p *ngIf="aviso[3]" (click)="mute(4)">activar sonido</p>
                         </div>
                         <div class="video">
-                            <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute"
+                            <video [src]="informacion[3].video" style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video4 loop playsinline id="video-slider4"></video>
                         </div>
                         <div class="info-title">
@@ -233,7 +228,7 @@
                             <p *ngIf="aviso[4]" (click)="mute(5)">activar sonido</p>
                         </div>
                         <div class="video">
-                            <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute"
+                            <video [src]="informacion[4].video" style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video5 loop playsinline id="video-slider5"></video>
                         </div>
                         <div class="info-title">
@@ -285,7 +280,7 @@
                             <p *ngIf="aviso[5]" (click)="mute(6)">activar sonido</p>
                         </div>
                         <div class="video">
-                            <video src="../../assets/Noticias/cabina_caro.webm" style="z-index: 99;" [muted]="mute"
+                            <video [src]="informacion[5].video" style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video6 loop playsinline id="video-slider6"></video>
                         </div>
                         <div class="info-title">

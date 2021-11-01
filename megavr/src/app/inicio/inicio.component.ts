@@ -29,10 +29,10 @@ export class InicioComponent implements OnInit {
 
   constructor(private router: Router, private fire: FireService) { }
 
-  async ngOnInit(): Promise<void> {
+  async ngOnInit(){
 
-
-    await this.llenar();
+    this.informacion = await this.fire.llenarInformacionOnboarding();
+    console.log("informacion on" , this.informacion)
     this.indicador[0] = true;
 
     this.swiper = new Swiper('.swiper', {
@@ -53,16 +53,6 @@ export class InicioComponent implements OnInit {
   }
 
   llenar() {
-    /*
-    this.fire.llenarInformacionOnboarding().subscribe(res => {
-      let index = 0;
-      res.docs.forEach((res3: any) => {
-        let ban = new banner();
-        ban = res3.data();
-        this.informacion[index] = ban
-        index += 1;
-      });
-    });*/
   }
   logo() {
     this.open = false;

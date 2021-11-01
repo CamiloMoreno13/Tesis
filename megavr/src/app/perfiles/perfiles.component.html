@@ -16,7 +16,7 @@
         <p *ngIf="sonido" (click)="mute()">activar sonido</p>
     </div>
     <div class="video">
-        <img src="../../assets/Shared/mateo.svg">
+        <video [src]="perfil.video"></video>
     </div>
     <div class="menu" *ngIf="!isMobile">
         <div *ngFor="let noticias of listNoticias; let i = index" class="item{{i+1}}"

@@ -64,7 +64,6 @@ export class NoticiaAdminComponent implements OnInit {
     this.videoTempo = false;
     this.fileVideo = 'cargando';
     this.fileUpVideo = this.video.nativeElement.files;
-    var ext = this.fileUpImg.item(0)?.type.replace('video/', '');
     this.fileVideo = await this.storage.videoTemporal('noticias', 'tempo_video', this.fileUpVideo);
     this.videoTempo = true;
   }
@@ -73,7 +72,6 @@ export class NoticiaAdminComponent implements OnInit {
     this.imgTempo = false;
     this.fileImg = 'cargando';
     this.fileUpImg = this.img.nativeElement.files;
-    var ext = this.fileUpImg.item(0)?.type.replace('image/', '');
     this.fileImg = await this.storage.videoTemporal('noticias', 'tempo_img', this.fileUpImg);
     this.imgTempo = true;
   }

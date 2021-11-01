@@ -35,7 +35,7 @@
             <div *ngFor="let items of listNoticias; let i = index">
                 <div class="item{{i+1}}" *ngIf="difuminado" (click)="noticia(items.nombre)">
                     <h1 class="name">{{items.nombre}}</h1>
-                    <img class="img-item" src="../../assets/Shared/user.svg" alt="">
+                    <img class="img-item" [src]="items.icono" alt="">
                 </div>
             </div>
         </div>
@@ -55,7 +55,7 @@
             <div *ngFor="let items of listNoticias; let i = index">
                 <div class="item{{i+1}}" *ngIf="difuminado" (click)="noticia(items.nombre)">
                     <h1 class="name">{{items.nombre}}</h1>
-                    <img class="img-item" src="../../assets/Shared/user.svg" alt="">
+                    <img class="img-item" [src]="items.icono" alt="">
                 </div>
             </div>
         </div>
