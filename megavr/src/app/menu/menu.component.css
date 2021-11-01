@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(245, 222, 179, 0.5);
+  background-color: transparent;
   z-index: 100;
 }
 .menu {
@@ -39,7 +39,6 @@
   flex-direction: column;
   user-select: none;
   cursor: pointer;
-  background-color: rgba(102, 51, 153, 0.5);
 }
 .menu img {
   height: 35px;
@@ -51,7 +50,7 @@
   width: 40px;
   position: absolute;
   user-select: none;
-  background-color: rgba(102, 51, 153, 0.5);
+  background-color: transparent;
 }
 .menu-items > div > div{
   height: 100%;
@@ -84,7 +83,7 @@
   flex-direction: column;
 }
 .name {
-  background-color: red;
+  background-color: transparent;
   width: 190%;
   position: absolute;
   bottom: 100%;
@@ -107,7 +106,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: tomato;
+  color: transparent;
 }
 .menu-items > div > div:hover {
   background-color: tomato;
@@ -143,7 +142,6 @@ a {
   cursor: pointer;
 }
 .item5{
-  background-color: black;
   left: -140px;
 }
 .item3{

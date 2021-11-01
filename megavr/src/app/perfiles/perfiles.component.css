@@ -28,7 +28,7 @@
   display: flex;
   align-items: center;
   color: white;
-  background-color: tomato;
+  background-color: transparent;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -46,7 +46,7 @@
   left: 5%;
   user-select: none;
   display: block;
-  background-color: rgba(255, 0, 0, 0.438);
+  background-color: transparent;
 }
 .titular h5 {
   font-family: Roboto Slab;
@@ -54,7 +54,7 @@
   font-weight: normal;
   font-size: 20px;
   line-height: 25px;
-  background-color: saddlebrown;
+  background-color: transparent;
   position: absolute;
   display: block;
   left: 5%;
@@ -68,7 +68,7 @@
   font-weight: 500;
   font-size: 13px;
   line-height: 18px;
-  background-color: salmon;
+  background-color: transparent;
   position: absolute;
   display: block;
   left: 5%;
@@ -81,7 +81,7 @@
   width: 100%;
   grid-area: 2 / 2 / 4 / 3;
   position: absolute;
-  background-color: rgba(238, 130, 238, 0.5);
+  background-color: transparent;
 }
 .menu div {
   background-color: rgba(255, 67, 29, 1);
@@ -95,7 +95,7 @@
   align-items: center;
 }
 .name {
-  background-color: black;
+  background-color: transparent;
   color:white;
   width: 90px;
   height: 40px;
