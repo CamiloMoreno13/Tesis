@@ -335,4 +335,7 @@ Para hacer zoom de los videos
   .name {
     font-size: 15px;
   }
+  .loading:before {
+    background-size: 90%;
+  }
 }

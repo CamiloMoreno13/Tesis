@@ -13,69 +13,94 @@
 </head>
 
 <body>
-  
 
-  <div class="parent" >
+
+  <div class="parent">
     <div class="titular">
-       <img id="shop" src="../../assets/Productos/logo_ishop.svg">
+      <img id="shop" src="../../assets/Productos/logo_ishop.svg">
     </div>
   </div>
   <app-menu [menus]="menu"></app-menu>
-  
-  
-  
+
+
+
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
-    cursor="rayOrigin:mouse"
-    animation-timeline__1="timeline: #myTimeline;loop:true"
-    >
+    cursor="rayOrigin:mouse" animation-timeline__1="timeline: #myTimeline;loop:true">
     <!---------------------------------Elementos externos ------------------------>
     <a-assets timeout="5000">
       <audio id="bichota" src=""></audio>
-      
-      
+
+
       <img id="carreta" src="../../assets/Space/btn_caro_Carreta.png">
       <img id="marca" src="../../assets/Space/btn_marca.png">
-      <img id="volumeoff" src="../../assets/Space/volumeup.png">
-      <video id="cabina_caro" src="../../assets/Space/cabina_Caro_Carreta.webm" muted loop autoplay #videoid></video>
-      
+      <img id="volumeoff" src="../../assets/Space/volumeoff.png">
+      <video id="cabina-caro" src="../../assets/Space/cabina_Caro_Carreta.webm" muted loop autoplay></video>
+      <video id="cabina-carlos" src="../../assets/Space/cabina_Carlos_mira.webm" muted loop autoplay></video>
+      <video id="cabina-daniel" src="../../assets/Space/cabina_Dani_Murcia.webm" muted loop autoplay></video>
+      <video id="cabina-mateo" src="../../assets/Space/cabina_Mateo_Ramirez.webm" muted loop autoplay></video>
+      <video id="cabina-shirry" src="../../assets/Space/Cabina_El_shirry.webm" muted loop autoplay></video>
+
     </a-assets>
 
-    <a-plane id="parlante" position="1 1.13 0.2" src="#volumeoff" transparent="true" scale="0.1 0.1 0.4" rotation="0 -103.63202232090227 0" (click)=caroclick() #parlante></a-plane>
-    
-    <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
-    material="shader: transparent-video; src: #cabina_caro; alphaTest: 0.5; side: front"
-        position="4.88336 0.98349 -0.29431"
-        scale="2.15239 2.15239 2.15239"  
-        (click)="locutor('video_caro')"
-        ></a-entity>
+    <!--Carolina Carreta-->
 
-    <!--
-       <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 165.91826422957405 0"
-    material="shader: transparent-video; src: #videoId; alphaTest: 0.5"
-        position="0.4061 0 10.97853"
-        scale="4.04319 4.04319 4.04319"
-        (mouseenter)=caroEnter() (mouseleave)=caroLeave()  
-       ></a-entity>
--->
-    <!----------------------------------------------------------------------------->
-    <!-------------------------------Camara---------------------------------------->
-    <!--<a-camera wasd-controls="enabled : false">-->
-    
-    
-    <a-entity id="camera" rotation="0 -98 0" >
-        <a-camera wasd-controls="enabled : false"></a-camera>
+    <a-entity id="caro-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
+      material="shader: transparent-video; src: #cabina-caro; alphaTest: 0.5; side: front"
+      position="4.88336 0.98349 -0.29431" scale="2.15239 2.15239 2.15239" (click)="locutor('video_caro')"></a-entity>
+
+    <a-plane id="caro-parlante" position="1 1.13 0.2" src="#volumeoff" transparent="true" scale="0.1 0.1 0.4"
+      rotation="0 -103.63202232090227 0" (click)="caroclick()"></a-plane>
+
+    <!--Carlos Mira-->
+
+    <a-entity id="carlos-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 176.280205954515 0"
+      material="shader: transparent-video; src: #cabina-carlos; alphaTest: 0.5; side: front"
+      position="-0.39143 0.98349 4.72107" scale="2.15239 2.15239 2.15239">
     </a-entity>
-    
+
+    <a-plane id="carlos-parlante" rotation="0 -175.60526167185088 0" position="0.10958 1.2982 0.76553" src="#volumeoff"
+      rotation="0 -166.5 0" transparent="true" scale="0.1 0.1 0.4" (click)="carlosclick()"></a-plane>
+
+    <!--Daniel Murcia-->
+    <a-entity id="daniel-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 108.23573820477843 0"
+      material="shader: transparent-video; src: #cabina-daniel; alphaTest: 0.5; side: front"
+      position="-14.76835 0.31527 3.57619" scale="6.61355 6.61355 6.61355">
+    </a-entity>
+
+    <a-plane id="daniel-parlante" rotation="0 100.57414656828905 0" position="-0.61624 1.32669 0.02147" src="#volumeoff"
+     transparent="true" scale="0.1 0.1 0.4" (click)="danielclick()"></a-plane>
+
+     <!--Mateo Ramirez-->
+    <a-entity id="mateo-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 52.81582251295442 0"
+    material="shader: transparent-video; src: #cabina-mateo; alphaTest: 0.5; side: front"
+    position="-82.84465 -2.69849 -42.93003" scale="28.44376 28.44376 28.44376">
+  </a-entity>
+
+  <a-plane id="mateo-parlante" rotation="0 58.7751565401101 0" position="-0.70667 1.50636 -0.68029" src="#volumeoff"
+   transparent="true" scale="0.1 0.1 0.4" (click)="mateoclick()"></a-plane>
+
+    <!--El Shirry -->
+    <a-entity id="shirry-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 18.98667541504522 0"
+    material="shader: transparent-video; src: #cabina-shirry; alphaTest: 0.5; side: front"
+    position="-21.30433 -15.03244 -72.54276" scale="28.44376 28.44376 28.44376">
+  </a-entity>
+
+  <a-plane id="shirry-parlante" rotation="0 10.407205390756273 0" position="-0.05943 1.18638 -0.79916" src="#volumeoff"
+   transparent="true" scale="0.1 0.1 0.4" (click)="shirryclick()"></a-plane>
+
+
+
+    <a-entity id="camera" rotation="0 -98 0">
+      <a-camera wasd-controls="enabled : false" camera="fov:65"></a-camera>
+    </a-entity>
+
 
     <!-------------------------------------Elementos ------------------------------>
-   <a-sky id="fondo" src="../../assets/Space/nueva_cabina.jpg" ></a-sky>
-    <a-entity  id="pc" (click)="product('obj_producto')" 
-    animation__scale="property: scale; dir: alternate; dur: 400;
-    easing: easeInSine; loop: true; to:0.050 0.050 0.050"
-    
-    ></a-entity>
-   
-    
+    <a-sky id="fondo" src="../../assets/Space/nueva_cabina.jpg"></a-sky>
+    <a-entity id="pc" (click)="product('obj_producto')" animation__scale="property: scale; dir: alternate; dur: 400;
+    easing: easeInSine; loop: true; to:0.050 0.050 0.050"></a-entity>
+
+
     <!-- Titulos de los locutores -->
 
     <a-timeline id="myTimeline">
@@ -83,45 +108,35 @@
       <a-timeline-animation select="#banner_caro" name="a"></a-timeline-animation>
       <a-timeline-animation select="#banner_caro" name="b"></a-timeline-animation>
       <a-timeline-animation select="#banner_caro" name="c"></a-timeline-animation>
-      
-      
-      
+
+
+
     </a-timeline>
 
-    <a-plane id="banner_caro" material="side: double" position="2.93463 2.58451 -0.27046" src="#carreta" transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
-    animation__a = "property: scale; dir: alternate; dur: 200;
-    easing: easeInSine;  to:3 0.9 0.8"
-    animation__b = "property: scale; dir: alternate; dur: 200;
-    easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6"
-     
-     animation__c = "property:scale; to : 2.3 0.7 0.6;dur:4000;"
-    (click)="locutor('titulo_caro')"></a-plane>
-    <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca"  material="roughness:0.1;transparent:true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -34.698324073122656 -0.265852416940702" 
-    animation__scale="property: scale; dir: alternate; dur: 400;
-    easing: easeInSine; loop: true; to:2.5 0.9 0.8"    
-    (click)="product('titulo_producto')"></a-plane>
-  <!--  <a-plane id="ex4" position="-2.41 -78.6 -3.9" src="#img_caro" transparent="true" scale="1.6 2.4 1.4" rotation="0 0 0" *ngIf="mostrar"></a-plane> -->
+    <a-plane id="banner_caro" material="side: double" position="2.93463 2.58451 -0.27046" src="#carreta"
+      transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
+      animation__a="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
+      (click)="locutor('titulo_caro')"></a-plane>
+
+
+    <a-plane id="banner_ishop" position="0.32695 1.53303 -5.79656" src="#marca"
+      material="roughness:0.1;transparent:true" scale="2.4653866306848617 0.8653866306848618 0.7653866306848618"
+      rotation="9.698456598179446 -15.469860468532229 -0.265852416940702" animation__scale="property: scale; dir: alternate; dur: 400;
+    easing: easeInSine; loop: true; to:2.5 0.9 0.8" (click)="product('titulo_producto')"></a-plane>
 
     <!-- Iluminacion de titulos y objeto -->
     <a-light type="ambient" color="#FFF"></a-light>
 
     <a-mixin id="icon-animation" geometry="primitive: ring; radiusInner: 0; radiusOuter: 0.8;"
-    material="color: #fff; opacity: 0.8"
-    animation="property: geometry.radiusOuter; from: 0; to: 0.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;"></a-mixin>
-    
-    <!--
-    <a-entity id="anillo1" position="-5.9 -6 16.6" rotation="0 180 0"> 
-      <a-entity mixin="icon-animation"></a-entity>
-    </a-entity>
+      material="color: #fff; opacity: 0.8"
+      animation="property: geometry.radiusOuter; from: 0; to: 0.2; dur: 1000; easing: easeInOutSine; dir:alternate; loop: true;">
+    </a-mixin>
 
-    <a-entity id="anillo2" position="-1.9 0 -3.8" rotation="0 10 0" scale="0.3 0.3 0.3">
-      <a-entity mixin="icon-animation"></a-entity>
-    </a-entity>
-    -->
-    <!-- texto -->
-    <a-text ></a-text>
+    <a-text></a-text>
   </a-scene>
-  
+
 </body>
 
 </html>
