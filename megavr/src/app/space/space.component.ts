@@ -30,22 +30,27 @@ export class SpaceComponent implements OnInit {
     let caro = <HTMLVideoElement>document.getElementById("cabina-caro");
     caro.volume = 0;
     caro.currentTime = 0;
+    caro.play();
 
     let carlos = <HTMLVideoElement>document.getElementById("cabina-carlos");
     carlos.volume = 0;
     carlos.currentTime = 0;
+    carlos.play();
 
     let daniel = <HTMLVideoElement>document.getElementById("cabina-daniel");
     daniel.volume = 0;
     daniel.currentTime = 0;
+    daniel.play();
 
     let mateo = <HTMLVideoElement>document.getElementById("cabina-mateo");
     mateo.volume = 0;
     mateo.currentTime = 0;
+    mateo.play();
 
     let shirry = <HTMLVideoElement>document.getElementById("cabina-shirry");
     shirry.volume = 0;
     shirry.currentTime = 0;
+    shirry.play();
 
 
     pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
