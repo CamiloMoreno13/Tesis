@@ -36,15 +36,14 @@
       <img id="carreta" src="../../assets/Space/btn_caro_Carreta.png">
       <img id="marca" src="../../assets/Space/btn_marca.png">
       <img id="volumeoff" src="../../assets/Space/volumeup.png">
-      <video id="videoId" src="../../assets/Noticias/cabina_caro.webm#" muted loop autoplay #videoid></video>
-      <video id="cabina-caro" src="../../assets/Noticias/cabina_caro.webm" muted loop autoplay #videoid></video>
-
+      <video id="cabina_caro" src="../../assets/Space/cabina_Caro_Carreta.webm" muted loop autoplay #videoid></video>
+      
     </a-assets>
 
     <a-plane id="parlante" position="1 1.13 0.2" src="#volumeoff" transparent="true" scale="0.1 0.1 0.4" rotation="0 -103.63202232090227 0" (click)=caroclick() #parlante></a-plane>
     
-    <a-entity id="carovideo2" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
-    material="shader: transparent-video; src: #cabina-caro; alphaTest: 0.5; side: front"
+    <a-entity id="carovideo" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
+    material="shader: transparent-video; src: #cabina_caro; alphaTest: 0.5; side: front"
         position="4.88336 0.98349 -0.29431"
         scale="2.15239 2.15239 2.15239"  
         (click)="locutor('video_caro')"

@@ -33,17 +33,10 @@ export class SpaceComponent implements OnInit {
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
 
-    let caro = <HTMLVideoElement>document.getElementById("videoId");
+    let caro = <HTMLVideoElement>document.getElementById("cabina_caro");
     caro.volume = 0;
     caro.currentTime = 1;
-    
-
-
-    let caro2 = <HTMLVideoElement>document.getElementById("cabina-caro");
-    caro2.volume = 0;
-    caro2.play();
-    
-       
+           
 
     pc?.setAttribute('gltf-model','../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale','0.04 0.04 0.04');
@@ -72,64 +65,22 @@ export class SpaceComponent implements OnInit {
 
   
 
-  prueba() {
-    let valor = document.querySelector('#caja');
-    console.log(valor);
-    valor?.setAttribute('color', 'red');
-  }
-
   caroclick(){
     if (this.sonidoclick==false){
       this.sonidoclick=true;
-      let carosonido2 = document.getElementById("cabina-caro") as HTMLVideoElement;
+      let carosonido2 = document.getElementById("cabina_caro") as HTMLVideoElement;
       carosonido2.volume=1;
      document.getElementById('#parlante')?.setAttribute('src','../../assets/Space/volumeup.png')
       //parlante?.setAttribute('src','../../assets/Space/volumeup.png');
 
     }else{
-      let carosonido2 = document.getElementById("cabina-caro") as HTMLVideoElement;
+      let carosonido2 = document.getElementById("cabina_caro") as HTMLVideoElement;
       carosonido2.volume=0;
       this.sonidoclick=false;
     }
     
   }
-
-  caroEnter() {
-
-    if (this.playsonido == false) {
-      let carosonido = document.getElementById("videoId") as HTMLVideoElement;
-      if (this.primercaro == true) {
-        this.primercaro = false;
-        carosonido.currentTime = 0;
-        console.log("primer");
-        carosonido.play();
-        carosonido.volume = 1;
-        this.playsonido = true;
-      }
-      else {
-
-        console.log("segundo o mas");
-        carosonido.play();
-        carosonido.volume = 1;
-        this.playsonido = true
-      }
-
-    }
-  }
-
-
-  caroLeave() {
-    if (this.playsonido == true) {
-      let carosonido = <HTMLVideoElement>document.getElementById("videoId");
-      carosonido.volume = 0;
-      this.playsonido = false;
-      carosonido.pause();
-    }
-  }
-
-
-
-
+  
   playExam() {
     console.log("Funciona enbebido")
   }
