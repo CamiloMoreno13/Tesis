@@ -32,7 +32,6 @@ export class InicioComponent implements OnInit {
   async ngOnInit(){
 
     this.informacion = await this.fire.llenarInformacionOnboarding();
-    console.log("informacion on" , this.informacion)
     this.indicador[0] = true;
 
     this.swiper = new Swiper('.swiper', {

@@ -14,7 +14,6 @@ export class FireService {
   async llenarInformacionOnboarding() {
     var sliders: any[] = [];
     await (await this.fire.collection('onboarding').ref.get()).docs.forEach(x => { sliders.push(x.data()) });
-    console.log("sliders" , sliders);
     return sliders;
   }
 

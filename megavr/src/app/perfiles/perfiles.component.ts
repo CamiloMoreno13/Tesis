@@ -32,7 +32,6 @@ export class PerfilesComponent implements OnInit {
       this.isMobile = false;
       this.tipoMenu.isMobile = false; 
     }
-
     this.locutor = this.routes.snapshot.paramMap.get('id');
     this.tipoMenu.locutor = this.locutor;
     if(this.locutor != null){
@@ -40,8 +39,6 @@ export class PerfilesComponent implements OnInit {
       this.listNoticias = this.perfil.noticias;
     }
     this.mostrarSpinner = false;
-    console.log(this.detectMob());
-    console.log(this.mobileAndTabletCheck());
   }
 
   mute() {
@@ -58,6 +55,7 @@ export class PerfilesComponent implements OnInit {
 
   redireccionar(cadena:string) {
     this.router.navigate(['/perfiles/'+this.locutor+'/noticias',cadena]);
+    this.sonido = true; 
   }
   
   exit() {
