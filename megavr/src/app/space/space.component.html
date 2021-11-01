@@ -13,16 +13,15 @@
 </head>
 
 <body>
-
-
+  <div class="loading" *ngIf="mostrarSpinner">
+    <app-pantalla-carga></app-pantalla-carga>
+</div>
   <div class="parent">
     <div class="titular">
       <img id="shop" src="../../assets/Productos/logo_ishop.svg">
     </div>
   </div>
   <app-menu [menus]="menu"></app-menu>
-
-
 
   <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #20007f ; dotsColor: #db04bb"
     cursor="rayOrigin:mouse" 

@@ -16,14 +16,35 @@ export class SpaceComponent implements OnInit {
   public mostrar: boolean = false;
   public menu: string = 'space';
 
+  public mostrarSpace : boolean = false; 
+  public mostrarSpinner : boolean = true; 
+
 
 
   constructor(private _CargarScripts: CargarScriptsService, private router: Router, private spaceService: SpaceService) {
     _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
 
+    await this.carga();
+    setTimeout(() => {
+    this.mostrarSpace = true;
+    this.mostrarSpinner = false; 
+    }, 20000);
+    
+    /*
+        document.addEventListener('DOMContentLoaded', (e) => {
+          var scene = document.querySelector('a-scene');
+          scene.addEventListener('loaded',  (e) => {
+              this.mostrar=true;
+          });
+      });*/
+    /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
+  }
+
+  carga(){
+    
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
 
@@ -68,14 +89,6 @@ export class SpaceComponent implements OnInit {
     if (entity != null) {
       console.log("enity", entity);
     }
-    /*
-        document.addEventListener('DOMContentLoaded', (e) => {
-          var scene = document.querySelector('a-scene');
-          scene.addEventListener('loaded',  (e) => {
-              this.mostrar=true;
-          });
-      });*/
-    /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
   }
 
   caroclick() {
