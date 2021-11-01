@@ -2,6 +2,7 @@ export class banner{
     public title: string = '';
     public subtitle : string = '';
     public imagenes : string[] = []; 
+    public video : string = '';
     
     createBanner (title: string, sub: string): banner{
         let nuevo = new banner();

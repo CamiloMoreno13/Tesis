@@ -107,7 +107,7 @@ p {
   user-select: none;
   color: #fff;
   margin: 0.5em;
-  z-index: 100;
+  z-index: 20;
 }
 .resp-sharing-button {
   border-radius: 5px;
@@ -211,7 +211,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 100;
+  z-index: 10;
 }
 .imagenes {
   grid-area: 3 / 2 / 4 / 3;
@@ -221,7 +221,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 99;
+  z-index: 10;
 }
 .ititle {
   height: 80%;
@@ -238,7 +238,7 @@ p {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  z-index: 102;
+  z-index: 90;
   position: absolute;
 }
 .indicadores ul {
@@ -301,12 +301,14 @@ button {
   justify-content: center;
 }
 .home-img{
+  width : 120px !important;
+  height: 70px !important;
   position: absolute;
   background-color: transparent;
   height: 160%;
   top: -20%;
   cursor: pointer;
-  z-index: 101;
+  z-index: 90;
 }
 .title-start{
   display: block;
@@ -340,7 +342,7 @@ button {
   grid-area: 4 / 2 / 5 / 3;
   width: 150px;
   height: 40px;
-  z-index: 99;
+  z-index: 90;
   color: white;
   background-color: transparent;
   border-color: rgba(248, 88, 88, 1);

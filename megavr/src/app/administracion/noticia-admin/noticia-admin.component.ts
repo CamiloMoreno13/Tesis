@@ -63,7 +63,7 @@ export class NoticiaAdminComponent implements OnInit {
   async cargarVideo() {
     this.videoTempo = false;
     this.fileVideo = 'cargando';
-    this.fileUpVideo = this.video.nativeElement.files;    
+    this.fileUpVideo = this.video.nativeElement.files;
     this.fileVideo = await this.storage.videoTemporal('noticias', 'tempo_video', this.fileUpVideo);
     this.videoTempo = true;
   }
@@ -71,7 +71,7 @@ export class NoticiaAdminComponent implements OnInit {
   async cargarImagen() {
     this.imgTempo = false;
     this.fileImg = 'cargando';
-    this.fileUpImg = this.img.nativeElement.files;    
+    this.fileUpImg = this.img.nativeElement.files;
     this.fileImg = await this.storage.videoTemporal('noticias', 'tempo_img', this.fileUpImg);
     this.imgTempo = true;
   }
