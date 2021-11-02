@@ -31,11 +31,12 @@ export class SpaceComponent implements OnInit {
       this.carga2();    
     },200);
 
-
+    this.carga();
     setTimeout(() => {
     this.mostrarSpace = true;
-    this.mostrarSpinner = false; 
+    this.mostrarSpinner = false;    
     }, 8000);
+    
     
     /*
         document.addEventListener('DOMContentLoaded', (e) => {
