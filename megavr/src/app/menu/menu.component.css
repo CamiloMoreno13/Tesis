@@ -5,6 +5,7 @@
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 100vh;
+  background-color: black;
 }
 .prueba {
   grid-area: 1 / 1 / 4 / 4;
@@ -161,6 +162,17 @@ a {
 .img-item{
   position: absolute;
   color: black;
+}
+.mobile-item img{
+  height: 20px;
+  width: 20px;
+}
+.mobile-item{
+  background-color: tomato;
+}
+.img-item-mod{
+  height: 25px;
+  width: 25px;
 }
 @media (max-width: 480px) {
   .menu {

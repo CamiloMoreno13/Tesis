@@ -33,9 +33,9 @@
         </div>
         <div class="menu-items">
             <div *ngFor="let items of listNoticias; let i = index">
-                <div class="item{{i+1}}" *ngIf="difuminado" (click)="noticia(items.nombre)">
+                <div class="item{{i+1}} mobile-item" *ngIf="difuminado" (click)="noticia(items.nombre)" [ngClass]="{'mobile-item': isMobile}">
                     <h1 class="name">{{items.nombre}}</h1>
-                    <img class="img-item" [src]="items.icono" alt="">
+                    <img class="img-item img-item-mod" [src]="items.icono" alt="">
                 </div>
             </div>
         </div>
@@ -53,9 +53,9 @@
         </div>
         <div class="menu-items">
             <div *ngFor="let items of listNoticias; let i = index">
-                <div class="item{{i+1}}" *ngIf="difuminado" (click)="noticia(items.nombre)">
+                <div class="item{{i+1}}  mobile-item" *ngIf="difuminado" (click)="noticia(items.nombre)"  [ngClass]="{'mobile-item': isMobile}">
                     <h1 class="name">{{items.nombre}}</h1>
-                    <img class="img-item" [src]="items.icono" alt="">
+                    <img class="img-item img-item-mod" [src]="items.icono" alt="">
                 </div>
             </div>
         </div>

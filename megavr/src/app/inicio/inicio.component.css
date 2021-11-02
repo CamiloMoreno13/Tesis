@@ -286,6 +286,7 @@ p {
   margin-top: -10px;
   color: rgba(248, 88, 88, 1);
   position: relative;
+  left: -8px;
 }
 button {
   background-color: white;
@@ -398,6 +399,9 @@ button {
   .resp-sharing-button {
     font-size: 12px;
   }
+  .video img{
+    height: 70%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -427,7 +431,7 @@ button {
     top: 45%;
   }
   .boton{
-    top: 140%;
+    top: 150%;
   }
   .saltar {
     margin-top: -12px;

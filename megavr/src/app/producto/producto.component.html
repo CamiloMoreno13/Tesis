@@ -43,6 +43,7 @@
             <img id="procesador2" src="../../assets/Productos/procesador2.png">
             <img id="teclado1" src="../../assets/Productos/teclado1.png">
             <img id="bateria1" src="../../assets/Productos/bateria1.png">
+            <img id="white_exit" src="../../assets/Shared//white_exit.png">
 
 
 
@@ -97,8 +98,8 @@ dir: normal; easing: easeInOutCubic ; startEvents: second"
       dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animRE">
 
-            <a-circle id="close_retina" visible="false" material="color:red;side:double" radius="0.0001" scale="0.5 1 1"
-                position="0.465 0.435 0.02" retina-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
+            <a-circle id="close_retina" visible="false"  src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="0.525 1.076 1"
+                position="0.475 0.458 0.02" retina-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
     dir: normal; easing: easeInOutCubic; startEvents: second"
                 animation__rewind="property: radius; to: 0.03; easing:easeInOutSine; dir:normal; startEvents: rewind-animRE">
             </a-circle>
@@ -147,8 +148,8 @@ easing: easeInOutCubic; loop: true; to:3.4 1.3 1.2">
             animation__move="property:position;to :-0.83 -0.28 2.068; dur: 300; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
             animation__scale="property: scale; to:  1.950 0.860 1.101; dur: 900;dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animPR">
-            <a-circle id="close_procesador" visible="false" material="color:red;side:double" radius="0.0001"
-                scale="0.540 1.142 1" position="0.465 0.435 0.02" procesador-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
+            <a-circle id="close_procesador" visible="false"src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true"
+                scale="0.540 1.142 1" position="0.481 0.435 0.033" procesador-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
     dir: normal; easing: easeInOutCubic; startEvents: second"
                 animation__rewind="property: radius; to: 0.03; easing:easeInOutSine; dir:normal; startEvents: rewind-animPR">
             </a-circle>
@@ -168,7 +169,7 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
 
         <a-entity id="bateria" rotation="0 0 0" position="1.08784 -13.6 -32.56" scale=" 0.030 0.030 0.030" src="#png"
             bateria-manager-object
-            animation__move="property: position; to:0.750 -5.34 -18.2; dur: 1500; dir: normal; startEvents: play-anim-object; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+            animation__move="property: position; to:0.750 -8.25 -27.56; dur: 1500; dir: normal; startEvents: play-anim-object; pauseEvents: pauseA-anim; stopEvents: stop-anim"
             animation__scale="property: rotation; to: 0 360 0; dur: 1500; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: rotation; to: 0 0 0; easing: easeInOutCubic; startEvents: rewind-animBA"
@@ -176,7 +177,7 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
             >
         </a-entity>
 
-        <a-plane id="banner_bateria" position="0.097 -0.085 -4.22" src="#bn_retina"
+        <a-plane id="banner_bateria" position="0.097 -0.085 -5.6" src="#bn_retina"
             material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6" rotation="0 0 0"
             bateria-manager animation__scale="property: scale; dir: alternate; dur: 1000;
         easing: easeInOutCubic; loop: true; to:2.7 0.9 0.8">
@@ -184,12 +185,12 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
         </a-plane>
 
         <a-plane id="ghost1_bateria" visible="false" material="side:double;opacity:0.9" src="#bateria1"
-            position="0.098 -2.14 -3.120" rotation="-15 0 0" scale=" 0 0 1.5" bateria-manager
-            animation__move="property:position;to :0.098 -2.14 -3.120; dur: 300; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
-            animation__scale="property: scale; to:  3.545 1.590 2.660; dur: 900; 
+            position="0.098 -2.14 -3.120" rotation="-28 0 0" scale=" 0 0 1.5" bateria-manager
+            animation__move="property:position;to :0.098 -2.25 -3.062; dur: 300; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+            animation__scale="property: scale; to:  3.545 1.7 2.660; dur: 900; 
   dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animBA">
-            <a-circle id="close_bateria" visible="false" material="color:red;side:double" radius="0.0001"
+            <a-circle id="close_bateria" visible="false" src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true"
                 position="0.465 0.435 0.02" scale="0.540 1 1" bateria-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
                 animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-animBA">
@@ -210,8 +211,8 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__scale="property: scale; to:  5.208 1.650 2.660; dur: 1200; 
   dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animTE">
-            <a-circle id="close_teclado" visible="true" material="color:red;side:double" radius="0.0001"
-                position="0.465 0.435 0.02" scale="0.429 0.971 0.923" teclado-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+            <a-circle id="close_teclado" visible="true"src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true"
+                position="0.472 0.391 0.032" scale="0.429 0.971 0.923" teclado-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
                 animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-animTE">
             </a-circle>

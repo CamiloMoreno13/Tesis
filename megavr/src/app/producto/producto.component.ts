@@ -37,7 +37,7 @@ export class ProductoComponent implements OnInit {
     await this.carga();
     setTimeout(() => {
     this.mostrarSpinner = false; 
-    }, 8000);
+    }, 5000);
   }
 
   carga(){

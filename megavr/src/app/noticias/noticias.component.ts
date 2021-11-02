@@ -36,13 +36,16 @@ export class NoticiasComponent implements OnInit {
 
   async changeNoticia(event: any){
     this.mostrarSpinner = true;
-    this.sonido = true; 
     if(this.locutor != null){
       this.noticia = await this.fire.llenarInfoNoticias(this.locutor , event);
     }
     setTimeout(() => {
       this.mostrarSpinner = false; 
     }, 2000);
+    if(!this.sonido){
+      this.videopls.nativeElement.muted = true;
+      this.sonido = true;
+    }
   }
   
   mute() {

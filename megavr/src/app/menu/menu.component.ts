@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, ElementRef, OnInit, ViewChild, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { Noticia } from '../models/noticia';
 import { FireService } from '../Services/Firebase/firestore/fire.service';
@@ -36,6 +36,13 @@ export class MenuComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.href = this.router.url;
     this.selectLocutores = await this.fire.getLocutoresAdmin();
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // Es mobile
+      this.isMobile = true; 
+    }else{
+      // No es mobile 
+      this.isMobile = false;
+    }
   }
 
   perfil(indice: number) {
