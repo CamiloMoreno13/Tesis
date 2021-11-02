@@ -27,7 +27,11 @@ export class SpaceComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
 
-    await this.carga();
+    setTimeout (() =>{
+      this.carga2();    
+    },200);
+
+
     setTimeout(() => {
     this.mostrarSpace = true;
     this.mostrarSpinner = false; 
@@ -43,10 +47,8 @@ export class SpaceComponent implements OnInit {
     /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
   }
 
-  carga(){
+  carga2(){
     
-    let caja = document.getElementById('caja');
-    let pc = document.getElementById('pc');
 
     let caro = <HTMLVideoElement>document.getElementById("cabina-caro");
     caro.volume = 0;
@@ -73,6 +75,11 @@ export class SpaceComponent implements OnInit {
     shirry.currentTime = 0;
     shirry.play();
 
+  }
+
+  carga(){
+    let caja = document.getElementById('caja');
+    let pc = document.getElementById('pc');
 
     pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale', '0.04 0.04 0.04');
