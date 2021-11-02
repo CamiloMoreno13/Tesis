@@ -31,7 +31,7 @@ export class SpaceComponent implements OnInit {
     setTimeout(() => {
     this.mostrarSpace = true;
     this.mostrarSpinner = false; 
-    }, 20000);
+    }, 8000);
     
     /*
         document.addEventListener('DOMContentLoaded', (e) => {

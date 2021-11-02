@@ -38,7 +38,9 @@ export class PerfilesComponent implements OnInit {
       this.perfil = await this.fire.llenarInfoPerfil(this.locutor);
       this.listNoticias = this.perfil.noticias;
     }
-    this.mostrarSpinner = false;
+    setTimeout(() => {
+      this.mostrarSpinner = false; 
+    }, 2000);
   }
 
   mute() {

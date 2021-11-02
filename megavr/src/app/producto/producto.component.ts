@@ -23,6 +23,7 @@ export class ProductoComponent implements OnInit {
   public equis: boolean = true;
   public mostrar: boolean = false;
   public movimiento: boolean = false;
+  public mostrarSpinner : boolean = true;
   
   constructor(
     private renderer2: Renderer2,
@@ -31,7 +32,15 @@ export class ProductoComponent implements OnInit {
   ) { }
 
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+
+    await this.carga();
+    setTimeout(() => {
+    this.mostrarSpinner = false; 
+    }, 8000);
+  }
+
+  carga(){
     let pc = document.getElementById('clic_pc');
     pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale', '0.022 0.022 0.022');

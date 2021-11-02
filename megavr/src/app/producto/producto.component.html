@@ -1,4 +1,6 @@
-<div class="loading" *ngIf="!mostrar"></div>
+<div class="loading" *ngIf="mostrarSpinner">
+    <app-pantalla-carga></app-pantalla-carga>
+</div>
 <div class="parent" *ngIf="mostrar">
     <div class="titular">
         <h4>Información</h4>
@@ -15,12 +17,10 @@
 
 </div>
 <app-menu></app-menu>
-
 <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
 </head>
-
 <body>
     <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  "
         cursor="rayOrigin:mouse">

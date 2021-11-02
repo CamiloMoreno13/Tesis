@@ -1,10 +1,7 @@
-<div class="spinner-border text-primary" role="status" *ngIf="mostrarSpinner">
-    <span class="visually-hidden">Loading...</span>
+<div class="loading" *ngIf="mostrarSpinner">
+    <app-pantalla-carga></app-pantalla-carga>
 </div>
-
-<div class="loading" *ngIf="mostrarSpinner"></div>
-
-<div class="contenedor" *ngIf="!mostrarSpinner">
+<div class="contenedor" [hidden]="mostrarSpinner">
     <div class="titular">
         <h4>Menu</h4>
         <h5>{{perfil.nombre}}</h5>

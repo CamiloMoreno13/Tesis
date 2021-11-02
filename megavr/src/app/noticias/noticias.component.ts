@@ -29,16 +29,20 @@ export class NoticiasComponent implements OnInit {
       this.menus.locutor = this.locutor;
       this.noticia = await this.fire.llenarInfoNoticias(this.locutor , this.nameNoticia);
     }
-    this.mostrarSpinner = false;
+    setTimeout(() => {
+      this.mostrarSpinner = false; 
+    }, 2000);
   }
 
   async changeNoticia(event: any){
     this.mostrarSpinner = true;
     this.sonido = true; 
     if(this.locutor != null){
-      this.noticia = await this.fire.llenarInfoNoticias(this.locutor , event)
-      this.mostrarSpinner = false;
+      this.noticia = await this.fire.llenarInfoNoticias(this.locutor , event);
     }
+    setTimeout(() => {
+      this.mostrarSpinner = false; 
+    }, 2000);
   }
   
   mute() {
