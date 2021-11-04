@@ -105,7 +105,7 @@
   width: 20px;
 }
 .sonido {
-  color: white;
+  color:white;
   grid-area: 1 / 1 / 2 / 2;
   font-size: 40px;
   display: flex;
@@ -121,7 +121,6 @@
   user-select: none;
   top: 9%;
 }
-
 @media (max-width: 1366px) {
   .informacion {
     width: 130%;

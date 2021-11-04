@@ -15,7 +15,7 @@ export class NoticiasComponent implements OnInit {
   public sonido: boolean = true;
   public nameNoticia: string | null = "";
   public locutor: string | null = ""; 
-  public noticia : any;
+  public noticia: {nombre:string,video:string,icono:string,encabezado:string,descripcion:string} = {nombre:'',video:'',icono:'',encabezado:'',descripcion:''};
   public menus : menu = new menu(); 
   public mostrarSpinner : boolean = true;
 
@@ -39,24 +39,21 @@ export class NoticiasComponent implements OnInit {
     if(this.locutor != null){
       this.noticia = await this.fire.llenarInfoNoticias(this.locutor , event);
     }
-    setTimeout(() => {
-      this.mostrarSpinner = false; 
-    }, 2000);
     if(!this.sonido){
       this.videopls.nativeElement.muted = true;
       this.sonido = true;
     }
+    setTimeout(() => {
+      this.mostrarSpinner = false; 
+    }, 3000);
   }
   
   mute() {
-    console.log("entro mute");
     if (this.videopls.nativeElement.muted) {
-      console.log("if")
       this.videopls.nativeElement.muted = false;
       this.sonido = false;
     }
     else {
-      console.log("else")
       this.videopls.nativeElement.muted = true;
       this.sonido = true;
     }

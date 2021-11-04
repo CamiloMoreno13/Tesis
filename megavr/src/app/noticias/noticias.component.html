@@ -1,7 +1,7 @@
 <div class="loading" *ngIf="mostrarSpinner">
     <app-pantalla-carga></app-pantalla-carga>
 </div>
-<div class="contenedor" *ngIf="!mostrarSpinner">
+<div class="contenedor" [hidden]="mostrarSpinner">
     <div class="titular">
         <h4>Nota</h4>
         <h3>{{noticia.nombre}}</h3>

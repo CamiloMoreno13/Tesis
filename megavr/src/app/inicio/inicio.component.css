@@ -58,6 +58,11 @@ h3 {
   color: white;
   user-select: none;
 }
+
+.btn-volumen{
+  width: 45px;
+  height: 35px;
+}
 p {
   background-color: transparent;
   font-family: Roboto Slab;

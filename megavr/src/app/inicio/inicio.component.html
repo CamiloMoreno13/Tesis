@@ -5,7 +5,7 @@
 <div class="inicio">
     <input type="button" value="" class="logo" (click)="logo()" *ngIf="open">
 </div>
-<div class="swiper">
+<div class="swiper" >
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
@@ -15,8 +15,8 @@
                     <div class="slider">
                         <!--
                         <div class="sonido">
-                            <i id="sound" class="fa fa-volume-off" (click)="mute(1)" *ngIf="aviso[0]" #videoi></i>
-                            <i id="muted" class="fa fa-volume-up" (click)="mute(1)" *ngIf="!aviso[0]" #videoi></i>
+                            <i id="sound" class="fa fa-volume-off" (click)="mute(1)" *ngIf="aviso[0]"></i>
+                            <i id="muted" class="fa fa-volume-up" (click)="mute(1)" *ngIf="!aviso[0]"></i>
                             <p *ngIf="aviso[0]" (click)="mute(1)">activar sonido</p>
                         </div>-->
                         <div class="video">
@@ -66,9 +66,8 @@
                 <div class="container-slide">
                     <div class="slider">
                         <div class="sonido">
-                            <i id="sound" class="fa fa-volume-off" (click)="mute(2)" *ngIf="aviso[1]" #video1></i>
-                            <i id="muted" class="fa fa-volume-up" (click)="mute(2)" *ngIf="!aviso[1]" #video1></i>
-                            <p *ngIf="aviso[1]" (click)="mute(2)">activar sonido</p>
+                            <img id="sound-2" src="../../assets/Space/volumeoff.png" alt="" class="btn-volumen" (click)="mute(2)">
+                            <p id="texto-2" (click)="mute(2)">activar sonido</p>
                         </div>
                         <div class="video">
                             <video [src]="informacion[1].video" style="z-index: 99;" [muted]="mute"
@@ -118,9 +117,8 @@
                 <div class="container-slide">
                     <div class="slider">
                         <div class="sonido">
-                            <i id="sound" class="fa fa-volume-off" (click)="mute(3)" *ngIf="aviso[2]" #video2></i>
-                            <i id="muted" class="fa fa-volume-up" (click)="mute(3)" *ngIf="!aviso[2]" #video2></i>
-                            <p *ngIf="aviso[2]" (click)="mute(3)">activar sonido</p>
+                            <img id="sound-3" src="../../assets/Space/volumeoff.png" alt="" class="btn-volumen" (click)="mute(3)">
+                            <p id="texto-3" (click)="mute(3)">activar sonido</p>
                         </div>
                         <div class="video">
                             <video [src]="informacion[2].video" style="z-index: 99;" [muted]="mute"
@@ -172,9 +170,8 @@
                 <div class="container-slide">
                     <div class="slider">
                         <div class="sonido">
-                            <i id="sound" class="fa fa-volume-off" (click)="mute(4)" *ngIf="aviso[3]" #video3></i>
-                            <i id="muted" class="fa fa-volume-up" (click)="mute(4)" *ngIf="!aviso[3]" #video3></i>
-                            <p *ngIf="aviso[3]" (click)="mute(4)">activar sonido</p>
+                            <img id="sound-4" src="../../assets/Space/volumeoff.png" alt="" class="btn-volumen" (click)="mute(4)">
+                            <p id="texto-4" (click)="mute(4)">activar sonido</p>
                         </div>
                         <div class="video">
                             <video [src]="informacion[3].video" style="z-index: 99;" [muted]="mute"
@@ -224,9 +221,8 @@
                 <div class="container-slide">
                     <div class="slider">
                         <div class="sonido">
-                            <i id="sound" class="fa fa-volume-off" (click)="mute(5)" *ngIf="aviso[4]" #video4></i>
-                            <i id="muted" class="fa fa-volume-up" (click)="mute(5)" *ngIf="!aviso[4]" #video4></i>
-                            <p *ngIf="aviso[4]" (click)="mute(5)">activar sonido</p>
+                            <img id="sound-5" src="../../assets/Space/volumeoff.png" alt="" class="btn-volumen" (click)="mute(5)">
+                            <p id="texto-5" (click)="mute(5)">activar sonido</p>
                         </div>
                         <div class="video">
                             <video [src]="informacion[4].video" style="z-index: 99;" [muted]="mute"
@@ -276,9 +272,8 @@
                 <div class="container-slide">
                     <div class="slider">
                         <div class="sonido">
-                            <i id="sound" class="fa fa-volume-off" (click)="mute(6)" *ngIf="aviso[5]" #video5></i>
-                            <i id="muted" class="fa fa-volume-up" (click)="mute(6)" *ngIf="!aviso[5]" #video5></i>
-                            <p *ngIf="aviso[5]" (click)="mute(6)">activar sonido</p>
+                            <img id="sound-6" src="../../assets/Space/volumeoff.png" alt="" class="btn-volumen" (click)="mute(6)">
+                            <p id="texto-6" (click)="mute(6)">activar sonido</p>
                         </div>
                         <div class="video">
                             <video [src]="informacion[5].video" style="z-index: 99;" [muted]="mute"

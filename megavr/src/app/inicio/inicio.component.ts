@@ -29,7 +29,7 @@ export class InicioComponent implements OnInit {
 
   constructor(private router: Router, private fire: FireService) { }
 
-  async ngOnInit(){
+  async ngOnInit() {
 
     this.informacion = await this.fire.llenarInformacionOnboarding();
     this.indicador[0] = true;
@@ -48,16 +48,38 @@ export class InicioComponent implements OnInit {
     caro2.volume = 0;
     caro2.play();
     */
-  
-  }
+   
+    this.swiper.on('slideChange', function () {
+      console.log("entro change");
+      let video2 = document.getElementById('video-slider2') as HTMLVideoElement;
+      let video3 = document.getElementById('video-slider3') as HTMLVideoElement;
+      let video4 = document.getElementById('video-slider4') as HTMLVideoElement;
+      let video5 = document.getElementById('video-slider5') as HTMLVideoElement;
+      let video6 = document.getElementById('video-slider6') as HTMLVideoElement;
+      video2.muted = true;
+      video3.muted = true;
+      video4.muted = true;
+      video5.muted = true;
+      video6.muted = true;
 
-  llenar() {
+      (document.getElementById('sound-2')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+      (document.getElementById('sound-3')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+      (document.getElementById('sound-4')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+      (document.getElementById('sound-5')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+      (document.getElementById('sound-6')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+      
+      (document.getElementById('texto-2')as HTMLImageElement).hidden = false;
+      (document.getElementById('texto-3')as HTMLImageElement).hidden = false;
+      (document.getElementById('texto-4')as HTMLImageElement).hidden = false;
+      (document.getElementById('texto-5')as HTMLImageElement).hidden = false;
+      (document.getElementById('texto-6')as HTMLImageElement).hidden = false;
+
+    });
   }
   logo() {
     this.open = false;
   }
   next() {
-    console.log('entro siguiente')
     this.swiper.slideNext();
   }
   indicadores(index: number) {
@@ -74,7 +96,8 @@ export class InicioComponent implements OnInit {
   }
 
   mute(slider: number) {
-    switch(slider){
+    switch (slider) {
+      /*
       case 1:
         if (this.video1.nativeElement.muted) {
           this.video1.nativeElement.muted = false;
@@ -83,90 +106,97 @@ export class InicioComponent implements OnInit {
           this.video4.nativeElement.muted = true;
           this.video5.nativeElement.muted = true;
           this.video6.nativeElement.muted = true;
-          this.aviso = [false, true, true, true, true, true ]
+          this.aviso = [false, true, true, true, true, true];
         }
         else {
           this.video1.nativeElement.muted = true;
           this.aviso[0] = true;
-          console.log(this.aviso);
         }
         break;
+        */
       case 2:
         if (this.video2.nativeElement.muted) {
           this.video2.nativeElement.muted = false;
-          this.video1.nativeElement.muted = true;
           this.video3.nativeElement.muted = true;
           this.video4.nativeElement.muted = true;
           this.video5.nativeElement.muted = true;
           this.video6.nativeElement.muted = true;
-          this.aviso = [true, false, true, true, true, true ]
+          (document.getElementById('sound-2')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeup.png');
+          (document.getElementById('texto-2')as HTMLImageElement).hidden = true;
         }
         else {
           this.video2.nativeElement.muted = true;
-          this.aviso[1] = true;
+          (document.getElementById('sound-2')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+          (document.getElementById('texto-2')as HTMLImageElement).hidden = false;
         }
         break;
       case 3:
         if (this.video3.nativeElement.muted) {
           this.video3.nativeElement.muted = false;
-          this.video1.nativeElement.muted = true;
+          
           this.video2.nativeElement.muted = true;
           this.video4.nativeElement.muted = true;
           this.video5.nativeElement.muted = true;
           this.video6.nativeElement.muted = true;
-          this.aviso = [true, true, false, true, true, true ]
+          (document.getElementById('sound-3')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeup.png');
+          (document.getElementById('texto-3')as HTMLImageElement).hidden = true;
         }
         else {
           this.video3.nativeElement.muted = true;
-          this.aviso[2] = true;
+          (document.getElementById('sound-3')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+          (document.getElementById('texto-3')as HTMLImageElement).hidden = false;
         }
         break;
       case 4:
         if (this.video4.nativeElement.muted) {
           this.video4.nativeElement.muted = false;
-          this.video1.nativeElement.muted = true;
+          
           this.video2.nativeElement.muted = true;
           this.video3.nativeElement.muted = true;
           this.video5.nativeElement.muted = true;
           this.video6.nativeElement.muted = true;
-          this.aviso = [true, true, true, false, true, true ]
+          (document.getElementById('sound-4')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeup.png');
+          (document.getElementById('texto-4')as HTMLImageElement).hidden = true;
         }
         else {
           this.video4.nativeElement.muted = true;
-          this.aviso[3] = true;
+          (document.getElementById('sound-4')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+          (document.getElementById('texto-4')as HTMLImageElement).hidden = false;
         }
         break;
       case 5:
         if (this.video5.nativeElement.muted) {
           this.video5.nativeElement.muted = false;
-          this.video1.nativeElement.muted = true;
+          
           this.video2.nativeElement.muted = true;
           this.video3.nativeElement.muted = true;
           this.video4.nativeElement.muted = true;
           this.video6.nativeElement.muted = true;
-          this.aviso = [true, true, true, true, false, true ]
+          (document.getElementById('sound-5')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeup.png');
+          (document.getElementById('texto-5')as HTMLImageElement).hidden = true;
         }
         else {
           this.video5.nativeElement.muted = true;
-          this.aviso[4] = true;
+          (document.getElementById('sound-5')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+          (document.getElementById('texto-5')as HTMLImageElement).hidden = false;
         }
         break;
       case 6:
         if (this.video6.nativeElement.muted) {
           this.video6.nativeElement.muted = false;
-          this.video1.nativeElement.muted = true;
           this.video2.nativeElement.muted = true;
           this.video3.nativeElement.muted = true;
           this.video4.nativeElement.muted = true;
           this.video5.nativeElement.muted = true;
-          this.aviso = [true, true, true, true, true, false ]
+          (document.getElementById('sound-6')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeup.png');
+          (document.getElementById('texto-6')as HTMLImageElement).hidden = true;
         }
         else {
           this.video6.nativeElement.muted = true;
-          this.aviso[5] = true;
+          (document.getElementById('sound-6')as HTMLImageElement).setAttribute('src' , '../../assets/Space/volumeoff.png');
+          (document.getElementById('texto-6')as HTMLImageElement).hidden = false;
         }
         break;
     }
-    
   }
 }

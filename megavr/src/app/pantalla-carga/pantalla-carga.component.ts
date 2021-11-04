@@ -12,7 +12,5 @@ export class PantallaCargaComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log("entre a pantalla carga")
   }
-
 }
