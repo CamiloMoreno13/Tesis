@@ -42,11 +42,21 @@
       <img id="shirry" src="../../assets/Space/btn_shirry.png">
       <img id="marca" src="../../assets/Space/btn_marca.png">
       <img id="volumeoff" src="../../assets/Space/volumeoff.png">
-      <video id="cabina-caro" src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Caro_Carreta.webm?alt=media&token=c8300fae-d2fe-430f-8121-faae7f181800" autoplay loop ></video>
-      <video id="cabina-carlos" src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Carlos_mira.webm?alt=media&token=7f0f85eb-0dc4-4735-8342-51278901c7e6" autoplay loop ></video>
-      <video id="cabina-daniel" src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Dani_Murcia.webm?alt=media&token=091b8de3-41c9-48c0-ba18-c0130b02966a" autoplay  loop ></video>
-      <video id="cabina-mateo" src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Mateo_Ramirez.webm?alt=media&token=c92c9c41-dc22-45ae-927e-a9c079f26119" autoplay loop ></video>
-      <video id="cabina-shirry" src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2FCabina_El_shirry.webm?alt=media&token=99001cd3-3da2-46d0-b28b-d407eb8bc58f" loop autoplay ></video>
+      <video id="cabina-caro"
+        src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Caro_Carreta.webm?alt=media&token=c8300fae-d2fe-430f-8121-faae7f181800"
+        autoplay loop></video>
+      <video id="cabina-carlos"
+        src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Carlos_mira.webm?alt=media&token=7f0f85eb-0dc4-4735-8342-51278901c7e6"
+        autoplay loop></video>
+      <video id="cabina-daniel"
+        src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Dani_Murcia.webm?alt=media&token=091b8de3-41c9-48c0-ba18-c0130b02966a"
+        autoplay loop></video>
+      <video id="cabina-mateo"
+        src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2Fcabina_Mateo_Ramirez.webm?alt=media&token=c92c9c41-dc22-45ae-927e-a9c079f26119"
+        autoplay loop></video>
+      <video id="cabina-shirry"
+        src="https://firebasestorage.googleapis.com/v0/b/tesisvr-space.appspot.com/o/space%2FCabina_El_shirry.webm?alt=media&token=99001cd3-3da2-46d0-b28b-d407eb8bc58f"
+        loop autoplay></video>
 
     </a-assets>
 
@@ -54,48 +64,56 @@
 
     <a-entity id="shirry-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
       material="shader: transparent-video; src: #cabina-shirry; alphaTest: 0.5; side: front"
-      position="4.88336 0.98349 -0.29431" scale="2.15239 2.15239 2.15239" (click)="locutor('shirry')"></a-entity>
-
-    <a-plane id="shirry-parlante" position="1 1.13 0.2" src="#volumeoff" transparent="true" scale="0.1 0.1 0.4"
+      position="4.88336 0.98349 -0.29431" scale="2.15239 2.15239 2.15239">
+      <a-plane id="shirry-area" scale="0.41 1.06 1" position="0.03 0.05 0.1" color="red" (click)="locutor('shirry')"
+        material="opacity: 0.0; transparent: true">></a-plane>
+    </a-entity>
+    <a-plane id="shirry-parlante" position="1 1.70499 0.2" src="#volumeoff" transparent="true" scale="0.1 0.1 0.4"
       rotation="0 -103.63202232090227 0" (click)="shirryclick()"></a-plane>
 
     <!--Daniel Murcia-->
 
     <a-entity id="daniel-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 176.280205954515 0"
       material="shader: transparent-video; src: #cabina-daniel; alphaTest: 0.5; side: front"
-      position="-1.15344 0.98349 4.72107" scale="2.15239 2.15239 2.15239" (click)="locutor('daniel')">
+      position="-1.15344 0.98349 4.72107" scale="2.15239 2.15239 2.15239">
+      <a-plane id="daniel-area" scale="0.41 1.06 1" position="-0.09 -0.01 0.1" color="red" (click)="locutor('daniel')"
+      material="opacity: 0.0; transparent: true" ></a-plane>
 
       <a-plane id="banner_daniel" material="side: double" src="#daniel" transparent="true" scale="2.3 0.7 0.6"
         position="0 1.4 -1.3" animation__a="property: scale; dir: alternate; dur: 200;
     easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
     easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
-    (click)="locutor('daniel')">
+        (click)="locutor('daniel')">
       </a-plane>
 
     </a-entity>
 
-    <a-plane id="daniel-parlante" rotation="0 -175.60526167185088 0" position="0.10958 1.2982 0.76553" src="#volumeoff"
+    <a-plane id="daniel-parlante" rotation="0 158.53856782828905 0" position="-0.288 1.652 0.76553" src="#volumeoff"
       rotation="0 -166.5 0" transparent="true" scale="0.1 0.1 0.4" (click)="danielclick()"></a-plane>
 
     <!--Carolina Carreta-->
     <a-entity id="caro-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 108.23573820477843 0"
       material="shader: transparent-video; src: #cabina-caro; alphaTest: 0.5; side: front"
-      position="-14.76835 -2.09235 9.73552" scale="7.89253 7.89253 7.89253" (click)="locutor('carolina')">
+      position="-14.76835 -2.09235 9.73552" scale="7.89253 7.89253 7.89253">
+      <a-plane id="carolina-area" rotation="0 8.276948308459872 0" scale="0.41 1.06 1" position="0.03 -0.03 0.1" color="red" (click)="locutor('carolina')"
+      material="opacity: 0.0; transparent: true"></a-plane>
       <a-plane id="banner_caro" material="side: double" src="#carolina" transparent="true" scale="2.3 0.7 0.6"
         position="0 1.16584 -1.3" animation__a="property: scale; dir: alternate; dur: 200;
     easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
     easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
-    (click)="locutor('carolina')">
+        (click)="locutor('carolina')">
       </a-plane>
     </a-entity>
 
-    <a-plane id="caro-parlante" rotation="0 100.57414656828905 0" position="-0.58722 1.52969 0.1769" src="#volumeoff"
+    <a-plane id="caro-parlante" rotation="0 118.11983312858027 0" position="-1.067 1.56 0.4569" src="#volumeoff"
       transparent="true" scale="0.1 0.1 0.4" (click)="caroclick()"></a-plane>
 
     <!--Carlos-->
     <a-entity id="carlos-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 52.81582251295442 0"
       material="shader: transparent-video; src: #cabina-carlos; alphaTest: 0.5; side: front"
-      position="-143.82566 11.34662 -47.15236" scale="46.87191 46.87191 46.87191" (click)="locutor('carlos')">
+      position="-143.82566 11.34662 -47.15236" scale="46.87191 46.87191 46.87191">
+      <a-plane id="carlos-area" rotation="0 8 0" scale="0.59 1.35 1" position="0.07 -0.09 0.1" color="red" (click)="locutor('carlos')"
+      material="opacity: 0.0; transparent: true"></a-plane>
       <a-plane id="banner_carlos" material="side: double" src="#carlos" transparent="true" scale="2.3 0.7 0.6"
         position="0 1.4 -1.3" animation__a="property: scale; dir: alternate; dur: 200;
   easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
@@ -103,13 +121,15 @@
         (click)="locutor('carlos')"></a-plane>
     </a-entity>
 
-    <a-plane id="carlos-parlante" rotation="0 58.7751565401101 0" position="-0.81723 1.63735 -0.49793" src="#volumeoff"
+    <a-plane id="carlos-parlante" rotation="0 60 0" position="-0.81723 1.79735 -0.46793" src="#volumeoff"
       transparent="true" scale="0.1 0.1 0.4" (click)="carlosclick()"></a-plane>
 
     <!--Mateo-->
     <a-entity id="mateo-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 18.98667541504522 0"
       material="shader: transparent-video; src: #cabina-mateo; alphaTest: 0.5; side: front"
-      position="-21.30433 -15.03244 -72.54276" scale="28.44376 28.44376 28.44376" (click)="locutor('mateo')">
+      position="-21.30433 -15.03244 -72.54276" scale="28.44376 28.44376 28.44376">
+      <a-plane id="mateo-area" rotation="0 -0.5402992008083662 0" scale="0.41 1.06 1" position="0 0.05 0.1" color="red" (click)="locutor('mateo')"
+      material="opacity: 0.0; transparent: true"></a-plane>
       <a-plane id="banner_mateo" material="side: double" src="#mateo" transparent="true" scale="2.3 0.7 0.6"
         position="0 1.4 -1.3" animation__a="property: scale; dir: alternate; dur: 200;
   easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
@@ -117,7 +137,7 @@
         (click)="locutor('mateo')"></a-plane>
     </a-entity>
 
-    <a-plane id="mateo-parlante" rotation="0 10.407205390756273 0" position="-0.05943 1.18638 -0.79916" src="#volumeoff"
+    <a-plane id="mateo-parlante" rotation="0 -9.474 0" position="-0.09 1.526 -0.829" src="#volumeoff"
       transparent="true" scale="0.1 0.1 0.4" (click)="mateoclick()"></a-plane>
 
 
@@ -195,8 +215,7 @@
 
 
     <a-plane id="banner_ishop" position="0.977 1.533 -5.79656" src="#marca" material="roughness:0.1;transparent:true"
-      scale="2.3 0.7 0.6"
-      rotation="9.698456598179446 -15.469860468532229 -0.265852416940702" animation__a="property: scale; dir: alternate; dur: 200;
+      scale="2.3 0.7 0.6" rotation="9.698456598179446 -15.469860468532229 -0.265852416940702" animation__a="property: scale; dir: alternate; dur: 200;
     easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
     easing: easeInSine; from:3 0.9 0.8; to:2.3 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
       (click)="product('titulo_producto')"></a-plane>

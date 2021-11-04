@@ -16,15 +16,15 @@ export class ProductoComponent implements OnInit {
   @ViewChild('item4') item4!: ElementRef;
   @ViewChild('item5') item5!: ElementRef;
   @ViewChild('menu-items') menu!: ElementRef;
-  @ViewChild('camita') mover!: ElementRef;
-
+  
   public bola: boolean = false;
   public inicio: boolean = false;
   public equis: boolean = true;
   public mostrar: boolean = false;
   public movimiento: boolean = false;
-  public mostrarSpinner : boolean = true;
-  
+  public mostrarSpinner: boolean = true;
+  public hide: boolean = false;
+
   constructor(
     private renderer2: Renderer2,
     private router: Router,
@@ -36,11 +36,11 @@ export class ProductoComponent implements OnInit {
 
     await this.carga();
     setTimeout(() => {
-    this.mostrarSpinner = false; 
-    }, 5000);
+      this.mostrarSpinner = false;
+    }, 10000);
   }
 
-  carga(){
+  carga() {
     let pc = document.getElementById('clic_pc');
     pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
     pc?.setAttribute('scale', '0.022 0.022 0.022');
@@ -89,9 +89,174 @@ export class ProductoComponent implements OnInit {
     bateria?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
   }
 
- 
+
   ngAfterContentInit(): void {
 
+    AFRAME.registerComponent('pc-manager', {
+      init: function () {
+
+        let pc = document.getElementById("clic_pc")
+        let playBtn = document.getElementById('clic_icon');
+        let texto = document.getElementById('clic_texto');
+        let rewindBtn = document.getElementById('close_pc');
+        let posinicial = this.el.getAttribute('position').x
+
+        if (playBtn != null) {
+          playBtn.addEventListener('click', (e) => {
+            
+            if (AFRAME.utils.device.isMobile() == true) {
+              window.open(
+                'https://www.vectary.com/viewer-ar/v1/?model=07041aab-469e-42a5-932b-9d9cdbb09dbd&allowScaling=',
+                '_blank'
+              );
+            } else {
+              this.el.emit('play-anim');
+              this.el.emit('second');              
+            }
+          });
+
+        }
+
+        if (pc != null) {
+          pc.addEventListener('click', (e) => {
+            if (AFRAME.utils.device.isMobile() == true) {
+              window.open(
+                'https://www.vectary.com/viewer-ar/v1/?model=07041aab-469e-42a5-932b-9d9cdbb09dbd&allowScaling=',
+                '_blank'
+              );
+            } else {
+              this.el.emit('play-anim');
+              this.el.emit('second');
+             
+            }
+          });
+        }
+
+        if (rewindBtn != null) {
+          rewindBtn.addEventListener('click', (e) => {
+            this.el.emit('pause-anim');
+            this.el.emit('rewind-animPC');
+            this.el.emit('rewind-movePC');
+          });
+        }
+
+        if (AFRAME.utils.device.isMobile() == false) {
+
+          // RETINA OBJECT AND RETINA BANNER
+
+          let banner_retina = document.getElementById('banner_retina')
+          let retina = document.getElementById('retina')
+          if (banner_retina != null && retina != null) {
+            banner_retina.addEventListener('click', (e) => {
+              let posactual = this.el.getAttribute('position').x;
+              if (posactual != posinicial) {
+                this.el.emit('rewind-animPC');
+                this.el.emit('rewind-movePC');
+                setTimeout(() => {
+                  if (playBtn != null) {
+                    playBtn.setAttribute('visible', 'true');
+                    //texto.setAttribute('visible', 'true');
+                  }
+                }, 200)
+              };
+            });
+
+            retina.addEventListener('click', (e) => {
+              this.el.emit('rewind-animPC');
+              this.el.emit('rewind-movePC');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200);
+            });
+          }
+          // PROCESADOR OBJECT AND PROCESADOR BANNER
+          let banner_procesador = document.getElementById('banner_procesador')
+          let procesador = document.getElementById('procesador')
+          if (banner_procesador != null && procesador != null) {
+            banner_procesador.addEventListener('click', (e) => {
+              let posactual = this.el.getAttribute('position').x;
+              if (posactual != posinicial) {
+                this.el.emit('rewind-movePC');
+                this.el.emit('rewind-animPC');
+                setTimeout(() => {
+                  if (playBtn != null && texto != null) {
+                    playBtn.setAttribute('visible', 'true');
+                    texto.setAttribute('visible', 'true');
+                  }
+                }, 200)
+              }
+              ;
+            })
+
+            procesador.addEventListener('click', (e) => {
+              this.el.emit('rewind-animPC');
+              this.el.emit('rewind-movePC');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200);
+            });
+          }
+
+          // BATERIA OBJECT AND BATERIA BANNER
+          let bateria = document.getElementById('bateria')
+          let banner_bateria = document.getElementById('banner_bateria')
+          if (banner_bateria != null && bateria != null) {
+            banner_bateria.addEventListener('click', (e) => {
+              let posactual = this.el.getAttribute('position').x;
+              if (posactual != posinicial) {
+
+
+                this.el.emit('rewind-animPC');
+                this.el.emit('rewind-movePC');
+
+                setTimeout(() => {
+                  if (playBtn != null && texto != null) {
+                    playBtn.setAttribute('visible', 'true');
+                    texto.setAttribute('visible', 'true');
+                  }
+                }, 200)
+              }
+            });
+
+            bateria.addEventListener('click', (e) => {
+              let posactual = this.el.getAttribute('position').x;
+              if (posactual != posinicial) {
+                this.el.emit('rewind-animPC');
+                this.el.emit('rewind-movePC');
+                setTimeout(() => {
+                  if (playBtn != null) {
+                    playBtn.setAttribute('visible', 'true');
+                    //texto.setAttribute('visible', 'true');
+                  }
+                }, 200)
+              }
+            });
+          }
+
+          // Teclado
+          let teclado = document.getElementById('teclado')
+          if (teclado != null) {
+            teclado.addEventListener('click', (e) => {
+              this.el.emit('rewind-animPC');
+              this.el.emit('rewind-movePC');
+              setTimeout(() => {
+                if (playBtn != null && texto != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
+                }
+              }, 200);
+            });
+          }
+
+        }
+      }
+    })
 
     AFRAME.registerComponent('retina-manager-object', {
       init: function () {
@@ -214,6 +379,24 @@ export class ProductoComponent implements OnInit {
           });
         }
 
+        //PC 
+
+        let pc = document.getElementById('clic_pc')
+        if (pc != null) {
+          pc.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null && texto != null) {
+                playBtn.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          }
+          });
+        }
       }
     })
 
@@ -230,9 +413,6 @@ export class ProductoComponent implements OnInit {
         if (playBtn != null) {
           playBtn.addEventListener('click', (e) => {
             setTimeout(() => {
-              this.el.emit('second');
-              this.el.emit('play-anim-object');
-
               this.el.emit('second');
               this.el.emit('play-anim');
               if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
@@ -336,6 +516,20 @@ export class ProductoComponent implements OnInit {
         let teclado = document.getElementById('teclado')
         if (teclado != null) {
           teclado.addEventListener('click', (e) => {
+            this.el.emit('rewind-animRE');
+            this.el.emit('rewind-moveRE');
+            setTimeout(() => {
+              if (playBtn != null && texto != null) {
+                playBtn.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+// pc
+        let pc = document.getElementById('clic_pc')
+        if (pc != null) {
+          pc.addEventListener('click', (e) => {
             this.el.emit('rewind-animRE');
             this.el.emit('rewind-moveRE');
             setTimeout(() => {
@@ -467,6 +661,21 @@ export class ProductoComponent implements OnInit {
             }
           })
         }
+         //PC 
+
+         let pc = document.getElementById('clic_pc')
+         if (pc != null) {
+           pc.addEventListener('click', (e) => {
+             this.el.emit('rewind-animPR');
+             this.el.emit('rewind-movePR');
+             setTimeout(() => {
+               if (playBtn != null ) {
+                 playBtn.setAttribute('visible', 'true');
+                 //texto.setAttribute('visible', 'true');
+               }
+             }, 200);
+           });
+         }
 
       }
     })
@@ -604,8 +813,22 @@ export class ProductoComponent implements OnInit {
           })
         }
 
+        // pc
+        let pc = document.getElementById('clic_pc')
+        if (pc != null) {
+          pc.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPR');
+            this.el.emit('rewind-movePR');
+            setTimeout(() => {
+              if (playBtn != null ) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
 
-      },
+         },
     });
 
     AFRAME.registerComponent('bateria-manager-object', {
@@ -709,25 +932,44 @@ export class ProductoComponent implements OnInit {
 
         // Teclado
         let teclado = document.getElementById('teclado')
-        if (teclado != null){
+        if (teclado != null) {
           teclado.addEventListener('click', (e) => {
             let posactual = this.el.getAttribute('position').x;
             if (posactual != posinicial) {
-            this.el.emit('rewind-animBA');
-            this.el.emit('rewind-moveBA');
-            setTimeout(() => {
-              if (playBtn != null ) {
-                playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
-              }
-            }, 200)
-          }
+              this.el.emit('rewind-animBA');
+              this.el.emit('rewind-moveBA');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
           })
         }
+
+         //PC 
+
+        let pc = document.getElementById('clic_pc')
+        if (pc != null) {
+          pc.addEventListener('click', (e) => {
+            let posactual = this.el.getAttribute('position').x;
+            if (posactual != posinicial) {
+              this.el.emit('rewind-animBA');
+              this.el.emit('rewind-moveBA');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+            }
+          })
 
 
 
       }
+    }
     })
     AFRAME.registerComponent('bateria-manager', {
       init: function () {
@@ -843,19 +1085,34 @@ export class ProductoComponent implements OnInit {
 
         // Teclado
         let teclado = document.getElementById('teclado')
-        if (teclado != null){
+        if (teclado != null) {
           teclado.addEventListener('click', (e) => {
             this.el.emit('rewind-animBA');
             this.el.emit('rewind-moveBA');
             setTimeout(() => {
-              if (playBtn != null ) {
+              if (playBtn != null) {
                 playBtn.setAttribute('visible', 'true');
                 //texto.setAttribute('visible', 'true');
               }
             }, 200)
-          
+
           })
         }
+         //PC 
+
+         let pc = document.getElementById('clic_pc')
+         if (pc != null) {
+           pc.addEventListener('click', (e) => {
+             this.el.emit('rewind-animBA');
+             this.el.emit('rewind-moveBA');
+             setTimeout(() => {
+               if (playBtn != null) {
+                 playBtn.setAttribute('visible', 'true');
+                 //texto.setAttribute('visible', 'true');
+               }
+             }, 200);
+           });
+         }
       },
     });
 
@@ -962,6 +1219,18 @@ export class ProductoComponent implements OnInit {
           });
 
         }
+         //PC 
+
+         let pc = document.getElementById('clic_pc')
+         if (pc != null) {
+           pc.addEventListener('click', (e) => {
+             this.el.emit('rewind-animTE');
+             this.el.emit('rewind-moveTE');
+             setTimeout(() => {
+              teclado?.setAttribute('visible','true')
+             }, 1150);
+           });
+         }
 
 
 
@@ -1002,6 +1271,17 @@ export class ProductoComponent implements OnInit {
 
   exit() {
     this.router.navigate(['/space']);
+  }
+
+  esconder() {
+    this.hide = false;
+  }
+
+  esconderObj() {
+    if (this.hide == false) {
+      this.hide = true;
+    }
+
   }
 
   goToAr(objeto: string) {

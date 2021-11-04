@@ -8,19 +8,21 @@
         <img id="shop" src="../../assets/Productos/logo_ishop.svg">
     </div>
 
-    <div class="cerrar-contenedor">
+    <div class="cerrar-contenedor" *ngIf="!hide">
         <div class="cerrar">
             <img src="../../assets/Shared/white_exit.svg" (click)="exit()">
         </div>
     </div>
-    
+
 
 </div>
 <app-menu></app-menu>
+
 <head>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
 
 </head>
+
 <body>
     <a-scene class="escena" loading-screen="enabled:true ; backgroundColor : #560396 ; dotsColor: #db04bb  "
         cursor="rayOrigin:mouse">
@@ -50,14 +52,44 @@
         </a-assets>
 
         <a-entity id="camera-container" rotation="0 -77 0" #camita>
-            <a-entity id="camera"  camera="fov:60" look-controls></a-entity>
+            <a-entity id="camera" camera="fov:60" look-controls></a-entity>
         </a-entity>
 
         <a-sky id="fondo" src="../../assets/Productos/newplace.jpg"></a-sky>
 
-        <!-- clic pc -->
+        <!-- clic pc en desktop
         <a-entity id="clic_pc" (click)="goToAr('pc')" animation__scale="property: scale; dir: alternate; dur: 1000;
     easing: easeInSine; loop: true; to:0.025 0.025 0.025"></a-entity>
+    -->
+        <a-entity id="clic_pc" pc-manager animation__scale="property: scale; dir: alternate; dur: 1000;
+        easing: easeInSine; loop: true; to:0.025 0.025 0.025"
+        animation__move="property:position;to :49.2 -13.7 -7.9; dur: 900; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+        animation__rewindm="property: position; to: 49.2 -13.6 -7.9; easing: easeInOutCubic; startEvents: rewind-movePC"
+        (click)="esconderObj()"></a-entity>
+
+        <a-plane id="ghost1_pc" visible="true" material="side:double;opacity:0.9" src="#teclado1"
+            position="45.2 -13.6 -7.9" rotation="0 -66.94209695190487 0" scale=" 0 0 1.5" pc-manager
+            animation__move="property:position;to :5.6 0.06 -4.47; dur: 900; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
+            animation__scale="property: scale; to:  4 4 4 ; dur: 1200; 
+  dir: normal; easing: easeInOutCubic; startEvents: second"
+            animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animPC">
+            <a-circle id="close_pc" visible="true" src="#white_exit"
+                material="opacity: 1; roughness: 0.5; side: double;transparent:true" position="0.472 0.391 0.1"
+                scale="1 1 1" pc-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+dir: normal; easing: easeInOutCubic; startEvents: second"
+                animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-anim"
+                (click)="esconder()">
+            </a-circle>
+        </a-plane>
+
+        <a-plane id="clic_icon" position="8.3 -0.5 -0.9" src="#ar_icon" scale="0.5 0.5 1.0" transparent="true"
+        rotation="0 -90 0" *ngIf="mostrar" 
+        pc-manager animation__scale="property: scale; dir: alternate; dur: 1000;
+        easing: easeInSine; loop: true; to:0.55 0.5 1.0" (click)="esconderObj()"
+        ></a-plane>
+
+        <a-plane id="clic_texto" position="9.3 -1 -1.1" src="#vista_3d" scale="0.6 0.13 1.1" transparent="true"
+        rotation="0 -90 0" *ngIf="mostrar"></a-plane>
 
         <!-- clic logo -->
         <a-plane id="clic_logo" position="4.2 0.2 -1.7" src="#logo" transparent="true" scale="0.7 0.23 0.5"
@@ -72,13 +104,13 @@
         </a-plane>
         <a-plane id="apple" position="3.8 -0.2 0.3" src="#apple" transparent="true" scale="0.08 0.09 0.2"
             rotation="0 -100 0" *ngIf="mostrar"></a-plane>
-        <!--clic texto-->
+        <!--clic texto
         <a-plane id="clic_texto" position="9.3 -1 -1.1" src="#vista_3d" scale="0.6 0.13 1.1" transparent="true"
             rotation="0 -90 0" *ngIf="mostrar" (click)="goToAr('texto')"></a-plane>
-        <!-- clic icono-->
+         clic icono
         <a-plane id="clic_icon" position="8.3 -0.5 -0.9" src="#ar_icon" scale="0.5 0.5 1.0" transparent="true"
             rotation="0 -90 0" *ngIf="mostrar" (click)="goToAr('icono')"></a-plane>
-
+-->
 
         <!-- Retina ---------------------------------------------------------------------------------------- -->
 
@@ -88,7 +120,8 @@
             animation__scale="property: rotation; to: 0 205 0; dur: 1500; 
 dir: normal; easing: easeInOutCubic ; startEvents: second"
             animation__rewind="property: rotation; to: 0 567 0; easing: easeInOutCubic; startEvents: rewind-animRE ; "
-            animation__mrewind="property: position; to: 12.13 -15.3 29.535; easing: easeInOutCubic; startEvents: rewind-moveRE">
+            animation__mrewind="property: position; to: 12.13 -15.3 29.535; easing: easeInOutCubic; startEvents: rewind-moveRE"
+            (click)="esconderObj()">
         </a-entity>
 
         <a-plane id="ghost1" visible="false" material="side:double;opacity:0.9" position="1.438 0 1.005"
@@ -98,10 +131,12 @@ dir: normal; easing: easeInOutCubic ; startEvents: second"
       dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animRE">
 
-            <a-circle id="close_retina" visible="false"  src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="0.525 1.076 1"
+            <a-circle id="close_retina" visible="false" src="#white_exit"
+                material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="0.525 1.076 1"
                 position="0.475 0.458 0.02" retina-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
     dir: normal; easing: easeInOutCubic; startEvents: second"
-                animation__rewind="property: radius; to: 0.03; easing:easeInOutSine; dir:normal; startEvents: rewind-animRE">
+                animation__rewind="property: radius; to: 0.03; easing:easeInOutSine; dir:normal; startEvents: rewind-animRE"
+                (click)="esconder()">
             </a-circle>
         </a-plane>
 
@@ -117,7 +152,7 @@ dir: normal; easing: easeInOutCubic ; startEvents: second"
         <a-plane id="banner_retina" position="2.723 -0.16318 4.74821" src="#bn_retina"
             material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6" rotation="0 210 0"
             retina-manager animation__scale="property: scale; dir: alternate; dur: 1000;
-        easing: easeInSine; loop: true; to:2.7 0.9 0.8">
+        easing: easeInSine; loop: true; to:2.7 0.9 0.8" (click)="esconderObj()">
 
         </a-plane>
 
@@ -133,13 +168,14 @@ dir: normal; easing: easeInOutCubic ; startEvents: second"
             animation__scale="property: rotation; to: 0 484 -1; dur: 1500; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: rotation; to: 0 90.85 0; easing: easeInOutCubic; startEvents: rewind-animPR"
-            animation__mrewind="property: position; to: -25.4 -13.4 10.498; easing: easeInOutCubic; startEvents: rewind-movePR">
+            animation__mrewind="property: position; to: -25.4 -13.4 10.498; easing: easeInOutCubic; startEvents: rewind-movePR"
+            (click)="esconderObj()">
             ></a-entity>
 
         <a-plane id="banner_procesador" position="-6.9 -2.77 5.680" src="#bn_retina"
             material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="3 1.100 1.000"
             rotation="0 127 0" procesador-manager animation__scale="property: scale; dir: alternate; dur: 1000;
-easing: easeInOutCubic; loop: true; to:3.4 1.3 1.2">
+easing: easeInOutCubic; loop: true; to:3.4 1.3 1.2" (click)="esconderObj()">
 
         </a-plane>
 
@@ -148,10 +184,12 @@ easing: easeInOutCubic; loop: true; to:3.4 1.3 1.2">
             animation__move="property:position;to :-0.83 -0.28 2.068; dur: 300; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
             animation__scale="property: scale; to:  1.950 0.860 1.101; dur: 900;dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animPR">
-            <a-circle id="close_procesador" visible="false"src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true"
-                scale="0.540 1.142 1" position="0.481 0.435 0.033" procesador-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
+            <a-circle id="close_procesador" visible="false" src="#white_exit"
+                material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="0.540 1.142 1"
+                position="0.481 0.435 0.033" procesador-manager animation__scale="property: radius; to: 0.065; dur: 2000; 
     dir: normal; easing: easeInOutCubic; startEvents: second"
-                animation__rewind="property: radius; to: 0.03; easing:easeInOutSine; dir:normal; startEvents: rewind-animPR">
+                animation__rewind="property: radius; to: 0.03; easing:easeInOutSine; dir:normal; startEvents: rewind-animPR"
+                (click)="esconder()">
             </a-circle>
         </a-plane>
 
@@ -173,14 +211,15 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__scale="property: rotation; to: 0 360 0; dur: 1500; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: rotation; to: 0 0 0; easing: easeInOutCubic; startEvents: rewind-animBA"
-            animation__mrewind="property: position; to: 1.08784 -13.6 -32.56; easing: easeInOutCubic; startEvents: rewind-moveBA">
+            animation__mrewind="property: position; to: 1.08784 -13.6 -32.56; easing: easeInOutCubic; startEvents: rewind-moveBA"
+            (click)="esconderObj()">
             >
         </a-entity>
 
         <a-plane id="banner_bateria" position="0.097 -0.085 -5.6" src="#bn_retina"
             material="opacity: 1; roughness: 0.5; side: double;transparent:true" scale="2.3 0.7 0.6" rotation="0 0 0"
             bateria-manager animation__scale="property: scale; dir: alternate; dur: 1000;
-        easing: easeInOutCubic; loop: true; to:2.7 0.9 0.8">
+        easing: easeInOutCubic; loop: true; to:2.7 0.9 0.8" (click)="esconderObj()">
 
         </a-plane>
 
@@ -190,10 +229,12 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__scale="property: scale; to:  3.545 1.7 2.660; dur: 900; 
   dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animBA">
-            <a-circle id="close_bateria" visible="false" src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true"
-                position="0.465 0.435 0.02" scale="0.540 1 1" bateria-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+            <a-circle id="close_bateria" visible="false" src="#white_exit"
+                material="opacity: 1; roughness: 0.5; side: double;transparent:true" position="0.465 0.435 0.02"
+                scale="0.540 1 1" bateria-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
-                animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-animBA">
+                animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-animBA"
+                (click)="esconder()">
             </a-circle>
         </a-plane>
 
@@ -201,7 +242,8 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
             material="shader:gif;src:#gif;" gif="" rotation="0 64.9315880487908 0" position="-6.99594 -2.5447 -1.97098"
             teclado-manager
             animation__move="property:position;to :-7 -2.5447 -1.97098; dur: 900; dir: normal; startEvents: play-anim; pauseEvents: pauseA-anim; stopEvents: stop-anim"
-            animation__rewindm="property: position; to: -6.99594 -2.5447 -1.97098; easing: easeInOutCubic; startEvents: rewind-moveTE">
+            animation__rewindm="property: position; to: -6.99594 -2.5447 -1.97098; easing: easeInOutCubic; startEvents: rewind-moveTE"
+            (click)="esconderObj()">
         </a-entity>
 
 
@@ -211,10 +253,12 @@ dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__scale="property: scale; to:  5.208 1.650 2.660; dur: 1200; 
   dir: normal; easing: easeInOutCubic; startEvents: second"
             animation__rewind="property: scale; to: 0 0 1.5; easing: easeInOutCubic; startEvents: rewind-animTE">
-            <a-circle id="close_teclado" visible="true"src="#white_exit" material="opacity: 1; roughness: 0.5; side: double;transparent:true"
-                position="0.472 0.391 0.032" scale="0.429 0.971 0.923" teclado-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
+            <a-circle id="close_teclado" visible="true" src="#white_exit"
+                material="opacity: 1; roughness: 0.5; side: double;transparent:true" position="0.472 0.391 0.032"
+                scale="0.429 0.971 0.923" teclado-manager animation__scale="property: radius; to: 0.080; dur: 2000; 
 dir: normal; easing: easeInOutCubic; startEvents: second"
-                animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-animTE">
+                animation__rewind="property: radius; to: 0.0001; easing:easeInOutSine; dir:normal; startEvents: rewind-animTE"
+                (click)="esconder()">
             </a-circle>
         </a-plane>
         <!-- Iluminacion de titulos y objeto -->
