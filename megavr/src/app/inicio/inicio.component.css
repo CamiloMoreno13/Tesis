@@ -80,7 +80,7 @@ p {
   height: 50%;
   width: 100%;
   position: relative;
-  top: 50%;
+  top: 55%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -229,7 +229,7 @@ p {
   z-index: 10;
 }
 .ititle {
-  height: 80%;
+  height: 70%;
   background-color: transparent;
   margin-left: 20px;
   margin-right: 20px;
@@ -334,6 +334,11 @@ button {
   z-index: 90;
   cursor: pointer;
 }
+.exit img {
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
 .boton {
   grid-area: 4 / 2 / 5 / 3;
   height: 50%;
@@ -357,6 +362,35 @@ button {
   border-radius: 5px;
   font-size: large;
 }
+.sonido {
+  grid-area: 1 / 1 / 2 / 2;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 90;
+  cursor: pointer;
+  color:white;
+  font-size: 40px;
+}
+.sonido img {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+.sonido p {
+  background-color: transparent;
+  position: absolute;
+  color:white;
+  font-size: 14px;
+  width: 100px;
+  text-align: center;
+  user-select: none;
+  top: 9%;
+}
 @media (max-width: 1680px) {
   .subtitle {
     width: 60%;
@@ -376,7 +410,7 @@ button {
     font-size: 30px;
   }
   .sonido p {
-    font-size: 9px;
+    font-size: 10px;
   }
   .indicadores ul button {
     width: 18px;
@@ -452,6 +486,17 @@ button {
   .resp-sharing-button {
     font-size: 8px;
   }
+  .ititle {
+    height: 80%;
+  }
+  .exit img {
+    height: 40px;
+    width: 40px;
+  }
+  .sonido img {
+    height: 30px;
+    width: 30px;
+  }
 }
 @media (max-width: 320px) {
   h3 {
@@ -467,29 +512,7 @@ button {
     margin-top: -18px;
   }
 }
-.sonido {
-  grid-area: 1 / 1 / 2 / 2;
-  height: 100%;
-  width: 100%;
-  background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 90;
-  cursor: pointer;
-  color:white;
-  font-size: 40px;
-}
-.sonido p {
-  position: absolute;
-  color:white;
-  font-size: 12px;
-  width: 50px;
-  text-align: center;
-  user-select: none;
-  top: 9%;
-}
+
 
 /*
 1680x1050

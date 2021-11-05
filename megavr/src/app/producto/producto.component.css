@@ -13,18 +13,22 @@
 
 .titular {
   grid-area: 1 / 1 / 2 / 3;
-  position: relative;
+  position: absolute;
   left: 5%;
   margin-top: 15px;
   z-index: 3;
-  width: 310px;
+  width: 320px;
   user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
 }
 
 .titular h4 {
-  width: 159px;
+  position: relative;
+  left: 5px;
+  width: 170px;
   height: 27px;
-  top: 39px;
+  top: 5px;
 
   /* 21 - Medium */
   font-family: "chivo";
@@ -34,16 +38,15 @@
   line-height: 28px;
   /* or 133% */
   text-align: left;
-
   color: white;
 }
 
 .titular h3 {
-  position: static;
-  width: 327px;
+  position: relative;
+  left: 5px;
+  width: 310px;
   height: 40px;
-  left: 0px;
-  top: 0px;
+  top: 2px;
   font-family: "chivo";
   font-style: italic;
   font-weight: bold;
@@ -56,6 +59,12 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+
+.titular img{
+  position: relative;
+  top: -5px;
+  left: 5px;
 }
 
 .cerrar {
@@ -95,5 +104,9 @@
   .cerrar img {
     height: 40px;
     width: 40px;
+  }
+  .titular img {
+    width: 119px;
+    height: 40px;
   }
 }
