@@ -14,9 +14,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PerfilesComponent } from './perfiles/perfiles.component';
 import { ProductoComponent } from './producto/producto.component';
 import { NoticiasComponent } from './noticias/noticias.component';
-import { SharedComponent } from './shared/shared.component';
 import { AdministracionComponent } from './administracion/administracion.component';
-import { EstadisticaComponent } from './estadistica/estadistica.component';
 import { SpaceAdminComponent } from './administracion/space-admin/space-admin.component';
 import { PerfilAdminComponent } from './administracion/perfil-admin/perfil-admin.component';
 import { NoticiaAdminComponent } from './administracion/noticia-admin/noticia-admin.component';
@@ -40,9 +38,7 @@ import { PantallaCargaComponent } from './pantalla-carga/pantalla-carga.componen
     PerfilesComponent,
     ProductoComponent,
     NoticiasComponent,
-    SharedComponent,
     AdministracionComponent,
-    EstadisticaComponent,
     SpaceAdminComponent,
     PerfilAdminComponent,
     NoticiaAdminComponent,
