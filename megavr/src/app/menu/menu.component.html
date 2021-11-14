@@ -47,6 +47,12 @@
     </div>
     <!------------------------------------------- Noticias -------------------------------------------->
     <div class="menu-contenedor" *ngIf="noticias">
+        <div class="menu" (click)="exitNoticias()">
+            <img src="../../assets/Shared/icon_rest.svg">
+        </div>
+    </div>
+    <!--
+        <div class="menu-contenedor" *ngIf="noticias">
         <div class="menu" (click)="menuDifuminado()">
             <img src="../../assets/Shared/menu.svg" *ngIf="equis">
             <img src="../../assets/Shared/menu_abre.svg" *ngIf="!equis">
@@ -60,8 +66,9 @@
             </div>
         </div>
     </div>
+    -->
     <div class="cerrar-contenedor" *ngIf="noticias">
-        <div class="cerrar" id="cerrar" (click)="exitNoticias()">
+        <div class="cerrar" id="cerrar" (click)="exit()">
             <img src="../../assets/Shared/btn_Cerrar.svg">
         </div>
     </div>
