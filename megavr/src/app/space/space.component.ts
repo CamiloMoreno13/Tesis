@@ -13,13 +13,10 @@ import { CargarScriptsService } from "../Services/Carga/cargar-scripts.service";
 export class SpaceComponent implements OnInit {
 
 
-  public mostrar: boolean = false;
-  public menu: string = 'space';
+ public menu: string = 'space';
 
   public mostrarSpace : boolean = false; 
   public mostrarSpinner : boolean = true; 
-
-
 
   constructor(private _CargarScripts: CargarScriptsService, private router: Router, private spaceService: SpaceService) {
     _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);

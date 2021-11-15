@@ -18,8 +18,6 @@ export class ProductoComponent implements OnInit {
   @ViewChild('menu-items') menu!: ElementRef;
   
   public bola: boolean = false;
-  public inicio: boolean = false;
-  public equis: boolean = true;
   public mostrar: boolean = false;
   public movimiento: boolean = false;
   public mostrarSpinner: boolean = true;
