@@ -13,9 +13,9 @@
         <p *ngIf="sonido" (click)="mute()">activar sonido</p>
     </div>
     <div class="video">
-        <video [muted]="mute" autoplay="autoplay" #videopls loop playsinline>
+        <video [muted]="mute" autoplay="autoplay" #videopls loop playsinline class="tempo">
             <source src="../../assets/Pruebas/cabina_carlos_mira-1.mov" type='video/mp4; codecs="hvc1"'>
-            <source [src]="perfil.video" >
+            <source [src]="perfil.video" type="video/webm">
         </video>
     </div>
     <div class="menu" *ngIf="!isMobile">
