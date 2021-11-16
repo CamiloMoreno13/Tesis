@@ -18,8 +18,6 @@ export class InicioComponent implements OnInit {
   @ViewChild('video5') video5!: ElementRef;
   @ViewChild('video6') video6!: ElementRef;
 
-
-
   public open: boolean = true;
   public informacion: banner[] = [new banner(), new banner(), new banner(), new banner(), new banner(), new banner()];
   public indicador: boolean[] = [false, false, false, false, false, false];
@@ -50,7 +48,6 @@ export class InicioComponent implements OnInit {
     */
    
     this.swiper.on('slideChange', function () {
-      console.log("entro change");
       let video2 = document.getElementById('video-slider2') as HTMLVideoElement;
       let video3 = document.getElementById('video-slider3') as HTMLVideoElement;
       let video4 = document.getElementById('video-slider4') as HTMLVideoElement;
@@ -76,17 +73,21 @@ export class InicioComponent implements OnInit {
 
     });
   }
+
   logo() {
     this.open = false;
   }
+
   next() {
     this.swiper.slideNext();
   }
+
   indicadores(index: number) {
     this.indicador = [false, false, false, false, false];
     this.indicador[index] = true;
     this.swiper.slideTo(index)
   }
+
   space() {
     this.router.navigate(['/space']);
   }
