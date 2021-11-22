@@ -17,6 +17,8 @@ export class SpaceComponent implements OnInit {
 
   public mostrarSpace : boolean = false; 
   public mostrarSpinner : boolean = true; 
+  public mostrarimagenes : boolean = true;
+  public mostrarvideos : boolean = true;
 
   constructor(private _CargarScripts: CargarScriptsService, private router: Router, private spaceService: SpaceService) {
     _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);
@@ -43,6 +45,16 @@ export class SpaceComponent implements OnInit {
           });
       });*/
     /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
+
+    if(this.iOS()){
+      this.mostrarimagenes = true;
+      this.mostrarvideos = false;
+      console.log("entro true");
+    }else{
+      this.mostrarimagenes = false;
+      this.mostrarvideos = true;
+      console.log("entro false");
+    }
   }
 
   carga2(){
@@ -79,7 +91,7 @@ export class SpaceComponent implements OnInit {
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
 
-    pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    pc?.setAttribute('gltf-model', '../../assets/Space/Notebook.glb');
     pc?.setAttribute('scale', '0.04 0.04 0.04');
     pc?.setAttribute('position', '16.1 -22.5 -53.1');
     //pc?.setAttribute('position','-19.2 -19.9 52.3'); 
@@ -232,6 +244,18 @@ export class SpaceComponent implements OnInit {
   product(cadena: string) {
     this.spaceService.clic(cadena);
     this.router.navigate(['/producto'])
+  }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
 

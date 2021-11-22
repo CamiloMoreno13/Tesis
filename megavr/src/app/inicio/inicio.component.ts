@@ -72,6 +72,25 @@ export class InicioComponent implements OnInit {
       (document.getElementById('texto-6')as HTMLImageElement).hidden = false;
 
     });
+    let video2 = document.getElementById('video-slider2') as HTMLVideoElement;
+    let video3 = document.getElementById('video-slider3') as HTMLVideoElement;
+    let video4 = document.getElementById('video-slider4') as HTMLVideoElement;
+    let video5 = document.getElementById('video-slider5') as HTMLVideoElement;
+    let video6 = document.getElementById('video-slider6') as HTMLVideoElement;
+
+    if(this.iOS()){
+      video2.src = "https://proyectos-hernan.info/videos_mov/Onboarding_titulo_2_caro_carreta.mov";
+      video3.src = "https://proyectos-hernan.info/videos_mov/Onboarding_titulo_3_Dani_murcia.mov";
+      video4.src = "https://proyectos-hernan.info/videos_mov/Onboarding_titulo_4_caro_carreta.mov";
+      video5.src = "https://proyectos-hernan.info/videos_mov/Onboarding_titulo_5_Dani_murcia.mov";
+      video6.src = "https://proyectos-hernan.info/videos_mov/Onboarding_titulo_6_El_Shirry.mov";
+    }else{
+      video2.src = this.informacion[1].video;
+      video3.src = this.informacion[2].video;
+      video4.src = this.informacion[3].video;
+      video5.src = this.informacion[4].video;
+      video6.src = this.informacion[5].video;
+    }
   }
 
   logo() {
@@ -94,6 +113,18 @@ export class InicioComponent implements OnInit {
 
   exit() {
     this.router.navigate(['/space']);
+  }
+
+  iOS() {
+    return [
+      'iPad Simulator',
+      'iPhone Simulator',
+      'iPod Simulator',
+      'iPad',
+      'iPhone',
+      'iPod'
+    ].includes(navigator.platform)
+    || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
   }
 
   mute(slider: number) {
