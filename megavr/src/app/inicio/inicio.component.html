@@ -70,8 +70,9 @@
                             <p id="texto-2" (click)="mute(2)">Activar Sonido</p>
                         </div>
                         <div class="video">
-                            <video [src]="informacion[1].video" style="z-index: 99;" [muted]="mute"
-                            autoplay="autoplay" #video2 loop playsinline id="video-slider2"></video>
+                            <video style="z-index: 99;" [muted]="mute"
+                            autoplay="autoplay" #video2 loop playsinline id="video-slider2">
+                            </video>
                         </div>
                         <div class="imagenes" >
                             <img class="ititle" *ngFor="let img of informacion[1].imagenes; let i = index;" [src]="informacion[1].imagenes[i]">
@@ -121,7 +122,7 @@
                             <p id="texto-3" (click)="mute(3)">Activar Sonido</p>
                         </div>
                         <div class="video">
-                            <video [src]="informacion[2].video" style="z-index: 99;" [muted]="mute"
+                            <video style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video3 loop playsinline id="video-slider3"></video>
                         </div>
                         <div class="imagenes">
@@ -174,7 +175,7 @@
                             <p id="texto-4" (click)="mute(4)">Activar Sonido</p>
                         </div>
                         <div class="video">
-                            <video [src]="informacion[3].video" style="z-index: 99;" [muted]="mute"
+                            <video style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video4 loop playsinline id="video-slider4"></video>
                         </div>
                         <div class="info-title">
@@ -225,7 +226,7 @@
                             <p id="texto-5" (click)="mute(5)">Activar Sonido</p>
                         </div>
                         <div class="video">
-                            <video [src]="informacion[4].video" style="z-index: 99;" [muted]="mute"
+                            <video style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video5 loop playsinline id="video-slider5"></video>
                         </div>
                         <div class="info-title">
@@ -276,7 +277,7 @@
                             <p id="texto-6" (click)="mute(6)">Activar Sonido</p>
                         </div>
                         <div class="video">
-                            <video [src]="informacion[5].video" style="z-index: 99;" [muted]="mute"
+                            <video style="z-index: 99;" [muted]="mute"
                             autoplay="autoplay" #video6 loop playsinline id="video-slider6"></video>
                         </div>
                         <div class="info-title">

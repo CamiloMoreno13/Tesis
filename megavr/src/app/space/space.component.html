@@ -36,10 +36,15 @@
 
 
       <img id="carolina" src="../../assets/Space/btn_caro_Carreta.png">
+      <img id="carolina_video" src="../../assets/Space/Carolina_carreño.png">
       <img id="daniel" src="../../assets/Space/btn_dani_murcia.png">
+      <img id="daniel_video" src="../../assets/Space/Dani_Murcia.png">
       <img id="mateo" src="../../assets/Space/btn_mateo.png">
+      <img id="mateo_video" src="../../assets/Space/Mateo_Ramirez.png">
       <img id="carlos" src="../../assets/Space/btn_carlos_mira.png">
+      <img id="carlos_video" src="../../assets/Space/carlos_mira.png">
       <img id="shirry" src="../../assets/Space/btn_shirry.png">
+      <img id="shirry_video" src="../../assets/Space/Elshirry.png">
       <img id="marca" src="../../assets/Space/btn_marca.png">
       <img id="volumeoff" src="../../assets/Space/volumeoff.png">
       <video id="cabina-caro"
@@ -64,18 +69,33 @@
 
     <a-entity id="shirry-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 -90.35830908110648 0"
       material="shader: transparent-video; src: #cabina-shirry; alphaTest: 0.5; side: front"
-      position="4.88336 0.98349 -0.29431" scale="2.15239 2.15239 2.15239">
+      position="4.88336 0.98349 -0.29431" scale="2.15239 2.15239 2.15239" *ngIf="mostrarvideos">
       <a-plane id="shirry-area" scale="0.41 1.06 1" position="0.03 0.05 0.1" color="red" (click)="locutor('shirry')"
-        material="opacity: 0.0; transparent: true">></a-plane>
+        material="opacity: 0.0; transparent: true"></a-plane>
+        <a-plane id="banner_shirry" material="side: double" src="#shirry" transparent="true" scale="2.3 0.7 0.6"
+        position="0 1.4 -1.3" animation__a="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
+        (click)="locutor('daniel')">
+      </a-plane>
     </a-entity>
     <a-plane id="shirry-parlante" position="1 1.70499 0.2" src="#volumeoff" transparent="true" scale="0.1 0.1 0.4"
-      rotation="0 -103.63202232090227 0" (click)="shirryclick()"></a-plane>
+      rotation="0 -103.63202232090227 0" (click)="shirryclick()" *ngIf="mostrarvideos"></a-plane>
+    <a-plane id="video_shirryIOS" material="side: double" src="#shirry_video" transparent="true" rotation="0.529 -94.0 89.755"
+    position="4.98 0.943 -0.406" scale="3.586 4.15 2.15" *ngIf="mostrarimagenes">
+      <a-plane id="banner_shirry" material="side: double" position="1.25 0.17 -6.08" src="#shirry"
+        transparent="true" scale="2.6 0.7 0.6" rotation="0 0 -90.01"
+        animation__a="property: scale; dir: alternate; dur: 200;
+      easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+      easing: easeInSine; from:3 0.9 0.8; to:2.6 0.7 0.6" animation__c="property:scale; to : 2.6 0.7 0.6;dur:4000;"
+        (click)="locutor('shirry')"></a-plane>
+    </a-plane>
 
     <!--Daniel Murcia-->
 
     <a-entity id="daniel-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 176.280205954515 0"
       material="shader: transparent-video; src: #cabina-daniel; alphaTest: 0.5; side: front"
-      position="-1.15344 0.98349 4.72107" scale="2.15239 2.15239 2.15239">
+      position="-1.15344 0.98349 4.72107" scale="2.15239 2.15239 2.15239" *ngIf="mostrarvideos">
       <a-plane id="daniel-area" scale="0.41 1.06 1" position="-0.09 -0.01 0.1" color="red" (click)="locutor('daniel')"
       material="opacity: 0.0; transparent: true" ></a-plane>
 
@@ -85,16 +105,23 @@
     easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
         (click)="locutor('daniel')">
       </a-plane>
-
     </a-entity>
 
     <a-plane id="daniel-parlante" rotation="0 158.53856782828905 0" position="-0.288 1.652 0.76553" src="#volumeoff"
-      rotation="0 -166.5 0" transparent="true" scale="0.1 0.1 0.4" (click)="danielclick()"></a-plane>
+      rotation="0 -166.5 0" transparent="true" scale="0.1 0.1 0.4" (click)="danielclick()" *ngIf="mostrarvideos"></a-plane>
+    <a-plane id="video_danielIOS" material="side: double" src="#daniel_video" transparent="true" rotation="0 167.9 0"
+    position="-1.15344 0.508 4.72107" scale="3.182 4.362 2.152" *ngIf="mostrarimagenes">
+      <a-plane id="banner_daniel" material="side: double" src="#daniel" transparent="true" scale="2.6 0.7 0.6"
+        position="0.18 1.14 -4.68" animation__a="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine; from:3 0.9 0.8; to:2.6 0.7 0.6" animation__c="property:scale; to : 2.6 0.7 0.6;dur:4000;"
+        (click)="locutor('daniel')"></a-plane>
+   </a-plane>
 
     <!--Carolina Carreta-->
     <a-entity id="caro-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 108.23573820477843 0"
       material="shader: transparent-video; src: #cabina-caro; alphaTest: 0.5; side: front"
-      position="-14.76835 -2.09235 9.73552" scale="7.89253 7.89253 7.89253">
+      position="-14.76835 -2.09235 9.73552" scale="7.89253 7.89253 7.89253" *ngIf="mostrarvideos">
       <a-plane id="carolina-area" rotation="0 8.276948308459872 0" scale="0.41 1.06 1" position="0.03 -0.03 0.1" color="red" (click)="locutor('carolina')"
       material="opacity: 0.0; transparent: true"></a-plane>
       <a-plane id="banner_caro" material="side: double" src="#carolina" transparent="true" scale="2.3 0.7 0.6"
@@ -106,12 +133,21 @@
     </a-entity>
 
     <a-plane id="caro-parlante" rotation="0 118.11983312858027 0" position="-1.067 1.56 0.4569" src="#volumeoff"
-      transparent="true" scale="0.1 0.1 0.4" (click)="caroclick()"></a-plane>
+      transparent="true" scale="0.1 0.1 0.4" (click)="caroclick()" *ngIf="mostrarvideos"></a-plane>
+    <a-plane id="video_caroIOS" material="side: double" src="#carolina_video" transparent="true" rotation="0 108.23573820477843 0"
+       position="-14.6 -3.12 10.219" scale="8.37 10.38 7.89" *ngIf="mostrarimagenes">
+       <a-plane id="banner_caro" material="side: double" src="#carolina" transparent="true" scale="2.3 0.7 0.6"
+        position="-0.82 0.996 -3.77" rotation="0 4 0" animation__a="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+    easing: easeInSine; from:3 0.9 0.8; to:2.33 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
+        (click)="locutor('carolina')">
+      </a-plane>
+    </a-plane>
 
     <!--Carlos-->
     <a-entity id="carlos-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 52.81582251295442 0"
       material="shader: transparent-video; src: #cabina-carlos; alphaTest: 0.5; side: front"
-      position="-143.82566 11.34662 -47.15236" scale="46.87191 46.87191 46.87191">
+      position="-143.82566 11.34662 -47.15236" scale="46.87191 46.87191 46.87191" *ngIf="mostrarvideos">
       <a-plane id="carlos-area" rotation="0 8 0" scale="0.59 1.35 1" position="0.07 -0.09 0.1" color="red" (click)="locutor('carlos')"
       material="opacity: 0.0; transparent: true"></a-plane>
       <a-plane id="banner_carlos" material="side: double" src="#carlos" transparent="true" scale="2.3 0.7 0.6"
@@ -122,12 +158,20 @@
     </a-entity>
 
     <a-plane id="carlos-parlante" rotation="0 60 0" position="-0.81723 1.79735 -0.46793" src="#volumeoff"
-      transparent="true" scale="0.1 0.1 0.4" (click)="carlosclick()"></a-plane>
+      transparent="true" scale="0.1 0.1 0.4" (click)="carlosclick()" *ngIf="mostrarvideos"></a-plane>
+    <a-plane id="video_carlosIOS" material="side: double" src="#carlos_video" transparent="true" rotation="0 52.81582251295442 0"
+      position="-143.82566 11.34662 -47.15236" scale="57.19 83.79 46.87" *ngIf="mostrarimagenes">
+      <a-plane id="banner_carlos" material="side: double" src="#carlos" transparent="true" scale="3.6 0.7 0.6"
+        position="-1.06 1.51 -4.49" animation__a="property: scale; dir: alternate; dur: 200;
+  easing: easeInSine;  to:4 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+  easing: easeInSine; from:4 0.9 0.8; to:3.6 0.7 0.6" animation__c="property:scale; to : 3.6 0.7 0.6;dur:4000;"
+        (click)="locutor('carlos')"></a-plane>
+   </a-plane>
 
     <!--Mateo-->
     <a-entity id="mateo-video" geometry="height: 1.8; width: 1.5; primitive: plane" rotation="0 18.98667541504522 0"
       material="shader: transparent-video; src: #cabina-mateo; alphaTest: 0.5; side: front"
-      position="-21.30433 -15.03244 -72.54276" scale="28.44376 28.44376 28.44376">
+      position="-21.30433 -15.03244 -72.54276" scale="28.44376 28.44376 28.44376" *ngIf="mostrarvideos">
       <a-plane id="mateo-area" rotation="0 -0.5402992008083662 0" scale="0.41 1.06 1" position="0 0.05 0.1" color="red" (click)="locutor('mateo')"
       material="opacity: 0.0; transparent: true"></a-plane>
       <a-plane id="banner_mateo" material="side: double" src="#mateo" transparent="true" scale="2.3 0.7 0.6"
@@ -138,9 +182,15 @@
     </a-entity>
 
     <a-plane id="mateo-parlante" rotation="0 -9.474 0" position="-0.09 1.526 -0.829" src="#volumeoff"
-      transparent="true" scale="0.1 0.1 0.4" (click)="mateoclick()"></a-plane>
-
-
+      transparent="true" scale="0.1 0.1 0.4" (click)="mateoclick()" *ngIf="mostrarvideos"></a-plane>
+    <a-plane id="video_mateoIOS" material="side: double" src="#mateo_video" transparent="true" rotation="0 18.98 0"
+      position="-27.7 -12.1 -84.81" scale="49.57 73.59 28.44" *ngIf="mostrarimagenes">
+      <a-plane id="banner_mateo" material="side: double" src="#mateo" transparent="true" scale="3.6 0.7 0.6"
+        position="0.15 0.97 -6.76" rotation="0 -10 0" animation__a="property: scale; dir: alternate; dur: 200;
+  easing: easeInSine;  to:4 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
+  easing: easeInSine; from:4 0.9 0.8; to:3.6 0.7 0.6" animation__c="property:scale; to : 3.6 0.7 0.6;dur:4000;"
+        (click)="locutor('mateo')"></a-plane>
+    </a-plane>
 
     <a-entity id="camera" rotation="0 -98 0">
       <a-camera wasd-controls="enabled : false" camera="fov:60"></a-camera>
@@ -203,15 +253,6 @@
     </a-timeline>
 
 
-
-
-
-    <a-plane id="banner_shirry" material="side: double" position="2.93463 2.58451 -0.27046" src="#shirry"
-      transparent="true" scale="2.3 0.7 0.6" rotation="9.698456598179446 -91.57756326914487 -0.265852416940702"
-      animation__a="property: scale; dir: alternate; dur: 200;
-    easing: easeInSine;  to:3 0.9 0.8" animation__b="property: scale; dir: alternate; dur: 200;
-    easing: easeInSine; from:3 0.9 0.8; to:2.3 0.7 0.6" animation__c="property:scale; to : 2.3 0.7 0.6;dur:4000;"
-      (click)="locutor('shirry')"></a-plane>
 
 
     <a-plane id="banner_ishop" position="0.977 1.533 -5.79656" src="#marca" material="roughness:0.1;transparent:true"

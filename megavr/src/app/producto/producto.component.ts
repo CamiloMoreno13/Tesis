@@ -40,7 +40,7 @@ export class ProductoComponent implements OnInit {
 
   carga() {
     let pc = document.getElementById('clic_pc');
-    pc?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    pc?.setAttribute('gltf-model', '../../assets/Space/Notebook.glb');
     pc?.setAttribute('scale', '0.022 0.022 0.022');
     pc?.setAttribute('position', '49.2 -13.6 -7.9');
     pc?.setAttribute('rotation', '0 -45.5 0');
@@ -48,7 +48,7 @@ export class ProductoComponent implements OnInit {
     logo?.setAttribute('src','../../assets/Productos/logo_ishop.svg')*/
 
     let retina = document.getElementById('retina');
-    retina?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb'); // xbox.glb
+    retina?.setAttribute('gltf-model', '../../assets/Productos/Notebook.glb'); // xbox.glb
     //retina?.setAttribute('scale', '0.020 0.020 0.020');
     //retina?.setAttribute('position', '12.13 -13.6 29.535');
     retina?.setAttribute('rotation', '0 -153.267 0');
@@ -63,7 +63,7 @@ export class ProductoComponent implements OnInit {
     let procesador = document.getElementById('procesador');
     procesador?.setAttribute(
       'gltf-model',
-      '../../assets/Shared/Notebook.glb'
+      '../../assets/Productos/ram.glb'
     );
     //procesador?.setAttribute('scale', '0.015 0.015 0.015');
     //procesadores?.setAttribute('position', '-25.3 -12.019 9.689');
@@ -84,7 +84,9 @@ export class ProductoComponent implements OnInit {
   });*/
 
     let bateria = document.getElementById('bateria');
-    bateria?.setAttribute('gltf-model', '../../assets/Shared/Notebook.glb');
+    bateria?.setAttribute('gltf-model', '../../assets/Productos/bateria.glb');
+    let teclado = document.getElementById('teclado');
+    teclado?.setAttribute('gltf-model', '../../assets/Productos/teclado.glb');
   }
 
 
@@ -93,7 +95,7 @@ export class ProductoComponent implements OnInit {
     AFRAME.registerComponent('pc-manager', {
       init: function () {
 
-        let pc = document.getElementById("clic_pc")
+        let pc = document.getElementById("clic_pc");
         let playBtn = document.getElementById('clic_icon');
         let texto = document.getElementById('clic_texto');
         let rewindBtn = document.getElementById('close_pc');
@@ -109,7 +111,7 @@ export class ProductoComponent implements OnInit {
               );
             } else {
               this.el.emit('play-anim');
-              this.el.emit('second');              
+              this.el.emit('second'); 
             }
           });
 
@@ -137,29 +139,12 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-movePC');
           });
         }
-
-        if (AFRAME.utils.device.isMobile() == false) {
-
-          // RETINA OBJECT AND RETINA BANNER
-
-          let banner_retina = document.getElementById('banner_retina')
-          let retina = document.getElementById('retina')
-          if (banner_retina != null && retina != null) {
-            banner_retina.addEventListener('click', (e) => {
-              let posactual = this.el.getAttribute('position').x;
-              if (posactual != posinicial) {
-                this.el.emit('rewind-animPC');
-                this.el.emit('rewind-movePC');
-                setTimeout(() => {
-                  if (playBtn != null) {
-                    playBtn.setAttribute('visible', 'true');
-                    //texto.setAttribute('visible', 'true');
-                  }
-                }, 200)
-              };
-            });
-
-            retina.addEventListener('click', (e) => {
+        // RETINA OBJECT AND RETINA BANNER
+        console.log("Entro");
+        let banner_retina = document.getElementById('banner_retina')
+        let retina = document.getElementById('retina')
+        if (banner_retina != null && retina != null) {
+          banner_retina.addEventListener('click', (e) => {
               this.el.emit('rewind-animPC');
               this.el.emit('rewind-movePC');
               setTimeout(() => {
@@ -168,93 +153,90 @@ export class ProductoComponent implements OnInit {
                   //texto.setAttribute('visible', 'true');
                 }
               }, 200);
-            });
-          }
-          // PROCESADOR OBJECT AND PROCESADOR BANNER
-          let banner_procesador = document.getElementById('banner_procesador')
-          let procesador = document.getElementById('procesador')
-          if (banner_procesador != null && procesador != null) {
-            banner_procesador.addEventListener('click', (e) => {
-              let posactual = this.el.getAttribute('position').x;
-              if (posactual != posinicial) {
-                this.el.emit('rewind-movePC');
-                this.el.emit('rewind-animPC');
-                setTimeout(() => {
-                  if (playBtn != null && texto != null) {
-                    playBtn.setAttribute('visible', 'true');
-                    texto.setAttribute('visible', 'true');
-                  }
-                }, 200)
-              }
-              ;
-            })
+          });
 
-            procesador.addEventListener('click', (e) => {
-              this.el.emit('rewind-animPC');
+          retina.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPC');
+            this.el.emit('rewind-movePC');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+        // PROCESADOR OBJECT AND PROCESADOR BANNER
+        let banner_procesador = document.getElementById('banner_procesador')
+        let procesador = document.getElementById('procesador')
+        if (banner_procesador != null && procesador != null) {
+          banner_procesador.addEventListener('click', (e) => {
               this.el.emit('rewind-movePC');
-              setTimeout(() => {
-                if (playBtn != null) {
-                  playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
-                }
-              }, 200);
-            });
-          }
-
-          // BATERIA OBJECT AND BATERIA BANNER
-          let bateria = document.getElementById('bateria')
-          let banner_bateria = document.getElementById('banner_bateria')
-          if (banner_bateria != null && bateria != null) {
-            banner_bateria.addEventListener('click', (e) => {
-              let posactual = this.el.getAttribute('position').x;
-              if (posactual != posinicial) {
-
-
-                this.el.emit('rewind-animPC');
-                this.el.emit('rewind-movePC');
-
-                setTimeout(() => {
-                  if (playBtn != null && texto != null) {
-                    playBtn.setAttribute('visible', 'true');
-                    texto.setAttribute('visible', 'true');
-                  }
-                }, 200)
-              }
-            });
-
-            bateria.addEventListener('click', (e) => {
-              let posactual = this.el.getAttribute('position').x;
-              if (posactual != posinicial) {
-                this.el.emit('rewind-animPC');
-                this.el.emit('rewind-movePC');
-                setTimeout(() => {
-                  if (playBtn != null) {
-                    playBtn.setAttribute('visible', 'true');
-                    //texto.setAttribute('visible', 'true');
-                  }
-                }, 200)
-              }
-            });
-          }
-
-          // Teclado
-          let teclado = document.getElementById('teclado')
-          if (teclado != null) {
-            teclado.addEventListener('click', (e) => {
               this.el.emit('rewind-animPC');
-              this.el.emit('rewind-movePC');
               setTimeout(() => {
                 if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
                   texto.setAttribute('visible', 'true');
                 }
               }, 200);
-            });
-          }
+          })
 
+          procesador.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPC');
+            this.el.emit('rewind-movePC');
+            setTimeout(() => {
+              if (playBtn != null) {
+                playBtn.setAttribute('visible', 'true');
+                //texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
+        }
+
+        // BATERIA OBJECT AND BATERIA BANNER
+        let bateria = document.getElementById('bateria')
+        let banner_bateria = document.getElementById('banner_bateria')
+        if (banner_bateria != null && bateria != null) {
+          banner_bateria.addEventListener('click', (e) => {
+              this.el.emit('rewind-animPC');
+              this.el.emit('rewind-movePC');
+
+              setTimeout(() => {
+                if (playBtn != null && texto != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+          });
+
+          bateria.addEventListener('click', (e) => {
+              this.el.emit('rewind-animPC');
+              this.el.emit('rewind-movePC');
+              setTimeout(() => {
+                if (playBtn != null) {
+                  playBtn.setAttribute('visible', 'true');
+                  //texto.setAttribute('visible', 'true');
+                }
+              }, 200)
+          });
+        }
+
+        // Teclado
+        let teclado = document.getElementById('teclado')
+        if (teclado != null) {
+          teclado.addEventListener('click', (e) => {
+            this.el.emit('rewind-animPC');
+            this.el.emit('rewind-movePC');
+            setTimeout(() => {
+              if (playBtn != null && texto != null) {
+                playBtn.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
+              }
+            }, 200);
+          });
         }
       }
-    })
+    });
 
     AFRAME.registerComponent('retina-manager-object', {
       init: function () {
@@ -547,7 +529,7 @@ export class ProductoComponent implements OnInit {
 
         let procesador = document.getElementById("procesador")
         let playBtn = document.getElementById('banner_procesador');
-        //let texto = document.getElementById('texto_retina');
+        let texto = document.getElementById('texto_procesador');
         let rewindBtn = document.getElementById('close_procesador');
         let posinicial = this.el.getAttribute('position').x
 
@@ -555,9 +537,9 @@ export class ProductoComponent implements OnInit {
           playBtn.addEventListener('click', (e) => {
             this.el.emit('second');
             this.el.emit('play-anim-object');
-            if (playBtn != null && rewindBtn != null) {
+            if (playBtn != null && texto != null && rewindBtn != null) {
               playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
+              texto.setAttribute('visible', "false");
             }
           });
         }
@@ -566,9 +548,9 @@ export class ProductoComponent implements OnInit {
           procesador.addEventListener('click', (e) => {
             this.el.emit('second');
             this.el.emit('play-anim-object');
-            if (playBtn != null && rewindBtn != null) {
+            if (playBtn != null && texto != null && rewindBtn != null) {
               playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
+              texto.setAttribute('visible', "false");
             }
           });
         }
@@ -591,9 +573,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animPR');
               this.el.emit('rewind-movePR');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             };
@@ -621,9 +603,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animPR');
               this.el.emit('rewind-movePR');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             }
@@ -651,9 +633,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animPR');
               this.el.emit('rewind-movePR');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             }
@@ -667,9 +649,9 @@ export class ProductoComponent implements OnInit {
              this.el.emit('rewind-animPR');
              this.el.emit('rewind-movePR');
              setTimeout(() => {
-               if (playBtn != null ) {
+               if (playBtn != null && texto != null) {
                  playBtn.setAttribute('visible', 'true');
-                 //texto.setAttribute('visible', 'true');
+                 texto.setAttribute('visible', 'true');
                }
              }, 200);
            });
@@ -684,7 +666,7 @@ export class ProductoComponent implements OnInit {
       init: function () {
         let cpu = document.getElementById("procesador")
         let playBtn = document.getElementById('banner_procesador');
-        // let texto = document.getElementById('texto_retina');
+        let texto = document.getElementById('texto_procesador');
         let rewindBtn = document.getElementById('close_procesador');
         let ghost1 = document.getElementById('ghost1_procesador');
         let ghost2 = document.getElementById('ghost2_procesador');
@@ -694,9 +676,9 @@ export class ProductoComponent implements OnInit {
             setTimeout(() => {
               this.el.emit('second');
               this.el.emit('play-anim');
-              if (playBtn != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
+              if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
                 playBtn.setAttribute('visible', "false");
-                //texto.setAttribute('visible', "false");
+                texto.setAttribute('visible', "false");
                 ghost1.setAttribute('visible', "true");
                 ghost2.setAttribute('visible', "true");
                 rewindBtn.setAttribute('visible', "true");
@@ -712,9 +694,9 @@ export class ProductoComponent implements OnInit {
 
               this.el.emit('second');
               this.el.emit('play-anim');
-              if (playBtn != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
+              if (playBtn != null && texto != null && ghost1 != null && ghost2 != null && rewindBtn != null) {
                 playBtn.setAttribute('visible', "false");
-                //texto.setAttribute('visible', "false");
+                texto.setAttribute('visible', "false");
                 ghost1.setAttribute('visible', "true");
                 ghost2.setAttribute('visible', "true");
                 rewindBtn.setAttribute('visible', "true");
@@ -732,9 +714,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-movePR');
 
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           });
@@ -750,9 +732,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           });
@@ -776,9 +758,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           });
@@ -802,9 +784,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200)
 
@@ -818,9 +800,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animPR');
             this.el.emit('rewind-movePR');
             setTimeout(() => {
-              if (playBtn != null ) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           });
@@ -834,7 +816,7 @@ export class ProductoComponent implements OnInit {
 
         let bateria = document.getElementById("bateria")
         let playBtn = document.getElementById("banner_bateria");
-        // let texto = document.getElementById('texto_retina');
+        let texto = document.getElementById('texto_bateria');
         let rewindBtn = document.getElementById('close_bateria');
         let posinicial = this.el.getAttribute('position').x
 
@@ -842,9 +824,9 @@ export class ProductoComponent implements OnInit {
           playBtn.addEventListener('click', (e) => {
             this.el.emit('second');
             this.el.emit('play-anim-object');
-            if (playBtn != null && rewindBtn != null) {
+            if (playBtn != null && texto != null && rewindBtn != null) {
               playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
+              texto.setAttribute('visible', "false");
             }
           });
         }
@@ -853,9 +835,9 @@ export class ProductoComponent implements OnInit {
           bateria.addEventListener('click', (e) => {
             this.el.emit('second');
             this.el.emit('play-anim-object');
-            if (playBtn != null && rewindBtn != null) {
+            if (playBtn != null && texto != null && rewindBtn != null) {
               playBtn.setAttribute('visible', "false");
-              //texto.setAttribute('visible', "false");
+              texto.setAttribute('visible', "false");
             }
           });
         }
@@ -878,9 +860,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animBA');
               this.el.emit('rewind-moveBA');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             }
@@ -907,9 +889,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animBA');
               this.el.emit('rewind-moveBA');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             }
@@ -937,9 +919,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animBA');
               this.el.emit('rewind-moveBA');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             }
@@ -956,9 +938,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animBA');
               this.el.emit('rewind-moveBA');
               setTimeout(() => {
-                if (playBtn != null) {
+                if (playBtn != null && texto != null) {
                   playBtn.setAttribute('visible', 'true');
-                  //texto.setAttribute('visible', 'true');
+                  texto.setAttribute('visible', 'true');
                 }
               }, 200)
             }
@@ -973,7 +955,7 @@ export class ProductoComponent implements OnInit {
       init: function () {
         let bateria = document.getElementById("bateria")
         let playBtn = document.getElementById('banner_bateria');
-        // let texto = document.getElementById('texto_retina');
+        let texto = document.getElementById('texto_bateria');
         let rewindBtn = document.getElementById('close_bateria');
         let ghost1 = document.getElementById('ghost1_bateria');
 
@@ -982,9 +964,9 @@ export class ProductoComponent implements OnInit {
             setTimeout(() => {
               this.el.emit('second');
               this.el.emit('play-anim');
-              if (playBtn != null && ghost1 != null && rewindBtn != null) {
+              if (playBtn != null && texto != null && ghost1 != null && rewindBtn != null) {
                 playBtn.setAttribute('visible', "false");
-                //texto.setAttribute('visible', "false");
+                texto.setAttribute('visible', "false");
                 ghost1.setAttribute('visible', "true");
                 rewindBtn.setAttribute('visible', "true");
               }
@@ -996,9 +978,9 @@ export class ProductoComponent implements OnInit {
             setTimeout(() => {
               this.el.emit('second');
               this.el.emit('play-anim');
-              if (playBtn != null && ghost1 != null && rewindBtn != null) {
+              if (playBtn != null && texto != null && ghost1 != null && rewindBtn != null) {
                 playBtn.setAttribute('visible', "false");
-                //texto.setAttribute('visible', "false");
+                texto.setAttribute('visible', "false");
                 ghost1.setAttribute('visible', "true");
                 rewindBtn.setAttribute('visible', "true");
               }
@@ -1017,9 +999,9 @@ export class ProductoComponent implements OnInit {
 
 
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           });
@@ -1035,9 +1017,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animBA');
             this.el.emit('rewind-moveBA');
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           });
@@ -1061,9 +1043,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animBA');
             this.el.emit('rewind-moveBA');
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200);
           })
@@ -1088,9 +1070,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animBA');
             this.el.emit('rewind-moveBA');
             setTimeout(() => {
-              if (playBtn != null) {
+              if (playBtn != null && texto != null) {
                 playBtn.setAttribute('visible', 'true');
-                //texto.setAttribute('visible', 'true');
+                texto.setAttribute('visible', 'true');
               }
             }, 200)
 
@@ -1104,9 +1086,9 @@ export class ProductoComponent implements OnInit {
              this.el.emit('rewind-animBA');
              this.el.emit('rewind-moveBA');
              setTimeout(() => {
-               if (playBtn != null) {
+               if (playBtn != null && texto != null) {
                  playBtn.setAttribute('visible', 'true');
-                 //texto.setAttribute('visible', 'true');
+                 texto.setAttribute('visible', 'true');
                }
              }, 200);
            });
@@ -1118,8 +1100,9 @@ export class ProductoComponent implements OnInit {
     AFRAME.registerComponent('teclado-manager', {
       init: function () {
 
-        let teclado = document.getElementById("teclado")
-        //let texto = document.getElementById('texto_retina');
+        let teclado = document.getElementById("teclado");
+        let playBtn = document.getElementById('banner_teclado');
+        let texto = document.getElementById('texto_teclado');
         let rewindBtn = document.getElementById('close_teclado');
         let posinicial = this.el.getAttribute('position').x
 
@@ -1127,7 +1110,9 @@ export class ProductoComponent implements OnInit {
           teclado.addEventListener('click', (e) => {
             this.el.emit('second');
             this.el.emit('play-anim')
-            teclado?.setAttribute('visible', 'false')
+            playBtn?.setAttribute('visible', "false");
+            teclado?.setAttribute('visible', 'false');
+            texto?.setAttribute('visible', 'false');
           });
         }
 
@@ -1137,7 +1122,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animTE');
             this.el.emit('rewind-moveTE');
             setTimeout(() => {
-              teclado?.setAttribute('visible', 'true')
+              teclado?.setAttribute('visible', 'true');
+              playBtn?.setAttribute('visible', "true");
+              texto?.setAttribute('visible', 'true')
             }, 1150);
 
           });
@@ -1154,7 +1141,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animTE');
               this.el.emit('rewind-moveTE');
               setTimeout(() => {
-                teclado?.setAttribute('visible', 'true')
+                playBtn?.setAttribute('visible', "true");
+                teclado?.setAttribute('visible', 'true');
+                texto?.setAttribute('visible', 'true');
               }, 1150);
             };
           });
@@ -1163,7 +1152,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animTE');
             this.el.emit('rewind-moveTE');
             setTimeout(() => {
-              teclado?.setAttribute('visible', 'true')
+              playBtn?.setAttribute('visible', "true");
+              teclado?.setAttribute('visible', 'true');
+              texto?.setAttribute('visible', 'true');
             }, 1150);
           });
         }
@@ -1178,7 +1169,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-moveTE');
               this.el.emit('rewind-animTE');
               setTimeout(() => {
-                teclado?.setAttribute('visible', 'true')
+                playBtn?.setAttribute('visible', "true");
+                teclado?.setAttribute('visible', 'true');
+                texto?.setAttribute('visible', 'true');
               }, 1150);
             }
             ;
@@ -1188,7 +1181,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animTE');
             this.el.emit('rewind-moveTE');
             setTimeout(() => {
-              teclado?.setAttribute('visible', 'true')
+              teclado?.setAttribute('visible', 'true');
+              playBtn?.setAttribute('visible', "true");
+              texto?.setAttribute('visible', 'true');
             }, 1150);
           });
         }
@@ -1203,7 +1198,9 @@ export class ProductoComponent implements OnInit {
               this.el.emit('rewind-animTE');
               this.el.emit('rewind-moveTE');
               setTimeout(() => {
-                teclado?.setAttribute('visible', 'true')
+                playBtn?.setAttribute('visible', "true");
+                teclado?.setAttribute('visible', 'true');
+                texto?.setAttribute('visible', 'true');
               }, 1150);
             }
           });
@@ -1212,7 +1209,9 @@ export class ProductoComponent implements OnInit {
             this.el.emit('rewind-animTE');
             this.el.emit('rewind-moveTE');
             setTimeout(() => {
-              teclado?.setAttribute('visible', 'true')
+              playBtn?.setAttribute('visible', "true");
+              teclado?.setAttribute('visible', 'true');
+              texto?.setAttribute('visible', 'true');
             }, 1150);
           });
 
@@ -1225,7 +1224,9 @@ export class ProductoComponent implements OnInit {
              this.el.emit('rewind-animTE');
              this.el.emit('rewind-moveTE');
              setTimeout(() => {
-              teclado?.setAttribute('visible','true')
+              teclado?.setAttribute('visible','true');
+              playBtn?.setAttribute('visible', "true");
+              texto?.setAttribute('visible', 'true');
              }, 1150);
            });
          }
