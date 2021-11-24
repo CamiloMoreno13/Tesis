@@ -14,6 +14,7 @@ export class PerfilesComponent implements OnInit {
   public selectLocutores : any[] = []; 
   public locutor: string | null = "";
   public sonido: boolean = true;
+  
   public perfil !: any;
   public listNoticias !: any[]; 
   public mostrarSpinner : boolean = true; 
@@ -36,6 +37,7 @@ export class PerfilesComponent implements OnInit {
     this.tipoMenu.locutor = this.locutor;
     if(this.locutor != null){
       this.perfil = await this.fire.llenarInfoPerfil(this.locutor);
+      console.log('perfil' , this.perfil);
       this.listNoticias = this.perfil.noticias;
     }
     setTimeout(() => {

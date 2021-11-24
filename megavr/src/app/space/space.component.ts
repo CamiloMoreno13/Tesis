@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { SpaceService } from '../Services/Space/space.service';
 import { CargarScriptsService } from "../Services/Carga/cargar-scripts.service";
@@ -11,12 +11,12 @@ import { CargarScriptsService } from "../Services/Carga/cargar-scripts.service";
 })
 
 export class SpaceComponent implements OnInit {
+  title = 'space'; 
 
+  public menu: string = 'space';
 
- public menu: string = 'space';
-
-  public mostrarSpace : boolean = false; 
-  public mostrarSpinner : boolean = true; 
+  public mostrarSpace: boolean = false;
+  public mostrarSpinner: boolean = true;
 
   constructor(private _CargarScripts: CargarScriptsService, private router: Router, private spaceService: SpaceService) {
     _CargarScripts.Carga(["aframe-animation-timeline-component.min"]);
@@ -24,17 +24,17 @@ export class SpaceComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
 
-    setTimeout (() =>{
-      this.carga2();    
-    },200);
+    setTimeout(() => {
+      this.carga2();
+    }, 200);
 
     this.carga();
     setTimeout(() => {
-    this.mostrarSpace = true;
-    this.mostrarSpinner = false;    
+      this.mostrarSpace = true;
+      this.mostrarSpinner = false;
     }, 8000);
-    
-    
+
+
     /*
         document.addEventListener('DOMContentLoaded', (e) => {
           var scene = document.querySelector('a-scene');
@@ -45,8 +45,8 @@ export class SpaceComponent implements OnInit {
     /*document.querySelector("a-scene").addEventListener("loaded", () => { setTimeout(() => { this.mostrar = true; }, 1000); })  This is the key*/
   }
 
-  carga2(){
-    
+  carga2() {
+
 
     let caro = <HTMLVideoElement>document.getElementById("cabina-caro");
     caro.volume = 0;
@@ -75,7 +75,7 @@ export class SpaceComponent implements OnInit {
 
   }
 
-  carga(){
+  carga() {
     let caja = document.getElementById('caja');
     let pc = document.getElementById('pc');
 
@@ -103,50 +103,50 @@ export class SpaceComponent implements OnInit {
     let danielsonido = document.getElementById("cabina-daniel") as HTMLVideoElement;
     let mateosonido = document.getElementById("cabina-mateo") as HTMLVideoElement;
     let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;
-    if(carosonido.volume==0){
+    if (carosonido.volume == 0) {
       carosonido.volume = 1;
-      carlossonido.volume=0;
-      danielsonido.volume=0;
-      mateosonido.volume=0;
-      shirrysonido.volume=0;
+      carlossonido.volume = 0;
+      danielsonido.volume = 0;
+      mateosonido.volume = 0;
+      shirrysonido.volume = 0;
       document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeup.png')
-      document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')      
-      document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')  
+      document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+      document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
       document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')      
-      
-    }else{
+      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+
+    } else {
       carosonido.volume = 0;
       document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
     }
-      }
+  }
 
-  carlosclick() {    
+  carlosclick() {
 
     let carosonido = document.getElementById("cabina-caro") as HTMLVideoElement;
     let carlossonido = document.getElementById("cabina-carlos") as HTMLVideoElement;
     let danielsonido = document.getElementById("cabina-daniel") as HTMLVideoElement;
     let mateosonido = document.getElementById("cabina-mateo") as HTMLVideoElement;
     let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;
-    if(carlossonido.volume==0){
+    if (carlossonido.volume == 0) {
       carlossonido.volume = 1;
-      carosonido.volume=0;
-      danielsonido.volume=0;
-      mateosonido.volume=0;
-      shirrysonido.volume=0;
+      carosonido.volume = 0;
+      danielsonido.volume = 0;
+      mateosonido.volume = 0;
+      shirrysonido.volume = 0;
       document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeup.png')
       document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-      document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')   
-      document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')     
+      document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+      document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
       document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-    }else{
+    } else {
       carlossonido.volume = 0;
       document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-    } 
+    }
 
   }
 
-  danielclick() {    
+  danielclick() {
 
     let danielsonido = document.getElementById("cabina-daniel") as HTMLVideoElement;
     let carosonido = document.getElementById("cabina-caro") as HTMLVideoElement;
@@ -154,73 +154,73 @@ export class SpaceComponent implements OnInit {
     let mateosonido = document.getElementById("cabina-mateo") as HTMLVideoElement;
     let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;
 
-    if(danielsonido.volume==0){
-      danielsonido.volume=1;
-      carlossonido.volume=0;
-      carosonido.volume=0;
-      mateosonido.volume=0;
-      shirrysonido.volume=0;
+    if (danielsonido.volume == 0) {
+      danielsonido.volume = 1;
+      carlossonido.volume = 0;
+      carosonido.volume = 0;
+      mateosonido.volume = 0;
+      shirrysonido.volume = 0;
       document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeup.png')
       document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-      document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png') 
+      document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
       document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')      
-    }else{
+      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+    } else {
       danielsonido.volume = 0;
       document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-    } 
+    }
 
   }
 
-  mateoclick() {    
+  mateoclick() {
 
     let mateosonido = document.getElementById("cabina-mateo") as HTMLVideoElement;
     let danielsonido = document.getElementById("cabina-daniel") as HTMLVideoElement;
     let carosonido = document.getElementById("cabina-caro") as HTMLVideoElement;
     let carlossonido = document.getElementById("cabina-carlos") as HTMLVideoElement;
-    let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;  
+    let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;
 
-    if(mateosonido.volume==0){
-      mateosonido.volume=1;
-      danielsonido.volume=0;
-      carlossonido.volume=0;
-      carosonido.volume=0;
-      shirrysonido.volume=0;
+    if (mateosonido.volume == 0) {
+      mateosonido.volume = 1;
+      danielsonido.volume = 0;
+      carlossonido.volume = 0;
+      carosonido.volume = 0;
+      shirrysonido.volume = 0;
       document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeup.png')
       document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
       document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-      document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')  
-      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')    
-    }else{
+      document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+    } else {
       mateosonido.volume = 0;
       document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-    } 
+    }
 
   }
 
-  shirryclick() {    
+  shirryclick() {
 
     let mateosonido = document.getElementById("cabina-mateo") as HTMLVideoElement;
     let danielsonido = document.getElementById("cabina-daniel") as HTMLVideoElement;
     let carosonido = document.getElementById("cabina-caro") as HTMLVideoElement;
     let carlossonido = document.getElementById("cabina-carlos") as HTMLVideoElement;
-    let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;  
+    let shirrysonido = document.getElementById("cabina-shirry") as HTMLVideoElement;
 
-    if(shirrysonido.volume==0){
-      mateosonido.volume=0;
-      danielsonido.volume=0;
-      carlossonido.volume=0;
-      carosonido.volume=0;
-      shirrysonido.volume=1;
+    if (shirrysonido.volume == 0) {
+      mateosonido.volume = 0;
+      danielsonido.volume = 0;
+      carlossonido.volume = 0;
+      carosonido.volume = 0;
+      shirrysonido.volume = 1;
       document.getElementById('mateo-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
       document.getElementById('daniel-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
       document.getElementById('carlos-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-      document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')  
-      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeup.png')    
-    }else{
+      document.getElementById('caro-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
+      document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeup.png')
+    } else {
       shirrysonido.volume = 0;
       document.getElementById('shirry-parlante')?.setAttribute('src', '../../assets/Space/volumeoff.png')
-    } 
+    }
 
   }
 

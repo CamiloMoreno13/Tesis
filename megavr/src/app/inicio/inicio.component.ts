@@ -18,8 +18,6 @@ export class InicioComponent implements OnInit {
   @ViewChild('video5') video5!: ElementRef;
   @ViewChild('video6') video6!: ElementRef;
 
-
-
   public open: boolean = true;
   public informacion: banner[] = [new banner(), new banner(), new banner(), new banner(), new banner(), new banner()];
   public indicador: boolean[] = [false, false, false, false, false, false];
@@ -90,11 +88,9 @@ export class InicioComponent implements OnInit {
   space() {
     this.router.navigate(['/space']);
   }
-
   exit() {
     this.router.navigate(['/space']);
   }
-
   mute(slider: number) {
     switch (slider) {
       /*

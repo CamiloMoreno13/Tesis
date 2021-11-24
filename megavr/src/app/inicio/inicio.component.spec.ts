@@ -1,5 +1,9 @@
+import { NgModule } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AngularFireModule } from '@angular/fire';
+import { Router } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
+import { environment } from 'src/environments/environment';
 import { InicioComponent } from './inicio.component';
 
 describe('InicioComponent', () => {
@@ -8,9 +12,9 @@ describe('InicioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InicioComponent ]
-    })
-    .compileComponents();
+      declarations: [ InicioComponent ],
+      imports: [ RouterTestingModule , AngularFireModule.initializeApp(environment.firebaseConfig)]
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +23,7 @@ describe('InicioComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('carga componente inicio', () => {
     expect(component).toBeTruthy();
   });
 });

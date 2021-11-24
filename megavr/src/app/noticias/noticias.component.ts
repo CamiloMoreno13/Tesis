@@ -32,7 +32,9 @@ export class NoticiasComponent implements OnInit {
     setTimeout(() => {
       this.mostrarSpinner = false; 
     }, 2000);
+
   }
+
 
   async changeNoticia(event: any){
     this.mostrarSpinner = true;
