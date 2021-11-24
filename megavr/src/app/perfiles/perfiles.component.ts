@@ -38,7 +38,6 @@ export class PerfilesComponent implements OnInit {
     this.tipoMenu.locutor = this.locutor;
     if(this.locutor != null){
       this.perfil = await this.fire.llenarInfoPerfil(this.locutor);
-      console.log('perfil' , this.perfil);
       this.listNoticias = this.perfil.noticias;
     }
     setTimeout(() => {

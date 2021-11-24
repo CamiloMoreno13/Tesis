@@ -28,7 +28,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 import { PantallaCargaComponent } from './pantalla-carga/pantalla-carga.component';
-import { PruebasComponent } from './pruebas/pruebas.component';
 
 @NgModule({
   declarations: [
@@ -45,8 +44,7 @@ import { PruebasComponent } from './pruebas/pruebas.component';
     NoticiaAdminComponent,
     ProductoAdminComponent,
     OnboardingAdminComponent,
-    PantallaCargaComponent,
-    PruebasComponent
+    PantallaCargaComponent
   ],
   imports: [
     BrowserModule,
