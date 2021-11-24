@@ -1,8 +1,16 @@
-.nav{
-    padding: 10px;
-    width: 100%;
-    height: auto;
+@import '../../assets/style/boost.css';
+
+.tabs{
+    text-align: center;
     background-color: black;
-    justify-content: space-between;
-    color: white;
+    color:  white;
+    height: 30px;
+}
+
+.tabs-items{
+    cursor: pointer;
+}
+
+.isActive{
+    background-color: grey;
 }

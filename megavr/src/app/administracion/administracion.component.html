@@ -1,17 +1,14 @@
-<ul class="nav">
-    <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="/onboarding-admin">On Boarding</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/space-admin" style="pointer-events: none;">Space</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/perfil-admin">Perfiles</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/noticias-admin">Noticias</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" style="pointer-events: none;">Producto</a>
-      </li>
-  </ul>
+<div class="tabs row">
+  <div class="col tabs-items" (click)="changeTab(0)" [class.isActive]="tabs[0]" >OnBoarding</div>
+  <div class="col tabs-items" (click)="changeTab(1)" [class.isActive]="tabs[1]"  style="pointer-events: none;">Space</div>
+  <div class="col tabs-items" (click)="changeTab(2)" [class.isActive]="tabs[2]" >Perfiles</div>
+  <div class="col tabs-items" (click)="changeTab(3)" [class.isActive]="tabs[3]" >Noticias</div>
+  <div class="col tabs-items" (click)="changeTab(4)" [class.isActive]="tabs[4]"  style="pointer-events: none;">Producto</div>
+</div>
+<div class="contenedor">
+  <app-onboarding-admin *ngIf="tabs[0]" ></app-onboarding-admin>
+  <app-space-admin *ngIf="tabs[1]"></app-space-admin>
+  <app-perfil-admin *ngIf="tabs[2]"></app-perfil-admin>
+  <app-noticia-admin *ngIf="tabs[3]"></app-noticia-admin>
+  <app-producto-admin *ngIf="tabs[4]"></app-producto-admin>
+</div>
