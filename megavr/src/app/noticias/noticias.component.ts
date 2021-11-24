@@ -97,6 +97,7 @@ export class NoticiasComponent implements OnInit {
     }
   }
 
+
   async changeNoticia(event: any){
     this.mostrarSpinner = true;
     if(this.locutor != null){

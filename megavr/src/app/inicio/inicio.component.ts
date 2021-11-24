@@ -110,7 +110,6 @@ export class InicioComponent implements OnInit {
   space() {
     this.router.navigate(['/space']);
   }
-
   exit() {
     this.router.navigate(['/space']);
   }

@@ -23,6 +23,7 @@ describe('PerfilesComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(PerfilesComponent);
     component = fixture.componentInstance;
+    component.perfil = 'carolina'; 
     fixture.detectChanges();
   });
 

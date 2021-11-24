@@ -7,3 +7,4 @@ export class Noticia {
         this.icono = '';
     }
 }
+
